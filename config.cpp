@@ -6,6 +6,12 @@ class CfgPatches
         author = "Dirt & Petee";
         requiredAddons[] = 
         {
+            "A3_data_F",
+            "A3_anims_F",
+            "A3_weapons_F",
+            "A3_characters_F",
+            "A3_Soft_F",
+            "A3_CargoPoses_F",
             "WBK_Combinus"
         };
         units[] = {};
@@ -33,6 +39,6 @@ class Extended_PostInit_EventHandlers
 {
     class Dirts_Visor_Extension
     {
-        init = "call compile preprocessFileLineNumbers '\OECExtension\patchHelmets.sqf'";
+        init = "call compile preprocessFileLineNumbers '\OECExtension\Scripts\OEC_patchHelmets.sqf'";
     };
 };
