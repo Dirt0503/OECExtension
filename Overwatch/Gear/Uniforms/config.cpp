@@ -322,13 +322,16 @@ class CfgVehicles
         model = "@Combain\CombainAssassin2.p3d";
     };*/
 
-    class OEC_Overwatch_Uniform_Wallhammer_Vehicle: OEC_Overwatch_Uniform_Assassin_1_Vehicle
+    class OEC_Overwatch_Uniform_Wallhammer_Vehicle: OEC_Overwatch_Uniform_Soldier_Vehicle
     {
         uniformClass = "OEC_Overwatch_Uniform_Wallhammer";
         model = "\WBK_FixingFactory\charger\CombainWallhamer.p3d";
+        hiddenSelections[] = {};
+		hiddenSelectionsTextures[] = {};
+        hiddenSelectionsMaterials[] = {};
     };
 
-    class OEC_Overwatch_Uniform_APF_Vehicle: OEC_Overwatch_Uniform_Assassin_1_Vehicle
+    class OEC_Overwatch_Uniform_APF_Vehicle: OEC_Overwatch_Uniform_Wallhammer_Vehicle
     {
         uniformClass = "OEC_Overwatch_Uniform_APF";
         model = "@Combain\CombainSuppressor.p3d";
