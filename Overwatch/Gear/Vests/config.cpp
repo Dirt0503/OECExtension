@@ -68,34 +68,47 @@ class CfgWeapons
 	    	vesttype = "Rebreather";
             class HitpointsProtectionInfo
 	    	{
+                class Neck
+	    		{
+	    			HitpointName = "HitNeck";
+	    			armor = 13.5;
+	    			PassThrough = 0.08975;
+                    explosionShielding = 0.8;
+	    		};
 	    		class Chest
 	    		{
 	    			HitpointName = "HitChest";
-	    			armor = 11.5;
+	    			armor = 13.5;
 	    			PassThrough = 0.08975;
                     explosionShielding = 0.8;
 	    		};
     			class Diaphragm
     			{
 				    HitpointName = "HitDiaphragm";
-			    	armor = 11.5;
+			    	armor = 13.5;
 					PassThrough = 0.08975;
                     explosionShielding = 0.8;
 		    	};
 	    		class Abdomen
     			{
 				    hitpointName = "HitAbdomen";
-				   	armor = 11.5;
+				   	armor = 13.5;
 					PassThrough = 0.08975;
                     explosionShielding = 0.8;
 		    	};
 	    		class Body
     			{
 				    hitpointName = "HitBody";
-				   	armor = 11;
+				   	armor = 13.5;
 					PassThrough = 0.08975;
                     explosionShielding = 0.8;
 		    	};
+                class Pelvis
+                {
+                    hitpointName = "HitPelvis";
+					armor = 11;
+					PassThrough = 0.4;
+                };
 	    		class Arms
     			{
 				    hitpointName = "HitArms";
@@ -110,6 +123,7 @@ class CfgWeapons
 			    	PassThrough = 0.08975;
                     explosionShielding = 0.8;
 				};
+                
 			};
         };
     };
@@ -293,38 +307,51 @@ class CfgWeapons
 		    };
             class HitpointsProtectionInfo
 	    	{
+                 class Neck
+	    		{
+	    			HitpointName = "HitNeck";
+	    			armor = 17;
+	    			PassThrough = 0.08975;
+                    explosionShielding = 0.8;
+	    		};
 	    		class Chest
 	    		{
 	    			HitpointName = "HitChest";
-	    			armor = 16;
+	    			armor = 17;
 	    			PassThrough = 0.08975;
                     explosionShielding = 0.5;
 	    		};
     			class Diaphragm
     			{
 				    HitpointName = "HitDiaphragm";
-			    	armor = 16;
+			    	armor = 17;
 					PassThrough = 0.08975;
                     explosionShielding = 0.5;
 		    	};
 	    		class Abdomen
     			{
 				    hitpointName = "HitAbdomen";
-				   	armor = 16;
+				   	armor = 17;
 					PassThrough = 0.08975;
                     explosionShielding = 0.5;
 		    	};
 	    		class Body
     			{
 				    hitpointName = "HitBody";
-				   	armor = 16;
+				   	armor = 17;
 					PassThrough = 0.08975;
                     explosionShielding = 0.5;
 		    	};
+                class Pelvis
+                {
+                    hitpointName = "HitPelvis";
+					armor = 14;
+					PassThrough = 0.4;
+                };
 	    		class Arms
     			{
 				    hitpointName = "HitArms";
-				    armor = 16;
+				    armor = 14;
 				    PassThrough = 0.08975;
                     explosionShielding = 0.5;
 		    	};
@@ -383,34 +410,47 @@ class CfgWeapons
 			mass = 100;
             class HitpointsProtectionInfo
 	    	{
+                class Neck
+	    		{
+	    			HitpointName = "HitNeck";
+	    			armor = 15;
+	    			PassThrough = 0.08975;
+                    explosionShielding = 0.8;
+	    		};
 	    		class Chest
 	    		{
 	    			HitpointName = "HitChest";
-	    			armor = 12.5;
+	    			armor = 15;
 	    			PassThrough = 0.08975;
-                    explosionShielding = 0.7;
+                    explosionShielding = 0.8;
 	    		};
     			class Diaphragm
     			{
 				    HitpointName = "HitDiaphragm";
-			    	armor = 12.5;
+			    	armor = 15;
 					PassThrough = 0.08975;
-                    explosionShielding = 0.7;
+                    explosionShielding = 0.8;
 		    	};
 	    		class Abdomen
     			{
 				    hitpointName = "HitAbdomen";
-				   	armor = 12.5;
+				   	armor = 15;
 					PassThrough = 0.08975;
-                    explosionShielding = 0.7;
+                    explosionShielding = 0.8;
 		    	};
 	    		class Body
     			{
 				    hitpointName = "HitBody";
-				   	armor = 11;
+				   	armor = 15;
 					PassThrough = 0.08975;
-                    explosionShielding = 0.7;
+                    explosionShielding = 0.8;
 		    	};
+                class Pelvis
+                {
+                    hitpointName = "HitPelvis";
+					armor = 11;
+					PassThrough = 0.4;
+                };
 	    		class Arms
     			{
 				    hitpointName = "HitArms";

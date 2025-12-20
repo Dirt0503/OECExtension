@@ -77,7 +77,7 @@ class CfgWeapons
 				class Head
 				{
 					hitpointname = "HitHead";
-					armor = 8;
+					armor = 6;
 					visual = "injury_Head";
 					PassThrough = 0.08975;
                     explosionShielding = 0.8;
@@ -85,7 +85,7 @@ class CfgWeapons
 				class Face
 				{
 					hitpointName = "HitFace";
-					armor = 8;
+					armor = 6;
 					visual = "injury_Head";
 					PassThrough = 0.08975;
                     explosionShielding = 0.8;
@@ -246,7 +246,7 @@ class CfgWeapons
                 class Head
 				{
 					hitpointname = "HitHead";
-					armor = 8;
+					armor = 6;
 					visual = "injury_Head";
 					PassThrough = 0.08975;
                     explosionShielding = 0.8;
@@ -254,7 +254,7 @@ class CfgWeapons
 				class Face
 				{
 					hitpointName = "HitFace";
-					armor = 8;
+					armor = 6;
 					visual = "injury_Head";
 					PassThrough = 0.08975;
                     explosionShielding = 0.8;
@@ -286,7 +286,7 @@ class CfgWeapons
 				class Head
 				{
 					hitpointname = "HitHead";
-					armor = 10;
+					armor = 9;
 					visual = "injury_Head";
 					PassThrough = 0.08975;
                     explosionShielding = 0.8;
@@ -294,11 +294,12 @@ class CfgWeapons
 				class Face
 				{
 					hitpointName = "HitFace";
-					armor = 10;
+					armor = 9;
 					visual = "injury_Head";
 					PassThrough = 0.08975;
                     explosionShielding = 0.8;
 				};
+                
 			};
         };
         class XtdGearInfo{};
