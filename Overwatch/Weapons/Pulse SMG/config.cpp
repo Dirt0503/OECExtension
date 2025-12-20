@@ -19,7 +19,7 @@ class CfgMagazines
 		author = "OEC Extension";
 		displayName = "[OEC] 60rnd AR-1s Cell";
 		count = 60;
-		mass = 33;
+		mass = 30;
 	};
 };
 

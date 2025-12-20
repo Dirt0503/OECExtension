@@ -84,13 +84,13 @@ class CfgAmmo
 		indirectHitRange = 2.5;
 		CraterEffects = "ExploAmmoCrater";
 		explosionEffects = "ExploAmmoExplosion";
-		cost = 20;
+		cost = 10;
 		explosive = 0.6;
 		airfriction = -0.0002;
 		caliber = 1.39;
 		timeToLive = 15;
 		displayName = "2a72 HE Shell";
-		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+		model = "\A3\Weapons_f\Data\bullettracer\tracer_green";
 		tracerScale = 2;
 		tracerStartTime = 0.1;
 		tracerEndTime = 10;
@@ -210,7 +210,7 @@ class CfgMagazines
 		count = 20;
 		maxLeadSpeed = 25;
 		initSpeed = 1120;
-		tracersEvery = 4;
+		tracersEvery = 1;
 		weight = "0.385*230";
 	};
 };
@@ -250,7 +250,7 @@ class CfgWeapons
 		type = 1;
 		showAimCursorInternal = 1;
 		scope = 1;
-		displayName = "[OEC] PKM";
+		displayName = "[OEC] Coaxial PKM";
 		magazines[] = {"OEC_Magazine_762x51_100Rnd"};
 		aiDispersionCoefY = 10;
 		aiDispersionCoefX = 8;
@@ -260,8 +260,8 @@ class CfgWeapons
 			class effect1
 			{
 				effectname = "MachineGunCloud";
-				positionname = "kulas";
-				directionname = "kulas end";
+				positionname = "Usti hlavne2";
+				directionname = "Konec hlavne2";
 			};
 		};
 
@@ -575,6 +575,7 @@ class CfgWeapons
 		};
 	};
 
+	// 2A72 30mm autocannon
     class autocannon_30mm_CTWS;
 	class OEC_Weapons_2a72: autocannon_30mm_CTWS
 	{
@@ -585,8 +586,8 @@ class CfgWeapons
 		scope = 1;
 		displayName = "[OEC] 2A72 30mm Autocannon";
 		nameSound = "cannon";
-		reloadTime = 0.02;
-		magazinereloadtime = 0.2;
+		reloadTime = 0.2;
+		magazinereloadtime = 12;
 		autoFire = 1;
 		canLock = 0;
 		magazines[] = {"OEC_Magazine_2a72_20Rnd"};
@@ -595,6 +596,7 @@ class CfgWeapons
 		cursorAim = "mg";
 		cursorSize = 1;
 		ballisticsComputer = 0;
+		muzzles[] = {"this"};
 		class gunParticles
 		{
 			class Shell
@@ -605,46 +607,36 @@ class CfgWeapons
 			};
 			class Effect
 			{
-				positionname = "Usti hlavne3";
-				directionname = "Konec hlavne3";
+				positionname = "Usti hlavne";
+				directionname = "Konec hlavne";
 				effectname = "AutoCannonFired";
 			};
 		};
-        modes[] = {"LowROF", "HighROF", "closeHR", "medHR", "shortLR", "farLR"};
+        modes[] = {"LowROF", "close","med", "far"};
 		class LowROF: Mode_FullAuto
 		{
-			displayName = "Lo-ROF HE";
-			displayNameShort = "Lo-ROF HE";
+			displayName = "30mm HE";
+			displayNameShort = "30mm HE";
 			reloadTime = 0.25;
 			soundContinuous = 0;
 			flash = "gunfire";
 			flashSize = 0.1;
 			aiBurstTerminable = 1;
 			minRange = 1;
-			minRangeProbab = 0.06;
+			minRangeProbab = 1;
 			midRange = 2;
-			midRangeProbab = 0.06;
+			midRangeProbab = 1;
 			maxRange = 3;
-			maxRangeProbab = 0.004;
+			maxRangeProbab = 1;
 			dispersion = 0.0009375;
 			textureType = "burst";
+			sounds[] = {"StandardSound"};
+			class StandardSound
+			{
+				soundSetShot[] = {"RHS_autocannon_Shot_SoundSet","RHS_autocannon_int_Shot_SoundSet","RHS_autocannon_Tail_SoundSet"};
+			};
 		};
-		class HighROF: LowROF
-		{
-			displayName = "Hi-ROF HE";
-			displayNameShort = "Hi-ROF HE";
-			reloadTime = 0.1;
-			soundContinuous = 0;
-			minRange = 1;
-			minRangeProbab = 0.08;
-			midRange = 2;
-			midRangeProbab = 0.058;
-			maxRange = 3;
-			maxRangeProbab = 0.004;
-			dispersion = 0.00325;
-			textureType = "fullAuto";
-		};
-		class closeHR: HighROF
+		class close: LowROF
 		{
 			showToPlayer = 0;
 			soundBurst = 0;
@@ -653,43 +645,27 @@ class CfgWeapons
 			aiRateOfFire = 0.5;
 			aiRateOfFireDistance = 150;
 			minRange = 0;
-			minRangeProbab = 0.25;
+			minRangeProbab = 1;
 			midRange = 75;
-			midRangeProbab = 0.58;
+			midRangeProbab = 1;
 			maxRange = 150;
-			maxRangeProbab = 0.04;
+			maxRangeProbab = 1;
 		};
-		class medHR: closeHR
+		class med: close
 		{
 			burst = 6;
 			burstRangeMax = 10;
 			aiRateOfFire = 0.5;
 			aiRateOfFireDistance = 200;
 			aiRateOfFireDispersion = 2;
-			minRange = 50;
-			minRangeProbab = 0.25;
-			midRange = 150;
-			midRangeProbab = 0.58;
-			maxRange = 200;
-			maxRangeProbab = 0.04;
-		};
-		class ShortLR: LowROF
-		{
-			showToPlayer = 0;
-			soundBurst = 0;
-			burst = 3;
-			burstRangeMax = 8;
-			aiRateOfFire = 4;
-			aiRateOfFireDistance = 600;
-			aiRateOfFireDispersion = 3;
-			minRange = 0;
-			minRangeProbab = 0.15;
-			midRange = 175;
-			midRangeProbab = 0.58;
+			minRange = 100;
+			minRangeProbab = 1;
+			midRange = 200;
+			midRangeProbab = 1;
 			maxRange = 300;
-			maxRangeProbab = 0.04;
+			maxRangeProbab = 1;
 		};
-		class farLR: ShortLR
+		class far: close
 		{
 			burst = 1;
 			burstRangeMax = 4;
@@ -697,11 +673,11 @@ class CfgWeapons
 			aiRateOfFireDistance = 550;
 			aiRateOfFireDispersion = 3;
 			minRange = 250;
-			minRangeProbab = 0.15;
+			minRangeProbab = 1;
 			midRange = 400;
-			midRangeProbab = 0.5;
+			midRangeProbab = 1;
 			maxRange = 550;
-			maxRangeProbab = 0.1;
+			maxRangeProbab = 1;
 		};
 	};
 };

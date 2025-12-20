@@ -177,7 +177,7 @@ class CfgMagazines
         displayNameShort = "100Rnd Cell";
         tracersEvery = 0;
         lastRoundsTracer = 0;
-		mass = 60;
+		mass = 50;
     };
 };
 

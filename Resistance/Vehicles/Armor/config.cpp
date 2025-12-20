@@ -1,3 +1,19 @@
+class CfgFunctions
+{
+    class OEC
+    {
+        tag = "OEC";
+        class functions
+        {
+            class cisBMP3Assign
+            {
+                file = "\OECExtension\Scripts\OEC_cisBMP3Assign.sqf";
+				description = "CIS BMP3 IFV Script";
+            };
+        };
+    };
+};
+
 class CfgPatches
 {
     class OEC_Extension_Resistance_Vehicles_Armor
@@ -10,7 +26,7 @@ class CfgPatches
             "rhs_c_btr",
             "rhs_btr80",
 			"rhs_c_bmp3",
-		//	"rhs_bmp3",
+			"rhs_bmp3",
 			"rhs_c_heavyweapons",
 			"OEC_Extension_Resistance_Weapons_Heavy"
         };
@@ -20,12 +36,14 @@ class CfgPatches
             "OEC_zsu234_AA",
             "OEC_BTR80_Base",
             "OEC_BTR80_CIS",
-			"OEC_Vehicles_bmp3m_base",
 			"OEC_Vehicles_bmp3m"
 		};
         weapons[] = 
         {
-            "OEC_Weapons_ZU23_Shilka"
+            "OEC_Weapons_ZU23_Shilka",
+			"OEC_Weapons_vicPKM_BMP3_bow1",
+			"OEC_Weapons_vicPKM_BMP3_bow2",
+			"OEC_Weapons_DSHKM_BMP3"
         };
     };
 };
@@ -191,6 +209,71 @@ class CfgWeapons
 			maxRange = 2500;
 			maxRangeProbab = 0.3;
 		};
+	};
+
+	class OEC_Weapons_vicPKM;
+	class OEC_Weapons_vicPKM_BMP3_bow1: OEC_Weapons_vicPKM
+	{
+		class gunParticles
+		{
+			class effect1
+			{
+				effectname = "MachineGunCloud";
+				positionname = "muzzle2";
+				directionname = "end2";
+			};
+		};
+	};
+
+	class OEC_Weapons_vicPKM_BMP3_bow2: OEC_Weapons_vicPKM
+	{
+		class gunParticles
+		{
+			class effect1
+			{
+				effectname = "MachineGunCloud";
+				positionname = "muzzle3";
+				directionname = "end2";
+			};
+		};
+	};
+
+	class OEC_Weapons_DSHKM;
+	class OEC_Weapons_DSHKM_BMP3: OEC_Weapons_DSHKM
+	{
+		class gunParticles
+		{
+			class Shell
+			{
+				positionName = "ejector_30mm";
+				directionName = "ejector_30mm_dir";
+				effectName = "MachineGunCartridge2";
+			};
+			class Effect
+			{
+				positionname = "Usti hlavne3";
+				directionname = "Konec hlavne3";
+				effectname = "MachineGunCloud";
+			};
+		};
+		/*class effect1a
+			{
+				effectname = "MachineGunCloud";
+				positionname = "Usti hlavne";
+				directionname = "Konec hlavne";
+			};
+            class effect1
+			{
+				positionname = "nabojnicestart";
+				directionname = "nabojniceend";
+				effectname = "MachineGunEject";
+			};
+			class effect2
+			{
+				positionName = "machinegun_eject_pos";
+				directionName = "machinegun_eject_dir";
+				effectName = "MachineGunCartridge2";
+			};*/
 	};
 };
 
@@ -1099,7 +1182,7 @@ class CfgVehicles
 				magazines[] = {"OEC_Magazine_127x100_50Rnd", "OEC_Magazine_127x100_50Rnd", "OEC_Magazine_127x100_50Rnd", "OEC_Magazine_127x100_50Rnd", "OEC_Magazine_762x51_100Rnd", "OEC_Magazine_762x51_100Rnd", "OEC_Magazine_762x51_100Rnd", "OEC_Magazine_762x51_100Rnd", "rhs_mag_3d17_6"};
             };
         };
-		armor = 250;
+		armor = 350;
 		class HitPoints: HitPoints
 		{
 			class HitEngine
@@ -1168,7 +1251,7 @@ class CfgVehicles
 			};
 			class HitHull
 			{
-				armor = 0.8;
+				armor = 1;
 				material = -1;
 				name = "telo";
 				visual = "zbytek";
@@ -1176,6 +1259,19 @@ class CfgVehicles
 				minimalHit = 0.44;
 				explosionShielding = 1;
 				radius = 0.25;
+			};
+			class Armor_Composite_50
+			{
+				armor = 3;
+				material = -1;
+				name = "Armor_CE_50_Hit";
+				armorComponent = "Armor_CE_50";
+				simulation = "RHS_Composite_50";
+				passThrough = 0;
+				minimalHit = 1;
+				explosionShielding = 0.0;
+				radius = 0.001;
+				visual = "-";
 			};
 		};
 		class AnimationSources: AnimationSources
@@ -1227,55 +1323,348 @@ class CfgVehicles
 	// BMP-3 IFV
 	class rhs_bmp3tank_base: Tank_F
 	{
-		class Turrets: Turrets
+		class Wheels;
+		class textureSources
 		{
-			class MainTurret: MainTurret{};
+			class standard;
 		};
-		class textureSources;
-	};
-	class rhs_bmp3m_msv: rhs_bmp3tank_base
-	{
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
 			{
-				class Turrets
+				class Turrets: Turrets
 				{
-					class CommanderOptics;
+					class CommanderOptics: CommanderOptics{};
+				};
+				class OpticsIn
+				{
+					class Wide;
 				};
 			};
+			class GPMGTurret1: NewTurret{};
+			class GPMGTurret2: GPMGTurret1{};
 		};
-		class textureSources: textureSources
+		class EventHandlers: EventHandlers
+		{
+			class RHS_EventHandlers
+			{
+				init = "_this call rhs_fnc_bmp3_init;";
+				postInit = "_this call rhs_fnc_reapplyTextures";
+				fired = "_this call RHS_fnc_bmp3_autoloader;";
+				hitpart = "_this call rhs_fnc_hitSpall";
+				engine = "[_this select 0,_this select 1,2] call rhs_fnc_engineStartupDelay;_this call rhs_fnc_engineCheckDamage;";
+				getOut = "_this call rhs_fnc_hatchAbandon";
+			};
+		};
+
+	};
+	class rhs_bmp3m_msv: rhs_bmp3tank_base
+	{
+		class Wheels: Wheels
+		{
+			class L2;
+		};
+		class textureSources
 		{
 			class standard;
 		};
-		class Sounds;
+		class Turrets: Turrets
+		{
+			class MainTurret: MainTurret
+			{
+				class Turrets: Turrets
+				{
+					class CommanderOptics: CommanderOptics{};
+				};
+				class OpticsIn
+				{
+					class Wide;
+				};
+			};
+			class GPMGTurret1: GPMGTurret1{};
+			class GPMGTurret2: GPMGTurret2{};
+		};
 	};
-	class OEC_Vehicles_bmp3m_base: rhs_bmp3m_msv
+	class OEC_Vehicles_bmp3m: rhs_bmp3m_msv
 	{
-		scope = 0;
+		editorPreview = "rhsafrf\addons\rhs_editorPreviews\data\rhs_bmp3mera_msv.paa";
+		model = "\rhsafrf\addons\rhs_bmp3\bmp3m_era";
+		displayName = "BMP-3 IFV";
+		scope = 2;
+		scopeCurator = 2;
+		side = 0;
+		author = "OEC Extension";
 		faction = "OEC_Faction_CIS";
 		factionClass = "OEC_Faction_Class_CIS";
         editorCategory = "OEC_EdCat_CIS";
         editorSubCategory = "OEC_EdSubCat_AFV";
 		vehicleClass = "OEC_Vehclass_APC";
 		crew = "OEC_Units_CIS_Crew";
+		typicalCargo[] = {"OEC_Units_CIS_Crew","OEC_Units_CIS_Crew","OEC_Units_CIS_Crew","OEC_Units_CIS_rifleman","OEC_Units_CIS_rifleman"};
+		enableGPS = 1;
+		reportOwnPosition = 1;
+		enginePower = 478;
+		peakTorque = 1650;
+		threat[] = {1.0,0.6,0.5};
+		torqueCurve[] = {{0,0},{0.228896,0.649091},{0.4,0.892121},{0.519156,1},{0.657143,0.992727},{0.813961,0.970303},{0.942857,0.952121},{1.05,0}};
+		class Wheels: Wheels
+		{
+			class L2: L2
+			{
+				dampingRate = 1034.0;
+				dampingRateInAir = 1034.0;
+			};
+			class L3: L2
+			{
+				boneName = "wheel_podkolol2";
+				center = "wheel_1_3_axis";
+				boundary = "wheel_1_3_bound";
+			};
+			class L4: L2
+			{
+				boneName = "wheel_podkolol3";
+				center = "wheel_1_4_axis";
+				boundary = "wheel_1_4_bound";
+			};
+			class L5: L2
+			{
+				boneName = "wheel_podkolol4";
+				center = "wheel_1_5_axis";
+				boundary = "wheel_1_5_bound";
+			};
+			class L6: L2
+			{
+				boneName = "wheel_podkolol5";
+				center = "wheel_1_6_axis";
+				boundary = "wheel_1_6_bound";
+			};
+			class L7: L2
+			{
+				boneName = "wheel_podkolol6";
+				center = "wheel_1_7_axis";
+				boundary = "wheel_1_7_bound";
+			};
+			class L9: L2
+			{
+				boneName = "wheel_podkolol9";
+				center = "wheel_1_9_axis";
+				boundary = "wheel_1_9_bound";
+				maxDroop = 0;
+				maxCompression = 0;
+			};
+			class L1: L2
+			{
+				boneName = "";
+				center = "wheel_1_1_axis";
+				boundary = "wheel_1_1_bound";
+				maxDroop = 0;
+				maxCompression = 0;
+			};
+			class R2: L2
+			{
+				boneName = "wheel_podkolop1";
+				center = "wheel_2_2_axis";
+				boundary = "wheel_2_2_bound";
+				side = "right";
+			};
+			class R3: R2
+			{
+				boneName = "wheel_podkolop2";
+				center = "wheel_2_3_axis";
+				boundary = "wheel_2_3_bound";
+			};
+			class R4: R2
+			{
+				boneName = "wheel_podkolop3";
+				center = "wheel_2_4_axis";
+				boundary = "wheel_2_4_bound";
+			};
+			class R5: R2
+			{
+				boneName = "wheel_podkolop4";
+				center = "wheel_2_5_axis";
+				boundary = "wheel_2_5_bound";
+			};
+			class R6: R2
+			{
+				boneName = "wheel_podkolop5";
+				center = "wheel_2_6_axis";
+				boundary = "wheel_2_6_bound";
+			};
+			class R7: R2
+			{
+				boneName = "wheel_podkolop6";
+				center = "wheel_2_7_axis";
+				boundary = "wheel_2_7_bound";
+			};
+			class R9: R2
+			{
+				boneName = "wheel_podkolop9";
+				center = "wheel_2_9_axis";
+				boundary = "wheel_2_9_bound";
+				maxDroop = 0;
+				maxCompression = 0;
+			};
+			class R1: R2
+			{
+				boneName = "";
+				center = "wheel_2_1_axis";
+				boundary = "wheel_2_1_bound";
+				maxDroop = 0;
+				maxCompression = 0;
+			};
+		};
+		hiddenSelections[] = {"camo1","camo2","camo3","camo4","camo5","n1","n2","n3","i1","f1","f2","f3","f4","f5","f6","f7","f8","f9"};
+		hiddenSelectionsTextures[] = {"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_01_3mera_co.paa","rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_02_3mera_co.paa","rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_03_3m_co.paa","rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_04_co.paa","rhsafrf\addons\rhs_bmp3\data\3m_era_co.paa"};
+		class textureSources: textureSources
+		{
+			class standard: standard
+			{
+				author = "$STR_RHS_AUTHOR_FULL";
+				textures[] = {"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_01_3mera_co.paa","rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_02_3mera_co.paa","rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_03_3m_co.paa","rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_04_co.paa","rhsafrf\addons\rhs_bmp3\data\3m_era_co.paa"};
+			};
+		};
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
 			{
-				weapons[] = {"OEC_Weapons_2a72","OEC_Weapons_vicPKM","rhs_weap_902a"};
-				magazines[] = {"OEC_Magazine_2a72_20Rnd","OEC_Magazine_2a72_20Rnd","OEC_Magazine_2a72_20Rnd", "OEC_Magazine_762x51_100Rnd", "OEC_Magazine_762x51_100Rnd", "OEC_Magazine_762x51_100Rnd", "OEC_Magazine_762x51_100Rnd","rhs_mag_3d17_6"};
-			//	turretInfoType = "RHS_RscWeaponESSA_FCS";
-				discreteDistance[] = {};
-				discreteDistanceInitIndex = 0;
 				class Turrets: Turrets
 				{
 					class CommanderOptics: CommanderOptics
 					{
 						gunnerType = "OEC_Units_CIS_Crew";
+						class Components
+						{
+							class VehicleSystemsDisplayManagerComponentLeft
+							{
+								class EmptyDisplay
+								{
+									componentType = "EmptyDisplayComponent";
+								};
+								class CrewDisplay
+								{
+									componentType = "CrewDisplayComponent";
+									resource = "RscCustomInfoCrew";
+								};
+								class MinimapDisplay
+								{
+									componentType = "MinimapDisplayComponent";
+									resource = "RscCustomInfoMiniMap";
+								};
+								class VehiclePrimaryGunnerDisplay
+								{
+									componentType = "TransportFeedDisplayComponent";
+									source = "PrimaryGunner";
+								};
+							};
+							class VehicleSystemsDisplayManagerComponentRight
+							{
+								class EmptyDisplay
+								{
+									componentType = "EmptyDisplayComponent";
+								};
+								class CrewDisplay
+								{
+									componentType = "CrewDisplayComponent";
+									resource = "RscCustomInfoCrew";
+								};
+								class MinimapDisplay
+								{
+									componentType = "MinimapDisplayComponent";
+									resource = "RscCustomInfoMiniMap";
+								};
+								class VehiclePrimaryGunnerDisplay
+								{
+									componentType = "TransportFeedDisplayComponent";
+									source = "PrimaryGunner";
+								};
+							};
+						};
 					};
 				};
+				weapons[] = {"OEC_Weapons_2a72","OEC_Weapons_DSHKM_BMP3","rhs_weap_902a"};
+				//weapons[] = {"rhs_weap_2a70","OEC_Weapons_2a72","rhs_weap_pkt_bmd_coax","rhs_weap_902a","rhs_weap_fcs"};
+				magazines[] = {"OEC_Magazine_2a72_20Rnd", "OEC_Magazine_2a72_20Rnd","OEC_Magazine_2a72_20Rnd", "OEC_Magazine_2a72_20Rnd","OEC_Magazine_2a72_20Rnd", "OEC_Magazine_2a72_20Rnd","OEC_Magazine_2a72_20Rnd", "OEC_Magazine_2a72_20Rnd","OEC_Magazine_2a72_20Rnd", "OEC_Magazine_2a72_20Rnd","OEC_Magazine_762x51_100Rnd", "OEC_Magazine_127x100_50Rnd", "OEC_Magazine_127x100_50Rnd", "OEC_Magazine_127x100_50Rnd", "OEC_Magazine_127x100_50Rnd","OEC_Magazine_127x100_50Rnd", "OEC_Magazine_127x100_50Rnd", "OEC_Magazine_127x100_50Rnd", "OEC_Magazine_127x100_50Rnd", "rhs_mag_3d17_6"};
+				turretInfoType = "RHS_RscWeaponESSA_FCS";
+				discreteDistance[] = {};
+				discreteDistanceInitIndex = 0;
+				class OpticsIn: OpticsIn
+				{
+					class Wide: Wide
+					{
+						opticsDisplayName = "DAY3";
+						initAngleX = 0;
+						minAngleX = -30;
+						maxAngleX = 30;
+						initAngleY = 0;
+						minAngleY = -100;
+						maxAngleY = 100;
+						initFov = 0.233333;
+						minFov = 0.233333;
+						maxFov = 0.233333;
+						visionMode[] = {"Normal","Ti"};
+						thermalMode[] = {0,1};
+						gunnerOpticsModel = "\rhsafrf\addons\rhs_optics\vehicles\rhs_thermalscreen_empty.p3d";
+					};
+					class Medium: Wide
+					{
+						opticsDisplayName = "DAY12";
+						initFov = 0.0583333;
+						minFov = 0.0583333;
+						maxFov = 0.0583333;
+					};
+					class Narrow: Medium
+					{
+						opticsDisplayName = "DAY24";
+						initFov = 0.0291667;
+						minFov = 0.0291667;
+						maxFov = 0.0291667;
+					};
+					class Narrow2: Narrow
+					{
+						opticsDisplayName = "AUTOTRACK";
+						directionStabilized = 1;
+					};
+				};
+				class Components
+				{
+					class VehicleSystemsDisplayManagerComponentLeft
+					{
+						class EmptyDisplay
+						{
+							componentType = "EmptyDisplayComponent";
+						};
+						class CrewDisplay
+						{
+							componentType = "CrewDisplayComponent";
+							resource = "RscCustomInfoCrew";
+						};
+					};
+					class VehicleSystemsDisplayManagerComponentRight
+					{
+						class EmptyDisplay
+						{
+							componentType = "EmptyDisplayComponent";
+						};
+						class CrewDisplay
+						{
+							componentType = "CrewDisplayComponent";
+							resource = "RscCustomInfoCrew";
+						};
+					};
+				};
+			};
+			class GPMGTurret1: GPMGTurret1
+			{
+				weapons[] = {"OEC_Weapons_vicPKM_BMP3_bow1"};
+				magazines[] = {"OEC_Magazine_762x51_100Rnd", "OEC_Magazine_762x51_100Rnd", "OEC_Magazine_762x51_100Rnd", "OEC_Magazine_762x51_100Rnd", "OEC_Magazine_762x51_100Rnd", "OEC_Magazine_762x51_100Rnd"};
+				gunnerType = "OEC_Units_CIS_rifleman";
+			};
+			class GPMGTurret2: GPMGTurret2
+			{
+				weapons[] = {"OEC_Weapons_vicPKM_BMP3_bow2"};
+				magazines[] = {"OEC_Magazine_762x51_100Rnd", "OEC_Magazine_762x51_100Rnd", "OEC_Magazine_762x51_100Rnd", "OEC_Magazine_762x51_100Rnd", "OEC_Magazine_762x51_100Rnd", "OEC_Magazine_762x51_100Rnd"};
+				gunnerType = "OEC_Units_CIS_rifleman";
 			};
 		};
 		class AnimationSources
@@ -1284,44 +1673,11 @@ class CfgVehicles
 			{
 				source = "ammorandom";
 				weapon = "OEC_Weapons_vicPKM";
-			};
-			class recoil_source2
-			{
-				source = "reload";
-				weapon = "OEC_Weapons_2a72";
-			};
-			class muzzle_hide_hmg: recoil_source2{};
-			class muzzle_rot_hmg: recoil_source2
-			{
-				source = "ammorandom";
-			};
-			class smokecap_revolving_source
-			{
-				source = "revolving";
-				weapon = "rhs_weap_902a";
-			};
-			class muzzle_rot_coax2: muzzle_rot_hmg
-			{
-				weapon = "rhs_weap_pkt_bmd_bow1";
-			};
-			class muzzle_rot_coax3: muzzle_rot_hmg
-			{
-				weapon = "rhs_weap_pkt_bmd_bow2";
-			};
-			class hatchC
-			{
-				source = "door";
-				animPeriod = 2.1;
 			};*/
-			class muzzle_rot_coax
-			{
-				source = "ammorandom";
-				weapon = "rhs_weap_pkt_bmd_coax";
-			};
 			class recoil_source
 			{
 				source = "reload";
-				weapon = "rhs_weap_2a70";
+				weapon = "OEC_Weapons_2a72";
 			};
 			class muzzle_hide_cannon: recoil_source{};
 			class muzzle_rot_cannon: recoil_source
@@ -1331,7 +1687,7 @@ class CfgVehicles
 			class recoil_source2
 			{
 				source = "reload";
-				weapon = "rhs_weap_2a72";
+				weapon = "OEC_Weapons_DSHKM_BMP3";
 			};
 			class muzzle_hide_hmg: recoil_source2{};
 			class muzzle_rot_hmg: recoil_source2
@@ -1345,17 +1701,11 @@ class CfgVehicles
 			};
 			class muzzle_rot_coax2: muzzle_rot_hmg
 			{
-				weapon = "rhs_weap_pkt_bmd_bow1";
+				weapon = "OEC_Weapons_vicPKM_BMP3_bow1";
 			};
 			class muzzle_rot_coax3: muzzle_rot_hmg
 			{
-				weapon = "rhs_weap_pkt_bmd_bow2";
-			};
-			class autoloader
-			{
-				source = "user";
-				animPeriod = 1.25;
-				initPhase = 0;
+				weapon = "OEC_Weapons_vicPKM_BMP3_bow2";
 			};
 			class hatchC
 			{
@@ -1387,21 +1737,24 @@ class CfgVehicles
 				animperiod = 0.0002;
 			};
 		};
-		class textureSources: textureSources
+		class EventHandlers: EventHandlers
 		{
-			class standard: standard
+			class RHS_EventHandlers
 			{
-				author = "$STR_RHS_AUTHOR_FULL";
-				textures[] = {"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_01_3m_co.paa","rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_02_co.paa","rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_03_3m_co.paa","rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_04_co.paa"};
+				init = "_this call rhs_fnc_bmp3_init; _this call oec_fnc_cisBMP3Assign";
+				postInit = "_this call rhs_fnc_reapplyTextures";
+				fired = "_this call RHS_fnc_bmp3_autoloader;";
+				hitpart = "_this call rhs_fnc_hitSpall";
+				engine = "[_this select 0,_this select 1,2] call rhs_fnc_engineStartupDelay;_this call rhs_fnc_engineCheckDamage;";
+				getOut = "_this call rhs_fnc_hatchAbandon";
 			};
 		};
-		class TransportMagazines{};
-		class TransportWeapons{};
-		class TransportItems{};
-		class TransportBackpacks{};
-		class Sounds: sounds {};
+		class TransportItems {};
+		class TransportBackpacks {};
+		class TransportWeapons {};
+		class TransportMagazines {};
 	};
-	class OEC_Vehicles_bmp3m: OEC_Vehicles_bmp3m_base
+	/*class OEC_Vehicles_bmp3m: OEC_Vehicles_bmp3m_base
 	{
 		editorPreview = "rhsafrf\addons\rhs_editorPreviews\data\rhs_bmp3mera_msv.paa";
 		model = "\rhsafrf\addons\rhs_bmp3\bmp3m_era";
@@ -1444,5 +1797,5 @@ class CfgVehicles
 				textures[] = {"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_01_3mera_co.paa","rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_02_3mera_co.paa","rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_03_3m_co.paa","rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_04_co.paa","rhsafrf\addons\rhs_bmp3\data\3m_era_co.paa"};
 			};
 		};
-	};
+	};*/
 }; 

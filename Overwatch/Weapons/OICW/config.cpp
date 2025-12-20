@@ -47,7 +47,7 @@ class CfgMagazines
 		model = "\a3\Weapons_F_Exp\MagazineProxies\mag_556x45_stanag_30rnd.p3d";
 		modelSpecialIsProxy = 1;
 		count = 30;
-		mass = 12;
+		mass = 10;
 		tracersEvery = 1;
     };
 

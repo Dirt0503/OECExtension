@@ -101,7 +101,7 @@ class CfgAmmo
 		timeToLive = 0.666666667;
 		caliber = 1.5;
 		model = "\hl_cmb_weapons\ar2\Data\bullettracer\tracer_blue";
-		tracerScale = 1;
+		tracerScale = 1.5;
 		tracerStartTime = 0.005;
 		tracerEndTime = 1;
 		nvgOnly = 0;

@@ -65,6 +65,12 @@ class CfgFunctions
 				description = "CIS Zu23 Emplacement Script";
             };
 
+            class cisBMP3Assign
+            {
+                file = "\OECExtension\Scripts\OEC_cisBMP3Assign.sqf";
+				description = "CIS BMP3 IFV Script";
+            };
+
             class cisTaruPod
             {
                 file = "\OECExtension\Scripts\OEC_cmbTaruPod.sqf";

@@ -22,7 +22,7 @@ class CfgMagazines
 		initSpeed = 750;
 		picture = "\hl_cmb_weapons\UI\m_ar2_ca.paa";
 		tracersEvery = 1;
-		mass = 30;
+		mass = 25;
 	};
 };
 
