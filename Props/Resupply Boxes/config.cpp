@@ -13,8 +13,7 @@ class CfgPatches
         };
         units[] = 
         {
-            "OEC_Prop_Resupply_bigAmmo",
-            "OEC_Prop_Resupply_bigMedic"
+            "OEC_Prop_Resupply_bigSupply"
         };
         weapons[] = {};
     };
@@ -57,18 +56,18 @@ class CfgVehicles
 	{
 		class DestructionEffects;
 	};
-	class OEC_Prop_Resupply_bigAmmo: B_supplyCrate_F
+	class OEC_Prop_Resupply_bigSupply: B_supplyCrate_F
 	{
 		scope = 2;
 		scopecurator = 2;
 		author = "OEC Extension";
-        displayName = "Large Ammo Resupply";
+        displayName = "Large Resupply";
 		editorCategory = "OEC_EdCat_Supply";
 		editorSubcategory = "OEC_EdSubCat_resup";
-		editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\O_supplyCrate_F.jpg";
+		editorPreview = "\A3\EditorPreviews_F_Orange\Data\CfgVehicles\C_IDAP_supplyCrate_F.jpg";
 		model = "\A3\Weapons_F\Ammoboxes\Supplydrop.p3d";
         hiddenSelections[] = {"camo"};
-		hiddenSelectionsTextures[] = {"a3\weapons_f\ammoboxes\data\supplydrop_co.paa"};
+		hiddenSelectionsTextures[] = {"\a3\Supplies_F_Orange\Ammoboxes\Data\supplydrop_idap_co.paa"};
 		slingLoadCargoMemoryPoints[] = {"SlingLoadCargo1","SlingLoadCargo2","SlingLoadCargo3","SlingLoadCargo4"};
         transportMaxWeapons = 50;
 		transportMaxMagazines = 999;
@@ -203,38 +202,76 @@ class CfgVehicles
 		};
 		class TransportWeapons
 		{
-			class _xx_OEC_AR2_Rifle
-			{
-				weapon = "OEC_Weapon_AR2";
-				count = 2;
-			};
-			class _xx_OEC_OICW_Rifle
-			{
-				weapon = "OEC_Weapon_OICW";
-				count = 2;
-			};
-			class _xx_OEC_Pulse_SMG
-			{
-				weapon = "OEC_Weapon_PulseSMG";
-				count = 2;
-			};
-			class __xx_OEC_SMG46_Sighted
-			{
-				weapon = "OEC_Weapon_SMG46_Sighted";
-				count = 2;
-			};
 			class _xx_OEC_Launcher_SIPL0
 			{
 				weapon = "OEC_Weapons_SIPL0";
-				count = 15;
-			};
-			class _xx_OEC_Launcher_SIPL_green
-			{
-				weapon = "OEC_Weapons_SIPL_green";
-				count = 2;
+				count = 20;
 			};
 		};
-		class TransportItems{};
+		class TransportItems
+		{
+			class XX_ACE_tourniquet
+			{
+				name = "ACE_tourniquet";
+				count = 60;
+			};
+			class XX_ACE_splint
+			{
+				name = "ACE_splint";
+				count = 80;
+			};
+			class XX_ACE_plasmaIV_250
+			{
+				name = "ACE_plasmaIV_250";
+				count = 100;
+			};
+			class XX_ACE_plasmaIV_500
+			{
+				name = "ACE_plasmaIV_500";
+				count = 100;
+			};
+			class XX_ACE_plasmaIV_1000
+			{
+				name = "ACE_plasmaIV";
+				count = 100;
+			};
+			class XX_ACE_elasticBandage
+			{
+				name = "ACE_elasticBandage";
+				count = 500;
+			};
+			class XX_ACE_quikclot
+			{
+				name = "ACE_quikclot";
+				count = 500;
+			};
+			class XX_ACE_packingBandage
+			{
+				name = "ACE_packingBandage";
+				count = 500;
+			};
+			class XX_ACE_painkiller
+			{
+				name = "ACE_Painkillers";
+				count = 60;
+			};
+			class XX_ACE_epinephrine
+			{
+				name = "ACE_epinephrine";
+				count = 100;
+			};
+			class XX_ACE_morphine
+			{
+				name = "ACE_morphine";
+				count = 100;
+            };
+			class XX_ACE_surgicalKit
+			{
+				name = "ACE_surgicalKit";
+				count = 5;
+			};
+		};
+		class TransportBackpacks{};
 		class SimpleObject
 		{
 			eden = 1;
@@ -246,7 +283,7 @@ class CfgVehicles
 		};
 	};
 
-    class OEC_Prop_Resupply_bigMedic: OEC_Prop_Resupply_bigAmmo
+    /*class OEC_Prop_Resupply_bigMedic: OEC_Prop_Resupply_bigAmmo
 	{
 		displayName = "Large Medical Resupply";
 		editorPreview = "\A3\EditorPreviews_F_Orange\Data\CfgVehicles\C_IDAP_supplyCrate_F.jpg";
@@ -321,5 +358,5 @@ class CfgVehicles
 				count = 20;
 			};
 		};
-	};
+	};*/
 };

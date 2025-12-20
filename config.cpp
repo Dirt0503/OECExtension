@@ -51,3 +51,118 @@ class Extended_PostInit_EventHandlers
         init = "call compile preprocessFileLineNumbers '\OECExtension\Scripts\OEC_patchHelmets.sqf'";
     };
 };
+
+
+class CfgFactionClasses
+{
+    class OEC_Faction_Class_CIS
+    {
+		displayName = "[OEC] CISDF";
+		priority = -9;
+		side = 0;
+		icon = "\rhsafrf\addons\rhs_main\data\icons\msv.paa";
+		flag = "\rhsafrf\addons\rhs_main\data\flag_rus_co.paa";
+		backpack_tf_faction_radio_api = "tf_bussole";
+	};
+    class OEC_Faction_Class_Combine
+    {
+		displayName = "[OEC] Combine";
+		priority = -5;
+		side = 1;
+		icon = "\rhsusf\addons\rhsusf_main\data\armylogo.paa";
+		flag = "\rhsusf\addons\rhsusf_main\data\flag_us_co.paa";
+		backpack_tf_faction_radio_api = "tf_rt1523g_rhs";
+	};
+};
+
+class CfgVehicleClasses
+{
+    class OEC_Vehclass_Infantry
+    {
+        displayName = "Infantry";
+    };
+    class OEC_Vehclass_Trucks
+    {
+        displayName = "Truck";
+    };
+    class OEC_Vehclass_AA
+    {
+        displayName = "Anti-Air";
+    };
+    class OEC_Vehclass_APC
+    {
+        displayName = "APC";
+    };
+    class OEC_Vehclass_Air
+    {
+        displayName = "Air";
+    };
+};
+
+class CfgEditorCategories
+{
+    class OEC_EdCat_CIS
+    {
+       displayName = "[OEC] CISDF";
+    };
+    class OEC_EdCat_Supply
+    {
+       displayName = "[OEC] Supply Objects";
+    };
+    class OEC_EdCat_Combine
+    {
+       displayName = "[OEC] Combine";
+    };
+};
+
+class CfgEditorSubCategories
+{
+
+    class OEC_EdSubCat_Infantry
+    {
+        displayName = "1. Infantry";
+    };
+
+    class OEC_EdSubCat_Specials
+    {
+        displayName = "2. Infantry Specials";
+    };
+
+    class OEC_EdSubCat_HVTs
+    {
+        displayName = "3. High Value Persons";
+    };
+
+    class OEC_EdSubCat_Turrets
+    {
+        displayName = "4. Turrets";
+    };
+    
+    class OEC_EdSubCat_Cars
+    {
+        displayName = "5. Cars + Trucks";
+    };
+
+    class OEC_EdSubCat_AFV
+    {
+        displayName = "6. Armored Fighting Vehicles";
+    };
+
+    class OEC_EdSubCat_AA
+    {
+        displayName = "0. Anti-Air";
+    };
+    class OEC_EdSubCat_resup
+    {
+        displayName = "1. Combine Resupply";
+    };
+     class OEC_EdSubCat_Pods
+    {
+        displayName = "2. Airwatch Pods";
+    };
+    class OEC_EdSubCat_Air
+    {
+        displayName = "7. Air";
+    };
+
+};

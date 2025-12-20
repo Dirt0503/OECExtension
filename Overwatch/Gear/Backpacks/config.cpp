@@ -20,7 +20,7 @@ class CfgVehicles
     class OEC_Overwatch_Backpack_Base: Bag_Base
     {
         author = "OEC Extension";
-        maximumLoad = 320;
+        maximumLoad = 100;
         mass = 20;
     };
 
@@ -40,11 +40,21 @@ class CfgVehicles
 		hiddenSelectionsTextures[] = {"\WBK_Combines\grunt\data\body_dark.paa","\WBK_Combines\grunt\data\grenade.paa"};
 		hiddenSelectionsMaterials[] = {};
         displayName = "[OEC] Oxygen Tank - Dark";
+        class XtdGearInfo
+        {
+            model = "OEC_ACEX_Backpack_CMB_Oxygen";
+            variant = "dark";
+        };
     };
     class OEC_Overwatch_Backpack_OxygenTank_White: OEC_Overwatch_Backpack_OxygenTank_Dark
     {
         hiddenSelectionsTextures[] = {"\WBK_Combines\grunt\data\body_white.paa","\WBK_Combines\grunt\data\grenade.paa"};
-        displayName = "[OEC] Oxygen Tank - White";
+        displayName = "[OEC] Oxygen Tank - Light";
+        class XtdGearInfo
+        {
+            model = "OEC_ACEX_Backpack_CMB_Oxygen";
+            variant = "light";
+        };
     };
     
     class OEC_Overwatch_Backpack_Dark: OEC_Overwatch_Backpack_Base
@@ -56,10 +66,62 @@ class CfgVehicles
 		hiddenSelectionsTextures[] = {"\WBK_Combines\grunt\data\body_dark.paa","\WBK_Combines\grunt\data\grenade.paa"};
 		hiddenSelectionsMaterials[] = {};
         displayName = "[OEC] Combine Backpack - Dark";
+        class XtdGearInfo
+        {
+            model = "OEC_ACEX_Backpack_CMB_Empty";
+            variant = "dark";
+        };
     };
     class OEC_Overwatch_Backpack_White: OEC_Overwatch_Backpack_Dark
     {
         hiddenSelectionsTextures[] = {"\WBK_Combines\grunt\data\body_white.paa","\WBK_Combines\grunt\data\grenade.paa"};
-        displayName = "[OEC] Combine Backpack - White";
+        displayName = "[OEC] Combine Backpack - Light";
+        class XtdGearInfo
+        {
+            model = "OEC_ACEX_Backpack_CMB_Empty";
+            variant = "light";
+        };
     };
+};
+
+class XtdGearModels
+{
+    class CfgVehicles
+    {
+		class OEC_ACEX_Backpack_CMB_Oxygen
+        {
+            label = "";
+            author = "OEC Extension";
+            options[] = { "variant" };
+            class variant
+            {
+                label = "Backpack Variants";
+                values[] = 
+                {
+                    "light",
+                    "dark"
+                };
+                class light { label = "Light"; };
+                class dark { label = "Dark"; };
+            };
+        };
+
+        class OEC_ACEX_Backpack_CMB_Empty
+        {
+            label = "";
+            author = "OEC Extension";
+            options[] = { "variant" };
+            class variant
+            {
+                label = "Backpack Variants";
+                values[] = 
+                {
+                    "light",
+                    "dark"
+                };
+                class light { label = "Light"; };
+                class dark { label = "Dark"; };
+            };
+        };
+	};
 };

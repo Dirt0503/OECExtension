@@ -62,7 +62,19 @@ class CfgFunctions
             class cisZu23Assign
             {
                 file = "\OECExtension\Scripts\OEC_cisZu23Assign.sqf";
-				description = "CIS Zu23 Emplacement Passenger Script";
+				description = "CIS Zu23 Emplacement Script";
+            };
+
+            class cisBMP3Assign
+            {
+                file = "\OECExtension\Scripts\OEC_cisBMP3Assign.sqf";
+				description = "CIS BMP3 IFV Script";
+            };
+
+            class cisTaruPod
+            {
+                file = "\OECExtension\Scripts\OEC_cmbTaruPod.sqf";
+				description = "OEC Taru Pod Script";
             };
         };
     };

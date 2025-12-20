@@ -17,9 +17,9 @@ class CfgMagazines
 		scope = 2;
 		ammo = "OEC_Ammo_PulseSMG";
 		author = "OEC Extension";
-		displayName = "[OEC] 60rnd AR-1S Cell";
+		displayName = "[OEC] 60rnd AR-1s Cell";
 		count = 60;
-		mass = 10;
+		mass = 30;
 	};
 };
 
@@ -31,7 +31,7 @@ class CfgWeapons
   class OEC_Weapon_PulseSMG: OEC_Weapon_AR2
 	{
 		author = "OEC Extension";
-        displayName = "[OEC] AR-1S Pulse SMG";
+        displayName = "[OEC] AR-1s Pulse SMG";
 		scopeArsenal = 2;
 		scope = 2;
 		descriptionShort = "Overwatch Standard Issue Pulse Submachine Gun";
@@ -45,7 +45,7 @@ class CfgWeapons
 		muzzles[] = {"this"};
         class Library
 		{
-			libTextDesc = "Overwatch Standard Issue Pulse SMG. Pulse ammo has no damage dropoff and is not affected by gravity, but will dissipate beyond 400m.";
+			libTextDesc = "Overwatch Standard Issue Pulse SMG. Pulse ammo has no damage dropoff and is not affected by gravity, but will dissipate beyond 200m.";
 		};
         modes[] = {"FullAuto"};
 		class FullAuto: Mode_FullAuto

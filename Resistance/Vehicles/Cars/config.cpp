@@ -71,6 +71,7 @@ class CfgVehicles
         editorCategory = "OEC_EdCat_CIS";
         editorSubCategory = "OEC_EdSubCat_Cars";
 		crew = "OEC_Units_CIS_Crew";
+		armor = 30;
 		class Turrets: Turrets
 		{
 			class CargoTurret_01: CargoTurret_01

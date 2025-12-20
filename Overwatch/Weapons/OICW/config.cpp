@@ -65,7 +65,7 @@ class CfgMagazines
 		modelSpecialIsProxy = 1; // check this if error
 		ammo = "OEC_Ammo_CMB20mm";
 		count = 6;
-		mass = 20;
+		mass = 24.5;
 		initspeed = 80;
 		scope = 2;
 		scopearsenal = 2;
@@ -84,7 +84,7 @@ class CfgMagazines
 		picture = "\cup\weapons\cup_weapons_xm29\data\ui\m_xm29_he_ca.paa";
 		modelSpecial = "\cup\weapons\cup_weapons_xm29\CUP_xm29_he_mag.p3d";
 		initspeed = 80;
-		mass = 10;
+		mass = 12.75;
 	};
 
 	// Cmb 20mm Stun Grenade
@@ -99,7 +99,7 @@ class CfgMagazines
 		ammo = "OEC_Ammo_CMB20mm_stun";
 		initspeed = 80;
 		count = 3;
-		mass = 15;
+		mass = 24.5;
 	};
 
 	// Cmb 20mm Flares
@@ -112,7 +112,7 @@ class CfgMagazines
 		ammo = "OEC_Ammo_CMB20mm_red";
 		initspeed = 80;
 		count = 6;
-		mass = 10;
+		mass = 5;
 	};
 	class OEC_Magazine_OICW_green_6rnd: OEC_Magazine_OICW_HE_6rnd
 	{
@@ -123,7 +123,7 @@ class CfgMagazines
 		ammo = "OEC_Ammo_CMB20mm_green";
 		initspeed = 80;
 		count = 6;
-		mass = 10;
+		mass = 5;
 	};
 };
 

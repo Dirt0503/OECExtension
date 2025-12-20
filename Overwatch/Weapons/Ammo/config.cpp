@@ -69,8 +69,10 @@ class CfgAmmo
 
         airFriction = -0.0006;
         coefGravity = 0.01;
-        hit = 6;
-        caliber = 1.2;
+        hit = 9;
+        caliber = 2.5;
+		typicalSpeed = 770;
+		timeToLive = 0.38961039;
         tracerColor[] = {0,1,1,1};
         tracerColorR[] = {0,1,1,1};
     };
@@ -78,9 +80,10 @@ class CfgAmmo
     // OICW Ammo
 	class OEC_Ammo_OICW: B_65x39_Caseless
     {
-		hit = 11.5;
-		caliber = 1.2;
+		hit = 11;
+		caliber = 1.25;
         typicalSpeed = 820;
+		airFriction = -0.0009;
 		model = "\hl_cmb_weapons\ar2\Data\bullettracer\tracer_blue";
     };
 
@@ -98,7 +101,7 @@ class CfgAmmo
 		timeToLive = 0.666666667;
 		caliber = 1.5;
 		model = "\hl_cmb_weapons\ar2\Data\bullettracer\tracer_blue";
-		tracerScale = 1;
+		tracerScale = 1.5;
 		tracerStartTime = 0.005;
 		tracerEndTime = 1;
 		nvgOnly = 0;
@@ -112,21 +115,22 @@ class CfgAmmo
 	// Pulse SMG Ammo
 	class OEC_Ammo_PulseSMG: OEC_Ammo_AR2
 	{
-		hit = 7;
+		hit = 9;
 		caliber = 1.5;
+		timeToLive = 0.333333334;
 	};
 
 	// 4.6x30mm SMG46 ammo
 	class OEC_Ammo_46x30: BulletBase
 	{
-		hit = 9;
+		hit = 13.5;
 		indirectHit = 0;
 		indirectHitRange = 0;
 		cartridge = "FxCartridge_9mm";
 		cost = 100;
 		typicalSpeed = 380;
-		airFriction = -0.0016;
-		caliber = 2;
+		airFriction = -0.0075;
+		caliber = 1.3;
 		deflecting = 25;
 		model = "\A3\Weapons_f\Data\bullettracer\tracer_white";
 		airLock = 1;
@@ -244,9 +248,9 @@ class CfgAmmo
 		effectsMissileInit = "RocketBackEffectsRPG";
 		model = "\CUP\Weapons\CUP_Weapons_M136\CUP_AT4_rocket.p3d";
 		hit = 85;
-		indirectHit = 10;
+		indirectHit = 25;
 		indirectHitRange = 2;
-		warheadName = "AT";
+		warheadName = "HEAT";
 		submunitionAmmo = "OEC_Ammo_Penetrator_sipl0Disposable";
 		submunitionDirectionType = "SubmunitionModelDirection";
 		submunitionInitSpeed = 1000;
@@ -307,15 +311,15 @@ class CfgAmmo
 
 	class OEC_Ammo_Penetrator_sipl0Disposable: ammo_Penetrator_Base
 	{
-		caliber = 18;
+		caliber = 12.5;
 		warheadName = "HEAT";
-		hit = 370;
+		hit = 200;
 	};
 
 	// SIPL-1 ammo
 	class OEC_Ammo_Rocket_SIPL_HEAT75: RocketBase
 	{
-		model = "\A3\Weapons_F_Tank\Launchers\MRAWS\rocket_MRAWS_HEAT_F.p3d";
+		EffectFly = "ArtilleryTrails";
 		warheadName = "TandemHEAT";
 		submunitionAmmo = "Ammo_Penetrator_SIPL_HEAT75";
 		submunitionDirectionType = "SubmunitionModelDirection";
@@ -327,7 +331,7 @@ class CfgAmmo
 		hit = 150;
 		indirectHit = 14;
 		indirectHitRange = 3;
-		explosive = 0.8;
+		explosive = 0.85;
 		cost = 100;
 		airFriction = 0.05;
 		sideAirFriction = 0;
@@ -342,11 +346,12 @@ class CfgAmmo
 		effectsMissile = "EmptyEffect";
 		simulationStep = 0.02;
 		airLock = 0;
-		aiAmmoUsageFlags = "128 + 512";
+		aiAmmoUsageFlags = "128 + 256 + 512";
 		irLock = 0;
 		timeToLive = 25;
 		maneuvrability = 0;
 		allowAgainstInfantry = 0;
+		model = "rhsusf\addons\rhsusf_weapons2\m3maaws\ammo_m3maaws.p3d";
 		soundHit1[] = {"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_01",2.5118864,1,1800};
 		soundHit2[] = {"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_02",2.5118864,1,1800};
 		soundHit3[] = {"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_03",2.5118864,1,1800};
@@ -383,27 +388,30 @@ class CfgAmmo
 
 	class Ammo_Penetrator_SIPL_HEAT75: ammo_Penetrator_Base
 	{
-		caliber = 33.3333;
-		warheadName = "Tandem HEAT (75)";
-		hit = 495;
+		caliber = 40;
+		warheadName = "TandemHEAT";
+		hit = 500;
 	};
 
 	class OEC_Ammo_Rocket_SIPL_HE: OEC_Ammo_Rocket_SIPL_HEAT75
 	{
-		warheadName = "High-Explosive (44)";
+		warheadName = "HE";
 		submunitionAmmo = "";
 		submunitionDirectionType = "";
 		submunitionInitSpeed = 0;
 		submunitionParentSpeedCoef = 0.0;
 		submunitionInitialOffset[] = {0,0,0};
 		triggerOnImpact = 0;
-		hit = 200;
-		indirectHit = 100;
-		indirectHitRange = 9;
+		hit = 130;
+		indirectHit = 90;
+		indirectHitRange = 10;
 		explosive = 1;
-		model = "\A3\Weapons_F_Tank\Launchers\MRAWS\rocket_MRAWS_HE_F.p3d";
+		aiAmmoUsageFlags = "64 + 128 + 512";
+		model = "rhsusf\addons\rhsusf_weapons2\m3maaws\ammo_m3maaws.p3d";
 		CraterEffects = "ArtyShellCrater";
-		ExplosionEffects = "MortarExplosion";
+		ExplosionEffects = "BombExplosion";
+		effectsMissileInit = "";
+		effectsMissile = "RHSUSF_SMAW_MissileTrail";
 		allowAgainstInfantry = 1;
 		class CamShakeExplode
 		{
@@ -416,7 +424,7 @@ class CfgAmmo
 
 	class OEC_Ammo_Rocket_SIPL_HEAT55: OEC_Ammo_Rocket_SIPL_HEAT75
 	{
-		warheadName = "HEAT (55)";
+		warheadName = "HEAT";
 		submunitionAmmo = "ammo_Penetrator_SIPL_HEAT55";
 		submunitionDirectionType = "SubmunitionModelDirection";
 		submunitionInitSpeed = 1000;
@@ -425,12 +433,16 @@ class CfgAmmo
 		triggerOnImpact = 1;
 		deleteParentWhenTriggered = 0;
 		hit = 95;
-		model = "\A3\Weapons_F_Tank\Launchers\MRAWS\rocket_MRAWS_HEAT55_F.p3d";
+		indirectHit = 30;
+		indirectHitRange = 5.1;
+		aiAmmoUsageFlags = "64 + 128 + 256 + 512";
+		allowAgainstInfantry = 1;
+		model = "rhsusf\addons\rhsusf_weapons2\m3maaws\ammo_m3maaws.p3d";
 	};
 
 	class ammo_Penetrator_SIPL_HEAT55: ammo_Penetrator_Base
 	{
-		caliber = 26.6667;
-		hit = 450;
+		caliber = 20;
+		hit = 300;
 	};
 };

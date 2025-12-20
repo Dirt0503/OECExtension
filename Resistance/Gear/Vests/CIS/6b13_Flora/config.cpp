@@ -77,7 +77,7 @@ class CfgWeapons
                 class Pelvis
                 {
                     hitpointName = "HitPelvis";
-					armor = 6;
+					armor = 12;
 					PassThrough = 0.4;
                 };
                 

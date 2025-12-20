@@ -475,8 +475,8 @@ class cfgVehicles
         editorSubCategory = "OEC_EdSubCat_Specials";
         uniformClass = "OEC_CIS_Uniform_6sh112";
         headgearList[] = {};
-        linkedItems[] = {"OEC_CIS_Vest_ModularCarrier", "OEC_APR", "ItemMap","ItemCompass","ItemWatch","ItemRadio"};
-        respawnLinkedItems[] = {"OEC_CIS_Vest_ModularCarrier", "OEC_APR", "ItemMap","ItemCompass","ItemWatch","ItemRadio"};
+        linkedItems[] = {"OEC_CIS_Vest_ModularCarrier", "OEC_CIS_Facewear_APR", "ItemMap","ItemCompass","ItemWatch","ItemRadio"};
+        respawnLinkedItems[] = {"OEC_CIS_Vest_ModularCarrier", "OEC_CIS_Facewear_APR", "ItemMap","ItemCompass","ItemWatch","ItemRadio"};
 		backpack = "OEC_CIS_Backpack_SCBA_Bag";
         weapons[] = {"OEC_Weapons_PKM","Throw","Put"};
         respawnWeapons[] = {"OEC_Weapons_PKM","Throw","Put"};

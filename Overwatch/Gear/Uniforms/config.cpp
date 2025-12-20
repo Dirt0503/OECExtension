@@ -19,8 +19,6 @@ class CfgPatches
             "OEC_Overwatch_Uniform_TL_Vehicle",
             "OEC_Overwatch_Uniform_Recon_Vehicle",
             "OEC_Overwatch_Uniform_Elite_Vehicle",
-           /*"OEC_Overwatch_Uniform_Assassin_1_Vehicle",
-            "OEC_Overwatch_Uniform_Assassin_2_Vehicle",*/
             "OEC_Overwatch_Uniform_Wallhammer_Vehicle",
             "OEC_Overwatch_Uniform_APU_Vehicle"
         };
@@ -33,8 +31,6 @@ class CfgPatches
             "OEC_Overwatch_Uniform_TL",
             "OEC_Overwatch_Uniform_Recon",
             "OEC_Overwatch_Uniform_Elite",
-            //"OEC_Overwatch_Uniform_Assassin_1",
-            //"OEC_Overwatch_Uniform_Assassin_2",
             "OEC_Overwatch_Uniform_Wallhammer",
             "OEC_Overwatch_Uniform_APU"
         };
@@ -60,7 +56,7 @@ class CfgWeapons
 		{
 			uniformModel = "-";
 			uniformClass = "OEC_Overwatch_Unit_Base";
-			containerClass = "Supply30";
+			containerClass = "Supply35";
 			mass = 20;
 			hiddenSelections[] = {""};
             scope = 1;
@@ -84,7 +80,7 @@ class CfgWeapons
     };
     class OEC_Overwatch_Uniform_AT: OEC_Overwatch_Uniform_Soldier
     {  
-        displayName = "[OEC] Combine AT Uniform";
+        displayName = "[OEC] Combine Soldier Uniform - AT";
         class ItemInfo: ItemInfo
         {
             uniformClass = "OEC_Overwatch_Uniform_AT_Vehicle";
@@ -97,10 +93,11 @@ class CfgWeapons
     };
     class OEC_Overwatch_Uniform_Medic: OEC_Overwatch_Uniform_Soldier
     {
-        displayName = "[OEC] Combine Medic Uniform";
+        displayName = "[OEC] Combine Soldier Uniform - Medic";
         class ItemInfo: ItemInfo
         {
             uniformClass = "OEC_Overwatch_Uniform_Medic_Vehicle";
+            containerClass = "Supply240";
         };
         class XtdGearInfo
         {
@@ -110,7 +107,7 @@ class CfgWeapons
     };
     class OEC_Overwatch_Uniform_Recon: OEC_Overwatch_Uniform_Soldier
     {
-        displayName = "[OEC] Combine Recon Uniform";
+        displayName = "[OEC] Combine Soldier Uniform - Recon";
         class ItemInfo: ItemInfo
         {
             uniformClass = "OEC_Overwatch_Uniform_Recon_Vehicle";
@@ -123,7 +120,7 @@ class CfgWeapons
     };
     class OEC_Overwatch_Uniform_TL: OEC_Overwatch_Uniform_Soldier
     {
-        displayName = "[OEC] Combine Team Leader Uniform";
+        displayName = "[OEC] Combine Soldier Uniform - TL";
         class ItemInfo: ItemInfo
         {
             uniformClass = "OEC_Overwatch_Uniform_TL_Vehicle";
@@ -149,7 +146,7 @@ class CfgWeapons
     };
     class OEC_Overwatch_Uniform_Recon_TL: OEC_Overwatch_Uniform_Soldier
     {
-        displayName = "[OEC] Combine Recon TL Uniform";
+        displayName = "[OEC] Combine Elite Uniform - Recon";
         class ItemInfo: ItemInfo
         {
             uniformClass = "OEC_Overwatch_Uniform_Recon_TL_Vehicle";
@@ -160,22 +157,6 @@ class CfgWeapons
             variant = "reconSL";
         };
     };
-   /* class OEC_Overwatch_Uniform_Assassin_1: OEC_Overwatch_Uniform_Soldier
-    {
-        displayName = "[OEC] Combine Assassin Uniform [1]";
-        class ItemInfo: ItemInfo
-        {
-            uniformClass = "OEC_Overwatch_Uniform_Assassin_1_Vehicle";
-        };
-    };
-    class OEC_Overwatch_Uniform_Assassin_2: OEC_Overwatch_Uniform_Soldier
-    {
-        displayName = "[OEC] Combine Assassin Uniform [2]";
-        class ItemInfo: ItemInfo
-        {
-            uniformClass = "OEC_Overwatch_Uniform_Assassin_2_Vehicle";
-        };
-    };*/
 
     class OEC_Overwatch_Uniform_Wallhammer: OEC_Overwatch_Uniform_Soldier
     {
@@ -199,6 +180,19 @@ class CfgWeapons
 
 class CfgVehicles
 {
+    class ContainerSupply;
+	class Supply35: ContainerSupply
+	{
+		maximumLoad = 35;
+	};
+    class Supply75: ContainerSupply
+	{
+		maximumLoad = 75;
+	};
+    class Supply500: ContainerSupply
+	{
+		maximumLoad = 500;
+	};
     class OEC_Overwatch_Unit_Base;
 
     class OEC_Overwatch_Uniform_Soldier_Vehicle: OEC_Overwatch_Unit_Base
@@ -307,31 +301,13 @@ class CfgVehicles
         };
     };
 
-    /*class OEC_Overwatch_Uniform_Assassin_1_Vehicle: OEC_Overwatch_Uniform_Soldier_Vehicle
-    {
-        uniformClass = "OEC_Overwatch_Uniform_Assassin_1";
-        model = "\@Combain\CombainAssassin.p3d";
-        hiddenSelections[] = {};
-		hiddenSelectionsTextures[] = {};
-        hiddenSelectionsMaterials[] = {};
-    };
-
-    class OEC_Overwatch_Uniform_Assassin_2_Vehicle: OEC_Overwatch_Uniform_Assassin_1_Vehicle
-    {
-        uniformClass = "OEC_Overwatch_Uniform_Assassin_2";
-        model = "@Combain\CombainAssassin2.p3d";
-    };*/
-
     class OEC_Overwatch_Uniform_Wallhammer_Vehicle: OEC_Overwatch_Uniform_Soldier_Vehicle
     {
         uniformClass = "OEC_Overwatch_Uniform_Wallhammer";
         model = "\WBK_FixingFactory\charger\CombainWallhamer.p3d";
-        hiddenSelections[] = {};
-		hiddenSelectionsTextures[] = {};
-        hiddenSelectionsMaterials[] = {};
     };
 
-    class OEC_Overwatch_Uniform_APF_Vehicle: OEC_Overwatch_Uniform_Wallhammer_Vehicle
+    class OEC_Overwatch_Uniform_APF_Vehicle: OEC_Overwatch_Uniform_Soldier_Vehicle
     {
         uniformClass = "OEC_Overwatch_Uniform_APF";
         model = "@Combain\CombainSuppressor.p3d";
@@ -361,7 +337,7 @@ class XtdGearModels
                 class soldier { label = "Soldier"; };
                 class at { label = "AT"; };
                 class medic { label = "Medic"; };
-				class tl { label = "Team Lead"; };
+				class tl { label = "TL"; };
 				class recon { label = "Recon"; };
             };
         };
@@ -379,7 +355,7 @@ class XtdGearModels
                     "sl",
                     "reconSL"
                 };
-                class sl { label = "Squad Lead"; };
+                class sl { label = "SL"; };
                 class reconSL { label = "Recon SL"; };
             };
         };

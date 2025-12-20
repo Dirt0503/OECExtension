@@ -20,9 +20,9 @@ class CfgMagazines
 		displayName = "[OEC] 45rnd MP7 Magazine";
         picture = "\A3\Weapons_F\Data\UI\M_30Rnd_45ACP_CA.paa";
 		modelSpecialIsProxy = 1;
-		initspeed = 390;
+		initspeed = 380;
 		count = 45;
-		mass = 10;
+		mass = 4.5;
 		tracersEvery = 0;
 		lastRoundsTracer = 10;
     };
@@ -37,7 +37,7 @@ class CfgMagazines
 		displayName = "[OEC] MP7 HE 2Rnd Mag";
 		initspeed = 80;
 		count = 2;
-		mass = 8;
+		mass = 8.25;
 		picture = "\A3\Weapons_f\Data\ui\gear_UGL_slug_CA.paa";
 	};
     // Cmb 20mm Instant Smoke
@@ -47,7 +47,7 @@ class CfgMagazines
 		displayName = "[OEC] MP7 Instant Smoke 2Rnd Mag";
 		initspeed = 80;
 		count = 2;
-		mass = 3;
+		mass = 4.125;
 		picture = "\A3\Weapons_f\Data\ui\gear_UGL_slug_CA.paa";
 	};
     // Cmb 20mm Stun Grenade
@@ -57,7 +57,7 @@ class CfgMagazines
 		displayName = "[OEC] MP7 Stun 1Rnd Mag";
 		initspeed = 80;
 		count = 1;
-		mass = 5;
+		mass = 8.25;
 		picture = "\A3\Weapons_f\Data\ui\gear_UGL_slug_CA.paa";
 	};
     // Cmb 20mm Flares
@@ -67,7 +67,7 @@ class CfgMagazines
 		displayName = "[OEC] MP7 Flare (Red) 2Rnd Mag";
 		initspeed = 80;
 		count = 2;
-		mass = 3;
+		mass = 1.65;
 		picture = "\A3\Weapons_f\Data\ui\gear_UGL_slug_CA.paa";
 	};
     class OEC_Magazine_OICW_green_6rnd;
@@ -76,7 +76,7 @@ class CfgMagazines
 		displayName = "[OEC] MP7 Flare (Green) 2Rnd Mag";
 		initspeed = 80;
 		count = 2;
-		mass = 3;
+		mass = 1.65;
 		picture = "\A3\Weapons_f\Data\ui\gear_UGL_slug_CA.paa";
 	};
 };

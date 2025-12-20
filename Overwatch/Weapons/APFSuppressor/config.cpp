@@ -32,7 +32,7 @@ class CfgWeapons
 
         scope = 2;
         scopeArsenal = 2;
-        magazines[] = {"OEC_Magazine_APFSuppressor_200Rnd"};
+        magazines[] = {"OEC_Magazine_APFSuppressor_100Rnd"};
         magazineWell[] = {"OEC_MagazineWell_APFSuppressor"};
         drySound[] = {"WBK_Combines\weapons\shotgun_empty.wav",1,1,10};
 		reloadMagazineSound[] = {"WBK_Combines\weapons\APF_reload.ogg",1,1,30};
@@ -42,12 +42,16 @@ class CfgWeapons
         baseWeapon = "OEC_Weapons_APFSuppressor";
         _generalMacro = "";
         muzzles[] = {"this"};
-		modes[] = {"FullAuto","close","near","short","medium","far"};
-        class FullAuto: Mode_FullAuto
+		modes[] = {"FullAuto450", "FullAuto600", "FullAuto750","close","near","short","medium","far"};
+		class Library
+		{
+			libTextDesc = "Overwatch Standard Issue HMG. This unstable ammunition has no damage dropoff and is not affected by gravity, but will dissipate beyond 300m.";
+		};
+        class FullAuto450: Mode_FullAuto
         {
-            displayName = "APF Cannon";
-			reloadTime = 0.084;
-			aiRateOfFire = 0.25;
+            displayName = "450 RPM";
+			reloadTime = 0.13333;
+			aiRateOfFire = 0.13333;
 			sounds[] = {"StandardSound"};
 			class StandardSound
 			{
@@ -59,6 +63,7 @@ class CfgWeapons
 				soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};
 			};
 			autoFire = 1;
+			textureType = "semi";
 			flash = "gunfire";
 			flashSize = 0.1;
 			recoil = "Empty";
@@ -76,7 +81,23 @@ class CfgWeapons
 			dispersion = 0.0038;
 			showToPlayer = 1;
         };
-        class close: FullAuto
+		class FullAuto600: FullAuto450
+		{
+			showToPlayer = 1;
+			displayName = "600 RPM";
+			reloadTime = 0.1;
+			aiRateOfFire = 0.1;
+			textureType = "burst";
+		};
+		class FullAuto750: FullAuto450
+		{
+			showToPlayer = 1;
+			displayName = "750 RPM";
+			reloadTime = 0.08;
+			aiRateOfFire = 0.08;
+			textureType = "fullAuto";
+		};
+        class close: FullAuto750
 		{
 			showToPlayer = 0;
 			burst = 25;
@@ -145,16 +166,18 @@ class CfgMagazines
 {
     class HL_CMB_30Rnd_AR2_Mag;
 
-    class OEC_Magazine_APFSuppressor_200Rnd: HL_CMB_30Rnd_AR2_Mag
+    class OEC_Magazine_APFSuppressor_100Rnd: HL_CMB_30Rnd_AR2_Mag
     {
         ammo = "OEC_Ammo_APFSuppressor";
-        count = 200;
+        count = 100;
         author = "OEC";
-        displayName = "200Rnd Suppressor Cell";
+		typicalSpeed = 770;
+        displayName = "100Rnd Suppressor Cell";
         descriptionShort = "High Capacity Suppressor Cell";
-        displayNameShort = "200Rnd Cell";
+        displayNameShort = "100Rnd Cell";
         tracersEvery = 0;
         lastRoundsTracer = 0;
+		mass = 50;
     };
 };
 
@@ -164,7 +187,7 @@ class CfgMagazineWells
     {
         OEC_APFSuppressor_Mags[] =
         {
-            "OEC_Magazine_APFSuppressor_200Rnd"
+            "OEC_Magazine_APFSuppressor_100Rnd"
         };
     };
 };
