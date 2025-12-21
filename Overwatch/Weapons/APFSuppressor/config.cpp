@@ -170,9 +170,9 @@ class CfgMagazines
     {
         ammo = "OEC_Ammo_APFSuppressor";
         count = 100;
-        author = "OEC";
-		typicalSpeed = 770;
-        displayName = "100Rnd Suppressor Cell";
+        author = "OEC Extension";
+		initSpeed = 770;
+        displayName = "[OEC] 100Rnd Suppressor Cell";
         descriptionShort = "High Capacity Suppressor Cell";
         displayNameShort = "100Rnd Cell";
         tracersEvery = 0;

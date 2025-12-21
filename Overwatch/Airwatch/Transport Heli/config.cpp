@@ -56,8 +56,7 @@ class CfgVehicles
 		
 		class EventHandlers
 		{
-			postinit = "_this call oec_fnc_cmbTaruPod;";
-			init = "_this setMass 1000;";
+			init = "_this call oec_fnc_cmbTaruPod;";
 		};
 	};
 };

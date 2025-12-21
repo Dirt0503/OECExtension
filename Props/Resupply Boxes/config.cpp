@@ -194,9 +194,9 @@ class CfgVehicles
 				magazine = "OEC_Magazine_WallhammerShotgun_8Rnd_Shredder";
 				count = 80;
 			}; 
-            class XX_OEC_Magazine_APFSuppressor_200Rnd
+            class XX_OEC_Magazine_APFSuppressor_100Rnd
 			{
-				magazine = "OEC_Magazine_APFSuppressor_200Rnd";
+				magazine = "OEC_Magazine_APFSuppressor_100Rnd";
 				count = 60;
 			};
 		};
