@@ -13,15 +13,15 @@ class CfgPatches
         };
         units[] = 
         {
-            "OEC_Overwatch_Uniform_Soldier_Vehicle",
-            "OEC_Overwatch_Uniform_AT_Vehicle",
-            "OEC_Overwatch_Uniform_Medic_Vehicle",
-            "OEC_Overwatch_Uniform_TL_Vehicle",
-            "OEC_Overwatch_Uniform_Recon_Vehicle",
-            "OEC_Overwatch_Uniform_Elite_Vehicle",
-            "OEC_Overwatch_Uniform_Wallhammer_Vehicle",
-            "OEC_Overwatch_Uniform_Airwatch_Vehicle",
-            "OEC_Overwatch_Uniform_APU_Vehicle"
+            "OEC_Overwatch_Unit_Soldier",
+            "OEC_Overwatch_Unit_AT",
+            "OEC_Overwatch_Unit_Medic",
+            "OEC_Overwatch_Unit_TL",
+            "OEC_Overwatch_Unit_Recon",
+            "OEC_Overwatch_Unit_Elite",
+            "OEC_Overwatch_Unit_Wallhammer",
+            "OEC_Overwatch_Unit_Airwatch",
+            "OEC_Overwatch_Unit_APU"
         };
         weapons[] = 
         {
@@ -71,7 +71,7 @@ class CfgWeapons
         displayName = "[OEC] Combine Soldier Uniform";
         class ItemInfo: ItemInfo
         {
-            uniformClass = "OEC_Overwatch_Uniform_Soldier_Vehicle";
+            uniformClass = "OEC_Overwatch_Unit_Soldier";
             scope = 2;
         };
         class XtdGearInfo
@@ -85,7 +85,7 @@ class CfgWeapons
         displayName = "[OEC] Combine Soldier Uniform - AT";
         class ItemInfo: ItemInfo
         {
-            uniformClass = "OEC_Overwatch_Uniform_AT_Vehicle";
+            uniformClass = "OEC_Overwatch_Unit_AT";
         };
         class XtdGearInfo
         {
@@ -98,7 +98,7 @@ class CfgWeapons
         displayName = "[OEC] Combine Soldier Uniform - Medic";
         class ItemInfo: ItemInfo
         {
-            uniformClass = "OEC_Overwatch_Uniform_Medic_Vehicle";
+            uniformClass = "OEC_Overwatch_Unit_Medic";
             containerClass = "Supply240";
         };
         class XtdGearInfo
@@ -112,7 +112,7 @@ class CfgWeapons
         displayName = "[OEC] Combine Soldier Uniform - Recon";
         class ItemInfo: ItemInfo
         {
-            uniformClass = "OEC_Overwatch_Uniform_Recon_Vehicle";
+            uniformClass = "OEC_Overwatch_Unit_Recon";
         };
         class XtdGearInfo
         {
@@ -125,7 +125,7 @@ class CfgWeapons
         displayName = "[OEC] Combine Soldier Uniform - TL";
         class ItemInfo: ItemInfo
         {
-            uniformClass = "OEC_Overwatch_Uniform_TL_Vehicle";
+            uniformClass = "OEC_Overwatch_Unit_TL";
         };
         class XtdGearInfo
         {
@@ -138,7 +138,7 @@ class CfgWeapons
         displayName = "[OEC] Combine Elite Uniform";
         class ItemInfo: ItemInfo
         {
-            uniformClass = "OEC_Overwatch_Uniform_Elite_Vehicle";
+            uniformClass = "OEC_Overwatch_Unit_Elite";
         };
         class XtdGearInfo
         {
@@ -151,7 +151,7 @@ class CfgWeapons
         displayName = "[OEC] Combine Elite Uniform - Recon";
         class ItemInfo: ItemInfo
         {
-            uniformClass = "OEC_Overwatch_Uniform_Recon_TL_Vehicle";
+            uniformClass = "OEC_Overwatch_Unit_Recon_TL";
         };
         class XtdGearInfo
         {
@@ -165,7 +165,7 @@ class CfgWeapons
         displayName = "[OEC] Wallhammer Uniform";
         class ItemInfo: ItemInfo
         {
-            uniformClass = "OEC_Overwatch_Uniform_Wallhammer_Vehicle";
+            uniformClass = "OEC_Overwatch_Unit_Wallhammer";
         };
         class XtdGearInfo{};
     };
@@ -174,7 +174,7 @@ class CfgWeapons
         displayName = "[OEC] Airwatch Uniform";
         class ItemInfo: ItemInfo
         {
-            uniformClass = "OEC_Overwatch_Uniform_Airwatch_Vehicle";
+            uniformClass = "OEC_Overwatch_Unit_Airwatch";
         };
         class XtdGearInfo
         {};
@@ -184,7 +184,7 @@ class CfgWeapons
         displayName = "[OEC] APF Uniform";
         class ItemInfo: ItemInfo
         {
-            uniformClass = "OEC_Overwatch_Uniform_APF_Vehicle";
+            uniformClass = "OEC_Overwatch_Unit_APF";
         };
         class XtdGearInfo{};
     };
@@ -205,7 +205,7 @@ class CfgVehicles
 	{
 		maximumLoad = 500;
 	};
-    class OEC_Overwatch_Unit_Base;
+    /*class OEC_Overwatch_Unit_Base;
 
     class OEC_Overwatch_Uniform_Soldier_Vehicle: OEC_Overwatch_Unit_Base
     {
@@ -328,7 +328,7 @@ class CfgVehicles
     {
         uniformClass = "OEC_Overwatch_Uniform_APF";
         model = "@Combain\CombainSuppressor.p3d";
-    };
+    };*/
 };
 
 class XtdGearModels
