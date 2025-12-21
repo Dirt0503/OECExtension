@@ -27,7 +27,7 @@ class CfgVehicles
     class OEC_Overwatch_Backpack_Base: Bag_Base
     {
         author = "OEC Extension";
-        maximumLoad = 100;
+        maximumLoad = 110;
         mass = 20;
     };
 

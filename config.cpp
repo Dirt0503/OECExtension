@@ -33,14 +33,18 @@ class CfgMods
     class Mod_Base;
     class OEC_Extension_Base: Mod_Base
     {
-        dir = "@OECExtension";
+        dir = "OECExtension";
         name = "OEC Extension";
-        picture = "\OECExtension\OEClogo1.paa";
-        logo = "\OECExtension\OEClogo1.paa";
-        logoSmall = "\OECExtension\OEClogo1.paa";
-        logoOver = "\OECExtension\OEClogo1.paa";
+        picture = "\@1auxtest\addons\OECExtension\OEClogo1.paa";
+        logo = "\@1auxtest\addons\OECExtension\OEClogo1.paa";
+        logoSmall = "\@1auxtest\addons\OECExtension\OEClogo1.paa";
+        logoOver = "\@1auxtest\addons\OECExtension\OEClogo1.paa";
         tooltip = "OEC Extension";
         tooltipOwned = "OEC Extension";
+        overview = "OEC Extension, made for Overwatch Expeditionary Corps.";
+        dlcColor[] = {0,0,0,1};
+		hideName = 1;
+		hidePicture = 0;
     };
 };
 
@@ -90,6 +94,14 @@ class CfgVehicleClasses
         displayName = "Anti-Air";
     };
     class OEC_Vehclass_APC
+    {
+        displayName = "APC";
+    };
+    class OEC_Vehclass_IFV
+    {
+        displayName = "APC";
+    };
+    class OEC_Vehclass_Tank
     {
         displayName = "APC";
     };

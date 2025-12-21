@@ -14,8 +14,10 @@ class CfgPatches
 		{
 			"OEC_Weapons_ZU23",
 			"OEC_Weapons_DSHKM",
+			"OEC_Weapons_DSHKM_t80",
             "OEC_Weapons_vicPKM",
-            "OEC_Weapons_2a72"
+            "OEC_Weapons_2a72",
+			"OEC_Weapons_2A46_Cannon"
 		};
     };
 };
@@ -46,6 +48,7 @@ class CfgAmmo
         typicalSpeed = 835;
 		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
 		timeToLive = 25;
+		tracerStartTime = 0.005;
 		tracerEndTime = 3;
 		cost = 3;
 	};
@@ -126,6 +129,29 @@ class CfgAmmo
 			frequency = 20;
 			distance = 1;
 		};
+	};
+
+	// 125mm 2A46 t80 Cannon Ammo
+	class Sh_125mm_HE;
+	class OEC_Ammo_2A46: Sh_125mm_HE
+	{
+		explosive = 0.7;
+		hit = 200;
+		indirectHit = 70;
+		indirectHitRange = 9;
+		typicalspeed = 850;
+		deflecting = 1;
+		caliber = 5;
+		whistleDist = 60;
+		airFriction = -0.0002;
+		tracerScale = 3;
+		tracerStartTime = 0.1;
+		model = "\A3\Weapons_f\Data\bullettracer\shell_tracer_red";
+		cost = 300;
+		allowAgainstInfantry = 1;
+		aiAmmoUsageFlags = "64 + 128 + 256";
+		CraterEffects = "ArtyShellCrater";
+		ExplosionEffects = "ArtyShellExplosion";
 	};
 };
 
@@ -213,6 +239,21 @@ class CfgMagazines
 		tracersEvery = 1;
 		weight = "0.385*230";
 	};
+
+	// 125mm 2A46 T80 Cannon mags
+	class OEC_Magazine_125mm_HE: VehicleMagazine
+	{
+		scope = 2;
+		reloadTime = 6.5;
+		magazineReloadTime = 6.5;
+		count = 6;
+		initSpeed = 850;
+		tracersEvery = 1;
+		ammo = "OEC_Ammo_2A46";
+		//rhs_magazineIndex = 3;
+		maxLeadSpeed = 40;
+		muzzleImpulseFactor[] = {"14*0.5",14};
+	};
 };
 
 class Mode_SemiAuto;
@@ -255,7 +296,7 @@ class CfgWeapons
 		aiDispersionCoefY = 10;
 		aiDispersionCoefX = 8;
 		initSpeed = 0;
-        class gunParticles
+        /*class gunParticles
 		{
 			class effect1
 			{
@@ -263,7 +304,7 @@ class CfgWeapons
 				positionname = "Usti hlavne2";
 				directionname = "Konec hlavne2";
 			};
-		};
+		};*/
 
 		modes[] = {"manual","close","short","medium"};
 		class manual: MGun
@@ -342,25 +383,19 @@ class CfgWeapons
 	{
 		type = 1;
 		initSpeed = 0;
-		class GunParticles
+		class gunParticles
 		{
-			class effect1a
+			class effect1
 			{
 				effectname = "MachineGunCloud";
 				positionname = "Usti hlavne";
 				directionname = "Konec hlavne";
 			};
-            class effect1
-			{
-				positionname = "nabojnicestart";
-				directionname = "nabojniceend";
-				effectname = "MachineGunEject";
-			};
 			class effect2
 			{
-				positionName = "machinegun_eject_pos";
-				directionName = "machinegun_eject_dir";
-				effectName = "MachineGunCartridge2";
+				effectname = "RHS_145mm_Catridge";
+				positionname = "machinegun_eject_pos";
+				directionname = "machinegun_eject_dir";
 			};
 		};
 		reloadMagazineSound[] = {"a3\Sounds_F\arsenal\weapons_static\Static_HMG\reload_static_HMG",1,1,10};
@@ -453,6 +488,30 @@ class CfgWeapons
 			midRangeProbab = 0.58;
 			maxRange = 400;
 			maxRangeProbab = 0.04;
+		};
+	};
+	class OEC_Weapons_DSHKM_t80: OEC_Weapons_DSHKM
+	{
+		class GunParticles: GunParticles
+		{
+			class effect1a
+			{
+				effectname = "MachineGunCloud";
+				positionname = "Mgun_end";
+				directionname = "Mgun_start";
+			};
+			class effect1
+			{
+				positionname = "nabojnicestart";
+				directionname = "nabojniceend";
+				effectname = "MachineGunEject";
+			};
+			class effect2
+			{
+				positionName = "machinegun_eject_pos";
+				directionName = "machinegun_eject_dir";
+				effectName = "MachineGunCartridge2";
+			};
 		};
 	};
 
@@ -678,6 +737,96 @@ class CfgWeapons
 			midRangeProbab = 1;
 			maxRange = 550;
 			maxRangeProbab = 1;
+		};
+	};
+	// 2A46 T80 125mm Cannon
+	class cannon_120mm: CannonCore
+	{
+		class player;
+		class close;
+		class short;
+		class medium;
+		class far;
+	};
+	class OEC_Weapons_2A46_Cannon: cannon_120mm
+	{
+		aiDispersioncoefX = 3.5;
+		aiDispersioncoefY = 6.5;
+		canLock = 0;
+		scope = 1;
+		nameSound = "cannon";
+		displayName = "[OEC] 2A46 125mm Cannon";
+		showaimcursorinternal = 0;
+		cursor = "EmptyCursor";
+		cursoraim = "cannon";
+		cursoraimon = "cannon";
+		reloadSound[] = {"",1.0,1,200};
+		reloadMagazineSound[] = {"",1.0,1,200};
+		ballisticsComputer = 0;
+		flash = "gunfire";
+		flashSize = 10;
+		maxLeadSpeed = 100;
+		reloadTime = 6.5;
+		aiRateOfFire = 6.6;
+		aiRateOfFireDistance = 10;
+		magazineReloadTime = 6.5;
+		autoReload = 0;
+		magazines[] = {"OEC_Magazine_125mm_HE"};
+		magazineWell[] = {};
+		modes[] = {"single","close","short","medium"};
+		class Single: Mode_SemiAuto
+		{
+			displayName = "125mm HE";
+			displayNameShort = "125mm HE";
+			reloadTime = 10;
+			soundContinuous = 0;
+			flash = "gunfire";
+			flashSize = 0.1;
+			aiBurstTerminable = 1;
+			minRange = 1;
+			minRangeProbab = 1;
+			midRange = 2;
+			midRangeProbab = 1;
+			maxRange = 3;
+			maxRangeProbab = 1;
+			dispersion = 0.0009375;
+			textureType = "semi";
+			sounds[] = {"StandardSound"};
+			class StandardSound
+			{
+				soundSetShot[] = {"RHS_120mm_Shot_SoundSet","RHS_120mm_int_Shot_SoundSet","RHS_cannon_Tail_SoundSet"};
+			};
+		};
+		class close: Single
+		{
+			aiRateOfFireDistance = 100;
+			minRange = 10;
+			minRangeProbab = 0.15;
+			midRange = 50;
+			midRangeProbab = 0.4;
+			maxRange = 100;
+			maxRangeProbab = 0.8;
+			showToPlayer = 0;
+		};
+		class short: close
+		{
+			aiRateOfFireDistance = 400;
+			minRange = 100;
+			minRangeProbab = 0.6;
+			midRange = 250;
+			midRangeProbab = 0.85;
+			maxRange = 400;
+			maxRangeProbab = 0.8;
+		};
+		class medium: close
+		{
+			aiRateOfFireDistance = 800;
+			minRange = 400;
+			minRangeProbab = 0.6;
+			midRange = 600;
+			midRangeProbab = 0.85;
+			maxRange = 800;
+			maxRangeProbab = 0.8;
 		};
 	};
 };

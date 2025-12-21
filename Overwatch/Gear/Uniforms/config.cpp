@@ -58,7 +58,7 @@ class CfgWeapons
 		{
 			uniformModel = "-";
 			uniformClass = "OEC_Overwatch_Unit_Base";
-			containerClass = "Supply35";
+			containerClass = "Supply40";
 			mass = 20;
 			hiddenSelections[] = {""};
             scope = 1;
@@ -99,7 +99,7 @@ class CfgWeapons
         class ItemInfo: ItemInfo
         {
             uniformClass = "OEC_Overwatch_Uniform_Medic_Vehicle";
-            containerClass = "Supply240";
+            containerClass = "Supply250";
         };
         class XtdGearInfo
         {

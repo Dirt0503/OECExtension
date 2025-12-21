@@ -328,7 +328,7 @@ class CfgAmmo
 		submunitionInitialOffset[] = {0,0,-0.2};
 		triggerOnImpact = 1;
 		deleteParentWhenTriggered = 0;
-		hit = 150;
+		hit = 250;
 		indirectHit = 14;
 		indirectHitRange = 3;
 		explosive = 0.85;
@@ -388,9 +388,9 @@ class CfgAmmo
 
 	class Ammo_Penetrator_SIPL_HEAT75: ammo_Penetrator_Base
 	{
-		caliber = 40;
+		caliber = 75;
 		warheadName = "TandemHEAT";
-		hit = 500;
+		hit = 850;
 	};
 
 	class OEC_Ammo_Rocket_SIPL_HE: OEC_Ammo_Rocket_SIPL_HEAT75
