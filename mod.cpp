@@ -1,0 +1,12 @@
+name = "OEC Extension";
+tooltipOwned="OEC Extension";
+picture = "OECExtension\OEClogo1.paa";
+logoSmall = "OECExtension\OEClogo1.paa";
+logo = "OECExtension\OEClogo1.paa";
+logoOver = "OECExtension\OEClogo1.paa";
+hideName = 0;
+hidePicture = 0;
+actionName = "Discord";
+action = "https://discord.gg/4Wj2d3D4xz";
+description = "Overwatch Expeditionary Corps Extension";
+overview = "Overwatch Expeditionary Corps Extension";
