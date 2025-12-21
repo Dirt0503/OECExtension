@@ -35,10 +35,10 @@ class CfgMods
     {
         dir = "OECExtension";
         name = "OEC Extension";
-        picture = "\addons\OECExtension\OEClogo1.paa";
-        logo = "\addons\OECExtension\OEClogo1.paa";
-        logoSmall = "\addons\OECExtension\OEClogo1.paa";
-        logoOver = "\addons\OECExtension\OEClogo1.paa";
+        picture = "\@1auxtest\addons\OECExtension\OEClogo1.paa";
+        logo = "\@1auxtest\addons\OECExtension\OEClogo1.paa";
+        logoSmall = "\@1auxtest\addons\OECExtension\OEClogo1.paa";
+        logoOver = "\@1auxtest\addons\OECExtension\OEClogo1.paa";
         tooltip = "OEC Extension";
         tooltipOwned = "OEC Extension";
         overview = "OEC Extension, made for Overwatch Expeditionary Corps.";

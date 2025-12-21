@@ -18,7 +18,7 @@ class CfgMagazines
 		ammo = "OEC_Ammo_46x30";
 		author = "OEC Extension";
 		displayName = "[OEC] 45rnd MP7 Magazine";
-        picture = "\CUP\Weapons\CUP_Weapons_Ammunition\data\ui\m_mp7x20_ca.paa";
+        picture = "\CUP\Weapons\CUP_Weapons_Ammunition\data\ui\m_mp7x40_ca.paa";
 		modelSpecialIsProxy = 1;
 		initspeed = 380;
 		count = 45;
