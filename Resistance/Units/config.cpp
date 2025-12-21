@@ -573,6 +573,257 @@ class CfgGroups
                     };
                 };
             };
+
+            class OEC_Group_CIS_Armor
+            {
+                name = "Armor Groups";
+				aliveCategory = "Armored";
+				class OEC_Group_BTR80_Section
+				{
+					name = "1. BTR-80 APC Section";
+					side = 0;
+					faction = "OEC_Faction_CIS";
+					icon = "\A3\ui_f\data\map\markers\nato\o_armor.paa";
+					class Unit0
+					{
+						side = 0;
+						vehicle = "OEC_BTR80_CIS";
+						rank = "LIEUTENANT";
+						position[] = {0,0,0};
+					};
+					class Unit1
+					{
+						side = 0;
+						vehicle = "OEC_BTR80_CIS";
+						rank = "SERGEANT";
+						position[] = {20.1,-30,3};
+					};
+				};
+
+				class OEC_Group_BTR80_Platoon
+				{
+					name = "2. BTR-80 APC Platoon";
+					side = 0;
+					faction = "OEC_Faction_CIS";
+					icon = "\A3\ui_f\data\map\markers\nato\o_armor.paa";
+					class Unit0
+					{
+						side = 0;
+						vehicle = "OEC_BTR80_CIS";
+						rank = "LIEUTENANT";
+						position[] = {0,0,0};
+					};
+					class Unit1
+					{
+						side = 0;
+						vehicle = "OEC_BTR80_CIS";
+						rank = "SERGEANT";
+						position[] = {20.1,-30,3};
+					};
+                    class Unit2
+					{
+						side = 0;
+						vehicle = "OEC_BTR80_CIS";
+						rank = "SERGEANT";
+						position[] = {-20,-30,3};
+					};
+					class Unit3
+					{
+						side = 0;
+						vehicle = "OEC_BTR80_CIS";
+						rank = "CORPORAL";
+						position[] = {40,-60,3};
+					};
+				};
+
+                class OEC_Group_BTR80_PlatoonAssault
+				{
+					name = "3. BTR-80 APC Assault Platoon";
+					side = 0;
+					faction = "OEC_Faction_CIS";
+					icon = "\A3\ui_f\data\map\markers\nato\o_armor.paa";
+					class Unit0
+					{
+						side = 0;
+						vehicle = "OEC_BTR80_CIS";
+						rank = "LIEUTENANT";
+						position[] = {0,0,0};
+					};
+					class Unit1
+					{
+						side = 0;
+						vehicle = "OEC_BTR80_CIS";
+						rank = "SERGEANT";
+						position[] = {20.1,-30,3};
+					};
+                    class Unit2
+					{
+						side = 0;
+						vehicle = "OEC_BTR80_CIS";
+						rank = "SERGEANT";
+						position[] = {-20,-30,3};
+					};
+					class Unit3
+					{
+						side = 0;
+						vehicle = "OEC_Vehicles_bmp3m";
+						rank = "CORPORAL";
+						position[] = {40,-60,3};
+					};
+				};
+
+                class OEC_Group_BMP3_Section
+				{
+					name = "4. BMP-3 IFV Section";
+					side = 0;
+					faction = "OEC_Faction_CIS";
+					icon = "\A3\ui_f\data\map\markers\nato\o_armor.paa";
+					class Unit0
+					{
+						side = 0;
+						vehicle = "OEC_Vehicles_bmp3m";
+						rank = "LIEUTENANT";
+						position[] = {0,0,0};
+					};
+					class Unit1
+					{
+						side = 0;
+						vehicle = "OEC_Vehicles_bmp3m";
+						rank = "SERGEANT";
+						position[] = {20.1,-30,3};
+					};
+				};
+
+                class OEC_Group_BMP3_Platoon
+				{
+					name = "5. BMP-3 IFV Platoon";
+					side = 0;
+					faction = "OEC_Faction_CIS";
+					icon = "\A3\ui_f\data\map\markers\nato\o_armor.paa";
+					class Unit0
+					{
+						side = 0;
+						vehicle = "OEC_Vehicles_bmp3m";
+						rank = "LIEUTENANT";
+						position[] = {0,0,0};
+					};
+					class Unit1
+					{
+						side = 0;
+						vehicle = "OEC_Vehicles_bmp3m";
+						rank = "SERGEANT";
+						position[] = {20.1,-30,3};
+					};
+                    class Unit2
+					{
+						side = 0;
+						vehicle = "OEC_Vehicles_bmp3m";
+						rank = "SERGEANT";
+						position[] = {-20,-30,3};
+					};
+					class Unit3
+					{
+						side = 0;
+						vehicle = "OEC_Vehicles_bmp3m";
+						rank = "CORPORAL";
+						position[] = {40,-60,3};
+					};
+				};
+
+                class OEC_Group_T80_Section
+				{
+					name = "5. T-80UE Tank Section";
+					side = 0;
+					faction = "OEC_Faction_CIS";
+					icon = "\A3\ui_f\data\map\markers\nato\o_armor.paa";
+					class Unit0
+					{
+						side = 0;
+						vehicle = "OEC_Vehicles_T80_UE1";
+						rank = "LIEUTENANT";
+						position[] = {0,0,0};
+					};
+					class Unit1
+					{
+						side = 0;
+						vehicle = "OEC_Vehicles_T80_UE1";
+						rank = "SERGEANT";
+						position[] = {20.1,-30,3};
+					};
+				};
+
+                class OEC_Group_T80_Platoon
+				{
+					name = "6. T-80UE Tank Platoon";
+					side = 0;
+					faction = "OEC_Faction_CIS";
+					icon = "\A3\ui_f\data\map\markers\nato\o_armor.paa";
+					class Unit0
+					{
+						side = 0;
+						vehicle = "OEC_Vehicles_T80_UE1";
+						rank = "LIEUTENANT";
+						position[] = {0,0,0};
+					};
+					class Unit1
+					{
+						side = 0;
+						vehicle = "OEC_Vehicles_T80_UE1";
+						rank = "SERGEANT";
+						position[] = {20.1,-30,3};
+					};
+                    class Unit2
+					{
+						side = 0;
+						vehicle = "OEC_Vehicles_T80_UE1";
+						rank = "SERGEANT";
+						position[] = {-20,-30,3};
+					};
+					class Unit3
+					{
+						side = 0;
+						vehicle = "OEC_Vehicles_T80_UE1";
+						rank = "CORPORAL";
+						position[] = {40,-60,3};
+					};
+				};
+
+                class OEC_Group_T80_PlatoonCombined
+				{
+					name = "7. T-80UE Combined Platoon";
+					side = 0;
+					faction = "OEC_Faction_CIS";
+					icon = "\A3\ui_f\data\map\markers\nato\o_armor.paa";
+					class Unit0
+					{
+						side = 0;
+						vehicle = "OEC_Vehicles_T80_UE1";
+						rank = "LIEUTENANT";
+						position[] = {0,0,0};
+					};
+					class Unit1
+					{
+						side = 0;
+						vehicle = "OEC_Vehicles_T80_UE1";
+						rank = "SERGEANT";
+						position[] = {20.1,-30,3};
+					};
+                    class Unit2
+					{
+						side = 0;
+						vehicle = "OEC_Vehicles_bmp3m";
+						rank = "SERGEANT";
+						position[] = {-20,-30,3};
+					};
+					class Unit3
+					{
+						side = 0;
+						vehicle = "OEC_Vehicles_bmp3m";
+						rank = "CORPORAL";
+						position[] = {40,-60,3};
+					};
+				};
+            };
         };
     };
 };

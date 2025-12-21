@@ -34,7 +34,7 @@ class CfgPatches
 		{
             "OEC_zsutank_base",
             "OEC_zsu234_AA",
-            "OEC_BTR80_Base",
+     //       "OEC_BTR80_Base",
             "OEC_BTR80_CIS",
 			"OEC_Vehicles_bmp3m",
 			"OEC_Vehicles_T80_UE1"
