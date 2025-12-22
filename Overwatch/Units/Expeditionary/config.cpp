@@ -153,7 +153,7 @@ class CfgVehicles
         {
             class OEC_Combine_SoldierAssign_Event
             {
-                init = "_this call oec_fnc_cmbSoldier;";
+                init = "_this call oec_fnc_cmbGrunt;";
             };
         };
     };
@@ -260,7 +260,7 @@ class CfgVehicles
         {
             class OEC_Combine_SoldierAssign_Event
             {
-                init = "_this call oec_fnc_cmbOrdinal;";
+                init = "_this call oec_fnc_cmbRanger;";
             };
         };
     };

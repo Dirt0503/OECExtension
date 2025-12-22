@@ -1,3 +1,3 @@
 params ["_unit"];
 
-_unit setVariable ["WBK_CombineType", " Ranger_", true];
+_unit setVariable ["WBK_CombineType", " ranger_", true];
