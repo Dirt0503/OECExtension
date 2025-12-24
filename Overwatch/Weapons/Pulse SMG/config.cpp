@@ -43,6 +43,7 @@ class CfgWeapons
 		reloadAction = "WBK_HLA_OrdinalArReload";
 		picture = "\hl_cmb_weapons\UI\w_ar2_x_ca.paa";
 		muzzles[] = {"this"};
+		mass = 85;
         class Library
 		{
 			libTextDesc = "Overwatch Standard Issue Pulse SMG. Pulse ammo has no damage dropoff and is not affected by gravity, but will dissipate beyond 200m.";

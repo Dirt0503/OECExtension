@@ -43,6 +43,7 @@ class CfgWeapons
         _generalMacro = "";
         muzzles[] = {"this"};
 		modes[] = {"FullAuto450", "FullAuto600", "FullAuto750","close","near","short","medium","far"};
+		mass = 262;
 		class Library
 		{
 			libTextDesc = "Overwatch Standard Issue HMG. This unstable ammunition has no damage dropoff and is not affected by gravity, but will dissipate beyond 300m.";

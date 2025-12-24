@@ -355,7 +355,7 @@ class CfgWeapons
 		dexterity = 1.1;
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			mass = 100;
+			mass = 130;
 			class PointerSlot: PointerSlot
 			{
 				iconPosition[] = {0.15,0.5};

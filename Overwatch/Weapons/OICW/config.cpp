@@ -47,7 +47,7 @@ class CfgMagazines
 		model = "\a3\Weapons_F_Exp\MagazineProxies\mag_556x45_stanag_30rnd.p3d";
 		modelSpecialIsProxy = 1;
 		count = 30;
-		mass = 10;
+		mass = 11.5;
 		tracersEvery = 1;
     };
 
@@ -151,6 +151,7 @@ class CfgWeapons
 	{
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
+			mass = 120;
 			class CowsSlot
 			{
 				linkProxy = "\A3\data_f\proxies\weapon_slots\TOP";
@@ -163,7 +164,7 @@ class CfgWeapons
 		};
 		reloadMagazineSound[] = {"WBK_Combines\weapons\OICW_reloadSnd.ogg",1,1,30};
 		reloadSound[] = {"WBK_Combines\weapons\OICW_reloadSnd.ogg",1,1,30};
-		author = "Dirt's OEC Extension";
+		author = "OEC Extension";
         displayName = "[OEC] XM29 OICW Rifle";
 		scopeArsenal = 2;
 		scope = 2;

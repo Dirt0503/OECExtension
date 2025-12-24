@@ -94,6 +94,7 @@ class CfgWeapons
 	{
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
+			mass = 75;
 			class CowsSlot
 			{
 				linkProxy = "\A3\data_f\proxies\weapon_slots\TOP";
