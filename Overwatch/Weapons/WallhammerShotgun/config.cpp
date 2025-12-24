@@ -30,6 +30,7 @@ class CfgWeapons
 		reloadAction = "WBK_HLA_ChargerShotgun_reload";
 		reloadMagazineSound[] = {"WBK_Combines\weapons\shotgun_reloadSnd.ogg",1,1,30};
 		model = "WBK_Combines\weapons\charger_shotgun.p3d";
+        mass = 135;
 		class GunParticles
 		{
 			class Effect1

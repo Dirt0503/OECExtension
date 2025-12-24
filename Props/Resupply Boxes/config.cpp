@@ -209,6 +209,11 @@ class CfgVehicles
 				magazine = "OEC_Magazine_cmbSrifle_AP";
 				count = 30;
 			};
+			class XX_OEC_Magazine_R1
+			{
+				magazine = "OEC_Magazine_R1";
+				count = 40;
+			}; 
 		};
 		class TransportWeapons
 		{
