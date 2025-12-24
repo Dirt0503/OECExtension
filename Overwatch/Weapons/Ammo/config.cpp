@@ -80,8 +80,8 @@ class CfgAmmo
     // OICW Ammo
 	class OEC_Ammo_OICW: B_65x39_Caseless
     {
-		hit = 11;
-		caliber = 1.25;
+		hit = 12.5;
+		caliber = 1.5;
         typicalSpeed = 820;
 		airFriction = -0.0009;
 		model = "\hl_cmb_weapons\ar2\Data\bullettracer\tracer_blue";
@@ -91,12 +91,12 @@ class CfgAmmo
 	class BulletBase;
 	class OEC_Ammo_AR2: BulletBase
 	{
-		airLock = 1;
+		airLock = 0;
 		hit = 13;
 		indirectHit = 0;
 		indirectHitRange = 0;
 		typicalSpeed = 770;
-		airFriction = -0.0006;
+		airFriction = 0;
 		deflecting = 0;
 		timeToLive = 0.666666667;
 		caliber = 1.5;
@@ -110,6 +110,51 @@ class CfgAmmo
 		suppressionRadiusBulletClose = 6;
 		suppressionRadiusHit = 8;
 		coefGravity = 0.01;
+	};
+
+	// R-2X Sniper Ammo
+	class OEC_Ammo_cmbSrifle_normal: OEC_Ammo_AR2
+	{
+		hit = 40;
+		indirectHit = 0;
+		indirectHitRange = 0;
+		visibleFire = 5;
+		audibleFire = 40;
+		visibleFireTime = 3;
+		cost = 7;
+		caliber = 3;
+		typicalSpeed = 1000;
+		timeToLive = 1.2;
+		model = "\hl_cmb_weapons\ar2\Data\bullettracer\tracer_blue";
+		tracerScale = 2.5;
+		tracerStartTime = 0.005;
+		tracerEndTime = 10;
+		deflecting = 0;
+		deflectionSlowDown = 0.8;
+		airFriction = 0;
+		coefgravity = 1e-005;
+		class CamShakeExplode
+		{
+			power = 3.60555;
+			duration = 0.8;
+			frequency = 20;
+			distance = 10.8167;
+		};
+		class CamShakeHit
+		{
+			power = 13;
+			duration = 0.4;
+			frequency = 20;
+			distance = 1;
+		};
+		effectFly = "OEC_ParticleEffect_AlienPulse_Blue_sRifle";
+	};
+	class OEC_Ammo_cmbSrifle_AP: OEC_Ammo_cmbSrifle_normal
+	{
+		hit = 40;
+		caliber = 75;
+		tracerScale = 2.5;
+		model = "\A3\Weapons_f\Data\bullettracer\tracer_yellow";
 	};
 
 	// Pulse SMG Ammo

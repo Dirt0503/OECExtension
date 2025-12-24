@@ -33,6 +33,13 @@ class CfgLights
         flareMaxDistance = 6000;
     };
 
+    class OEC_Light_AlienPulse_Blue_sRifle: OEC_Light_AlienPulse_Blue
+    {
+        useFlare = 0;
+        intensity = 200000;
+    };
+
+
     class OEC_Light_AlienPulse_Orange: OEC_Light_AlienPulse_Blue
     {
         color[] = {1, 0.65, 0, 1};
@@ -101,6 +108,16 @@ class OEC_ParticleEffect_AlienPulse_Blue
 		enabled = "speedY interpolate [-0.0001,0.0001,1,-1]";
 		intensity = 1;
 		interval = 1;
+    };
+};
+
+class OEC_ParticleEffect_AlienPulse_Blue_sRifle
+{
+    class Light
+    {
+        simulation = "light";
+        type = "OEC_Light_AlienPulse_Blue_sRifle";
+        position[] = {0,0,0};
     };
 };
 
