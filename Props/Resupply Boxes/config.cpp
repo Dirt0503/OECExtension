@@ -214,6 +214,16 @@ class CfgVehicles
 				magazine = "OEC_Magazine_R1";
 				count = 40;
 			}; 
+			class XX_OEC_Magazine_M320_Smoke
+			{
+				magazine = "OEC_Magazine_M320_Smoke";
+				count = 30;
+			};
+			class XX_OEC_Magazine_M320_Stun
+			{
+				magazine = "OEC_Magazine_M320_Stun";
+				count = 40;
+			};
 		};
 		class TransportWeapons
 		{
@@ -297,81 +307,4 @@ class CfgVehicles
 			init = "''";
 		};
 	};
-
-    /*class OEC_Prop_Resupply_bigMedic: OEC_Prop_Resupply_bigAmmo
-	{
-		displayName = "Large Medical Resupply";
-		editorPreview = "\A3\EditorPreviews_F_Orange\Data\CfgVehicles\C_IDAP_supplyCrate_F.jpg";
-		hiddenSelectionsTextures[] = {"\a3\Supplies_F_Orange\Ammoboxes\Data\supplydrop_idap_co.paa"};
-		class TransportMagazines{};
-		class TransportWeapons{};
-		class TransportItems
-		{
-			class XX_ACE_tourniquet
-			{
-				name = "ACE_tourniquet";
-				count = 60;
-			};
-			class XX_ACE_splint
-			{
-				name = "ACE_splint";
-				count = 80;
-			};
-			class XX_ACE_plasmaIV_250
-			{
-				name = "ACE_plasmaIV_250";
-				count = 100;
-			};
-			class XX_ACE_plasmaIV_500
-			{
-				name = "ACE_plasmaIV_500";
-				count = 100;
-			};
-			class XX_ACE_plasmaIV_1000
-			{
-				name = "ACE_plasmaIV";
-				count = 100;
-			};
-			class XX_ACE_elasticBandage
-			{
-				name = "ACE_elasticBandage";
-				count = 800;
-			};
-			class XX_ACE_quikclot
-			{
-				name = "ACE_quikclot";
-				count = 800;
-			};
-			class XX_ACE_packingBandage
-			{
-				name = "ACE_packingBandage";
-				count = 800;
-			};
-			class XX_ACE_painkiller
-			{
-				name = "ACE_Painkillers";
-				count = 60;
-			};
-			class XX_ACE_epinephrine
-			{
-				name = "ACE_epinephrine";
-				count = 100;
-			};
-			class XX_ACE_morphine
-			{
-				name = "ACE_morphine";
-				count = 100;
-            };
-			class XX_ACE_surgicalKit
-			{
-				name = "ACE_surgicalKit";
-				count = 10;
-			};
-			class XX_ACE_bodyBag_blue
-			{
-				name = "ACE_bodyBag_blue";
-				count = 20;
-			};
-		};
-	};*/
 };

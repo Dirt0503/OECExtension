@@ -48,7 +48,7 @@ class CfgMagazines
 		initspeed = 80;
 		count = 2;
 		mass = 4.125;
-		picture = "\A3\Weapons_f\Data\ui\gear_UGL_slug_CA.paa";
+		picture = "\A3\Weapons_f\Data\UI\gear_UGL_Smokeshell_white_CA.paa";
 	};
     // Cmb 20mm Stun Grenade
 	class OEC_Magazine_OICW_Stun_3rnd;
@@ -58,17 +58,19 @@ class CfgMagazines
 		initspeed = 80;
 		count = 1;
 		mass = 8.25;
-		picture = "\A3\Weapons_f\Data\ui\gear_UGL_slug_CA.paa";
+		picture = "\rhsusf\addons\rhsusf_weapons\icons\m576_buckshot_ca.paa";
 	};
     // Cmb 20mm Flares
 	class OEC_Magazine_OICW_red_6rnd;
 	class OEC_Magazine_SMG46_red_2Rnd: OEC_Magazine_OICW_red_6rnd
 	{
+		scope = 1;
+		scopeArsenal = 1;
 		displayName = "[OEC] MP7 Flare (Red) 2Rnd Mag";
 		initspeed = 80;
 		count = 2;
 		mass = 1.65;
-		picture = "\A3\Weapons_f\Data\ui\gear_UGL_slug_CA.paa";
+		picture = "\A3\Weapons_F\Data\UI\gear_UGL_Flare_red_CA.paa";
 	};
     class OEC_Magazine_OICW_green_6rnd;
 	class OEC_Magazine_SMG46_green_2Rnd: OEC_Magazine_OICW_green_6rnd
@@ -77,7 +79,7 @@ class CfgMagazines
 		initspeed = 80;
 		count = 2;
 		mass = 1.65;
-		picture = "\A3\Weapons_f\Data\ui\gear_UGL_slug_CA.paa";
+		picture = "\A3\Weapons_F\Data\UI\gear_UGL_Flare_green_CA.paa";
 	};
 };
 
@@ -136,7 +138,7 @@ class CfgWeapons
 			descriptionShort = "20mm 2GL";
             useModelOptics = 10;
 			useExternalOptic = 0;
-			magazines[] = {"OEC_Magazine_SMG46_HE_2Rnd", "OEC_Magazine_SMG46_Smoke_2Rnd", "OEC_Magazine_SMG46_Stun_1Rnd", "OEC_Magazine_SMG46_red_2Rnd", "OEC_Magazine_SMG46_green_2Rnd"};
+			magazines[] = {"OEC_Magazine_SMG46_HE_2Rnd", "OEC_Magazine_SMG46_Smoke_2Rnd", "OEC_Magazine_SMG46_Stun_1Rnd", "OEC_Magazine_SMG46_green_2Rnd"};
 			magazineWell[] = {};
 			cameraDir = "OP_look";
 			discreteDistance[] = {100,200,300,400};

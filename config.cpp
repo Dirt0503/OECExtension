@@ -15,6 +15,7 @@ class CfgPatches
             "WBK_Combinus",
             "rhs_c_weapons",
             "rhs_c_heavyweapons",
+            "rhsusf_c_weapons",
             "A3_Data_F_Oldman_Loadorder",
             "A3_Armor_F",
             "cup_weapons_grenadelaunchers",

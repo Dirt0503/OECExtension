@@ -76,7 +76,7 @@ class CfgMagazines
 	{
 		author = "OEC Extension";
 		displayName = "[OEC] XM29 Instant Smoke 6Rnd Mag";
-		displaynameshort = "Impact Smoke";
+		displaynameshort = "Instant Smoke";
 		descriptionShort = "Standard 20mm Combine Instant Smoke Grenade";
 		ammo = "OEC_Ammo_CMB20mm_smoke";
 		nameSoundWeapon = "smokeshell";
@@ -105,6 +105,8 @@ class CfgMagazines
 	// Cmb 20mm Flares
 	class OEC_Magazine_OICW_red_6rnd: OEC_Magazine_OICW_HE_6rnd
 	{
+		scope = 1;
+		scopeArsenal = 1;
 		author = "OEC Extension";
 		displayName = "[OEC] XM29 Flare (Red) 6Rnd Mag";
 		displaynameshort = "Red Flare";
@@ -195,7 +197,7 @@ class CfgWeapons
 			descriptionShort = "20mm 6GL";
             useModelOptics = 10;
 			useExternalOptic = 0;
-			magazines[] = {"OEC_Magazine_OICW_HE_6rnd", "OEC_Magazine_OICW_Smoke_6rnd", "OEC_Magazine_OICW_Stun_3rnd", "OEC_Magazine_OICW_red_6rnd", "OEC_Magazine_OICW_green_6rnd"};
+			magazines[] = {"OEC_Magazine_OICW_HE_6rnd", "OEC_Magazine_OICW_Smoke_6rnd", "OEC_Magazine_OICW_Stun_3rnd", "OEC_Magazine_OICW_green_6rnd"};
 			magazineWell[] = {};
 			cameraDir = "OP_look";
 			discreteDistance[] = {100,200,300,400};

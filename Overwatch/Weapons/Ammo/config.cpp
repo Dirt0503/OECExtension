@@ -256,6 +256,29 @@ class CfgAmmo
 		effectFly = "OEC_ParticleEffect_Gren";
 	};
 
+	//cmb colored smoke
+	class SmokeShellYellow;
+	class SmokeShellGreen;
+	class SmokeShellRed;
+	class OEC_Ammo_CMB40mm_smokeRed: SmokeShellRed
+	{
+		model = "\A3\weapons_f\ammo\UGL_slug";
+		explosionTime = -1;
+		timeToLive = 30;
+	};
+	class OEC_Ammo_CMB40mm_smokeGreen: SmokeShellGreen
+	{
+		model = "\A3\weapons_f\ammo\UGL_slug";
+		explosionTime = -1;
+		timeToLive = 30;
+	};
+	class OEC_Ammo_CMB40mm_smokeYellow: SmokeShellYellow
+	{
+		model = "\A3\weapons_f\ammo\UGL_slug";
+		explosionTime = -1;
+		timeToLive = 30;
+	};
+
 	// Cmb Stun Grenades
 	class OEC_Ammo_CMB20mm_stun: OEC_Ammo_CMB20mm
 	{
@@ -264,7 +287,7 @@ class CfgAmmo
 		indirectHit = 0;
 		indirectHitRange = 0;
 		typicalspeed = 70;
-		fuseDistance=2;
+		fuseDistance = 2;
 		explosionTime = -1;
 		ExplosionEffects = "RHS_flashbang_10";
 		explosive = 1;
@@ -296,6 +319,17 @@ class CfgAmmo
 		affectedByWind = 1;
 		flareSize = 20;
 		effectFlare = "RHS_FlareShell_Red";
+		aiAmmoUsageFlags = 0.5;
+	};
+
+	class F_40mm_Yellow;
+	class OEC_Ammo_CMB20mm_yellow: F_40mm_Yellow
+	{
+		brightness = 25; // def 12
+		timeToLive = 60; // def 25
+		intensity = 1000000;
+		affectedByWind = 1;
+		flareSize = 20;
 		aiAmmoUsageFlags = 0.5;
 	};
 
