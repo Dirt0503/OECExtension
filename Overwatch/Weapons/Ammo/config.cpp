@@ -73,7 +73,7 @@ class CfgAmmo
 		tracerScale = 1.2;
         triggerTime = 0.002;
 		cartridge = "FxCartridge_slug";
-        submunitionConeAngle = 1.5;
+        submunitionConeAngle = 1.1;
         submunitionCount = 8;
         submunitionAmmo = "OEC_Ammo_SPAS12_Buckshot_Pellets";
         submunitionInitialOffset[] = {0, 0, -0.2};
@@ -90,7 +90,7 @@ class CfgAmmo
 		model = "\A3\Weapons_f\Data\bullettracer\tracer_green";
 		tracerStartTime = 0.005;
 		tracerEndTime = 3;
-		tracerScale = 1.2;
+		tracerScale = 1.75;
         hit = 35;
 		indirectHit = 0;
 		indirectHitRange = 0;
