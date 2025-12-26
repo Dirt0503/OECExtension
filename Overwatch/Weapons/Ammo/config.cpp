@@ -69,8 +69,8 @@ class CfgAmmo
     {
 		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
 		tracerStartTime = 0.005;
-		tracerEndTime = 3;
-		tracerScale = 1.2;
+		tracerEndTime = 10;
+		tracerScale = 1;
         triggerTime = 0.002;
 		cartridge = "FxCartridge_slug";
         submunitionConeAngle = 1.1;
@@ -82,15 +82,15 @@ class CfgAmmo
         timeToLive = 1;
         hit = 1;
         cost = 1;
-		airFriction = -0.008;
+		airFriction = -0.013;
     };
 
     class OEC_Ammo_SPAS12_Slug: BulletBase
     {
 		model = "\A3\Weapons_f\Data\bullettracer\tracer_green";
 		tracerStartTime = 0.005;
-		tracerEndTime = 3;
-		tracerScale = 1.75;
+		tracerEndTime = 10;
+		tracerScale = 1.5;
         hit = 35;
 		indirectHit = 0;
 		indirectHitRange = 0;
@@ -106,11 +106,11 @@ class CfgAmmo
     {
         model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
 		tracerStartTime = 0.005;
-		tracerEndTime = 3;
-		tracerScale = 1.2;
-        airFriction = -0.0115;
-        hit = 8;
-        caliber = 3.5;
+		tracerEndTime = 10;
+		tracerScale = 1;
+        airFriction = -0.013;
+        hit = 6.5;
+        caliber = 3;
         timeToLive = 0.6;
 		typicalSpeed = 590;
     };
