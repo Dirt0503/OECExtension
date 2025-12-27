@@ -47,6 +47,22 @@ class CfgMagazines
 	};
 }; 
 
+class CfgSoundSets
+{
+	class Rifle_Shot_Base_SoundSet;
+	class OEC_Shot_Sniper_Soundset: Rifle_Shot_Base_SoundSet
+	{
+		soundShaders[] = {"WBK_SniperRifle_HL_Shot_FireClose","WBK_SniperRifle_HL_Shot_FireDistance"};
+		volumeFactor = 1;
+		volumeCurve = "InverseSquare2Curve";
+		sound3DProcessingType = "WeaponMediumShot3DProcessingType";
+		distanceFilter = "weaponShotDistanceFreqAttenuationFilter";
+		spatial = 1;
+		doppler = 0;
+		loop = 0;
+	};
+};
+
 class Mode_SemiAuto;
 class CfgWeapons
 {
@@ -113,6 +129,7 @@ class CfgWeapons
 		magazines[] = {"OEC_Magazine_cmbSrifle", "OEC_Magazine_cmbSrifle_AP", "OEC_Magazine_cmbSrifle_HE"};
         magazineWell[] = {};
 
+		modes[] = {"Single"};
 		class Single: Mode_SemiAuto
 		{
 			sounds[] = {"StandardSound"};
@@ -124,12 +141,9 @@ class CfgWeapons
 			};
 			class StandardSound: BaseSoundModeType
 			{
-				soundSetShot[] = {"WBK_SniperRifleCombine_Shot_Base_Soundset"};
-				begin1[] = {"WBK_Combines\weapons\AR1_Fire_4.ogg",0.9,1,1000};
-				begin2[] = {"WBK_Combines\weapons\AR1_Fire_2.ogg",0.9,1,1000};
-				begin3[] = {"WBK_Combines\weapons\AR1_Fire_3.ogg",0.9,1,1000};
-				begin4[] = {"WBK_Combines\weapons\AR1_Fire_1.ogg",0.9,1,1000};
-				soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};
+				soundSetShot[] = {"OEC_Shot_Sniper_Soundset"};
+				begin1[] = {"OECExtension\Overwatch\Weapons\data\combinesniperfire.wss",0.9,1,1000};
+				soundBegin[] = {"begin1", 1};
 				class SoundTails
 				{
 					class TailInterior
