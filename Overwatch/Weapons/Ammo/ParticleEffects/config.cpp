@@ -38,11 +38,12 @@ class CfgLights
         useFlare = 0;
         intensity = 300000;
     };
-    class OEC_Light_AlienPulse_Orange_sRifle: OEC_Light_AlienPulse_Blue_sRifle
+    class OEC_Light_AlienPulse_Orange_sRifle: OEC_Light_AlienPulse_Blue
     {
+        useFlare = 0;
+        intensity = 300000;
         color[] = {1, 0.65, 0, 1};
     };
-
 
     class OEC_Light_AlienPulse_Orange: OEC_Light_AlienPulse_Blue
     {
