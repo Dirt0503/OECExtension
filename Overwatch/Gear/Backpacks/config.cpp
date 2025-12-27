@@ -14,7 +14,8 @@ class CfgPatches
             "OEC_Overwatch_Backpack_OxygenTank_White",
             "OEC_Overwatch_Backpack_OxygenTank_Airwatch",
             "OEC_Overwatch_Backpack_Dark",
-            "OEC_Overwatch_Backpack_White"
+            "OEC_Overwatch_Backpack_White",
+            "OEC_Overwatch_Backpack_LR_Black"
         };
         weapons[] = {};
     };
