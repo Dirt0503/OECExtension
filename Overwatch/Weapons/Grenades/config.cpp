@@ -20,7 +20,7 @@ class CfgMagazines
         displayNameShort = "MK3A2 Grenade";
         descriptionShort = "Repurposed Pre-War Explosive Grenade";
 
-        picture = "\rhsusf\addons\rhsusf_weapons\icons\g_mk3a2_ca.paa";
+        picture = "\OECExtension\Overwatch\Weapons\data\FragNade.paa";
         model = "\rhsusf\addons\rhsusf_weapons\grenades\mk3a2\mk3a2";
     };
 };

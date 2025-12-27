@@ -20,7 +20,7 @@ class CfgMagazines
 		displayName = "[OEC] 30rnd AR-2 Cell";
 		count = 30;
 		initSpeed = 750;
-		picture = "\hl_cmb_weapons\UI\m_ar2_ca.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\AR2mag.paa";
 		tracersEvery = 1;
 		mass = 25;
 	};
@@ -33,7 +33,7 @@ class CfgMagazines
 		displayName = "[OEC] 20rnd R-1 Cell";
 		count = 20;
 		initSpeed = 770;
-		picture = "\hl_cmb_weapons\UI\m_ar2_ca.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\R1mag.paa";
 		tracersEvery = 1;
 		mass = 20;
 	};
@@ -245,7 +245,7 @@ class CfgWeapons
 		reloadAction = "WBK_HLA_OrdinalArReload";
 		baseWeapon = "OEC_Weapon_R1";
 		model = "\WBK_Combines\weapons\ordinal_ar.p3d";
-		picture = "\hl_cmb_weapons\UI\w_ar2_x_ca.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\R1rifle.paa";
 		magazines[] = {"OEC_Magazine_R1"};
 		magazineWell[] = {};
 		class Library

@@ -25,7 +25,7 @@ class CfgWeapons
         magazines[] = {"OEC_Magazine_WallhammerShotgun_8Rnd"};
         magazineWell[] = {};
 
-        picture = "\hl_cmb_weapons\UI\w_spas12_x_ca.paa";
+        picture = "\OECExtension\Overwatch\Weapons\data\WallhammerShotgun.paa";
 		drySound[] = {"WBK_Combines\weapons\shotgun_empty.wav",1,1,10};
 		reloadAction = "WBK_HLA_ChargerShotgun_reload";
 		reloadMagazineSound[] = {"WBK_Combines\weapons\shotgun_reloadSnd.ogg",1,1,30};

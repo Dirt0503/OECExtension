@@ -24,7 +24,7 @@ class CfgMagazines
 		displayName = "[OEC] R-2X Cell - Standard";
 		count = 1;
 		initSpeed = 1000;
-		picture = "\rhsusf\addons\rhsusf_weapons2\icons\rhs_icon_m781_ca.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\sniperMag.paa";
 		tracersEvery = 1;
 		mass = 2.5;
 	};
@@ -36,7 +36,7 @@ class CfgMagazines
 		displayName = "[OEC] R-2X Cell - Piercer";
 		count = 1;
 		initSpeed = 1000;
-		picture = "\rhsusf\addons\rhsusf_weapons2\icons\rhs_icon_m443_ca.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\sniperMagAP.paa";
 		tracersEvery = 1;
 		mass = 5;
 	};
@@ -96,6 +96,7 @@ class CfgWeapons
 		reloadAction = "WBK_HLA_OrdinalArReload";
 		reloadMagazineSound[] = {"WBK_Combines\weapons\sniper_reload.wav",2,1,30};
 		model = "WBK_Combines\weapons\assasin_sniper.p3d";
+		picture = "\OECExtension\Overwatch\Weapons\data\R2Xsniper.paa";
 		handAnim[] = {"OFP2_ManSkeleton","WBK_Combines\weapons\assasin_sniper_idle.rtm"};
 		magazines[] = {"OEC_Magazine_cmbSrifle", "OEC_Magazine_cmbSrifle_AP", "OEC_Magazine_cmbSrifle_HE"};
         magazineWell[] = {};

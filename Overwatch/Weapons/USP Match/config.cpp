@@ -18,7 +18,7 @@ class CfgMagazines
 		ammo = "OEC_Ammo_46x30";
 		author = "OEC Extension";
 		displayName = "[OEC] 18rnd USP Match Magazine";
-        picture = "\A3\Weapons_F\Data\UI\M_30Rnd_45ACP_CA.paa";
+        picture = "\OECExtension\Overwatch\Weapons\data\pistolMag.paa";
 		modelSpecialIsProxy = 1;
 		initspeed = 390;
 		count = 18;
@@ -46,7 +46,7 @@ class CfgWeapons
 		scope = 2;
 		baseWeapon = "OEC_Weapon_USP";
 		model = "\hl_cmb_weapons\usp\usp.p3d";
-		picture = "\hl_cmb_weapons\UI\w_usp_x_ca.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\USPmatch.paa";
 		UiPicture = "\A3\weapons_f\data\UI\icon_regular_CA.paa";
 		reloadAction = "WBK_HL_pistol_reload";
 		reloadMagazineSound[] = {"WBK_Combines\weapons\pistol_reload.ogg",1,1,30};

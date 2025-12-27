@@ -23,7 +23,7 @@ class CfgMagazines
         displayName = "[OEC] 8 SPAS-12 Buckshot Shells";
         displayNameShort = "Buckshot";
         descriptionshort = "Buckshot shell for SPAS-12 Shotgun.";
-        picture = "\CUP\Weapons\CUP_Weapons_Ammunition\data\ui\m_12gauge_ca.paa";
+        picture = "\OECExtension\Overwatch\Weapons\data\buckshotMag.paa";
         ammo = "OEC_Ammo_SPAS12_Buckshot";
         count = 8;
         initSpeed = 600;
@@ -35,7 +35,7 @@ class CfgMagazines
         displayName = "[OEC] 8 SPAS-12 Slug Shells";
         displayNameShort = "Slug";
         descriptionshort = "Slug shell for SPAS-12 Shotgun.";
-        picture = "\CUP\Weapons\CUP_Weapons_Ammunition\data\ui\m_12gauge_slug_ca.paa";
+        picture = "\OECExtension\Overwatch\Weapons\data\slugMag.paa";
         ammo = "OEC_Ammo_SPAS12_Slug";
         tracersEvery = 1;
         mass = 15;
@@ -65,7 +65,7 @@ class CfgWeapons
 		scope = 2;
 		descriptionShort = "Overwatch Standard Issue Ballistic Shotgun";
 		model = "CUP\Weapons\CUP_Weapons_SPAS12\CUP_sgun_SPAS12";
-		picture = "\CUP\Weapons\CUP_Weapons_SPAS12\data\ui\gear_SPAS12_X_ca.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\SPAS12.paa";
 		magazines[] = {"OEC_Magazine_SPAS12_8Rnd", "OEC_Magazine_SPAS12_8Rnd_Slug"};
         magazineWell[] = {};
 		handAnim[] = {"OFP2_ManSkeleton","\CUP\Weapons\CUP_Weapons_SPAS12\data\anim\spas_hand.rtm"};

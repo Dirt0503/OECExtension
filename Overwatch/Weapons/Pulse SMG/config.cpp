@@ -17,6 +17,7 @@ class CfgMagazines
 		scope = 2;
 		ammo = "OEC_Ammo_PulseSMG";
 		author = "OEC Extension";
+		picture = "\hl_cmb_weapons\UI\m_ar2_ca.paa";
 		displayName = "[OEC] 60rnd AR-1s Cell";
 		count = 60;
 		mass = 30;
@@ -41,7 +42,7 @@ class CfgWeapons
 		magazineWell[] = {};
 		reloadMagazineSound[] = {"WBK_Combines\weapons\ordinal_ar_reload.ogg",1.05,1,16};
 		reloadAction = "WBK_HLA_OrdinalArReload";
-		picture = "\hl_cmb_weapons\UI\w_ar2_x_ca.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\PulseSMG.paa";
 		muzzles[] = {"this"};
 		mass = 85;
         class Library

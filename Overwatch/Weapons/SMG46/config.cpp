@@ -18,7 +18,7 @@ class CfgMagazines
 		ammo = "OEC_Ammo_46x30";
 		author = "OEC Extension";
 		displayName = "[OEC] 45rnd MP7 Magazine";
-        picture = "\CUP\Weapons\CUP_Weapons_Ammunition\data\ui\m_mp7x40_ca.paa";
+        picture = "\OECExtension\Overwatch\Weapons\data\SMG46mag.paa";
 		modelSpecialIsProxy = 1;
 		initspeed = 380;
 		count = 45;
@@ -114,7 +114,7 @@ class CfgWeapons
 		scopeArsenal = 2;
 		scope = 2;
 		descriptionShort = "Overwatch Standard Issue Ballistic Submachine Gun";
-        picture = "\CUP\Weapons\CUP_Weapons_MP7\data\ui\gear_smg_MP7_X_CA.paa";
+        picture = "\OECExtension\Overwatch\Weapons\data\SMG46.paa";
 		baseWeapon = "OEC_Weapon_SMG46";
 		model = "\WBK_Combines\weapons\grunt_smg.p3d";
 		reloadMagazineSound[] = {"WBK_Combines\weapons\smg_reload.ogg",1,1,30};

@@ -27,7 +27,7 @@ class CfgWeapons
         author = "OEC";
         displayName = "[OEC] APF Suppressor";
 
-        picture = "\hl_cmb_weapons\UI\w_ar2_x_ca.paa";
+        picture = "\OECExtension\Overwatch\Weapons\data\APFSuppressor.paa";
         model = "WBK_Combines\weapons\supressor_LMG.p3d";
 
         scope = 2;
