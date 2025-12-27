@@ -49,14 +49,44 @@ class CfgMods
     };
 };
 
+class CfgAmmo
+{
+	rd501_fired_script_enabled = 1;
+};
+
+class CfgFunctions
+{
+    class OEC
+    {
+        class zeusLogin
+        {
+            file = "OECExtension\Scripts\ZeusLogin";
+            class ZL_globalMessage {};
+			class ZL_grant {};
+			class ZL_localInit {};
+			class ZL_logout {};
+			class ZL_login {};
+			class ZL_revoke {};
+        };
+        /*class Internal
+        {
+            //file = "OECExtension\Scripts\Internal";
+            //class internal_EVNT_handlePlayerFired{};
+        };*/
+    };
+};
+
 class Extended_PostInit_EventHandlers
 {
     class Dirts_Visor_Extension
     {
         init = "call compile preprocessFileLineNumbers '\OECExtension\Scripts\OEC_patchHelmets.sqf'";
     };
+    class OEC_ZuesLogin
+    {
+        clientInit = "call compile preprocessFileLineNumbers '\OECExtension\Scripts\ZeusLogin\fn_ZL_localInit.sqf'";
+    };
 };
-
 
 class CfgFactionClasses
 {

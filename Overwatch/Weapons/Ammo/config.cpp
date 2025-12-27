@@ -11,6 +11,7 @@ class CfgPatches
 
 class CfgAmmo
 {
+
     class SubmunitionBullet;
     class GrenadeHand;
     class B_65x39_Caseless;
