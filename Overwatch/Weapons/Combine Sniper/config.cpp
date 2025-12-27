@@ -43,6 +43,7 @@ class CfgMagazines
 }; 
 
 class Mode_SemiAuto;
+class PointerSlot;
 class CfgWeapons
 {
     class srifle_GM6_F
@@ -57,7 +58,13 @@ class CfgWeapons
 			class CowsSlot{};
 			class MuzzleSlot{};
 			class UnderBarrelSlot{};
-			class PointerSlot{};
+			class PointerSlot: PointerSlot
+			{
+				compatibleItems[] = 
+                {
+                    "OEC_Accessories_SniperLaser"
+                };
+			};
 		};
 
         modelOptics[] = {"\A3\Weapons_F\acc\reticle_lrps_F","\A3\Weapons_F\acc\reticle_lrps_z_F"};
