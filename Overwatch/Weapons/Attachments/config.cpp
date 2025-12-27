@@ -43,10 +43,10 @@ class CfgWeapons
 				irLaserEnd = "laser dir";
 				DotSize = 0.2;
                 irDotSize = 0.2;
-                dotColor[] = {275,675,800};
+                dotColor[] = {438,748,973};
 				beamThickness = 0.12;
 				beamMaxLength = 1200;
-				beamColor[] = {275,675,800};
+				beamColor[] = {471,867,891};
 			};
 			class FlashLight{};
 		};
