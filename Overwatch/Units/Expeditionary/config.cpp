@@ -161,6 +161,9 @@ class CfgVehicles
     {
         displayName = "Ranger";
         uniformClass = "OEC_Overwatch_Uniform_Recon";
+        weapons[] = {"OEC_Weapon_R1","Throw","Put"};
+        respawnWeapons[] = {"OEC_Weapon_R1","Throw","Put"};
+        magazines[] = {"OEC_Magazine_R1","OEC_Magazine_R1","OEC_Magazine_R1","OEC_Magazine_R1","OEC_Magazine_R1"};
         linkedItems[] = {"OEC_Overwatch_Helmet_Recon", "OEC_Overwatch_Vest_Recon","ItemMap", "TFAR_anprc152", "ItemCompass", "ItemWatch"};
         respawnLinkedItems[] = {"OEC_Overwatch_Helmet_Recon", "OEC_Overwatch_Vest_Recon", "ItemMap", "TFAR_anprc152", "ItemCompass", "ItemWatch"};
         hiddenSelectionsTextures[] = 
@@ -174,7 +177,7 @@ class CfgVehicles
         };
         class EventHandlers: EventHandlers
         {
-            class OEC_Combine_RangerAssign_Event
+            class OEC_Combine_SoldierAssign_Event
             {
                 init = "_this call oec_fnc_cmbRanger;";
             };
@@ -246,6 +249,9 @@ class CfgVehicles
     {
         displayName = "Recon Team Leader";
         uniformClass = "OEC_Overwatch_Uniform_Recon_TL";
+        weapons[] = {"OEC_Weapon_R1","Throw","Put"};
+        respawnWeapons[] = {"OEC_Weapon_R1","Throw","Put"};
+        magazines[] = {"OEC_Magazine_R1","OEC_Magazine_R1","OEC_Magazine_R1","OEC_Magazine_R1","OEC_Magazine_R1"};
         linkedItems[] = {"OEC_Overwatch_Helmet_Recon_TL", "OEC_Overwatch_Vest_Recon_TL","ItemMap", "TFAR_anprc152", "ItemCompass", "ItemWatch"};
         respawnLinkedItems[] = {"OEC_Overwatch_Helmet_Recon_TL", "OEC_Overwatch_Vest_Recon_TL", "ItemMap", "TFAR_anprc152", "ItemCompass", "ItemWatch"};
         hiddenSelectionsTextures[] = 
