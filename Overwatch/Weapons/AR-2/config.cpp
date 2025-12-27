@@ -18,6 +18,7 @@ class CfgMagazines
 		ammo = "OEC_Ammo_AR2";
 		author = "OEC Extension";
 		displayName = "[OEC] 30rnd AR-2 Cell";
+		descriptionShort = "Standard Capacity Pulse Cell; 400m dissipation range";
 		count = 30;
 		initSpeed = 750;
 		picture = "\OECExtension\Overwatch\Weapons\data\AR2mag.paa";
@@ -31,6 +32,7 @@ class CfgMagazines
 		ammo = "OEC_Ammo_R1";
 		author = "OEC Extension";
 		displayName = "[OEC] 20rnd R-1 Cell";
+		descriptionShort = "Reduced Capacity Pulse Cell; 400m dissipation range, does not alert enemies";
 		count = 20;
 		initSpeed = 770;
 		picture = "\OECExtension\Overwatch\Weapons\data\R1mag.paa";
@@ -250,7 +252,7 @@ class CfgWeapons
 		magazineWell[] = {};
 		class Library
 		{
-			libTextDesc = "Overwatch Special Issue Pulse RIfle. Lo-Power cells are virtually silent, but feature reduced magazine size. Dissipates beyond 400m.";
+			libTextDesc = "Overwatch Special Issue Pulse RIfle. Lo-Power cells are virtually silent, have no damage dropoff, and are not affected by gravity, but will dissipate beyond 400m.";
 		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{

@@ -174,7 +174,7 @@ class CfgMagazines
         author = "OEC Extension";
 		initSpeed = 770;
         displayName = "[OEC] 100Rnd Suppressor Cell";
-        descriptionShort = "High Capacity Suppressor Cell";
+        descriptionShort = "High Capacity Suppressor Cell; 300m dissipation range";
         displayNameShort = "100Rnd Cell";
 		picture = "\CUP\Weapons\CUP_Weapons_Ammunition\data\ui\m_g36_betac_ca.paa";
         tracersEvery = 0;

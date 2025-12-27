@@ -23,6 +23,8 @@ class CfgMagazines
 		ammo = "OEC_Ammo_cmbSrifle_normal";
 		author = "OEC Extension";
 		displayName = "[OEC] R-2X Cell - Standard";
+		displaynameshort = "Standard Cell";
+		descriptionShort = "Standard R-2X cell. High damage, decent penetration, 1200m dissipation range";
 		count = 1;
 		initSpeed = 1000;
 		picture = "\OECExtension\Overwatch\Weapons\data\sniperMag.paa";
@@ -35,6 +37,8 @@ class CfgMagazines
 		ammo = "OEC_Ammo_cmbSrifle_AP";
 		author = "OEC Extension";
 		displayName = "[OEC] R-2X Cell - Piercer";
+		displaynameshort = "Piercer Cell";
+		descriptionShort = "Anti-materiel R-2X cell. Medium damage, extreme penetration, 1200m dissipation range";
 		count = 1;
 		initSpeed = 1000;
 		picture = "\OECExtension\Overwatch\Weapons\data\sniperMagAP.paa";
@@ -95,6 +99,10 @@ class CfgWeapons
 		scopeArsenal = 2;
 		scope = 2;
 		descriptionShort = "Overwatch Special Issue Pulse Sniper Rifle";
+		class Library
+		{
+			libTextDesc = "Overwatch Special Issue Pulse Sniper Rifle. Pulse ammo has no damage dropoff and is not affected by gravity, but will dissipate beyond 1200m.";
+		};
 		baseWeapon = "OEC_Weapon_cmbSrifle";
 		drySound[] = {"WBK_Combines\weapons\shotgun_empty.wav",1,1,10};
 		reloadAction = "WBK_HLA_OrdinalArReload";
