@@ -77,7 +77,7 @@ class CfgVehicles
 		tf_subtype = "digital_lr";
         class XtdGearInfo{};
     };
-    
+
     class OEC_Overwatch_Backpack_Dark: OEC_Overwatch_Backpack_Base
     {
         scope = 2;
@@ -102,6 +102,23 @@ class CfgVehicles
             model = "OEC_ACEX_Backpack_CMB_Empty";
             variant = "light";
         };
+    };
+
+    class OEC_Overwatch_Backpack_LR_Black: OEC_Overwatch_Backpack_Base
+    {
+        scope = 2;
+        displayName = "[OEC] Radio Backpack";
+        model = "\HL_Combine\data\MPF_Radio.p3d";
+        hiddenSelections[] = {"camo1","camo2"};
+		hiddenSelectionsTextures[] = {"HL_Combine\data\Backpack\MPF_Radio.paa","HL_Combine\data\Backpack\MPF_Radio.paa"};
+		hiddenSelectionsMaterials[] = {"HL_Combine\data\Materials\Armor.rvmat","HL_Combine\data\Materials\Lens\Blue.rvmat"};
+        tf_dialog = "anprc155_radio_dialog";
+		tf_dialogUpdate = "call TFAR_fnc_updateLRDialogToChannel;";
+		tf_encryptionCode = "tf_west_radio_code";
+		tf_hasLRradio = 1;
+		tf_range = 20000;
+		tf_subtype = "digital_lr";
+        class XtdGearInfo{};
     };
 };
 
