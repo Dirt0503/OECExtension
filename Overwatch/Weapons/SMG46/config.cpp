@@ -20,7 +20,7 @@ class CfgMagazines
 		displayName = "[OEC] 45rnd MP7 Magazine";
         picture = "\OECExtension\Overwatch\Weapons\data\SMG46mag.paa";
 		modelSpecialIsProxy = 1;
-		initspeed = 380;
+		initspeed = 415;
 		count = 45;
 		mass = 4.5;
 		tracersEvery = 0;
@@ -38,7 +38,7 @@ class CfgMagazines
 		initspeed = 80;
 		count = 2;
 		mass = 8.25;
-		picture = "\A3\Weapons_f\Data\ui\gear_UGL_slug_CA.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\smgUglMagHE.paa";
 	};
     // Cmb 20mm Instant Smoke
 	class OEC_Magazine_OICW_Smoke_6rnd;
@@ -48,7 +48,7 @@ class CfgMagazines
 		initspeed = 80;
 		count = 2;
 		mass = 4.125;
-		picture = "\A3\Weapons_f\Data\UI\gear_UGL_Smokeshell_white_CA.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\smgUglMagSmoke.paa";
 	};
     // Cmb 20mm Stun Grenade
 	class OEC_Magazine_OICW_Stun_3rnd;
@@ -58,7 +58,7 @@ class CfgMagazines
 		initspeed = 80;
 		count = 1;
 		mass = 8.25;
-		picture = "\rhsusf\addons\rhsusf_weapons\icons\m576_buckshot_ca.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\smgUglMagStun.paa";
 	};
     // Cmb 20mm Flares
 	class OEC_Magazine_OICW_red_6rnd;
@@ -79,7 +79,7 @@ class CfgMagazines
 		initspeed = 80;
 		count = 2;
 		mass = 1.65;
-		picture = "\A3\Weapons_F\Data\UI\gear_UGL_Flare_green_CA.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\smgUglMagFlare.paa";
 	};
 };
 

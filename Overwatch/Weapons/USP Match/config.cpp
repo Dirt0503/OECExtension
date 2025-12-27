@@ -20,7 +20,7 @@ class CfgMagazines
 		displayName = "[OEC] 18rnd USP Match Magazine";
         picture = "\OECExtension\Overwatch\Weapons\data\pistolMag.paa";
 		modelSpecialIsProxy = 1;
-		initspeed = 390;
+		initspeed = 405;
 		count = 18;
 		mass = 2;
 		tracersEvery = 0;

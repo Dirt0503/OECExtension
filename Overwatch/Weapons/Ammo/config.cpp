@@ -248,7 +248,7 @@ class CfgAmmo
 		cost = 1;
 		typicalSpeed = 380;
 		airFriction = -0.0075;
-		caliber = 1.3;
+		caliber = 2;
 		deflecting = 25;
 		model = "\A3\Weapons_f\Data\bullettracer\tracer_white";
 		airLock = 1;

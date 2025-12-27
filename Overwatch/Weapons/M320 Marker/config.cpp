@@ -30,9 +30,7 @@ class CfgMagazines
 		displayName = "[OEC] S/M-320 HE Grenade";
 		displaynameshort = "HE Grenade";
 		descriptionShort = "Special 40mm Combine High-Explosive Grenade";
-		//picture = "\cup\weapons\cup_weapons_xm29\data\ui\m_xm29_he_ca.paa";
-		//modelSpecial = "\cup\weapons\cup_weapons_xm29\CUP_xm29_he_mag.p3d";
-		//modelSpecialIsProxy = 1; // check this if error
+		picture = "\OECExtension\Overwatch\Weapons\data\m320UglMagStun.paa";
 		ammo = "OEC_Ammo_CMB20mm";
 		count = 1;
 		mass = 4;
@@ -51,7 +49,7 @@ class CfgMagazines
 		ammo = "OEC_Ammo_CMB20mm_smoke";
 		nameSoundWeapon = "smokeshell";
 		nameSound = "smokeshell";
-		picture = "\A3\Weapons_f\Data\UI\gear_UGL_Smokeshell_white_CA.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\m320UglMagSmoke.paa";
 		mass = 2;
 	};
 
@@ -62,7 +60,7 @@ class CfgMagazines
 		displayName = "[OEC] S/M-320 Stun Grenade";
 		descriptionShort = "Special 40mm Combine Stun Grenade";
 		displaynameshort = "Stun Grenade";
-		picture = "\rhsusf\addons\rhsusf_weapons\icons\m576_buckshot_ca.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\m320UglMagStun.paa";
 		ammo = "OEC_Ammo_CMB20mm_stun";
 		count = 1;
 		mass = 8;
@@ -76,7 +74,7 @@ class CfgMagazines
 		displaynameshort = "Red Flare";
 		descriptionShort = "Special 40mm Combine Red Flare";
 		ammo = "OEC_Ammo_CMB20mm_red";
-        picture = "\A3\Weapons_F\Data\UI\gear_UGL_Flare_red_CA.paa";
+        picture = "\OECExtension\Overwatch\Weapons\data\m320UglMagFlareRed.paa";
 		count = 1;
 		mass = 0.75;
 	};
@@ -87,7 +85,7 @@ class CfgMagazines
 		displaynameshort = "Green Flare";
 		descriptionShort = "Special 40mm Combine Green Flare";
 		ammo = "OEC_Ammo_CMB20mm_green";
-        picture = "\A3\Weapons_F\Data\UI\gear_UGL_Flare_green_CA.paa";
+        picture = "\OECExtension\Overwatch\Weapons\data\m320UglMagFlareGreen.paa";
 		count = 1;
 		mass = 0.75;
 	};
@@ -98,7 +96,7 @@ class CfgMagazines
 		displaynameshort = "Yellow Flare";
 		descriptionShort = "Special 40mm Combine Yellow Flare";
 		ammo = "OEC_Ammo_CMB20mm_yellow";
-        picture = "\A3\Weapons_F\Data\UI\gear_UGL_Flare_yelow_CA.paa"; 
+        picture = "\OECExtension\Overwatch\Weapons\data\m320UglMagFlareYellow.paa"; 
 		count = 1;
 		mass = 0.75;
 	};
@@ -110,7 +108,7 @@ class CfgMagazines
 		displayName = "[OEC] S/M-320 Smoke (Red)";
 		displaynameshort = "Red Smoke";
 		descriptionShort = "Special 40mm Combine Red Marking Smoke Grenade";
-		picture = "\A3\Weapons_f\Data\UI\gear_UGL_Smokeshell_red_CA.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\m320UglMagSmokeRed.paa";
 		nameSoundWeapon = "smokeshell";
 		nameSound = "smokeshell";
 		ammo = "OEC_Ammo_CMB40mm_smokeRed";
@@ -123,7 +121,7 @@ class CfgMagazines
 		displayName = "[OEC] S/M-320 Smoke (Green)";
 		displaynameshort = "Green Smoke";
 		descriptionShort = "Special 40mm Combine Green Marking Smoke Grenade";
-		picture = "\A3\Weapons_f\Data\UI\gear_UGL_Smokeshell_green_CA.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\m320UglMagSmokeGreen.paa";
 		ammo = "OEC_Ammo_CMB40mm_smokeGreen";
         count = 1;
 		mass = 1;
@@ -134,7 +132,7 @@ class CfgMagazines
 		displayName = "[OEC] S/M-320 Smoke (Yellow)";
 		displaynameshort = "Yellow Smoke";
 		descriptionShort = "Special 40mm Combine Yellow Marking Smoke Grenade";
-		picture = "\A3\Weapons_f\Data\UI\gear_UGL_Smokeshell_yellow_CA.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\m320UglMagSmokeYellow.paa";
 		ammo = "OEC_Ammo_CMB40mm_smokeYellow";
         count = 1;
 		mass = 1;
@@ -156,7 +154,7 @@ class CfgWeapons
 	{
         scope = 1;
         scopearsenal = 1;
-		magazines[] = {"rhs_mag_M441_HE","rhs_mag_M433_HEDP","rhs_mag_M397_HET","rhs_mag_m576","rhs_mag_M4009","rhs_mag_M583A1_white","rhs_mag_M661_green","rhs_mag_M662_red","rhs_mag_M585_white_cluster","rhs_mag_M663_green_cluster","rhs_mag_M664_red_cluster","rhs_mag_M713_red","rhs_mag_M714_white","rhs_mag_M715_green","rhs_mag_M716_yellow","rhs_mag_M781_Practice","1Rnd_HE_Grenade_shell","UGL_FlareWhite_F","UGL_FlareGreen_F","UGL_FlareRed_F","UGL_FlareYellow_F","UGL_FlareCIR_F","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeRed_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeYellow_Grenade_shell","1Rnd_SmokePurple_Grenade_shell","1Rnd_SmokeBlue_Grenade_shell","1Rnd_SmokeOrange_Grenade_shell"};
+		magazines[] = {"OEC_Magazine_M320_Smoke", "OEC_Magazine_M320_Stun", "OEC_Magazine_M320_red", "OEC_Magazine_M320_green", "OEC_Magazine_M320_yellow", "OEC_Magazine_M320_smokeRed", "OEC_Magazine_M320_smokeGreen", "OEC_Magazine_M320_smokeYellow"};
 		magazineWell[] = {};
 		class Library
 		{

@@ -43,7 +43,7 @@ class CfgMagazines
 		ammo = "OEC_Ammo_OICW";
 		author = "OEC Extension";
 		displayName = "[OEC] 30rnd XM29 Magazine";
-        picture = "\a3\Weapons_F\MagazineProxies\data\UI\icon_30Rnd_556x45_Stanag_CA.paa";
+        picture = "\OECExtension\Overwatch\Weapons\data\OICWmag.paa";
 		model = "\a3\Weapons_F_Exp\MagazineProxies\mag_556x45_stanag_30rnd.p3d";
 		modelSpecialIsProxy = 1;
 		count = 30;
@@ -60,9 +60,9 @@ class CfgMagazines
 		displayName = "[OEC] XM29 HE 6Rnd GL Mag";
 		displaynameshort = "HE Grenade";
 		descriptionShort = "Standard 20mm Combine High-Explosive Grenade";
-		picture = "\cup\weapons\cup_weapons_xm29\data\ui\m_xm29_he_ca.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\oicwUglMagHE.paa";
 		modelSpecial = "\cup\weapons\cup_weapons_xm29\CUP_xm29_he_mag.p3d";
-		modelSpecialIsProxy = 1; // check this if error
+		modelSpecialIsProxy = 1;
 		ammo = "OEC_Ammo_CMB20mm";
 		count = 6;
 		mass = 24.5;
@@ -81,7 +81,7 @@ class CfgMagazines
 		ammo = "OEC_Ammo_CMB20mm_smoke";
 		nameSoundWeapon = "smokeshell";
 		nameSound = "smokeshell";
-		picture = "\cup\weapons\cup_weapons_xm29\data\ui\m_xm29_he_ca.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\oicwUglMagSmoke.paa";
 		modelSpecial = "\cup\weapons\cup_weapons_xm29\CUP_xm29_he_mag.p3d";
 		initspeed = 80;
 		mass = 12.75;
@@ -94,7 +94,7 @@ class CfgMagazines
 		displayName = "[OEC] XM29 Stun Grenade 3Rnd GL Mag";
 		descriptionShort = "Standard 20mm Combine Stun Grenade";
 		displaynameshort = "Stun Grenade";
-		picture = "\cup\weapons\cup_weapons_xm29\data\ui\m_xm29_he_ca.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\oicwUglMagStun.paa";
 		modelSpecial = "\cup\weapons\cup_weapons_xm29\CUP_xm29_he_mag.p3d";
 		ammo = "OEC_Ammo_CMB20mm_stun";
 		initspeed = 80;
@@ -122,6 +122,7 @@ class CfgMagazines
 		displayName = "[OEC] XM29 Flare (Green) 6Rnd GL Mag";
 		displaynameshort = "Green Flare";
 		descriptionShort = "Standard 20mm Combine Green Flare";
+		picture = "\OECExtension\Overwatch\Weapons\data\oicwUglMagFlare.paa";
 		ammo = "OEC_Ammo_CMB20mm_green";
 		initspeed = 80;
 		count = 6;
