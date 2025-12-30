@@ -223,7 +223,7 @@ class CfgAmmo
 	};
 	class OEC_Ammo_cmbSrifle_AP: OEC_Ammo_cmbSrifle_normal
 	{
-		hit = 40;
+		hit = 35;
 		caliber = 75;
 		tracerScale = 2.5;
 		model = "\A3\Weapons_f\Data\bullettracer\tracer_yellow";
@@ -247,15 +247,14 @@ class CfgAmmo
 		cartridge = "FxCartridge_9mm";
 		cost = 1;
 		typicalSpeed = 380;
+		airLock = 1;
 		airFriction = -0.0075;
 		caliber = 2;
 		deflecting = 25;
-		model = "\A3\Weapons_f\Data\bullettracer\tracer_white";
-		airLock = 1;
+		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
 		tracerScale = 0.5;
-		tracerStartTime = 0.05;
-		tracerEndTime = 1;
-		nvgOnly = 1;
+		tracerStartTime = 0.001;
+		tracerEndTime = 10;
 		audibleFire = 30;
 		aiAmmoUsageFlags = 64;
 		dangerRadiusBulletClose = 4;
@@ -282,10 +281,10 @@ class CfgAmmo
 		caliber = 2;
 		typicalSpeed = 890;
 		timeToLive = 10;
-		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
-		tracerScale = 1.2;
-		tracerStartTime = 0.075;
-		tracerEndTime = 1;
+		model = "\A3\Weapons_f\Data\bullettracer\tracer_green";
+		tracerScale = 1;
+		tracerStartTime = 0.001;
+		tracerEndTime = 10;
 		airFriction = -0.00061;
 		class CamShakeExplode
 		{

@@ -105,7 +105,7 @@ class CfgMagazines
 		picture = "\a3\Weapons_F_Tank\Launchers\MRAWS\Data\UI\icon_rocket_MRAWS_HE_F_ca.paa";
 		initSpeed = 350;
 		ammo = "OEC_Ammo_Rocket_SIPL_HE";
-		mass = 15;
+		mass = 12.5;
 	};
 
 	class OEC_Magazine_SIPL_HEAT75: OEC_Magazine_SIPL_HEAT55
@@ -120,7 +120,7 @@ class CfgMagazines
 		picture = "\a3\Weapons_F_Tank\Launchers\MRAWS\Data\UI\icon_rocket_MRAWS_HEAT_F_ca.paa";
 		initSpeed = 350;
 		ammo = "OEC_Ammo_Rocket_SIPL_HEAT75";
-		mass = 35;
+		mass = 30;
 	};
 };
 

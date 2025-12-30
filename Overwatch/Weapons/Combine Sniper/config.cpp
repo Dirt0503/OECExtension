@@ -43,7 +43,7 @@ class CfgMagazines
 		initSpeed = 1000;
 		picture = "\OECExtension\Overwatch\Weapons\data\sniperMagAP.paa";
 		tracersEvery = 1;
-		mass = 5;
+		mass = 3.5;
 	};
 }; 
 

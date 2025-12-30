@@ -264,11 +264,11 @@ class CfgVehicles
 		picture = "\rhsafrf\addons\rhs_heavyweapons\data\ico\RHS_ZU23_MSV_ca.paa";
 		initCargoAngleY = 180;
 		irTarget = 0;
-		irTargetSize = 1;
+		irTargetSize = 0.75;
 		visualTarget = 1;
-		visualTargetSize = 1;
+		visualTargetSize = 0.75;
 		radarTarget = 1;
-		radarTargetSize = 1;
+		radarTargetSize = 0.75;
 		memoryPointsGetInCargo = "pos_cargo_dir";
 		memoryPointsGetInCargoDir = "pos_cargo";
 		memoryPointsGetInDriver = "pos_driver_dir";

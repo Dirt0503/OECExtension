@@ -44,7 +44,52 @@ class CfgVehicles
         editorCategory = "OEC_EdCat_CIS";
         editorSubCategory = "OEC_EdSubCat_Cars";
 		crew = "OEC_Units_CIS_Crew";
-		//rhs_decalParameters[] = {"['Number', [5,6,7,8], 'Default']","['Label', [9,10], 'Platoon', 12]"};
+		class TransportItems
+		{
+			class XX_ACE_tourniquet
+			{
+				name = "ACE_tourniquet";
+				count = 4;
+			};
+			class XX_ACE_splint
+			{
+				name = "ACE_splint";
+				count = 4;
+			};
+			class XX_ACE_elasticBandage
+			{
+				name = "ACE_elasticBandage";
+				count = 10;
+			};
+			class XX_ACE_quikclot
+			{
+				name = "ACE_quikclot";
+				count = 8;
+			};
+			class XX_ACE_packingBandage
+			{
+				name = "ACE_packingBandage";
+				count = 8;
+			};
+			class XX_ACE_painkiller
+			{
+				name = "ACE_Painkillers";
+				count = 2;
+			};
+			class XX_ACE_epinephrine
+			{
+				name = "ACE_epinephrine";
+				count = 3;
+			};
+			class XX_ACE_morphine
+			{
+				name = "ACE_morphine";
+				count = 2;
+			};
+		};
+		class TransportBackpacks {};
+		class TransportWeapons {};
+		class TransportMagazines {};
 	};
 
 	// gaz233114 MRAP (Tigr)
@@ -79,5 +124,51 @@ class CfgVehicles
 				gunnerType = "OEC_Units_CIS_Heavy";
 			};
 		};
+		class TransportItems
+		{
+			class XX_ACE_tourniquet
+			{
+				name = "ACE_tourniquet";
+				count = 2;
+			};
+			class XX_ACE_splint
+			{
+				name = "ACE_splint";
+				count = 2;
+			};
+			class XX_ACE_elasticBandage
+			{
+				name = "ACE_elasticBandage";
+				count = 5;
+			};
+			class XX_ACE_quikclot
+			{
+				name = "ACE_quikclot";
+				count = 3;
+			};
+			class XX_ACE_packingBandage
+			{
+				name = "ACE_packingBandage";
+				count = 3;
+			};
+			class XX_ACE_painkiller
+			{
+				name = "ACE_Painkillers";
+				count = 1;
+			};
+			class XX_ACE_epinephrine
+			{
+				name = "ACE_epinephrine";
+				count = 2;
+			};
+			class XX_ACE_morphine
+			{
+				name = "ACE_morphine";
+				count = 1;
+			};
+		};
+		class TransportBackpacks {};
+		class TransportWeapons {};
+		class TransportMagazines {};
 	};
 };

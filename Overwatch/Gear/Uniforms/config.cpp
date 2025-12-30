@@ -112,6 +112,7 @@ class CfgWeapons
         displayName = "[OEC] Combine Soldier Uniform - Recon";
         class ItemInfo: ItemInfo
         {
+            containerClass = "Supply150";
             uniformClass = "OEC_Overwatch_Unit_Recon";
         };
         class XtdGearInfo
@@ -151,6 +152,7 @@ class CfgWeapons
         displayName = "[OEC] Combine Elite Uniform - Recon";
         class ItemInfo: ItemInfo
         {
+            containerClass = "Supply150";
             uniformClass = "OEC_Overwatch_Unit_Recon_TL";
         };
         class XtdGearInfo
