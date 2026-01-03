@@ -46,6 +46,7 @@ class CfgVehicles
 	{
 		displayName = "[OEC] Infantry Transport Pod";
 		scope = 2;
+        side = 1;
 		scopeCurator = 2;
 		faction = "OEC_Faction_Combine";
 		factionClass = "OEC_Faction_Class_Combine";
