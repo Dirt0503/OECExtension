@@ -32,7 +32,7 @@ class CfgWeapons
 		scope = 2;
 		picture = "\A3\weapons_F\Data\UI\gear_accv_pointer_CA.paa";
 		model = "\A3\weapons_f\acc\accv_pointer_F";
-		descriptionShort = "desc test pointer ir ig";
+		descriptionShort = "Combine blue laser";
 		class ItemInfo: InventoryFlashLightItem_Base_F
 		{
 			mass = 6;

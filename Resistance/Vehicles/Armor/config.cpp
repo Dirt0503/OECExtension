@@ -682,16 +682,52 @@ class CfgVehicles
 			};
 		};
 		class RenderTargets{};
-		class TransportMagazines{};
-		class TransportWeapons{};
-		class TransportItems
+	class TransportItems
 		{
-			class _xx_FirstAidKit
+			class XX_ACE_tourniquet
 			{
-				name = "FirstAidKit";
-				count = 4;
+				name = "ACE_tourniquet";
+				count = 2;
+			};
+			class XX_ACE_splint
+			{
+				name = "ACE_splint";
+				count = 2;
+			};
+			class XX_ACE_elasticBandage
+			{
+				name = "ACE_elasticBandage";
+				count = 5;
+			};
+			class XX_ACE_quikclot
+			{
+				name = "ACE_quikclot";
+				count = 3;
+			};
+			class XX_ACE_packingBandage
+			{
+				name = "ACE_packingBandage";
+				count = 3;
+			};
+			class XX_ACE_painkiller
+			{
+				name = "ACE_Painkillers";
+				count = 1;
+			};
+			class XX_ACE_epinephrine
+			{
+				name = "ACE_epinephrine";
+				count = 2;
+			};
+			class XX_ACE_morphine
+			{
+				name = "ACE_morphine";
+				count = 1;
 			};
 		};
+		class TransportBackpacks {};
+		class TransportWeapons {};
+		class TransportMagazines {};
 		hiddenSelections[] = {"camo1","camo2","camo3","n1","n2","n3"};
 		hiddenSelectionsTextures[] = {"\rhsafrf\addons\rhs_a2port_armor\data\zsu_01_co.paa","\rhsafrf\addons\rhs_a2port_armor\data\zsu_02_co.paa","\rhsafrf\addons\rhs_a2port_armor\data\zsu_03_co.paa","rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa","rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa","rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"};
 		class textureSources
@@ -1331,10 +1367,52 @@ class CfgVehicles
 				weapon = "rhs_weap_902a";
 			};
 		};
-		class TransportMagazines{};
-		class TransportWeapons{};
-		class TransportItems{};
-		class TransportBackpacks{};
+	class TransportItems
+		{
+			class XX_ACE_tourniquet
+			{
+				name = "ACE_tourniquet";
+				count = 2;
+			};
+			class XX_ACE_splint
+			{
+				name = "ACE_splint";
+				count = 2;
+			};
+			class XX_ACE_elasticBandage
+			{
+				name = "ACE_elasticBandage";
+				count = 5;
+			};
+			class XX_ACE_quikclot
+			{
+				name = "ACE_quikclot";
+				count = 3;
+			};
+			class XX_ACE_packingBandage
+			{
+				name = "ACE_packingBandage";
+				count = 3;
+			};
+			class XX_ACE_painkiller
+			{
+				name = "ACE_Painkillers";
+				count = 1;
+			};
+			class XX_ACE_epinephrine
+			{
+				name = "ACE_epinephrine";
+				count = 2;
+			};
+			class XX_ACE_morphine
+			{
+				name = "ACE_morphine";
+				count = 1;
+			};
+		};
+		class TransportBackpacks {};
+		class TransportWeapons {};
+		class TransportMagazines {};
 		class Eventhandlers;
         
     };
@@ -1784,7 +1862,49 @@ class CfgVehicles
 				getOut = "_this call rhs_fnc_hatchAbandon";
 			};
 		};
-		class TransportItems {};
+		class TransportItems
+		{
+			class XX_ACE_tourniquet
+			{
+				name = "ACE_tourniquet";
+				count = 2;
+			};
+			class XX_ACE_splint
+			{
+				name = "ACE_splint";
+				count = 2;
+			};
+			class XX_ACE_elasticBandage
+			{
+				name = "ACE_elasticBandage";
+				count = 5;
+			};
+			class XX_ACE_quikclot
+			{
+				name = "ACE_quikclot";
+				count = 3;
+			};
+			class XX_ACE_packingBandage
+			{
+				name = "ACE_packingBandage";
+				count = 3;
+			};
+			class XX_ACE_painkiller
+			{
+				name = "ACE_Painkillers";
+				count = 1;
+			};
+			class XX_ACE_epinephrine
+			{
+				name = "ACE_epinephrine";
+				count = 2;
+			};
+			class XX_ACE_morphine
+			{
+				name = "ACE_morphine";
+				count = 1;
+			};
+		};
 		class TransportBackpacks {};
 		class TransportWeapons {};
 		class TransportMagazines {};
@@ -5199,5 +5319,51 @@ class CfgVehicles
 				getOut = "_this call rhs_fnc_hatchAbandon";
 			};
 		};
+		class TransportItems
+		{
+			class XX_ACE_tourniquet
+			{
+				name = "ACE_tourniquet";
+				count = 2;
+			};
+			class XX_ACE_splint
+			{
+				name = "ACE_splint";
+				count = 2;
+			};
+			class XX_ACE_elasticBandage
+			{
+				name = "ACE_elasticBandage";
+				count = 5;
+			};
+			class XX_ACE_quikclot
+			{
+				name = "ACE_quikclot";
+				count = 3;
+			};
+			class XX_ACE_packingBandage
+			{
+				name = "ACE_packingBandage";
+				count = 3;
+			};
+			class XX_ACE_painkiller
+			{
+				name = "ACE_Painkillers";
+				count = 1;
+			};
+			class XX_ACE_epinephrine
+			{
+				name = "ACE_epinephrine";
+				count = 2;
+			};
+			class XX_ACE_morphine
+			{
+				name = "ACE_morphine";
+				count = 1;
+			};
+		};
+		class TransportBackpacks {};
+		class TransportWeapons {};
+		class TransportMagazines {};
 	};
 }; 

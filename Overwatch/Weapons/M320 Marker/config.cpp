@@ -50,7 +50,7 @@ class CfgMagazines
 		nameSoundWeapon = "smokeshell";
 		nameSound = "smokeshell";
 		picture = "\OECExtension\Overwatch\Weapons\data\m320UglMagSmoke.paa";
-		mass = 2;
+		mass = 1;
 	};
 
 	// Cmb 40mm Stun Grenade
@@ -76,7 +76,7 @@ class CfgMagazines
 		ammo = "OEC_Ammo_CMB20mm_red";
         picture = "\OECExtension\Overwatch\Weapons\data\m320UglMagFlareRed.paa";
 		count = 1;
-		mass = 0.75;
+		mass = 0.5;
 	};
 	class OEC_Magazine_M320_green: OEC_Magazine_M320_HE
 	{
@@ -87,7 +87,7 @@ class CfgMagazines
 		ammo = "OEC_Ammo_CMB20mm_green";
         picture = "\OECExtension\Overwatch\Weapons\data\m320UglMagFlareGreen.paa";
 		count = 1;
-		mass = 0.75;
+		mass = 0.5;
 	};
     class OEC_Magazine_M320_yellow: OEC_Magazine_M320_HE
 	{
@@ -98,7 +98,7 @@ class CfgMagazines
 		ammo = "OEC_Ammo_CMB20mm_yellow";
         picture = "\OECExtension\Overwatch\Weapons\data\m320UglMagFlareYellow.paa"; 
 		count = 1;
-		mass = 0.75;
+		mass = 0.5;
 	};
 
     // cmb 40mm colored smoke

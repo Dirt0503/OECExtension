@@ -23,8 +23,8 @@ class CfgMagazines
 		initspeed = 915;
 		count = 6;
 		mass = 8;
-		tracersEvery = 0;
-		lastRoundsTracer = 0;
+		tracersEvery = 1;
+		lastRoundsTracer = 6;
     };
 };
 
