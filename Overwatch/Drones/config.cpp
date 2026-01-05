@@ -9,7 +9,7 @@ class CfgPatches
             "OEC_UGV_rcws",
             "OEC_UGV_rcws_01",
             "OEC_Static_Turret_Base",
-            "OEC_Static_Turret_Test"
+            "OEC_Floor_Turret"
         };
         weapons[] = {};
     };
@@ -39,8 +39,8 @@ class CfgWeapons
     {
         class effect1
         {
-            positionName = "usti hlavne2";
-            directionName = "konec hlavne2";
+            positionName = "konec hlavne";
+            directionName = "usti hlavne";
             effectName = "MachineGunCloud";
         };
         type = 1;
@@ -427,10 +427,10 @@ class CfgVehicles
 			{
                 isCopilot = 0;
 				dontCreateAI = 0;
-				body = "mainTurret";
-				gun = "mainGun";
-				memoryPointGunnerOptics = "PiP1_pos";
-				memoryPointGun = "machinegun";
+				body = "vez";
+				gun = "hlaven";
+				memoryPointGunnerOptics = "gunnerView";
+				memoryPointGun = "usti hlavne";
 				gunnerForceOptics = 1;
 				gunnerOpticsModel = "A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_F.p3d";
 				turretInfoType = "RscOptics_UGV_gunner";
@@ -551,7 +551,7 @@ class CfgVehicles
 				lifeTime = 5;
 			};
 		};
-		model = "\A3\Static_F_Mark\Designator_01\Designator_01_F";
+		model = "OECExtension\Overwatch\Drones\data\OEC_Floor_Turret.p3d";
 		class assembleInfo
 		{
 			primary = 0;
@@ -587,9 +587,9 @@ class CfgVehicles
 			};
 		};
 	};
-	class OEC_Static_Turret_Test: OEC_Static_Turret_Base
+	class OEC_Floor_Turret: OEC_Static_Turret_Base
 	{
-		displayName = "[OEC] Test Designator";
+		displayName = "[OEC] Floor Turret";
 		scope = 2;
 		scopeCurator = 2;
 		faction = "OEC_Faction_Combine";
