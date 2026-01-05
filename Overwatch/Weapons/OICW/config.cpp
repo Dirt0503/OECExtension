@@ -60,7 +60,7 @@ class CfgMagazines
 		displayName = "[OEC] XM29 HE 6Rnd GL Mag";
 		displaynameshort = "HE Grenade";
 		descriptionShort = "Standard 20mm Combine High-Explosive Grenade";
-		picture = "\OECExtension\Overwatch\Weapons\data\oicwUglMagHE.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\uglHE.paa";
 		modelSpecial = "\cup\weapons\cup_weapons_xm29\CUP_xm29_he_mag.p3d";
 		modelSpecialIsProxy = 1;
 		ammo = "OEC_Ammo_CMB20mm";
@@ -81,7 +81,7 @@ class CfgMagazines
 		ammo = "OEC_Ammo_CMB20mm_smoke";
 		nameSoundWeapon = "smokeshell";
 		nameSound = "smokeshell";
-		picture = "\OECExtension\Overwatch\Weapons\data\oicwUglMagSmoke.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\uglSmokeWhite.paa";
 		modelSpecial = "\cup\weapons\cup_weapons_xm29\CUP_xm29_he_mag.p3d";
 		initspeed = 80;
 		mass = 12.75;
@@ -94,7 +94,7 @@ class CfgMagazines
 		displayName = "[OEC] XM29 Stun Grenade 3Rnd GL Mag";
 		descriptionShort = "Standard 20mm Combine Stun Grenade";
 		displaynameshort = "Stun Grenade";
-		picture = "\OECExtension\Overwatch\Weapons\data\oicwUglMagStun.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\uglStun.paa";
 		modelSpecial = "\cup\weapons\cup_weapons_xm29\CUP_xm29_he_mag.p3d";
 		ammo = "OEC_Ammo_CMB20mm_stun";
 		initspeed = 80;
@@ -103,26 +103,13 @@ class CfgMagazines
 	};
 
 	// Cmb 20mm Flares
-	class OEC_Magazine_OICW_red_6rnd: OEC_Magazine_OICW_HE_6rnd
-	{
-		scope = 1;
-		scopeArsenal = 1;
-		author = "OEC Extension";
-		displayName = "[OEC] XM29 Flare (Red) 6Rnd GL Mag";
-		displaynameshort = "Red Flare";
-		descriptionShort = "Standard 20mm Combine Red Flare";
-		ammo = "OEC_Ammo_CMB20mm_red";
-		initspeed = 80;
-		count = 6;
-		mass = 5;
-	};
 	class OEC_Magazine_OICW_green_6rnd: OEC_Magazine_OICW_HE_6rnd
 	{
 		author = "OEC Extension";
 		displayName = "[OEC] XM29 Flare (Green) 6Rnd GL Mag";
 		displaynameshort = "Green Flare";
 		descriptionShort = "Standard 20mm Combine Green Flare";
-		picture = "\OECExtension\Overwatch\Weapons\data\oicwUglMagFlare.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\uglFlareGreen.paa";
 		ammo = "OEC_Ammo_CMB20mm_green";
 		initspeed = 80;
 		count = 6;
@@ -177,7 +164,7 @@ class CfgWeapons
 		model = "\WBK_OICW\OICW\OICW.p3d";
 		hiddenSelections[] = {};
 		selectionfireanim = "muzzleFlash";
-        picture = "\CUP\Weapons\CUP_Weapons_xm29\data\ui\CUP_arifle_m29_caseless_woodland_ca.paa";
+        picture = "\OECExtension\Overwatch\Weapons\data\OICW.paa";
 		handAnim[] = {"OFP2_ManSkeleton","WBK_Combines\weapons\OICW_Idle.rtm"};
 		reloadAction = "WBK_OICW_ReloadMain";
 		recoil = "recoil_mk20";

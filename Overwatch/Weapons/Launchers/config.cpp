@@ -74,12 +74,12 @@ class CfgMagazines
 	{
 		author = "OEC Extension";
 		displayName = "[OEC] SIRR-1 Dual Purpose HE 55 Round";
-		displayNameShort = "SIRR - DPHE 55";
+		displayNameShort = "SIRR - HEDP 55";
 		scope = 2;
 		scopeArsenal = 2;
-		descriptionShort = "Effective against: Vehicles, Armor.";
+		descriptionShort = "Effective against: Infantry, Vehicles, Armor.";
 		model = "\a3\Weapons_F_Tank\Launchers\MRAWS\rocket_MRAWS_HEAT55_F_item.p3d";
-		picture = "\a3\Weapons_F_Tank\Launchers\MRAWS\Data\UI\icon_rocket_MRAWS_HEAT55_F_ca.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\CGM3hedpShell.paa";
 		initSpeed = 350;
 		ammo = "OEC_Ammo_Rocket_SIPL_HEAT55";
 		type = "2*		256";
@@ -102,7 +102,7 @@ class CfgMagazines
 		scopeArsenal = 2;
 		descriptionShort = "Effective against: Infantry, Soft Vehicles, Buildings.";
 		model = "\a3\Weapons_F_Tank\Launchers\MRAWS\rocket_MRAWS_HE_F_item.p3d";
-		picture = "\a3\Weapons_F_Tank\Launchers\MRAWS\Data\UI\icon_rocket_MRAWS_HE_F_ca.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\CGM3heShell.paa";
 		initSpeed = 350;
 		ammo = "OEC_Ammo_Rocket_SIPL_HE";
 		mass = 12.5;
@@ -117,7 +117,7 @@ class CfgMagazines
 		scopeArsenal = 2;
 		descriptionShort = "Effective against: Vehicles, Heavy Armor.";
 		model = "\a3\Weapons_F_Tank\Launchers\MRAWS\rocket_MRAWS_HEAT_F_item.p3d";
-		picture = "\a3\Weapons_F_Tank\Launchers\MRAWS\Data\UI\icon_rocket_MRAWS_HEAT_F_ca.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\CGM3heatShell.paa";
 		initSpeed = 350;
 		ammo = "OEC_Ammo_Rocket_SIPL_HEAT75";
 		mass = 30;

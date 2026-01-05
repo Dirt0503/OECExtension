@@ -49,7 +49,7 @@ class CfgMagazines
 		ammo = "OEC_Ammo_CMB20mm_smoke";
 		nameSoundWeapon = "smokeshell";
 		nameSound = "smokeshell";
-		picture = "\OECExtension\Overwatch\Weapons\data\m320UglMagSmoke.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\uglSmokeWhite.paa";
 		mass = 1;
 	};
 
@@ -60,7 +60,7 @@ class CfgMagazines
 		displayName = "[OEC] S/M-320 Stun Grenade";
 		descriptionShort = "Special 40mm Combine Stun Grenade";
 		displaynameshort = "Stun Grenade";
-		picture = "\OECExtension\Overwatch\Weapons\data\m320UglMagStun.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\uglStun.paa";
 		ammo = "OEC_Ammo_CMB20mm_stun";
 		count = 1;
 		mass = 8;
@@ -74,7 +74,7 @@ class CfgMagazines
 		displaynameshort = "Red Flare";
 		descriptionShort = "Special 40mm Combine Red Flare";
 		ammo = "OEC_Ammo_CMB20mm_red";
-        picture = "\OECExtension\Overwatch\Weapons\data\m320UglMagFlareRed.paa";
+        picture = "\OECExtension\Overwatch\Weapons\data\uglFlareRed.paa";
 		count = 1;
 		mass = 0.5;
 	};
@@ -85,7 +85,7 @@ class CfgMagazines
 		displaynameshort = "Green Flare";
 		descriptionShort = "Special 40mm Combine Green Flare";
 		ammo = "OEC_Ammo_CMB20mm_green";
-        picture = "\OECExtension\Overwatch\Weapons\data\m320UglMagFlareGreen.paa";
+        picture = "\OECExtension\Overwatch\Weapons\data\uglFlareGreen.paa";
 		count = 1;
 		mass = 0.5;
 	};
@@ -96,7 +96,7 @@ class CfgMagazines
 		displaynameshort = "Yellow Flare";
 		descriptionShort = "Special 40mm Combine Yellow Flare";
 		ammo = "OEC_Ammo_CMB20mm_yellow";
-        picture = "\OECExtension\Overwatch\Weapons\data\m320UglMagFlareYellow.paa"; 
+        picture = "\OECExtension\Overwatch\Weapons\data\uglFlareYellow.paa"; 
 		count = 1;
 		mass = 0.5;
 	};
@@ -108,7 +108,7 @@ class CfgMagazines
 		displayName = "[OEC] S/M-320 Smoke (Red)";
 		displaynameshort = "Red Smoke";
 		descriptionShort = "Special 40mm Combine Red Marking Smoke Grenade";
-		picture = "\OECExtension\Overwatch\Weapons\data\m320UglMagSmokeRed.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\uglSmokeRed.paa";
 		nameSoundWeapon = "smokeshell";
 		nameSound = "smokeshell";
 		ammo = "OEC_Ammo_CMB40mm_smokeRed";
@@ -121,7 +121,7 @@ class CfgMagazines
 		displayName = "[OEC] S/M-320 Smoke (Green)";
 		displaynameshort = "Green Smoke";
 		descriptionShort = "Special 40mm Combine Green Marking Smoke Grenade";
-		picture = "\OECExtension\Overwatch\Weapons\data\m320UglMagSmokeGreen.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\uglSmokeGreen.paa";
 		ammo = "OEC_Ammo_CMB40mm_smokeGreen";
         count = 1;
 		mass = 1;
@@ -132,7 +132,7 @@ class CfgMagazines
 		displayName = "[OEC] S/M-320 Smoke (Yellow)";
 		displaynameshort = "Yellow Smoke";
 		descriptionShort = "Special 40mm Combine Yellow Marking Smoke Grenade";
-		picture = "\OECExtension\Overwatch\Weapons\data\m320UglMagSmokeYellow.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\uglSmokeYellow.paa";
 		ammo = "OEC_Ammo_CMB40mm_smokeYellow";
         count = 1;
 		mass = 1;
@@ -244,7 +244,7 @@ class CfgWeapons
 		scopeArsenal = 2;
 		scope = 2;
 		descriptionShort = "Overwatch Special Issue Signal/Marking Pistol";
-		picture = "\rhsusf\addons\rhsusf_inventoryicons\data\weapons\rhs_weap_M320_ca.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\SM320.paa";
 		model = "\rhsusf\addons\rhsusf_weapons\m320\M320standalone.p3d";
 		UiPicture = "\A3\weapons_f\data\UI\icon_regular_CA.paa";
 		weaponInfoType = "rhs_rscOptics_pistol_usf";

@@ -70,7 +70,7 @@ class CfgWeapons
 		handanim[] = {"OFP2_ManSkeleton","\hl_cmb_weapons\Anim\ar2anim.rtm"};
 		magazines[] = {"OEC_Magazine_AR2"};
 		magazineWell[] = {};
-        picture = "\hl_cmb_weapons\UI\w_ar2_x_ca.paa";
+        picture = "\OECExtension\Overwatch\Weapons\data\AR2.paa";
 		inertia = 0.6;
 		aimTransitionSpeed = 1;
 		dexterity = 1.4;

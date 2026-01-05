@@ -38,7 +38,7 @@ class CfgMagazines
 		initspeed = 80;
 		count = 2;
 		mass = 8.25;
-		picture = "\OECExtension\Overwatch\Weapons\data\smgUglMagHE.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\uglHE.paa";
 	};
     // Cmb 20mm Instant Smoke
 	class OEC_Magazine_OICW_Smoke_6rnd;
@@ -48,7 +48,7 @@ class CfgMagazines
 		initspeed = 80;
 		count = 2;
 		mass = 4.125;
-		picture = "\OECExtension\Overwatch\Weapons\data\smgUglMagSmoke.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\uglSmokeWhite.paa";
 	};
     // Cmb 20mm Stun Grenade
 	class OEC_Magazine_OICW_Stun_3rnd;
@@ -58,20 +58,9 @@ class CfgMagazines
 		initspeed = 80;
 		count = 1;
 		mass = 8.25;
-		picture = "\OECExtension\Overwatch\Weapons\data\smgUglMagStun.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\uglStun.paa";
 	};
     // Cmb 20mm Flares
-	class OEC_Magazine_OICW_red_6rnd;
-	class OEC_Magazine_SMG46_red_2Rnd: OEC_Magazine_OICW_red_6rnd
-	{
-		scope = 1;
-		scopeArsenal = 1;
-		displayName = "[OEC] MP7 Flare (Red) 2Rnd GL Mag";
-		initspeed = 80;
-		count = 2;
-		mass = 1.65;
-		picture = "\A3\Weapons_F\Data\UI\gear_UGL_Flare_red_CA.paa";
-	};
     class OEC_Magazine_OICW_green_6rnd;
 	class OEC_Magazine_SMG46_green_2Rnd: OEC_Magazine_OICW_green_6rnd
 	{
@@ -79,7 +68,7 @@ class CfgMagazines
 		initspeed = 80;
 		count = 2;
 		mass = 1.65;
-		picture = "\OECExtension\Overwatch\Weapons\data\smgUglMagFlare.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\uglFlareGreen.paa";
 	};
 };
 
