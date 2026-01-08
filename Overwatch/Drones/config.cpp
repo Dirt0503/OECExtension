@@ -377,7 +377,7 @@ class CfgVehicles
 		class EventHandlers;
 		class AnimationSources;
 	};
-	class OEC_Static_Turret_Base: StaticWeapon
+	class OEC_Floor_Turret_Base: StaticWeapon
 	{
 		author = "$STR_A3_Bohemia_Interactive";
 		mapSize = 0.7;
@@ -427,10 +427,23 @@ class CfgVehicles
 			{
                 isCopilot = 0;
 				dontCreateAI = 0;
-				body = "vez";
-				gun = "hlaven";
+				body = "body";
+				gun = "gun";
+				animationsourcebody = "body";
+				animationSourceGun = "gun";
+				gunAxis = "axis_gun";
+				gunBeg = "gun_muzzle";
+				gunEnd = "gun_chamber";
+				minElev = -15;
+				maxElev = 45;
+				minTurn = -160;
+				maxTurn = 160;
+				initTurn = 0;
+				turretAxis = "axis_body";
+				maxHorizontalRotSpeed = 1.75;
+				maxVerticalRotSpeed = 1.5;
 				memoryPointGunnerOptics = "gunnerView";
-				memoryPointGun = "usti hlavne";
+				memoryPointGun = "gun_muzzle";
 				gunnerForceOptics = 1;
 				gunnerOpticsModel = "A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_F.p3d";
 				turretInfoType = "RscOptics_UGV_gunner";
@@ -438,49 +451,14 @@ class CfgVehicles
 				magazines[] = {"OEC_Magazine_Turret","OEC_Magazine_Turret"};
 				soundServo[] = {"A3\Sounds_F\vehicles\soft\UGV_01\Servo_UGV_gunner",0.31622776,1,30};
 				soundServoVertical[] = {"A3\Sounds_F\vehicles\soft\UGV_01\Servo_UGV_gunner_vertical",0.31622776,1,30};
-				minElev = -10;
-				maxElev = 60;
 				forceHideGunner = 1;
 				outGunnerMayFire = 1;
 				discreteDistance[] = {100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500};
 				discreteDistanceInitIndex = 2;
 				stabilizedInAxes = 3;
-
 				soundElevation[] = {"A3\Sounds_F_Mark\arsenal\sfx\Remote_Cameras\Remote_Camera_NATO",1.0,1,10};
-				//soundServo[] = {"A3\Sounds_F_Mark\arsenal\sfx\Remote_Cameras\Remote_Camera_servo_NATO",0.56234133,1,10};
-				//soundServoVertical[] = {"A3\Sounds_F_Mark\arsenal\sfx\Remote_Cameras\Remote_Camera_servo_vertical_NATO",0.56234133,1,10};
 				gunnergetInAction = "";
 				gunnergetOutAction = "";
-				//weapons[] = {"OEC_Weapon_Turret"};
-				//magazines[] = {"OEC_Magazine_Turret"};
-				animationSourceElevation = "MainElevation";
-				gunBeg = "look";
-				gunEnd = "eye";
-				maxHorizontalRotSpeed = 2.4;
-				maxVerticalRotSpeed = 2.4;
-				initElev = 0;
-				minTurn = -180;
-				maxTurn = 180;
-				initTurn = 0;
-				cameraDir = "look";
-				//gunnerForceOptics = 1;
-				//memoryPointGunnerOptics = "eye";
-				//gunnerOpticsModel = "\A3\Weapons_F_beta\Binocular\lasermarker_optics";
-				//turretInfoType = "RscOptics_LaserDesignator";
-				/*class ViewOptics: viewOptics
-				{
-					initAngleX = 0;
-					minAngleX = -30;
-					maxAngleX = 30;
-					initAngleY = 0;
-					minAngleY = -100;
-					maxAngleY = 100;
-					initFov = 0.1242;
-					minFov = 0.0125;
-					maxFov = 0.1242;
-					visionMode[] = {"Normal","NVG","TI"};
-					thermalMode[] = {2};
-				};*/
 
                 class ViewOptics: RCWSOptics
 				{
@@ -587,7 +565,7 @@ class CfgVehicles
 			};
 		};
 	};
-	class OEC_Floor_Turret: OEC_Static_Turret_Base
+	class OEC_Floor_Turret: OEC_Floor_Turret_Base
 	{
 		displayName = "[OEC] Floor Turret";
 		scope = 2;
