@@ -145,6 +145,7 @@ class OEC_ParticleEffect_AlienPulse_Orange
     };
 };
 
+
 class OEC_ParticleEffect_MK3A2
 {
     class Light

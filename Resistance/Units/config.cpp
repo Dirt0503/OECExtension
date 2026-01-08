@@ -826,5 +826,526 @@ class CfgGroups
             };
         };
     };
+
+    class Indep 
+    {
+        class OEC_Faction_Aliens
+        {
+            name = "[OEC] Aliens";
+            class OEC_Group_Alien_Swarm
+            {
+                name = "Antlion Swarms";
+                aliveCategory = "Infantry";
+                class OEC_group_Alien_small_swarm
+                {
+                    name = "1. Small Swarm";
+                    faction = "OEC_Faction_Aliens";
+                    side = 0;
+                    rarityGroup = 0.75;
+                    icon = "\A3\ui_f\data\map\markers\nato\o_inf.paa";
+                    class Unit0
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "LIEUTENANT";
+                        position[] = {0,0,0};
+                    };
+                    class Unit1
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "SERGEANT";
+                        position[] = {1,0,0};
+                    };
+                    class Unit2
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {-1,0,0};
+                    };
+                    class Unit3
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {0,-1,0};
+                    };
+                    class Unit4
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {1,-1,0};
+                    };
+                    class Unit5
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {-1,-1,0};
+                    };
+                    class Unit6
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {0,-2,0};
+                    };
+                    class Unit7
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {1,-2,0};
+                    };
+                    class Unit9
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {-1,-2,0};
+                    };
+                };
+                class OEC_group_Alien_small_swarm_mixed
+                {
+                    name = "2. Small Swarm (Mixed)";
+                    faction = "OEC_Faction_Aliens";
+                    side = 0;
+                    rarityGroup = 0.75;
+                    icon = "\A3\ui_f\data\map\markers\nato\o_inf.paa";
+                    class Unit0
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "LIEUTENANT";
+                        position[] = {0,0,0};
+                    };
+                    class Unit1
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "SERGEANT";
+                        position[] = {1,0,0};
+                    };
+                    class Unit2
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {-1,0,0};
+                    };
+                    class Unit3
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_HoundEye";
+                        rank = "PRIVATE";
+                        position[] = {0,-1,0};
+                    };
+                    class Unit4
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {1,-1,0};
+                    };
+                    class Unit5
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Bullsquid";
+                        rank = "PRIVATE";
+                        position[] = {-1,-1,0};
+                    };
+                    class Unit6
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_HoundEye";
+                        rank = "PRIVATE";
+                        position[] = {0,-2,0};
+                    };
+                    class Unit7
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {1,-2,0};
+                    };
+                    class Unit9
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {-1,-2,0};
+                    };
+                };
+                class OEC_group_Alien_big_swarm
+                {
+                    name = "3. Big Swarm";
+                    faction = "OEC_Faction_Aliens";
+                    side = 0;
+                    rarityGroup = 0.75;
+                    icon = "\A3\ui_f\data\map\markers\nato\o_inf.paa";
+                    class Unit0
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "LIEUTENANT";
+                        position[] = {0,0,0};
+                    };
+                    class Unit1
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "SERGEANT";
+                        position[] = {1,0,0};
+                    };
+                    class Unit2
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {-1,0,0};
+                    };
+                    class Unit3
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {2,0,0};
+                    };
+                    class Unit4
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {-2,0,0};
+                    };
+                    class Unit5
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {0,-1,0};
+                    };
+                    class Unit6
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {-1,-1,0};
+                    };
+                    class Unit7
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {1,-1,0};
+                    };
+                    class Unit9
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {2,-1,0};
+                    };
+                    class Unit10
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {-2,-1,0};
+                    };
+                    class Unit11
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {0,-2,0};
+                    };
+                    class Unit12
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {-1,-2,0};
+                    };
+                    class Unit13
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {1,-2,0};
+                    };
+                    class Unit14
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {2,-2,0};
+                    };
+                    class Unit15
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {-2,-2,0};
+                    };
+                    class Unit16
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {0,-3,0};
+                    };
+                    class Unit17
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {-1,-3,0};
+                    };
+                    class Unit18
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {1,-3,0};
+                    };
+                    class Unit19
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {2,-3,0};
+                    };
+                    class Unit20
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {-2,-3,0};
+                    };
+                    class Unit21
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {0,-4,0};
+                    };
+                    class Unit22
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {-1,-4,0};
+                    };
+                    class Unit23
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {1,-4,0};
+                    };
+                    class Unit24
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {2,-4,0};
+                    };
+                    class Unit25
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {-2,-4,0};
+                    };
+                };
+                 class OEC_group_Alien_big_swarm_mixed
+                {
+                    name = "4. Big Swarm (Mixed)";
+                    faction = "OEC_Faction_Aliens";
+                    side = 0;
+                    rarityGroup = 0.75;
+                    icon = "\A3\ui_f\data\map\markers\nato\o_inf.paa";
+                    class Unit0
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "LIEUTENANT";
+                        position[] = {0,0,0};
+                    };
+                    class Unit1
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "SERGEANT";
+                        position[] = {1,0,0};
+                    };
+                    class Unit2
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {-1,0,0};
+                    };
+                    class Unit3
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_HoundEye";
+                        rank = "PRIVATE";
+                        position[] = {2,0,0};
+                    };
+                    class Unit4
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {-2,0,0};
+                    };
+                    class Unit5
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {0,-1,0};
+                    };
+                    class Unit6
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {-1,-1,0};
+                    };
+                    class Unit7
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {1,-1,0};
+                    };
+                    class Unit9
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {2,-1,0};
+                    };
+                    class Unit10
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_HoundEye";
+                        rank = "PRIVATE";
+                        position[] = {-2,-1,0};
+                    };
+                    class Unit11
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {0,-2,0};
+                    };
+                    class Unit12
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {-1,-2,0};
+                    };
+                    class Unit13
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {1,-2,0};
+                    };
+                    class Unit14
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Bullsquid";
+                        rank = "PRIVATE";
+                        position[] = {2,-2,0};
+                    };
+                    class Unit15
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {-2,-2,0};
+                    };
+                    class Unit16
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {0,-3,0};
+                    };
+                    class Unit17
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {-1,-3,0};
+                    };
+                    class Unit18
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {1,-3,0};
+                    };
+                    class Unit19
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_HoundEye";
+                        rank = "PRIVATE";
+                        position[] = {2,-3,0};
+                    };
+                    class Unit20
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {-2,-3,0};
+                    };
+                    class Unit21
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {0,-4,0};
+                    };
+                    class Unit22
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {-1,-4,0};
+                    };
+                    class Unit23
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {1,-4,0};
+                    };
+                    class Unit24
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Antlion";
+                        rank = "PRIVATE";
+                        position[] = {2,-4,0};
+                    };
+                    class Unit25
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_HoundEye";
+                        rank = "PRIVATE";
+                        position[] = {-2,-4,0};
+                    };
+                };
+            };
+        };
+    };
 };
 

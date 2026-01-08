@@ -32,7 +32,7 @@ class CfgWeapons
 
         scope = 2;
         scopeArsenal = 2;
-        magazines[] = {"OEC_Magazine_APFSuppressor_100Rnd"};
+        magazines[] = {"OEC_Magazine_APFSuppressor_100Rnd", "OEC_Magazine_APFSuppressor_100Rnd_Exogen"};
         magazineWell[] = {"OEC_MagazineWell_APFSuppressor"};
         drySound[] = {"WBK_Combines\weapons\shotgun_empty.wav",1,1,10};
 		reloadMagazineSound[] = {"WBK_Combines\weapons\APF_reload.ogg",1,1,30};
@@ -181,6 +181,20 @@ class CfgMagazines
         lastRoundsTracer = 0;
 		mass = 50;
     };
+	 class OEC_Magazine_APFSuppressor_100Rnd_Exogen: HL_CMB_30Rnd_AR2_Mag
+    {
+        ammo = "OEC_Ammo_APFSuppressor_exogen";
+        count = 200;
+        author = "OEC Extension";
+		initSpeed = 770;
+        displayName = "[OEC] 200Rnd Anti-Exogen Suppressor Cell";
+        descriptionShort = "High Capacity Anti-Xen Suppressor Cell; 300m dissipation range; Deals increased damage to xen creatures";
+        displayNameShort = "200Rnd Cell";
+		picture = "\CUP\Weapons\CUP_Weapons_Ammunition\data\ui\m_g36_betac_ca.paa";
+        tracersEvery = 0;
+        lastRoundsTracer = 0;
+		mass = 50;
+    };
 };
 
 class CfgMagazineWells
@@ -189,7 +203,8 @@ class CfgMagazineWells
     {
         OEC_APFSuppressor_Mags[] =
         {
-            "OEC_Magazine_APFSuppressor_100Rnd"
+            "OEC_Magazine_APFSuppressor_100Rnd",
+			"OEC_Magazine_APFSuppressor_100Rnd_Exogen"
         };
     };
 };

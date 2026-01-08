@@ -13,6 +13,7 @@ class CfgPatches
             "A3_Soft_F",
             "A3_CargoPoses_F",
             "WBK_Combinus",
+            "WBK_HalfLife_AlienShit",
             "rhs_c_weapons",
             "rhs_c_heavyweapons",
             "rhsusf_c_weapons",
@@ -69,6 +70,15 @@ class CfgFactionClasses
 		flag = "\rhsafrf\addons\rhs_main\data\flag_rus_co.paa";
 		backpack_tf_faction_radio_api = "tf_bussole";
 	};
+    class OEC_Faction_Class_Aliens
+    {
+		displayName = "[OEC] Aliens";
+		priority = -9;
+		side = 2;
+		icon = "\rhsafrf\addons\rhs_main\data\icons\msv.paa";
+		flag = "\rhsafrf\addons\rhs_main\data\flag_rus_co.paa";
+		backpack_tf_faction_radio_api = "tf_bussole";
+	};
     class OEC_Faction_Class_Combine
     {
 		displayName = "[OEC] Combine";
@@ -118,6 +128,10 @@ class CfgEditorCategories
     {
        displayName = "[OEC] CISDF";
     };
+    class OEC_EdCat_Aliens
+    {
+       displayName = "[OEC] Aliens";
+    };
     class OEC_EdCat_Supply
     {
        displayName = "[OEC] Supply Objects";
@@ -165,6 +179,12 @@ class CfgEditorSubCategories
     {
         displayName = "0. Anti-Air";
     };
+
+    class OEC_EdSubCat_Creatures
+    {
+        displayName = "1. Creatures";
+    };
+
     class OEC_EdSubCat_resup
     {
         displayName = "1. Combine Resupply";

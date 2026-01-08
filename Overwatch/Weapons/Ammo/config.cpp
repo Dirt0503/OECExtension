@@ -130,6 +130,19 @@ class CfgAmmo
         tracerColor[] = {0,1,1,1};
         tracerColorR[] = {0,1,1,1};
     };
+	class OEC_Ammo_APFSuppressor_exogen: B_65x39_Caseless
+    {
+        effectFly = "OEC_CloudLet_AlienPulse_Green";
+
+        airFriction = -0.0006;
+        coefGravity = 0.01;
+        hit = 23.4;
+        caliber = 0;
+		typicalSpeed = 770;
+		timeToLive = 0.38961039;
+        tracerColor[] = {0,1,1,1};
+        tracerColorR[] = {0,1,1,1};
+    };
 
     // OICW Ammo
 	class OEC_Ammo_OICW: B_65x39_Caseless
