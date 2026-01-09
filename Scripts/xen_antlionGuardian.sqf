@@ -104,7 +104,7 @@ _unitWithSword addEventHandler ["AnimStateChanged", {
 					_unit call WBK_Smasher_CreateCamShake;
 					_unit call WBK_Smasher_Damage_Vehicles;
 					[_unit,0.5,[0,4000,800],5.4] call WBK_Alien_Heavy_Damage_Humanoid;
-					[_unit,100,3.5,false] call OEC_aceDamage_Guard; 
+					[_unit,1,6,false] call OEC_aceDamage_Guard; 
 				};
 				case "antlionguardian_charge_crash": {
 					[_unit, selectRandom ["WBK_AG_shell_crack_1","WBK_AG_shell_crack_2"], 85, 3] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf"; 
@@ -114,7 +114,7 @@ _unitWithSword addEventHandler ["AnimStateChanged", {
 					_unit call WBK_Smasher_CreateCamShake;
 					_unit call WBK_Smasher_Damage_Vehicles;
 					[_unit,0.5,[0,2000,400],5.4] call WBK_Alien_Heavy_Damage_Humanoid;
-					[_unit,1,3.5,false] call OEC_aceDamage_Guard; 
+					[_unit,1,6,false] call OEC_aceDamage_Guard; 
 				};
 		 };
 	};

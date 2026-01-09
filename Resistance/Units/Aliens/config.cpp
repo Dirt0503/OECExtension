@@ -25,6 +25,7 @@ class CfgPatches
             "OEC_Units_Antlion",
 		    "OEC_Units_HoundEye",
 			"OEC_Units_Bullsquid",
+			"OEC_Units_Zombie",
 			"OEC_Units_AntlionGuardian"
         };
         weapons[] = {};
@@ -100,7 +101,7 @@ class cfgVehicles
         author = "OEC Extension";
         displayName = "Antlion";
         editorCategory = "OEC_EdCat_Aliens";
-        editorSubCategory = "OEC_EdSubCat_Creatures";
+        editorSubCategory = "OEC_EdSubCat_Antlions";
         faction = "OEC_Faction_Aliens";
 		factionClass = "OEC_Faction_Class_Aliens";
 
@@ -355,7 +356,7 @@ class cfgVehicles
         author = "OEC Extension";
         displayName = "Antlion Myrmidont";
         editorCategory = "OEC_EdCat_Aliens";
-        editorSubCategory = "OEC_EdSubCat_Creatures";
+        editorSubCategory = "OEC_EdSubCat_Antlions";
         faction = "OEC_Faction_Aliens";
 		factionClass = "OEC_Faction_Class_Aliens";
 
@@ -1049,6 +1050,75 @@ class cfgVehicles
 		magazines[] = {};
 		linkedItems[] = {};
 	};
+
+	class OEC_Units_Zombie: WBK_C_ExportClass
+	{
+
+		editorPreview = "rhsafrf\addons\rhs_editorPreviews\data\rhs_msv_rifleman.paa";
+        scope = 2;
+        scopeCurator = 2;
+        author = "OEC Extension";
+        displayName = "Zombie";
+        editorCategory = "OEC_EdCat_Aliens";
+        editorSubCategory = "OEC_EdSubCat_Zombies";
+        faction = "OEC_Faction_Aliens";
+		factionClass = "OEC_Faction_Class_Aliens";
+
+		uniformClass = "OEC_Rebel_Civ_Uniform_White";
+		backpack = "";
+		weapons[] = {"Throw","Put"};
+		magazines[] = {};
+		items[] = {};
+		linkedItems[] = {"OEC_Misc_Helmet_Headcrab"};
+		class SoundBreath
+		{
+			breath[] = {};
+		};
+		class SoundDrown
+		{
+			breath[] = {};
+		};
+		class SoundInjured
+		{
+			breath[] = {};
+		};
+		class SoundBleeding
+		{
+			breath[] = {};
+		};
+		class SoundBurning
+		{
+			breath[] = {};
+		};
+		class SoundChoke
+		{
+			breath[] = {};
+		};
+		class SoundRecovered
+		{
+			breath[] = {};
+		};
+		class SoundBreathAiming
+		{
+			breath[] = {};
+		};
+		class SoundBreathAutomatic
+		{
+			breath[] = {};
+		};
+		class SoundBreathInjured
+		{
+			Person1[] = {};
+		};
+		class SoundBreathSwimming
+		{
+			breathSwimming1[] = {};
+		};
+		class SoundHitScream
+		{
+			Person1[] = {};
+		};
+	};
 };
 
 class Extended_InitPost_EventHandlers
@@ -1087,6 +1157,15 @@ class Extended_InitPost_EventHandlers
 		{
 			onRespawn = "true";
 			init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\xen_bullsquid.sqf';};";
+		};
+	};
+
+	class OEC_Units_Zombie
+	{
+		class HL_ClassicZombie_Ai_Init
+		{
+			onRespawn = "true";
+			init = "_unit = _this select 0; if (local _unit) then {[_unit,false] execVM '\OECExtension\Scripts\xen_zombie.sqf';};";
 		};
 	};
 };

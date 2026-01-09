@@ -132,7 +132,7 @@ class CfgAmmo
     };
 	class OEC_Ammo_APFSuppressor_exogen: B_65x39_Caseless
     {
-        effectFly = "OEC_CloudLet_AlienPulse_Green";
+        effectFly = "OEC_ParticleEffect_AlienPulse_Green";
 
         airFriction = -0.0006;
         coefGravity = 0.01;
@@ -328,7 +328,7 @@ class CfgAmmo
 		hit = 80;
 		indirectHit = 8;
 		indirectHitRange = 6;
-		fuseDistance = 15;
+		fuseDistance = 0;
 		warheadName = "HE";
 		aiAmmoUsageFlags = "64 + 128";
 		effectFly = "OEC_ParticleEffect_Gren";
@@ -391,7 +391,7 @@ class CfgAmmo
 		indirectHit = 0;
 		indirectHitRange = 0;
 		typicalspeed = 70;
-		fuseDistance = 2;
+		fuseDistance = 0;
 		explosionTime = -1;
 		ExplosionEffects = "RHS_flashbang_10";
 		explosive = 1;
@@ -542,7 +542,7 @@ class CfgAmmo
 		initTime = 0;
 		thrustTime = 0.1;
 		thrust = 0.1;
-		fuseDistance = 15;
+		fuseDistance = 10;
 		CraterEffects = "ATMissileCrater";
 		explosionEffects = "ATMissileExplosion";
 		effectsMissileInit = "";

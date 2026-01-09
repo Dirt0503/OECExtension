@@ -127,109 +127,8 @@ WBK_Antlion_Explode = {
 			[_x,2,_this] remoteExec ["concentrationToZero", _x, false];
 		};
 	} forEach nearestObjects [_this,["MAN"],4];
-	_gib1 = createVehicle ["WBK_Antlion_Gib_1",ASLToATL eyePos _this, [], 0, "CAN_COLLIDE"];
-	_gib2 = createVehicle ["WBK_Antlion_Gib_2",ASLToATL eyePos _this, [], 0, "CAN_COLLIDE"];
-	_gib3 = createVehicle ["WBK_Antlion_Gib_3",ASLToATL eyePos _this, [], 0, "CAN_COLLIDE"];
-	_gib4 = createVehicle ["WBK_Antlion_Gib_4",ASLToATL eyePos _this, [], 0, "CAN_COLLIDE"];
-	_gib4 setVelocityModelSpace [0, 10, 3];
-	_gib3 setVelocityModelSpace [0, -10, 3];
-	_gib2 setVelocityModelSpace [10, 0, 3];
-	_gib1 setVelocityModelSpace [-10, 0, 3];
-	uiSleep 5;
-	deleteVehicle _this;
-	uiSleep 60;
-	{
-		deleteVehicle _x;
-	} forEach [_gib1,_gib2,_gib3,_gib4];
 };
 
-
-WBK_AntlionSyncKill_1 = {
-_antlion = _this select 0;
-_victim = _this select 1;
-[_victim, "ALL"] remoteExec ["disableAI", _victim]; 
-_antlion setDamage 0;
-_victim setVariable ["canMakeAttack",1,true];
-_victim setVariable ["AI_CanTurn",1,true];
-_victim setVariable ["actualSwordBlock",0,true];
-_antlion attachTo [_victim,[0,0.72,0]];
-[_antlion, 180] remoteExec ["setDir", 0]; 
-[_antlion, "antlion_sync_main_1"] remoteExec ["switchMove", 0,false]; 
-[_victim, "antlion_sync_main_1"] remoteExec ["switchMove", 0,true]; 
-[_victim, ["","nearPanic_1","nearPanic_2","nearPanic_3","nearPanic_4"], 100, false] call WBK_MakeVoiceOver_Combine;
-[_victim, "Disable_Gesture"] remoteExec ["playActionNow", _victim];
-uisleep 0.1;
-[_victim, selectRandom ["leg_hit1","leg_hit2","leg_hit3"], 40, 3] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf"; 
-uisleep 0.5;
-if (!(alive _antlion) or !(animationState _antlion == "antlion_sync_main_1") or !(animationState _victim == "antlion_sync_main_1")) exitWith {
-	[_victim, [_victim vectorModelToWorld [0,100,40], _victim selectionPosition "head", false]] remoteExec ["addForce", _victim];
-	_victim setVariable ["canMakeAttack",0,true];
-	_victim setVariable ["AI_CanTurn",0,true];
-};
-[_victim, selectRandom ["WBK_antlion_attack_double_1","WBK_antlion_attack_double_2","WBK_antlion_attack_double_3"], 35, 3] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf"; 
-uisleep 0.5;
-if (!(alive _antlion) or !(animationState _antlion == "antlion_sync_main_1") or !(animationState _victim == "antlion_sync_main_1")) exitWith {
-	[_victim, [_victim vectorModelToWorld [0,100,40], _victim selectionPosition "head", false]] remoteExec ["addForce", _victim];
-	_victim setVariable ["canMakeAttack",0,true];
-	_victim setVariable ["AI_CanTurn",0,true];
-};
-removeGoggles _victim;
-[_victim, selectRandom ["WBK_antlion_breakHead_1","WBK_antlion_breakHead_2","WBK_antlion_breakHead_3"], 60, 3] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf"; 
-_victim setDamage 1;
-_victim spawn WBK_OB_FriendlyDown_Combine;
-[_victim, 1.2] remoteExec ["setAnimSpeedCoef", 0]; 
-[_victim, "WBK_DosHead_FrontHole"] remoteExec ["setFace",0];
-_victim call WBK_Smasher_CreateBloodParticle;
-uisleep 1;
-[_victim, selectRandom ["WBK_antlion_attack_1","WBK_antlion_attack_2","WBK_antlion_attack_3","WBK_antlion_attack_4","WBK_antlion_attack_5"], 35, 3] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf"; 
-[_victim, selectRandom ["sword_headgore_1","sword_headgore_2","sword_headgore_3","sword_headgore_4"], 40, 3] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf"; 
-_victim call WBK_Smasher_CreateBloodParticle;
-uisleep 1.5;
-detach _antlion;
-};
-
-
-
-WBK_AntlionSyncKill_2 = {
-_antlion = _this select 0;
-_victim = _this select 1;
-_antlion setDamage 0;
-[_victim, "ALL"] remoteExec ["disableAI", _victim]; 
-_victim setVariable ["canMakeAttack",1,true];
-_victim setVariable ["AI_CanTurn",1,true];
-_victim setVariable ["actualSwordBlock",0,true];
-_antlion attachTo [_victim,[0.47,0.9,0]];
-[_antlion, 180] remoteExec ["setDir", 0]; 
-[_antlion, "antlion_sync_main_2"] remoteExec ["switchMove", 0,false]; 
-[_victim, "antlion_sync_main_2"] remoteExec ["switchMove", 0,true]; 
-[_victim, ["","nearPanic_1","nearPanic_2","nearPanic_3","nearPanic_4"], 100, false] call WBK_MakeVoiceOver_Combine;
-[_victim, "Disable_Gesture"] remoteExec ["playActionNow", _victim];
-uisleep 0.4;
-if (!(alive _antlion) or !(animationState _antlion == "antlion_sync_main_2") or !(animationState _victim == "antlion_sync_main_2")) exitWith {
-	[_victim, [_victim vectorModelToWorld [0,100,40], _victim selectionPosition "head", false]] remoteExec ["addForce", _victim];
-	_victim setVariable ["canMakeAttack",0,true];
-	_victim setVariable ["AI_CanTurn",0,true];
-};
-[_antlion, selectRandom ["WBK_antlion_attack_double_1","WBK_antlion_attack_double_2","WBK_antlion_attack_double_3"], 35, 3] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf"; 
-uisleep 0.3;
-if (!(alive _antlion) or !(animationState _antlion == "antlion_sync_main_2") or !(animationState _victim == "antlion_sync_main_2")) exitWith {
-	[_victim, [_victim vectorModelToWorld [0,100,40], _victim selectionPosition "head", false]] remoteExec ["addForce", _victim];
-	_victim setVariable ["canMakeAttack",0,true];
-	_victim setVariable ["AI_CanTurn",0,true];
-};
-_victim setDamage 1;
-_victim spawn WBK_OB_FriendlyDown_Combine;
-[_victim, selectRandom ["WBK_antlion_breakBody_1","WBK_antlion_breakBody_2","WBK_antlion_breakBody_3"], 60, 3] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf"; 
-[_victim, 1.2] remoteExec ["setAnimSpeedCoef", 0]; 
-_victim call WBK_Smasher_CreateBloodParticle;
-uisleep 0.3;
-[_victim, 1.3] remoteExec ["setAnimSpeedCoef", 0]; 
-[_victim, selectRandom ["sword_headgore_1","sword_headgore_2","sword_headgore_3","sword_headgore_4"], 40, 3] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf"; 
-uisleep 0.8;
-[_victim, "dobi_fall", 40, 3] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf"; 
-uisleep 0.2;
-detach _antlion;
-};
 
 WBK_AntLionJump = {
 	_zombie = _this select 0;
@@ -335,6 +234,7 @@ WBK_AntLionJump = {
 	_zombie setVariable ["CanFly",nil];
 };
 
+
 OEC_aceDamage = {
 	params ["_zombie","_damage","_dist","_isMetal"];
 	if !(alive _zombie) exitWith {};
@@ -346,31 +246,19 @@ OEC_aceDamage = {
 			case (!(isNil {_x getVariable "IMS_IsUnitInvicibleScripted"}) || (animationState _x == "STAR_WARS_FIGHT_DODGE_LEFT") || (animationState _x == "STAR_WARS_FIGHT_DODGE_LEFT") || (animationState _x == "STAR_WARS_FIGHT_DODGE_RIGHT") || (animationState _x == "starWars_landRoll") || (animationState _x == "starWars_landRoll_b") || ((typeOf _x isKindOf "WBK_SpecialZombie_Smasher_1") && (side _x == side _zombie)) || ((typeOf _x isKindOf "WBK_Goliaph_1") && (side _x == side _zombie)) || ((_x == _zombie) || !(alive _zombie) || !(alive _x) || (animationState _x == "WBK_Smasher_Execution"))): {};
 			case (lifeState _x == "INCAPACITATED"): {};
 
-			_bodyPart1 = ["head","body","arm_r","arm_l","leg_r","leg_l"] selectRandomWeighted [4,10,8,8,9,9];
-			[_x, _damage, _bodyPart1, "bite"] remoteExec ["ace_medical_fnc_addDamageToUnit", _x];
+			[_x, _damage, "body", "bite"] remoteExec ["ace_medical_fnc_addDamageToUnit", _x];
 
-			_bodyPart2 = "body";
-			while {_bodyPart2 == _bodyPart1} do 
-			{
-				_bodyPart2 = ["head","body","arm_r","arm_l","leg_r","leg_l"] selectRandomWeighted [4,10,9,9,9,9];
-			};
+			_bodyPart2 = ["head","hand_r","hand_l","leg_r","leg_l"] selectRandomWeighted [5,10,10,10,10];
 			[_x, _damage, _bodyPart2, "bite"] remoteExec ["ace_medical_fnc_addDamageToUnit", _x];
 
-			_bodyPart3 = "body";
-			while {_bodyPart3 == _bodyPart1 || _bodyPart3 == _bodyPart2} do 
+			_bodyPart3 = ["head","hand_r","hand_l","leg_r","leg_l"] selectRandomWeighted [5,10,10,10,10];
+			while {_bodyPart3 == _bodyPart2} do 
 			{
-				_bodyPart3 = ["head","body","arm_r","arm_l","leg_r","leg_l"] selectRandomWeighted [4,10,9,9,9,9];
+				_bodyPart3 = ["head","hand_r","hand_l","leg_r","leg_l"] selectRandomWeighted [5,10,10,10,10];
 			};
 			[_x, _damage, _bodyPart3, "bite"] remoteExec ["ace_medical_fnc_addDamageToUnit", _x];
 
-			if (_isMetal) then 
-			{
-				[_x, selectRandom ["sword_hit_1","sword_hit_2","sword_hit_3","sword_hit_4","sword_hit_5","sword_hit_6"], 60, 3] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf"; 
-			}
-			else
-			{
-				[_x, selectRandom ["PF_Hit_1","PF_Hit_2"], 60, 5] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf";
-			};
+			[_x, selectRandom ["sword_hit_1","sword_hit_2","sword_hit_3","sword_hit_4","sword_hit_5","sword_hit_6"], 60, 3] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf"; 
 			if (isPlayer _x) then
 			{
 				[_x, {
@@ -434,6 +322,7 @@ if !(alive _unit) exitWith {};
 _unit reveal [_firer, 4];
 }];
 
+
 _unitWithSword addEventHandler ["AnimStateChanged",
 { 
 	_this spawn 
@@ -446,14 +335,14 @@ _unitWithSword addEventHandler ["AnimStateChanged",
 				[_unit, selectRandom ["WBK_antlion_attack_1","WBK_antlion_attack_2","WBK_antlion_attack_3","WBK_antlion_attack_4","WBK_antlion_attack_5"], 45, 3] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf"; 
 				uiSleep 0.6;
 				if (animationState _unit != "antlion_attack_1") exitWith {};
-				[_unit,0.8,3.3,true] call OEC_aceDamage;
+				[_unit,0.9,3.3,true] call OEC_aceDamage;
 			};
 			case "antlion_attack_2": 
 			{
 				[_unit, selectRandom ["WBK_antlion_attack_double_1","WBK_antlion_attack_double_2","WBK_antlion_attack_double_3"], 45, 3] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf"; 
 				uiSleep 0.6;
 				if (animationState _unit != "antlion_attack_2") exitWith {};
-				[_unit,0.8,3.3,true] call OEC_aceDamage;
+				[_unit,0.9,3.3,true] call OEC_aceDamage;
 			};
 		};
 	};
@@ -489,6 +378,7 @@ _this addEventHandler [
 	}
 ];
 }] remoteExec ["spawn",0,true];
+
 
 _actFr = [{
     _array = _this select 0;
@@ -526,13 +416,10 @@ _actFr = [{
 		[_mutant,_en] spawn WBK_AntLionJump;
 	};
 	if (((_en distance _mutant) <= 2) and (count _ins == 0)) then {
-		if (((damage _en) >= 0.4) and (getText (configfile >> 'CfgVehicles' >> typeOf _en >> 'moves') == 'CfgMovesMaleSdr')) exitWith {
-			[_en,(_en getDir _mutant)] remoteExec ["setDir",_en];
-			[_mutant, _en] spawn selectRandom [WBK_AntlionSyncKill_1,WBK_AntlionSyncKill_2];
-		};
 		[_mutant, selectRandom ["antlion_attack_1","antlion_attack_2"]] remoteExec ["switchMove",0];
 	};
 }, 0.1, [_unitWithSword]] call CBA_fnc_addPerFrameHandler;
+
 
 _loopPathfind = [{
     _array = _this select 0;

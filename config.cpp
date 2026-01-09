@@ -149,41 +149,45 @@ class CfgEditorSubCategories
     {
         displayName = "1. Infantry";
     };
-
     class OEC_EdSubCat_Specials
     {
         displayName = "2. Infantry Specials";
     };
-
     class OEC_EdSubCat_HVTs
     {
         displayName = "3. High Value Persons";
     };
-
     class OEC_EdSubCat_Turrets
     {
         displayName = "4. Turrets";
     };
-    
     class OEC_EdSubCat_Cars
     {
         displayName = "5. Cars + Trucks";
     };
-
     class OEC_EdSubCat_AFV
     {
         displayName = "6. Armored Fighting Vehicles";
     };
-
     class OEC_EdSubCat_AA
     {
         displayName = "0. Anti-Air";
     };
 
+
+    class OEC_EdSubCat_Antlions
+    {
+        displayName = "1. Antlions";
+    };
     class OEC_EdSubCat_Creatures
     {
-        displayName = "1. Creatures";
+        displayName = "2. Xen Creatures";
     };
+    class OEC_EdSubCat_Zombies
+    {
+        displayName = "3. Zombies";
+    };
+
 
     class OEC_EdSubCat_resup
     {

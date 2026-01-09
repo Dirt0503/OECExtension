@@ -52,6 +52,13 @@ class CfgLights
         flareSize = 0.25;
     };
 
+    class OEC_Light_AlienPulse_Green: OEC_Light_AlienPulse_Blue
+    {
+        color[] = {0.2, 0.95, 0.1, 1};
+        diffuse[] = {0.2, 0.95, 0.1, 1};
+        flareSize = 0.25;
+    };
+
     class OEC_Light_GrenadeLight_Red: OEC_Light_AlienPulse_Orange
     {
         color[] = {1,0,0,1};
@@ -75,6 +82,20 @@ class CfgCloudLets
             {0, 0.2, 0.2, 0.00}   
         };
         sizeCoef = 0.2;
+    };
+
+    class OEC_CloudLet_AlienPulse_Green: OEC_CloudLet_AlienPulse
+    {
+        color[] = 
+        {
+            {0.15, 0.65, 0.1, 0.25},  
+            {0.1, 0.65, 0.07, 0.15},
+            {0.07, 0.65, 0.04, 0.08},
+            {0.04, 0.65, 0.01, 0.03},  
+            {0, 0.65, 0, 0.00}   
+        };
+        sizeVar = 0.05;
+        sizeCoef = 0.1;
     };
 
     class OEC_CloudLet_AlienPulse_Orange: OEC_CloudLet_AlienPulse
@@ -138,6 +159,25 @@ class OEC_ParticleEffect_AlienPulse_Orange
     {
         simulation = "particles";
         type = "OEC_CloudLet_AlienPulse_Orange";
+        position[] = {0,0,0};
+		enabled = "speedY interpolate [-0.0001,0.0001,1,-1]";
+		intensity = 1;
+		interval = 1;
+    };
+};
+
+class OEC_ParticleEffect_AlienPulse_Green
+{
+    class Light
+    {
+        simulation = "light";
+        type = "OEC_Light_AlienPulse_Green";
+        position[] = {0,0,0};
+    };
+    class Trail1
+    {
+        simulation = "particles";
+        type = "OEC_CloudLet_AlienPulse_Green";
         position[] = {0,0,0};
 		enabled = "speedY interpolate [-0.0001,0.0001,1,-1]";
 		intensity = 1;

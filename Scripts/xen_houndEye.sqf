@@ -38,31 +38,20 @@ OEC_aceDamage_houndEye = {
 			case (!(isNil {_x getVariable "IMS_IsUnitInvicibleScripted"}) || (animationState _x == "STAR_WARS_FIGHT_DODGE_LEFT") || (animationState _x == "STAR_WARS_FIGHT_DODGE_LEFT") || (animationState _x == "STAR_WARS_FIGHT_DODGE_RIGHT") || (animationState _x == "starWars_landRoll") || (animationState _x == "starWars_landRoll_b") || ((typeOf _x isKindOf "WBK_SpecialZombie_Smasher_1") && (side _x == side _zombie)) || ((typeOf _x isKindOf "WBK_Goliaph_1") && (side _x == side _zombie)) || ((_x == _zombie) || !(alive _zombie) || !(alive _x) || (animationState _x == "WBK_Smasher_Execution"))): {};
 			case (lifeState _x == "INCAPACITATED"): {};
 
-			_bodyPart1 = ["head","body","arm_r","arm_l","leg_r","leg_l"] selectRandomWeighted [4,10,8,8,9,9];
-			[_x, _damage, _bodyPart1, "falling"] remoteExec ["ace_medical_fnc_addDamageToUnit", _x];
+			[_x, _damage, "body", "backblast"] remoteExec ["ace_medical_fnc_addDamageToUnit", _x];
 
-			_bodyPart2 = "body";
-			while {_bodyPart2 == _bodyPart1} do 
+			_bodyPart2 = ["head","hand_r","hand_l","leg_r","leg_l"] selectRandomWeighted [5,10,10,10,10];
+			[_x, _damage, _bodyPart2, "backblast"] remoteExec ["ace_medical_fnc_addDamageToUnit", _x];
+
+			_bodyPart3 = ["head","hand_r","hand_l","leg_r","leg_l"] selectRandomWeighted [5,10,10,10,10];
+			while {_bodyPart3 == _bodyPart2} do 
 			{
-				_bodyPart2 = ["head","body","arm_r","arm_l","leg_r","leg_l"] selectRandomWeighted [4,10,9,9,9,9];
+				_bodyPart3 = ["head","hand_r","hand_l","leg_r","leg_l"] selectRandomWeighted [5,10,10,10,10];
 			};
-			[_x, _damage, _bodyPart2, "falling"] remoteExec ["ace_medical_fnc_addDamageToUnit", _x];
+			[_x, _damage, _bodyPart3, "backblast"] remoteExec ["ace_medical_fnc_addDamageToUnit", _x];
 
-			_bodyPart3 = "body";
-			while {_bodyPart3 == _bodyPart1 || _bodyPart3 == _bodyPart2} do 
-			{
-				_bodyPart3 = ["head","body","arm_r","arm_l","leg_r","leg_l"] selectRandomWeighted [4,10,9,9,9,9];
-			};
-			[_x, _damage, _bodyPart3, "falling"] remoteExec ["ace_medical_fnc_addDamageToUnit", _x];
-
-			if (_isMetal) then 
-			{
 				[_x, selectRandom ["sword_hit_1","sword_hit_2","sword_hit_3","sword_hit_4","sword_hit_5","sword_hit_6"], 60, 3] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf"; 
-			}
-			else
-			{
-				[_x, selectRandom ["PF_Hit_1","PF_Hit_2"], 60, 5] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf";
-			};
+		
 			if (isPlayer _x) then
 			{
 				[_x, {
@@ -155,7 +144,7 @@ _unitWithSword addEventHandler ["AnimStateChanged", {
 					uiSleep 0.1;
 					[_unit,0.001,[0,700,100],5.5] call WBK_Alien_Heavy_Damage_Humanoid;
 					_unit call WBK_Smasher_Damage_Vehicles;
-                    [_unit,0.25,5.5,true] call OEC_aceDamage_houndEye;
+                    [_unit,0.4,5.5,true] call OEC_aceDamage_houndEye;
 				};
 		 };
 	};
