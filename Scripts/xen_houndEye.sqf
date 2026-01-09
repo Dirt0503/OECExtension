@@ -4,7 +4,7 @@ removeAllWeapons _unitWithSword;
 _unitWithSword setUnitPos "UP";
 _unitWithSword setVariable ["WBK_AI_ISZombie",true,true];
 _unitWithSword setVariable ["WBK_AI_ZombieMoveSet","WBK_CustomCreature",true];
-_unitWithSword setVariable ["WBK_SynthHP",55,true];
+_unitWithSword setVariable ["WBK_SynthHP",70,true];
 _unitWithSword setSpeaker "NoVoice";
 _unitWithSword disableConversation true;
 

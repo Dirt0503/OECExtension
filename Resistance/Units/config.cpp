@@ -1494,9 +1494,73 @@ class CfgGroups
                 };
             };
 
+             class OEC_Group_Alien_Houndeye_Pack
+            {
+                name = "3. Alien Creature Packs";
+                aliveCategory = "Infantry";
+                class OEC_group_Alien_small_swarm
+                {
+                    name = "1. Houndeye Pack";
+                    faction = "OEC_Faction_Aliens";
+                    side = 0;
+                    rarityGroup = 0.75;
+                    icon = "\A3\ui_f\data\map\markers\nato\o_inf.paa";
+                    class Unit0
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_HoundEye";
+                        rank = "LIEUTENANT";
+                        position[] = {0,0,0};
+                    };
+                    class Unit1
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_HoundEye";
+                        rank = "SERGEANT";
+                        position[] = {1,0,0};
+                    };
+                    class Unit2
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_HoundEye";
+                        rank = "PRIVATE";
+                        position[] = {-1,0,0};
+                    };
+                    class Unit3
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_HoundEye";
+                        rank = "PRIVATE";
+                        position[] = {0,-1,0};
+                    };
+                };
+                class OEC_group_Alien_Bullsquid_Pack
+                {
+                    name = "2. Bullsquid Pack";
+                    faction = "OEC_Faction_Aliens";
+                    side = 0;
+                    rarityGroup = 0.75;
+                    icon = "\A3\ui_f\data\map\markers\nato\o_inf.paa";
+                    class Unit0
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Bullsquid";
+                        rank = "LIEUTENANT";
+                        position[] = {0,0,0};
+                    };
+                    class Unit1
+                    {
+                        side = 2;
+                        vehicle = "OEC_Units_Bullsquid";
+                        rank = "SERGEANT";
+                        position[] = {1,0,0};
+                    };
+                };
+            };
+
              class OEC_Group_Alien_Horde
             {
-                name = "3. Zombie Hordes";
+                name = "4. Zombie Hordes";
                 aliveCategory = "Infantry";
                 class OEC_group_Alien_small_horde
                 {

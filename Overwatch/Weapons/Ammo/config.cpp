@@ -240,7 +240,15 @@ class CfgAmmo
 		caliber = 75;
 		tracerScale = 2.5;
 		model = "\A3\Weapons_f\Data\bullettracer\tracer_yellow";
-		//effectFly = "OEC_Light_AlienPulse_Orange_sRifle";
+	};
+	class OEC_Ammo_cmbSrifle_Exo: OEC_Ammo_cmbSrifle_normal
+	{
+		hit = 77.5;
+		caliber = 0;
+		tracerScale = 2.5;
+		typicalSpeed = 500;
+		timeToLive = 0.8;
+		model = "\A3\Weapons_f\Data\bullettracer\tracer_green";
 	};
 
 	// Pulse SMG Ammo
