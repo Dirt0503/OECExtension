@@ -17,10 +17,10 @@ class CfgMineTriggers
 	class RangeTrigger;
 	class RangeTriggerHopper: RangeTrigger
 	{
-		mineTriggerRange = 9;
-		mineTriggerActivationRange = 9;
+		mineTriggerRange = 7;
+		mineTriggerActivationRange = 7;
 		restrictZoneCenter[] = {0,0,0};
-		restrictZoneRadius = 9;
+		restrictZoneRadius = 7;
 		mineDelay = 0.5;
 	};
 };
@@ -40,31 +40,35 @@ class cfgAmmo
     class BoundingMineBase;
     class HopperMine_Range_Ammo: BoundingMineBase
 	{
-		hit = 20;
-		indirectHit = 20;
-		indirectHitRange = 20;
+		hit = 50;
+		indirectHit = 50;
+		indirectHitRange = 8;
 		model = "\A3\Weapons_F\explosives\mine_AP_bouncing";
 		mineModelDisabled = "\A3\Weapons_F\explosives\mine_AP_bouncing_d";
 		defaultMagazine = "HopperMine_Range_Mag";
 		soundHit1[] = {"A3\Sounds_F\arsenal\explosives\mines\Explosion_M6_slam_mine_01",3.1622777,1,1300};
 		soundHit2[] = {"A3\Sounds_F\arsenal\explosives\mines\Explosion_M6_slam_mine_02",3.1622777,1,2000};
 		multiSoundHit[] = {"soundHit1",0.5,"soundHit2",0.5};
-		// soundActivation[] = {"", 0, 0, 0};  // (Optional) No sound on activation
 		soundDeactivation[] = {"A3\Sounds_F\weapons\Mines\deactivate_mine_3a",1.9952624,1,20};
 		explosionEffects = "BoundingMineExplosion";
 		CraterEffects = "BoundingMineCrater";
 		mineJumpEffects = "MineJumpEffect";
 		whistleDist = 60;
 		cost = 300;
-		mineBoundingTime = 0.5;
-		mineBoundingDist = 3;
+		mineBoundingTime = 0.55;
+		mineBoundingDist = 2.5;
 		mineInconspicuousness = 40;
 		mineTrigger = "RangeTriggerHopper";
 
 
-        triggerWhenDestroyed = 0;  // (Optional) Explode when the object is shot and destroyed (after being placed) (0-disabled, 1-enabled). Required to be enabled prior to ACE 3.18.0.
-        ace_explosives_defuseTime = 3; // (Optional) Time it takes to defuse explosive (in seconds, default: 5)
-        ace_explosives_size = 0;  // (Optional) Setting to 1 will use a defusal action with a larger radius (useful for large mines or mines with a wide pressure plane trigger area) (default: 0)
+        triggerWhenDestroyed = 0;
+        ace_explosives_defuseTime = 3;
+        ace_explosives_size = 1;
+
+		class EventHandlers 
+		{
+            init = "[_this select 0] execVM '\OECExtension\Scripts\OEC_hopperMine.sqf';";
+        };
 	};
 };
 
@@ -93,7 +97,7 @@ class CfgMagazines
         displayNameShort = "Hopper Mine";
         descriptionShort = "Combine-made bounding mine with IFF capabilities";
 
-		mass = 20;
+		mass = 15;
 		ammo = "HopperMine_Range_Ammo";
 		picture = "\A3\Weapons_F\Data\UI\gear_mine_AP_bouncing_CA.paa";
 		model = "\A3\Weapons_F\explosives\mine_AP_bouncing_i";
@@ -106,16 +110,8 @@ class CfgMagazines
 
 		ace_explosives_setupObject = "ACE_Explosives_Place_APERSBoundingMine";
 		useAction = 1;
-        ace_explosives_placeable = 1;  // Can be placed
+        ace_explosives_placeable = 1;
 		
-       /* class ACE_Triggers 
-		{ 
-        	SupportedTriggers[] = {"PressurePlate"};  // This mine only support pressure plate activation
-            class PressurePlate 
-			{
-                digDistance = 5;
-            };
-		};*/
 	};
 };
 
@@ -158,39 +154,16 @@ class cfgVehicles
 
 	class hopperBoundingMine: MineBase
 	{
-		author = "$STR_A3_Bohemia_Interactive";
+		author = "OEC Extension";
 		mapSize = 0.08;
 		editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\APERSBoundingMine.jpg";
-		_generalMacro = "APERSBoundingMine";
+		scopeCurator = 2;
 		scope = 2;
 		ammo = "HopperMine_Range_Ammo";
-		displayName = "$STR_A3_cfgMagazines_BouncingMineRangeMagazine0";
+		displayName = "[OEC] Hopper Mine";
 		icon = "iconExplosiveAP";
 		picture = "\A3\Weapons_F\Data\clear_empty.paa";
 		model = "\A3\Weapons_F\explosives\mine_AP_bouncing";
-		descriptionShort = "$STR_A3_cfgMagazines_BouncingMineRangeMagazine1";
-		class Library
-		{
-			libTextDesc = "$STR_A3_cfgMagazines_BouncingMineRangeMagazine_Library0";
-		};
-
-		class OEC_Hopper_Ai_Init
-		{
-			onRespawn = "true";
-			init = "_unit = _this select 0; if (local _unit) then {[_unit, blufor] execVM '\OECExtension\Scripts\OEC_hopperMine.sqf';};";
-		};
+		descriptionShort = "hopper description 5";
 	};
-};
-
-class Extended_InitPost_EventHandlers
-{
-	class hopperBoundingMine
-	{
-		class OEC_Hopper_Ai_Init
-		{
-			onRespawn = "true";
-			init = "_unit = _this select 0; if (local _unit) then {[_unit, blufor] execVM '\OECExtension\Scripts\OEC_hopperMine.sqf';};";
-		};
-	};
-
 };
