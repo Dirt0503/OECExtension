@@ -12,17 +12,7 @@ class CfgPatches
 class CfgAmmo
 {
     class SubmunitionBullet;
-    class GrenadeHand;
-    class B_65x39_Caseless;
-
-    class OEC_Ammo_MK3A2: GrenadeHand
-    {
-        model = "\rhsusf\addons\rhsusf_weapons\grenades_thrown\mk3a2\mk3a2";
-        effectFly = "OEC_ParticleEffect_MK3A2";
-        simulation = "shotNVGMarker";
-        soundFly[] = {"\OECExtension\Overwatch\Weapons\Ammo\sounds\OEC_5SEC_GRENFUSE.wss",20,1,200};
-        class NVGMarkers{};
-    };
+	class B_65x39_Caseless;
 
     class OEC_Ammo_WallhammerShotgun: SubmunitionBullet
     {
