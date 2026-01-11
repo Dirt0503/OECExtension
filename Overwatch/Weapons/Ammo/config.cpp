@@ -540,7 +540,7 @@ class CfgAmmo
 		initTime = 0;
 		thrustTime = 0.1;
 		thrust = 0.1;
-		fuseDistance = 10;
+		fuseDistance = 0;
 		CraterEffects = "ATMissileCrater";
 		explosionEffects = "ATMissileExplosion";
 		effectsMissileInit = "";
@@ -607,6 +607,7 @@ class CfgAmmo
 		indirectHit = 90;
 		indirectHitRange = 10;
 		explosive = 1;
+		fuseDistance = 10;
 		aiAmmoUsageFlags = "64 + 128 + 512";
 		model = "rhsusf\addons\rhsusf_weapons2\m3maaws\ammo_m3maaws.p3d";
 		CraterEffects = "ArtyShellCrater";
@@ -635,6 +636,7 @@ class CfgAmmo
 		deleteParentWhenTriggered = 0;
 		hit = 95;
 		indirectHit = 30;
+		fuseDistance = 20;
 		indirectHitRange = 5.1;
 		aiAmmoUsageFlags = "64 + 128 + 256 + 512";
 		allowAgainstInfantry = 1;

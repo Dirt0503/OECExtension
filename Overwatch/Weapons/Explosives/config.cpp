@@ -43,7 +43,7 @@ class cfgAmmo
 		hit = 50;
 		indirectHit = 50;
 		indirectHitRange = 6.5;
-		model = "\A3\Weapons_F\explosives\mine_AP_bouncing";
+		model = "\OECExtension\Overwatch\Weapons\Explosives\data\combine_mine";
 		mineModelDisabled = "\A3\Weapons_F\explosives\mine_AP_bouncing_d";
 		defaultMagazine = "HopperMine_Range_Mag";
 		soundHit1[] = {"A3\Sounds_F\arsenal\explosives\mines\Explosion_M6_slam_mine_01",3.1622777,1,1300};
@@ -147,10 +147,6 @@ class cfgVehicles
 {
 	class MineGeneric;
 	class MineBase: MineGeneric {};
-	/*class hopperBoundingMine: MineBase
-	{
-		ammo = "HopperMine_Range_Ammo";
-	};*/
 
 	class hopperBoundingMine: MineBase
 	{

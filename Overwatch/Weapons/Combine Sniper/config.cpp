@@ -156,7 +156,7 @@ class CfgWeapons
 			class StandardSound: BaseSoundModeType
 			{
 				soundSetShot[] = {"OEC_Shot_Sniper_Soundset"};
-				begin1[] = {"OECExtension\Overwatch\Weapons\data\combinesniperfire.wss",0.9,1,1000};
+				begin1[] = {"\OECExtension\Overwatch\Weapons\Ammo\sounds\combinesniperrifle.wss",0.9,1,1000};
 				soundBegin[] = {"begin1", 1};
 				class SoundTails
 				{
