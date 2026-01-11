@@ -838,7 +838,7 @@ class CfgGroups
                 aliveCategory = "Infantry";
                 class OEC_group_Alien_small_swarm
                 {
-                    name = "1. Small Antlion Swarm";
+                    name = "1. Antlions Scouts";
                     faction = "OEC_Faction_Aliens";
                     side = 0;
                     rarityGroup = 0.75;
