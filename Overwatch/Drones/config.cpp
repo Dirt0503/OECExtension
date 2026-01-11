@@ -9,10 +9,68 @@ class CfgPatches
             "OEC_UGV_rcws",
             "OEC_UGV_rcws_01",
             "OEC_Static_Turret_Base",
-            "OEC_Static_Turret_Test"
+            "OEC_Floor_Turret"
         };
         weapons[] = {};
     };
+};
+
+class CfgSkeletons 
+{
+	class Default
+	{
+		isDiscrete = 1;
+		skeletonInherit = "";
+		skeletonBones[] = {};
+	};
+	class OEC_Floor_Turret: Default
+	{
+		skeletonInherit = "Default";
+		skeletonBones[] =
+		{
+			"body","",
+			"gun","body"
+		};
+	};
+};
+
+class Rotation;
+class CfgModels
+{
+	class Default
+	{
+		sectionsInherit = "";
+		sections[] = {};
+		sekeletonName = "";
+	};
+	class OEC_Floor_Turret: Default
+	{
+		sections[] = {};
+		skeletonName = "OEC_Floor_Turret";
+		class Animations
+		{
+			class body
+			{
+				type = "rotationy";
+				source = "body";
+				selection= "body";
+				axis = "axis_body";
+				animPeriod = 0;
+				minValue = "rad -40";
+				maxValue = "rad +40";
+				angle0 = "rad -40";
+				angle1 = "rad +40";
+				memory = 1;
+			};
+			class gun:body
+			{
+				type = "rotationx";
+				source = "gun";
+				selection = "gun";
+				axis = "axis_gun";
+			};
+		};
+	};
 };
 
 class CfgMagazines
@@ -39,8 +97,8 @@ class CfgWeapons
     {
         class effect1
         {
-            positionName = "usti hlavne";
-            directionName = "konec hlavne";
+            positionName = "konec hlavne";
+            directionName = "usti hlavne";
             effectName = "MachineGunCloud";
         };
         type = 1;
@@ -55,18 +113,18 @@ class CfgWeapons
 			sounds[] = {"StandardSound"};
 			class BaseSoundModeType
 			{
-				closure1[] = {"A3\Sounds_F\arsenal\weapons\SMG\PDW2000\closure_pdw2000_01",0.5011872,1,10};
-				closure2[] = {"A3\Sounds_F\arsenal\weapons\SMG\PDW2000\closure_pdw2000_02",0.5011872,1.1,10};
-				soundClosure[] = {"closure1",0.5,"closure2",0.5};
+				//closure1[] = {"A3\Sounds_F\arsenal\weapons\SMG\PDW2000\closure_pdw2000_01",0.5011872,1,10};
+				//closure2[] = {"A3\Sounds_F\arsenal\weapons\SMG\PDW2000\closure_pdw2000_02",0.5011872,1.1,10};
+				//soundClosure[] = {"closure1",0.5,"closure2",0.5};
 			};
 			class StandardSound: BaseSoundModeType
 			{
-				soundSetShot[] = {"WBK_AR1_Shot_Base_Soundset"};
-				begin1[] = {"WBK_Combines\weapons\AR1_Fire_4.ogg",0.9,1,1000};
-				begin2[] = {"WBK_Combines\weapons\AR1_Fire_2.ogg",0.9,1,1000};
-				begin3[] = {"WBK_Combines\weapons\AR1_Fire_3.ogg",0.9,1,1000};
-				begin4[] = {"WBK_Combines\weapons\AR1_Fire_1.ogg",0.9,1,1000};
-				soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};
+				//soundSetShot[] = {"WBK_AR1_Shot_Base_Soundset"};
+				begin1[] = {"OECExtension\Overwatch\Drones\data\shoot1.wss",0.9,1,1000};
+				begin2[] = {"OECExtension\Overwatch\Drones\data\shoot2.wss",0.9,1,1000};
+				begin3[] = {"OECExtension\Overwatch\Drones\data\shoot3.wss",0.9,1,1000};
+				//begin4[] = {"WBK_Combines\weapons\AR1_Fire_1.ogg",0.9,1,1000};
+				soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
 				class SoundTails
 				{
 					class TailInterior
@@ -113,8 +171,8 @@ class CfgWeapons
 			maxRangeProbab = 0.05;
 			aiRateOfFire = 0.005;
 			aiRateOfFireDistance = 70;
-			aiDispersionCoefY = 0.5;
-			aiDispersionCoefX = 0.5;
+			//aiDispersionCoefY = 0.5;
+			//aiDispersionCoefX = 0.5;
         };
         class aiMode: FullAuto
         {
@@ -377,14 +435,14 @@ class CfgVehicles
 		class EventHandlers;
 		class AnimationSources;
 	};
-	class OEC_Static_Turret_Base: StaticWeapon
+	class OEC_Floor_Turret_Base: StaticWeapon
 	{
 		author = "$STR_A3_Bohemia_Interactive";
 		mapSize = 0.7;
 		features = "Randomization: No						<br />Camo selections: 1 - the whole weapon with pod						<br />Script door sources: None						<br />Script animations: None						<br />Executed scripts: None						<br />Firing from vehicles: Just the designator						<br />Slingload: No						<br />Cargo proxy indexes: None";
 		scope = 0;
 		displayname = "$STR_A3_CfgVehicles_Static_Designator_01_base_F1";
-		overviewPicture = "\A3\Data_F_Mark\Images\watermarkInfo_page11_ca.paa";
+		//overviewPicture = "\A3\Data_F_Mark\Images\watermarkInfo_page11_ca.paa";
 		transportSoldier = 0;
 		cargoAction[] = {"Mortar_Gunner"};
 		getInAction = "GetInMortar";
@@ -397,23 +455,13 @@ class CfgVehicles
 		threat[] = {1.0,0.3,0.1};
 		isUav = 1;
 		getInRadius = 0;
-		uavCameraGunnerPos = "eye";
-		uavCameraGunnerDir = "look";
+		uavCameraGunnerPos = "gunnerView";
+		uavCameraGunnerDir = "gunnerView";
 		selectionDamage = "DamT_1";
-		epeImpulseDamageCoef = 60;
+		epeImpulseDamageCoef = 0;
 		extCameraPosition[] = {0,0.5,-3};
-		hiddenSelections[] = {"Camo","Camo1"};
-		hiddenSelectionsTextures[] = {"a3\static_f_mark\designator_01\data\ld01_remote_co.paa","a3\weapons_f_mark\binocular\data\ltlm_snd_co.paa"};
-		class TextureSources
-		{
-			class Sand
-			{
-				displayname = "$STR_A3_TEXTURESOURCES_SAND0";
-				author = "$STR_A3_Bohemia_Interactive";
-				factions[] = {"BLU_F"};
-				textures[] = {"a3\static_f_mark\designator_01\data\ld01_remote_co.paa","a3\weapons_f_mark\binocular\data\ltlm_snd_co.paa"};
-			};
-		};
+		hiddenSelections[] = {};
+		hiddenSelectionsTextures[] = {};
 		reportRemoteTargets = 1;
 		reportOwnPosition = 1;
 		class Damage
@@ -467,8 +515,6 @@ class CfgVehicles
 				magazines[] = {"OEC_Magazine_Turret","OEC_Magazine_Turret"};
 				soundServo[] = {"A3\Sounds_F\vehicles\soft\UGV_01\Servo_UGV_gunner",0.31622776,1,30};
 				soundServoVertical[] = {"A3\Sounds_F\vehicles\soft\UGV_01\Servo_UGV_gunner_vertical",0.31622776,1,30};
-				minElev = -10;
-				maxElev = 60;
 				forceHideGunner = 1;
 				outGunnerMayFire = 1;
 				discreteDistance[] = {100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500};
@@ -617,9 +663,9 @@ class CfgVehicles
 			};
 		};
 	};
-	class OEC_Static_Turret_Test: OEC_Static_Turret_Base
+	class OEC_Floor_Turret: OEC_Floor_Turret_Base
 	{
-		displayName = "[OEC] Test Designator";
+		displayName = "[OEC] Floor Turret";
 		scope = 2;
 		scopeCurator = 2;
 		faction = "OEC_Faction_Combine";
@@ -629,7 +675,7 @@ class CfgVehicles
 		class SimpleObject
 		{
 			eden = 1;
-			animate[] = {{"mainturret",0},{"maingun",0},{"mainelevation_01",0},{"mainelevation_02",0},{"mainelevation_03",0},{"mainelevation_04",0},{"initturret",0},{"initgun",0},{"initelevation_01",0},{"initelevation_02",0},{"initelevation_03",0},{"initelevation_04",0}};
+			animate[] = {{"body",0},{"gun",0},{"mainelevation_01",0},{"mainelevation_02",0},{"mainelevation_03",0},{"mainelevation_04",0},{"initturret",0},{"initgun",0},{"initelevation_01",0},{"initelevation_02",0},{"initelevation_03",0},{"initelevation_04",0}};
 			hide[] = {"light_back","brzdove svetlo","clan","podsvit pristroju","poskozeni"};
 			verticalOffset = 0.509;
 			verticalOffsetWorld = 0.001;
