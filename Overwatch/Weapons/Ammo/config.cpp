@@ -12,17 +12,7 @@ class CfgPatches
 class CfgAmmo
 {
     class SubmunitionBullet;
-    class GrenadeHand;
-    class B_65x39_Caseless;
-
-    class OEC_Ammo_MK3A2: GrenadeHand
-    {
-        model = "\rhsusf\addons\rhsusf_weapons\grenades_thrown\mk3a2\mk3a2";
-        effectFly = "OEC_ParticleEffect_MK3A2";
-        simulation = "shotNVGMarker";
-        soundFly[] = {"\OECExtension\Overwatch\Weapons\Ammo\sounds\OEC_5SEC_GRENFUSE.wss",20,1,200};
-        class NVGMarkers{};
-    };
+	class B_65x39_Caseless;
 
     class OEC_Ammo_WallhammerShotgun: SubmunitionBullet
     {
@@ -130,6 +120,19 @@ class CfgAmmo
         tracerColor[] = {0,1,1,1};
         tracerColorR[] = {0,1,1,1};
     };
+	class OEC_Ammo_APFSuppressor_exogen: B_65x39_Caseless
+    {
+        effectFly = "OEC_ParticleEffect_AlienPulse_Green";
+
+        airFriction = -0.0006;
+        coefGravity = 0.01;
+        hit = 23.4;
+        caliber = 0;
+		typicalSpeed = 770;
+		timeToLive = 0.38961039;
+        tracerColor[] = {0,1,1,1};
+        tracerColorR[] = {0,1,1,1};
+    };
 
     // OICW Ammo
 	class OEC_Ammo_OICW: B_65x39_Caseless
@@ -227,7 +230,15 @@ class CfgAmmo
 		caliber = 75;
 		tracerScale = 2.5;
 		model = "\A3\Weapons_f\Data\bullettracer\tracer_yellow";
-		//effectFly = "OEC_Light_AlienPulse_Orange_sRifle";
+	};
+	class OEC_Ammo_cmbSrifle_Exo: OEC_Ammo_cmbSrifle_normal
+	{
+		hit = 77.5;
+		caliber = 0;
+		tracerScale = 2.5;
+		typicalSpeed = 500;
+		timeToLive = 0.8;
+		model = "\A3\Weapons_f\Data\bullettracer\tracer_green";
 	};
 
 	// Pulse SMG Ammo
@@ -315,7 +326,7 @@ class CfgAmmo
 		hit = 80;
 		indirectHit = 8;
 		indirectHitRange = 6;
-		fuseDistance = 15;
+		fuseDistance = 0;
 		warheadName = "HE";
 		aiAmmoUsageFlags = "64 + 128";
 		effectFly = "OEC_ParticleEffect_Gren";
@@ -378,7 +389,7 @@ class CfgAmmo
 		indirectHit = 0;
 		indirectHitRange = 0;
 		typicalspeed = 70;
-		fuseDistance = 2;
+		fuseDistance = 0;
 		explosionTime = -1;
 		ExplosionEffects = "RHS_flashbang_10";
 		explosive = 1;
@@ -529,7 +540,7 @@ class CfgAmmo
 		initTime = 0;
 		thrustTime = 0.1;
 		thrust = 0.1;
-		fuseDistance = 15;
+		fuseDistance = 0;
 		CraterEffects = "ATMissileCrater";
 		explosionEffects = "ATMissileExplosion";
 		effectsMissileInit = "";
@@ -596,6 +607,7 @@ class CfgAmmo
 		indirectHit = 90;
 		indirectHitRange = 10;
 		explosive = 1;
+		fuseDistance = 10;
 		aiAmmoUsageFlags = "64 + 128 + 512";
 		model = "rhsusf\addons\rhsusf_weapons2\m3maaws\ammo_m3maaws.p3d";
 		CraterEffects = "ArtyShellCrater";
@@ -624,6 +636,7 @@ class CfgAmmo
 		deleteParentWhenTriggered = 0;
 		hit = 95;
 		indirectHit = 30;
+		fuseDistance = 20;
 		indirectHitRange = 5.1;
 		aiAmmoUsageFlags = "64 + 128 + 256 + 512";
 		allowAgainstInfantry = 1;

@@ -71,6 +71,8 @@ class CfgFunctions
 				description = "CIS BMP3 IFV Script";
             };
 
+
+
             class cisTaruPod
             {
                 file = "\OECExtension\Scripts\OEC_cmbTaruPod.sqf";
@@ -106,6 +108,14 @@ class CfgFunctions
             {
                 file = "\OECExtension\Scripts\CombineTypeAssignments\OEC_cmbAPF.sqf";
 				description = "Vocelines & Abilities Script";
+            };
+
+
+
+            class xenAntlion
+            {
+                file = "\OECExtension\Scripts\xen_antlion.sqf";
+				description = "Antlion Script";
             };
         };
     };
