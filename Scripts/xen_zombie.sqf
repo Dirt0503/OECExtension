@@ -45,14 +45,9 @@ _unitWithSword setVariable ["WBK_Zombie_CustomSounds",
 
 
 _unitWithSword spawn {
-	if (uniform _this in ["CombainCIVZombi_Uniform_1","CombainCIVZombi_Uniform_2"]) then {
-		_this addHeadgear "OEC_Misc_Helmet_Headcrab";
-		[_this, "WBK_CombineHead"] remoteExec ["setFace", 0];
-	}else{
-		_rndFace = selectRandom ["WBK_ZombieFace_blood_1","WBK_ZombieFace_blood_2","WBK_ZombieFace_blood_3","WBK_ZombieFace_blood_4"];
-		[_this, _rndFace] remoteExec ["setFace", 0];
-		_this addHeadgear "OEC_Misc_Helmet_Headcrab";
-	};
+	_rndFace = selectRandom ["Bloody_Neck"];
+	[_this, _rndFace] remoteExec ["setFace", 0];
+	_this addHeadgear "OEC_Misc_Helmet_Headcrab";
 	uisleep 0.5;
 	_this doMove (getPos _this);
 	if (uniform _this == "HL_RES_U_HEV_MK5") then {
