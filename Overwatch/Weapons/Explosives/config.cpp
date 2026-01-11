@@ -42,7 +42,7 @@ class cfgAmmo
 	{
 		hit = 50;
 		indirectHit = 50;
-		indirectHitRange = 8;
+		indirectHitRange = 7;
 		model = "\A3\Weapons_F\explosives\mine_AP_bouncing";
 		mineModelDisabled = "\A3\Weapons_F\explosives\mine_AP_bouncing_d";
 		defaultMagazine = "HopperMine_Range_Mag";

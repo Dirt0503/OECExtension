@@ -73,8 +73,6 @@ _mineIFF = [{
 
 
 
-waitUntil {sleep 0.5; 
-if (isNull _unit) then {true} else {false};
-};
-deleteVehicle _hopperLight;
+waitUntil {sleep 0.5; if {isNull _unit} exit with {true}; !(alive _unitWithSword)};
 [_mineIFF] call CBA_fnc_removePerFrameHandler;
+deleteVehicle _hopperLight;
