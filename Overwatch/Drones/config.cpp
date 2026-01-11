@@ -449,7 +449,7 @@ class CfgVehicles
 		getOutAction = "GetOutLow";
 		editorSubcategory = "EdSubcat_Turrets";
 		picture = "\A3\Static_F_Mark\Designator_01\Data\UI\Designator_01_CA.paa";
-		icon = "\A3\Static_F_Mark\Designator_01\Data\UI\map_Designator_01_CA.paa";
+		//icon = "\A3\Static_F_Mark\Designator_01\Data\UI\map_Designator_01_CA.paa";
 		cost = 200000;
 		accuracy = 0.25;
 		threat[] = {1.0,0.3,0.1};
@@ -473,41 +473,25 @@ class CfgVehicles
 		{
 			class MainTurret: MainTurret
 			{
-				class HitPoints
-				{
-					class HitTurret
-					{
-						armor = 3000;
-						material = -1;
-						armorComponent = "hit_main_turret";
-						name = "hit_main_turret_point";
-						visual = "OtocVez";
-						passThrough = 0;
-						minimalHit = 999;
-						explosionShielding = 0.4;
-						radius = 0.25;
-						isTurret = 1;
-					};
-					class HitGun
-					{
-						armor = 3000;
-						material = -1;
-						armorComponent = "hit_main_gun";
-						name = "hit_main_gun_point";
-						visual = "OtocHlaven";
-						passThrough = 0;
-						minimalHit = 999;
-						explosionShielding = 0.4;
-						radius = 0.2;
-						isGun = 1;
-					};
-				};
                 isCopilot = 0;
 				dontCreateAI = 0;
-				body = "mainTurret";
-				gun = "mainGun";
-				memoryPointGunnerOptics = "eye";
-				memoryPointGun = "machinegun";
+				body = "body";
+				gun = "gun";
+				animationsourcebody = "body";
+				animationSourceGun = "gun";
+				gunAxis = "axis_gun";
+				gunBeg = "gun_muzzle";
+				gunEnd = "gun_chamber";
+				minElev = -20;
+				maxElev = 45;
+				minTurn = -40;
+				maxTurn = 40;
+				initTurn = 0;
+				turretAxis = "axis_body";
+				maxHorizontalRotSpeed = 1.75;
+				maxVerticalRotSpeed = 1.5;
+				memoryPointGunnerOptics = "gunnerView";
+				memoryPointGun = "gun_muzzle";
 				gunnerForceOptics = 1;
 				gunnerOpticsModel = "A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_F.p3d";
 				turretInfoType = "RscOptics_UGV_gunner";
@@ -520,42 +504,9 @@ class CfgVehicles
 				discreteDistance[] = {100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500};
 				discreteDistanceInitIndex = 2;
 				stabilizedInAxes = 3;
-
 				soundElevation[] = {"A3\Sounds_F_Mark\arsenal\sfx\Remote_Cameras\Remote_Camera_NATO",1.0,1,10};
-				//soundServo[] = {"A3\Sounds_F_Mark\arsenal\sfx\Remote_Cameras\Remote_Camera_servo_NATO",0.56234133,1,10};
-				//soundServoVertical[] = {"A3\Sounds_F_Mark\arsenal\sfx\Remote_Cameras\Remote_Camera_servo_vertical_NATO",0.56234133,1,10};
 				gunnergetInAction = "";
 				gunnergetOutAction = "";
-				//weapons[] = {"OEC_Weapon_Turret"};
-				//magazines[] = {"OEC_Magazine_Turret"};
-				animationSourceElevation = "MainElevation";
-				gunBeg = "look";
-				gunEnd = "eye";
-				maxHorizontalRotSpeed = 2.4;
-				maxVerticalRotSpeed = 2.4;
-				initElev = 0;
-				minTurn = -180;
-				maxTurn = 180;
-				initTurn = 0;
-				cameraDir = "look";
-				//gunnerForceOptics = 1;
-				//memoryPointGunnerOptics = "eye";
-				//gunnerOpticsModel = "\A3\Weapons_F_beta\Binocular\lasermarker_optics";
-				//turretInfoType = "RscOptics_LaserDesignator";
-				/*class ViewOptics: viewOptics
-				{
-					initAngleX = 0;
-					minAngleX = -30;
-					maxAngleX = 30;
-					initAngleY = 0;
-					minAngleY = -100;
-					maxAngleY = 100;
-					initFov = 0.1242;
-					minFov = 0.0125;
-					maxFov = 0.1242;
-					visionMode[] = {"Normal","NVG","TI"};
-					thermalMode[] = {2};
-				};*/
 
                 class ViewOptics: RCWSOptics
 				{
@@ -626,8 +577,7 @@ class CfgVehicles
 				lifeTime = 5;
 			};
 		};
-		//model = "\A3\Static_F_Mark\Designator_01\Designator_01_F";
-		model = "\OECExtension\Overwatch\Weapons\data\floor_turret";
+		model = "OECExtension\Overwatch\Drones\data\OEC_Floor_Turret.p3d";
 		class assembleInfo
 		{
 			primary = 0;
