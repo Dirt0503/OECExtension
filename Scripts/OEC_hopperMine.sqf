@@ -21,7 +21,7 @@ _mineIFF = [{
     _hopperOrange = [1, 0.55, 0];
     _hopperRed = [0.75, 0, 0];
 	
-    _nearbyUnits = _mine nearEntities [["Man", "Air", "Car", "Motorcycle", "Tank"], 10];
+    _nearbyUnits = _mine nearEntities [["Man"], 12];
     {
         _currentUnit = _nearbyUnits select _forEachIndex;
         if ((side _currentUnit) == west) then 
@@ -31,6 +31,26 @@ _mineIFF = [{
             break;
         };
     } forEach _nearbyUnits;
+
+
+    private _isEnemyNearby = false;
+    {
+        _currentUnit = _nearbyUnits select _forEachIndex;
+        if ((side _currentUnit) != west) then
+        {
+            _isEnemyNearby = true;
+            break;
+        };
+    } forEach _nearbyUnits;
+
+    if (_isEnemyNearby) then 
+    {
+        _hopperLight setLightColor _hopperRed;
+        _mine enableSimulation true;
+    } else {
+        _hopperLight setLightColor _hopperOrange;
+        _mine enableSimulation true;
+    };
 
 
     private _isFriendlyNearby = false;
@@ -43,31 +63,12 @@ _mineIFF = [{
         };
     } forEach _nearbyUnits;
 
-    private _isEnemyNearby = false;
-    {
-        _currentUnit = _nearbyUnits select _forEachIndex;
-        if ((side _currentUnit) != west) then
-        {
-            _isEnemyNearby = true;
-            break;
-        };
-    } forEach _nearbyUnits;
-
-
     if (_isFriendlyNearby) then 
     {
         _hopperLight setLightColor _hopperGreen;
         _mine enableSimulation false;
-    } else {
-        _hopperLight setLightColor _hopperOrange;
-        _mine enableSimulation true;
     };
 
-    if (_isEnemyNearby) then 
-    {
-        _hopperLight setLightColor _hopperRed;
-        _mine enableSimulation true;
-    };
 
 }, 0.3, [_unit, _hopperLight]] call CBA_fnc_addPerFrameHandler;
 
