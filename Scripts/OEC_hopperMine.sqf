@@ -1,8 +1,13 @@
 params ["_unit"];
 
+_planted = "OECExtension\Overwatch\Weapons\data\hoppermine\combineMine_planted.wss";
+_alert = "OECExtension\Overwatch\Weapons\data\hoppermine\combineMine_alert.wss";
+
+[_unit, _planted, 30, 6] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf";
+
 _hopperOrange = [1, 0.55, 0];
 private _hopperLight = "#lightpoint" createVehicleLocal (getPos _unit);
-_hopperLight lightAttachObject [_unit,[0,0,0.5]];
+_hopperLight lightAttachObject [_unit,[0,0,0.28]];
 _hopperLight setLightColor _hopperOrange;
 _hopperLight setLightUseFlare true;
 _hopperLight setLightFlareSize 0.25;
@@ -46,6 +51,7 @@ _mineIFF = [{
     if (_isEnemyNearby) then 
     {
         _hopperLight setLightColor _hopperRed;
+        [_mine, _alert, 30, 6] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf";
         _mine enableSimulation true;
     } else {
         _hopperLight setLightColor _hopperOrange;
@@ -66,6 +72,7 @@ _mineIFF = [{
     if (_isFriendlyNearby) then 
     {
         _hopperLight setLightColor _hopperGreen;
+        [_mine, _alert, 30, 6] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf";
         _mine enableSimulation false;
     };
 

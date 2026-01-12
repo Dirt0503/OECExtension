@@ -12,6 +12,29 @@ class CfgPatches
     };
 };
 
+ class CfgSounds
+{
+    sounds[] = {};
+    class OEC_HopperMine_Planted
+    {
+        name = "OEC_HopperMine_Planted";
+        sound[] = {"OECExtension\Overwatch\Weapons\data\combineMine_planted.wss",3.1622777,1};
+        titles[] = {};
+    };
+	class OEC_HopperMine_Alert
+	{
+		name = "OEC_HopperMine_Alert";
+        sound[] = {"OECExtension\Overwatch\Weapons\data\combineMine_alert.wss",3.1622777,1};
+        titles[] = {};
+	};
+	class OEC_HopperMine_Triggered
+	{
+		name = "OEC_HopperMine_Triggered";
+        sound[] = {"OECExtension\Overwatch\Weapons\data\combineMine_triggered.wss",3.1622777,1};
+        titles[] = {};
+	};
+};
+
 class CfgMineTriggers
 {
 	class RangeTrigger;
@@ -43,8 +66,8 @@ class cfgAmmo
 		hit = 50;
 		indirectHit = 50;
 		indirectHitRange = 6.5;
-		model = "\OECExtension\Overwatch\Weapons\Explosives\data\combine_mine";
-		mineModelDisabled = "\A3\Weapons_F\explosives\mine_AP_bouncing_d";
+		model = "\OECExtension\Overwatch\Weapons\data\hoppermine\combine_mine.p3d";
+		mineModelDisabled = "\OECExtension\Overwatch\Weapons\data\hoppermine\combine_mine_folded.p3d";
 		defaultMagazine = "HopperMine_Range_Mag";
 		soundHit1[] = {"A3\Sounds_F\arsenal\explosives\mines\Explosion_M6_slam_mine_01",3.1622777,1,1300};
 		soundHit2[] = {"A3\Sounds_F\arsenal\explosives\mines\Explosion_M6_slam_mine_02",3.1622777,1,2000};
@@ -100,7 +123,7 @@ class CfgMagazines
 		mass = 10;
 		ammo = "HopperMine_Range_Ammo";
 		picture = "\OECExtension\Overwatch\Weapons\data\hopper.paa";
-		model = "\A3\Weapons_F\explosives\mine_AP_bouncing_i";
+		model = "OECExtension\Overwatch\Weapons\data\hoppermine\combine_mine_folded.p3d";
 		class Library
 		{
 			libTextDesc = "test description1. Tell Petee if you found this";
@@ -165,7 +188,7 @@ class cfgVehicles
 		displayName = "[OEC] Hopper Mine";
 		icon = "iconExplosiveAP";
 		picture = "\A3\Weapons_F\Data\clear_empty.paa";
-		model = "\A3\Weapons_F\explosives\mine_AP_bouncing";
+		model = "OECExtension\Overwatch\Weapons\data\hoppermine\combine_mine_folded.p3d";
 		descriptionShort = "Combine Hopper Mine";
 	};
 };
