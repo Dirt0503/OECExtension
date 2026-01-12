@@ -12,6 +12,39 @@ class CfgPatches
     };
 };
 
+class CfgSkeletons 
+{
+	class Default
+	{
+		isDiscrete = 1;
+		skeletonInherit = "";
+		skeletonBones[] = {};
+	};
+	class OEC_turretFolded: Default
+	{
+		skeletonInherit = "Default";
+		skeletonBones[] =
+		{
+			"base"
+		};
+	};
+};
+
+class CfgModels
+{
+	class Default
+	{
+		sectionsInherit = "";
+		sections[] = {};
+		sekeletonName = "";
+	};
+	class OEC_turretFolded: Default
+	{
+		sections[] = {};
+		skeletonName = "OEC_turretFolded";
+	};
+};
+
 class CfgWeapons
 {
     class OEC_Weapons_SIPL_base;
@@ -29,6 +62,13 @@ class CfgWeapons
         magazineWells[] = {};
         reloadAction = "";
         model = "OECExtension\Overwatch\Drones\data\folded\OEC_turretFolded.p3d";
-        class Single{};
+
+        class ACE_CSW
+		{
+			type = "mount";
+			deployTime = 1;
+			pickupTime = 1;
+			deploy = "OEC_Floor_Turret";
+		};
 	};
 };

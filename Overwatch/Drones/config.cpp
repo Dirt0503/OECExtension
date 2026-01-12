@@ -84,7 +84,7 @@ class CfgMagazines
 		picture = "\hl_cmb_weapons\UI\m_ar2_ca.paa";
 		displayName = "[OEC] 200rnd Combine Turret Cell";
 		descriptionShort = "Extreme Capacity Turret Pulse Cell; 200m dissipation range";
-		count = 200;
+		count = 1000;
 		mass = 30;
 	};
 };
@@ -95,12 +95,12 @@ class CfgWeapons
     class OEC_Weapon_PulseSMG;
     class OEC_Weapon_Turret: OEC_Weapon_PulseSMG
     {
-        class effect1
+        /*class effect1
         {
             positionName = "konec hlavne";
             directionName = "usti hlavne";
             effectName = "MachineGunCloud";
-        };
+        };*/
         type = 1;
 		showAimCursorInternal = 1;
 		scope = 1;
@@ -496,7 +496,7 @@ class CfgVehicles
 				gunnerOpticsModel = "A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_F.p3d";
 				turretInfoType = "RscOptics_UGV_gunner";
 				weapons[] = {"OEC_Weapon_Turret"};
-				magazines[] = {"OEC_Magazine_Turret","OEC_Magazine_Turret"};
+				magazines[] = {"OEC_Magazine_Turret"};
 				soundServo[] = {"A3\Sounds_F\vehicles\soft\UGV_01\Servo_UGV_gunner",0.31622776,1,30};
 				soundServoVertical[] = {"A3\Sounds_F\vehicles\soft\UGV_01\Servo_UGV_gunner_vertical",0.31622776,1,30};
 				forceHideGunner = 1;
@@ -580,29 +580,7 @@ class CfgVehicles
 		model = "OECExtension\Overwatch\Drones\data\OEC_Floor_Turret.p3d";
 		class EventHandlers: EventHandlers
 		{
-			init = "(_this select 0) execVM '\A3\Static_F_Mark\Designator_01\Scripts\init.sqf'";
-		};
-		class AnimationSources: AnimationSources
-		{
-			class Init
-			{
-				source = "user";
-				animPeriod = 0.5;
-				initPhase = 0;
-			};
-			class InitPiston
-			{
-				source = "user";
-				animPeriod = 1;
-				initPhase = 0;
-			};
-			class Designator_hide
-			{
-				source = "user";
-				animPeriod = 0;
-				displayname = "Hide designator";
-				mass = -10;
-			};
+			init = "(_this select 0) allowDamage false";
 		};
 	};
 	class OEC_Floor_Turret: OEC_Floor_Turret_Base
@@ -626,5 +604,52 @@ class CfgVehicles
 		editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\B_Static_Designator_01_F.jpg";
 		side = 1;
 		crew = "B_UAV_AI";
+
+		class UserActions
+		{
+			class enableTurret
+			{
+				displayName = "Activate Turret";
+				displayNameDefault = "Activate Turret";
+				priority = 100;
+				radius = 20;
+				position = "axis_body";
+				showWindow = 0;
+				hideOnUse = 1;
+				onlyForPlayer = 1;
+				shortcut = "";
+				condition = "count crew this == 0";
+				statement = "createVehicleCrew this";
+			};
+		};
+
+		class ACE_CSW
+		{
+			enabled = 1;
+            proxyWeapon = "OEC_Weapon_Turret";
+            magazineLocation = "_target selectionPosition 'gun_chamber'";
+            disassembleWeapon = "OEC_Floor_Turret_Folded";
+            disassembleTurret = "";
+            ammoLoadTime = 1;
+            ammoUnloadTime = 1;
+            desiredAmmo = 500;
+		};
+
+		/*class ACE_Actions
+		{
+			class enableTurret
+			{
+				displayName = "Activate Turret";
+				condition = "";
+				exceptions[] = {};
+				statement = "";
+				icon = "";
+				duration = 1;
+				distance = 2;
+				enabled = 1;
+
+
+			};
+		};*/
 	};
 };
