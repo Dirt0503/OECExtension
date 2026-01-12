@@ -171,8 +171,8 @@ class CfgWeapons
 			maxRangeProbab = 0.05;
 			aiRateOfFire = 0.005;
 			aiRateOfFireDistance = 70;
-			//aiDispersionCoefY = 0.5;
-			//aiDispersionCoefX = 0.5;
+			aiDispersionCoefY = 0;
+			aiDispersionCoefX = 0;
         };
         class aiMode: FullAuto
         {

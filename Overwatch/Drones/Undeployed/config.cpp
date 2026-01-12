@@ -56,7 +56,7 @@ class CfgWeapons
 		scope = 2;
 		scopeArsenal = 2;
 		baseWeapon = "OEC_Floor_Turret_Folded";
-		picture = "\A3\Weapons_F_Tank\Launchers\MRAWS\Data\UI\icon_launch_MRAWS_olive_F_X_CA.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\turretFolded.paa";
 		//hiddenSelectionsTextures[] = {"\A3\Weapons_F_Tank\Launchers\MRAWS\Data\launch_MRAWS_olive_01_F_co","\A3\Weapons_F_Tank\Launchers\MRAWS\Data\launch_MRAWS_02_F_co"};
         magazines[] = {};
         magazineWells[] = {};
