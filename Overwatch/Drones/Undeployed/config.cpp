@@ -1,0 +1,34 @@
+class CfgPatches
+{
+    class OEC_Extension_Overwatch_Drones_Undeployed
+    {
+        addonRootClass = "OEC_Extension_Overwatch";
+        requiredAddons[] = {};
+        units[] = {};
+        weapons[] = 
+        {
+            "OEC_Floor_Turret_Folded"
+        };
+    };
+};
+
+class CfgWeapons
+{
+    class OEC_Weapons_SIPL_base;
+    class OEC_Floor_Turret_Folded: OEC_Weapons_SIPL_base
+	{
+		displayName = "[OEC] Floor Turret";
+		descriptionShort = "An undeployed Combine 'Restrictor'.";
+		author = "OEC Extension";
+		scope = 2;
+		scopeArsenal = 2;
+		baseWeapon = "OEC_Floor_Turret_Folded";
+		picture = "\A3\Weapons_F_Tank\Launchers\MRAWS\Data\UI\icon_launch_MRAWS_olive_F_X_CA.paa";
+		//hiddenSelectionsTextures[] = {"\A3\Weapons_F_Tank\Launchers\MRAWS\Data\launch_MRAWS_olive_01_F_co","\A3\Weapons_F_Tank\Launchers\MRAWS\Data\launch_MRAWS_02_F_co"};
+        magazines[] = {};
+        magazineWells[] = {};
+        reloadAction = "";
+        model = "OECExtension\Overwatch\Drones\data\folded\OEC_turretFolded.p3d";
+        class Single{};
+	};
+};
