@@ -133,7 +133,7 @@ class CfgVehicles
     };
     class OEC_Overwatch_Unit_CE: OEC_Overwatch_Unit_Soldier
     {
-        displayName = "AT Soldier";
+        displayName = "Combat Engineer";
         uniformClass = "OEC_Overwatch_Uniform_CE";
         linkedItems[] = {"OEC_Overwatch_Helmet_CE", "OEC_Overwatch_Vest_CE","ItemMap", "TFAR_anprc152", "ItemCompass", "ItemWatch"};
         respawnLinkedItems[] = {"OEC_Overwatch_Helmet_CE", "OEC_Overwatch_Vest_CE", "ItemMap", "TFAR_anprc152", "ItemCompass", "ItemWatch"};
