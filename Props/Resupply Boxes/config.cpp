@@ -199,9 +199,19 @@ class CfgVehicles
 				magazine = "OEC_Magazine_APFSuppressor_100Rnd";
 				count = 60;
 			};
+			class XX_OEC_Magazine_APFSuppressor_150Rnd_Exogen
+			{
+				magazine = "OEC_Magazine_APFSuppressor_150Rnd_Exogen";
+				count = 60;
+			};
 			class XX_OEC_Magazine_cmbSrifle
 			{
 				magazine = "OEC_Magazine_cmbSrifle";
+				count = 120;
+			};
+			class XX_OEC_Magazine_cmbSrifle_Exo
+			{
+				magazine = "OEC_Magazine_cmbSrifle_Exo";
 				count = 120;
 			};
 			class XX_OEC_Magazine_cmbSrifle_AP
@@ -217,12 +227,12 @@ class CfgVehicles
 			class XX_OEC_Magazine_M320_Smoke
 			{
 				magazine = "OEC_Magazine_M320_Smoke";
-				count = 20;
+				count = 10;
 			};
 			class XX_OEC_Magazine_M320_Stun
 			{
 				magazine = "OEC_Magazine_M320_Stun";
-				count = 10;
+				count = 5;
 			};
 			class XX_OEC_Magazine_SPAS12_8Rnd
 			{
@@ -237,6 +247,11 @@ class CfgVehicles
 			class XX_OEC_Magazine_357
 			{
 				magazine = "OEC_Magazine_357";
+				count = 20;
+			};
+			class XX_HopperMine_Range_Mag
+			{
+				magazine = "HopperMine_Range_Mag";
 				count = 20;
 			};
 		};

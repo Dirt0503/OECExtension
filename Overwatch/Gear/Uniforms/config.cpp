@@ -28,6 +28,7 @@ class CfgPatches
             "OEC_Overwatch_Uniform_Base",
             "OEC_Overwatch_Uniform_Soldier",
             "OEC_Overwatch_Uniform_AT",
+            "OEC_Overwatch_Uniform_CE",
             "OEC_Overwatch_Uniform_Medic",
             "OEC_Overwatch_Uniform_TL",
             "OEC_Overwatch_Uniform_Recon",
@@ -93,6 +94,20 @@ class CfgWeapons
             variant = "at";
         };
     };
+    class OEC_Overwatch_Uniform_CE: OEC_Overwatch_Uniform_Soldier
+    {
+        displayName = "[OEC] Combine Soldier Uniform - CE";
+        class ItemInfo: ItemInfo
+        {
+            uniformClass = "OEC_Overwatch_Unit_CE";
+            containerClass = "Supply170";
+        };
+        class XtdGearInfo
+        {
+            model = "OEC_ACEX_Uniform_CMB_Soldier";
+            variant = "ce";
+        };
+    };
     class OEC_Overwatch_Uniform_Medic: OEC_Overwatch_Uniform_Soldier
     {
         displayName = "[OEC] Combine Soldier Uniform - Medic";
@@ -134,6 +149,7 @@ class CfgWeapons
             variant = "tl";
         };
     };
+
     class OEC_Overwatch_Uniform_Elite: OEC_Overwatch_Uniform_Soldier
     {
         displayName = "[OEC] Combine Elite Uniform";
@@ -349,12 +365,14 @@ class XtdGearModels
                 {
                     "soldier",
                     "at",
+                    "ce",
                     "medic",
 					"tl",
 					"recon"
                 };
                 class soldier { label = "Soldier"; };
                 class at { label = "AT"; };
+                class ce { label = "CE"; };
                 class medic { label = "Medic"; };
 				class tl { label = "TL"; };
 				class recon { label = "Recon"; };

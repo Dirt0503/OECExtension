@@ -97,16 +97,22 @@ class CfgMagazines
         displayNameShort = "Hopper Mine";
         descriptionShort = "Combine-made bounding mine with IFF capabilities";
 
-		mass = 15;
+		mass = 10;
 		ammo = "HopperMine_Range_Ammo";
-		picture = "\A3\Weapons_F\Data\UI\gear_mine_AP_bouncing_CA.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\hopper.paa";
 		model = "\A3\Weapons_F\explosives\mine_AP_bouncing_i";
 		class Library
 		{
 			libTextDesc = "test description1. Tell Petee if you found this";
 		};
-		descriptionUse = "DEPLOY HOPPER1";
-		allowedSlots[] = {901,701};
+		//descriptionUse = "Deeploy Hopper";
+		allowedSlots[] = 
+		{
+			701, // Vest
+			801, // Uniform
+			901  // Backpack
+		};
+		priority = 1;
 
 		ace_explosives_setupObject = "ACE_Explosives_Place_APERSBoundingMine";
 		useAction = 1;
@@ -138,7 +144,7 @@ class CfgWeapons
         class OEC_Put_Hopper: ClassicMineRangeMuzzle
 		{
 			magazines[] = {"HopperMine_Range_Mag"};
-			displayName = "Deploy Hopper2";
+			displayName = "Deploy Hopper Mine";
 		};
 	};
 };
@@ -160,6 +166,6 @@ class cfgVehicles
 		icon = "iconExplosiveAP";
 		picture = "\A3\Weapons_F\Data\clear_empty.paa";
 		model = "\A3\Weapons_F\explosives\mine_AP_bouncing";
-		descriptionShort = "hopper description 5";
+		descriptionShort = "Combine Hopper Mine";
 	};
 };

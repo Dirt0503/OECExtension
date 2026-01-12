@@ -15,6 +15,7 @@ class CfgPatches
         {
             "OEC_Overwatch_Vest_Soldier",
             "OEC_Overwatch_Vest_AT",
+            "OEC_Overwatch_Vest_CE",
             "OEC_Overwatch_Vest_Medic",
             "OEC_Overwatch_Vest_Recon",
             "OEC_Overwatch_Vest_TL",
@@ -164,6 +165,32 @@ class CfgWeapons
         {
             model = "OEC_ACEX_Vest_CMB_Soldier";
             variant = "at";
+        };
+    };
+
+    class OEC_Overwatch_Vest_CE: OEC_Overwatch_Vest_Base
+    {
+        displayName = "[OEC] Combine Soldier Vest - CE";
+        scope = 2;
+        scopeAresenal = 2;
+        hiddenSelectionsTextures[] = 
+        {
+            "HL_Combine\data\Nova\Nova_pants.paa",
+            "HL_Combine\data\Nova\Nova_upperArmor.paa"
+        };
+        class ItemInfo: ItemInfo
+		{
+			hiddenSelectionsTextures[] = 
+            {
+                "HL_Combine\data\BorderPatrol\Nova_pants.paa",
+                "HL_Combine\data\BorderPatrol\Nova_upperArmor.paa"
+            };
+            containerClass = "supply400";
+		};
+        class XtdGearInfo
+        {
+            model = "OEC_ACEX_Vest_CMB_Soldier";
+            variant = "ce";
         };
     };
 
@@ -501,12 +528,14 @@ class XtdGearModels
                 {
                     "soldier",
                     "at",
+                    "ce",
                     "medic",
 					"tl",
 					"recon"
                 };
                 class soldier { label = "Soldier"; };
                 class at { label = "AT"; };
+                class ce { label = "CE"; };
                 class medic { label = "Medic"; };
 				class tl { label = "TL"; };
 				class recon { label = "Recon"; };

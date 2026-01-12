@@ -176,7 +176,7 @@ class CfgMagazines
         displayName = "[OEC] 100Rnd Suppressor Cell";
         descriptionShort = "High Capacity Suppressor Cell; 300m dissipation range";
         displayNameShort = "100Rnd Cell";
-		picture = "\CUP\Weapons\CUP_Weapons_Ammunition\data\ui\m_g36_betac_ca.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\APFmag.paa";
         tracersEvery = 0;
         lastRoundsTracer = 0;
 		mass = 50;
@@ -190,7 +190,7 @@ class CfgMagazines
         displayName = "[OEC] 150Rnd Anti-Exogen Suppressor Cell";
         descriptionShort = "High Capacity Anti-Exogen Suppressor Cell; 300m dissipation range; Deals increased damage to xen creatures";
         displayNameShort = "150Rnd Cell";
-		picture = "\CUP\Weapons\CUP_Weapons_Ammunition\data\ui\m_g36_betac_ca.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\APFmagExogen.paa";
         tracersEvery = 0;
         lastRoundsTracer = 0;
 		mass = 50;

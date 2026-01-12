@@ -12,7 +12,9 @@ class CfgPatches
         {
             "ACE_plasmaIV",
             "ACE_plasmaIV_500",
-            "ACE_plasmaIV_250"
+            "ACE_plasmaIV_250",
+			"ToolKit",
+			"MineDetector"
         };
     };
 };
@@ -63,6 +65,59 @@ class CfgWeapons
 		{
 			mass = 2.5;
 		};
+	};
+
+	class InventoryItem_Base_F
+	{
+		scope = 0;
+		type = 0;
+	};
+	class ToolKitItem: InventoryItem_Base_F
+	{
+		type = 620;
+		allowedSlots[] = {801,701,901};
+	};
+	class ToolKit: ItemCore
+	{
+		author = "OEC Extension";
+        displayName = "[OEC] Combine Toolkit";
+		scopeArsenal = 2;
+		scope = 2;
+		descriptionShort = "Combine-made bag with all essential tools. Issued to flight personnel and engineers.";
+        picture = "\OECExtension\Overwatch\Weapons\data\toolkit.paa";
+
+		_generalMacro = "ToolKit";
+		model = "\A3\Weapons_F\Items\Toolkit";
+		class ItemInfo: ToolKitItem
+		{
+			mass = 20;
+			uniformModel = "\A3\Weapons_F\Items\Toolkit";
+		};
+	};
+
+	class DetectorCore;
+	class MineDetector: DetectorCore
+	{
+		author = "OEC Extension";
+        displayName = "[OEC] Combine Mine Detector";
+		scopeArsenal = 2;
+		scope = 2;
+		descriptionShort = "Combine-made mine detector. Compact and lightweight.";
+        picture = "\OECExtension\Overwatch\Weapons\data\MineDetector.paa";
+
+		_generalMacro = "MineDetector";
+		type = 131072;
+		weaponPoolAvailable = 1;
+		detectRange = 15;
+		soundMineDetector[] = {"A3\Sounds_F\sfx\blip1.wss",1,1};
+		mineDetectorSoundFrequency = 1;
+		mineDetectorPitchStart = 1;
+		mineDetectorPitchEnd = 2;
+		class ItemInfo
+		{
+			mass = 5;
+		};
+		model = "\a3\Weapons_F\Ammo\mag_minedetector.p3d";
 	};
 
 };

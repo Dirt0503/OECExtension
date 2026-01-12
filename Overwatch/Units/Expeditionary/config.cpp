@@ -11,6 +11,7 @@ class CfgPatches
         {
             "OEC_Overwatch_Unit_Soldier",
             "OEC_Overwatch_Unit_AT",
+            "OEC_Overwatch_Unit_CE",
             "OEC_Overwatch_Unit_Medic",
             "OEC_Overwatch_Unit_Recon",
             "OEC_Overwatch_Unit_TL",
@@ -120,6 +121,33 @@ class CfgVehicles
             "HL_Combine\data\Coordinator\Coordinator_upperArmor.paa",
             "HL_Combine\data\Soldier\soldier_lowerArmor.paa",
             "HL_Combine\data\Coordinator\Coordinator_boots.paa",
+            "HL_Combine\data\Soldier\soldier_gloves.paa"
+        };
+        class EventHandlers: EventHandlers
+        {
+            class OEC_Combine_SoldierAssign_Event
+            {
+                init = "_this call oec_fnc_cmbSoldier;";
+            };
+        };
+    };
+    class OEC_Overwatch_Unit_CE: OEC_Overwatch_Unit_Soldier
+    {
+        displayName = "AT Soldier";
+        uniformClass = "OEC_Overwatch_Uniform_CE";
+        linkedItems[] = {"OEC_Overwatch_Helmet_CE", "OEC_Overwatch_Vest_CE","ItemMap", "TFAR_anprc152", "ItemCompass", "ItemWatch"};
+        respawnLinkedItems[] = {"OEC_Overwatch_Helmet_CE", "OEC_Overwatch_Vest_CE", "ItemMap", "TFAR_anprc152", "ItemCompass", "ItemWatch"};
+        weapons[] = {"OEC_Weapon_SMG46","Throw","Put"};
+        respawnWeapons[] = {"OEC_Weapon_SMG46","Throw","Put"};
+        magazines[] ={"OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag"};
+        respawnMagazines[] = {"OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag"};
+        hiddenSelectionsTextures[] =
+        {
+            "HL_Combine\data\Nova\Nova_torso.paa",
+            "HL_Combine\data\Nova\Nova_pants.paa",
+            "HL_Combine\data\Nova\Nova_upperArmor.paa",
+            "HL_Combine\data\Soldier\soldier_lowerArmor.paa",
+            "HL_Combine\data\Soldier\soldier_boots.paa",
             "HL_Combine\data\Soldier\soldier_gloves.paa"
         };
         class EventHandlers: EventHandlers

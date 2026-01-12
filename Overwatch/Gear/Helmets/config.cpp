@@ -17,6 +17,7 @@ class CfgPatches
             "OEC_Overwatch_Helmet_Soldier",
             "OEC_Overwatch_Helmet_Airwatch",
             "OEC_Overwatch_Helmet_AT",
+            "OEC_Overwatch_Helmet_CE",
             "OEC_Overwatch_Helmet_Medic",
             "OEC_Overwatch_Helmet_Recon",
             "OEC_Overwatch_Helmet_TL",
@@ -155,6 +156,31 @@ class CfgWeapons
         {
             model = "OEC_ACEX_Helmet_CMB_Soldier";
             variant = "at";
+        };
+    };
+
+    class OEC_Overwatch_Helmet_CE: OEC_Overwatch_Helmet_Soldier
+    {
+        displayName = "[OEC] Combine Soldier Helmet - AT";
+        hiddenSelectionsTextures[] = 
+        {
+            "HL_Combine\data\Nova\Nova_helmet.paa",
+            "HL_Combine\data\Nova\Nova_torso.paa",
+            "HL_Combine\data\Nova\Nova_lens.paa"
+        };
+        class ItemInfo: ItemInfo
+        {
+            hiddenSelectionsTextures[] = 
+            {
+                "HL_Combine\data\Nova\Nova_helmet.paa",
+                "HL_Combine\data\Nova\Nova_torso.paa",
+                "HL_Combine\data\Nova\Nova_lens.paa"
+            };
+        };
+        class XtdGearInfo
+        {
+            model = "OEC_ACEX_Helmet_CMB_Soldier";
+            variant = "ce";
         };
     };
 
@@ -368,12 +394,14 @@ class XtdGearModels
                 {
                     "soldier",
                     "at",
+                    "ce",
                     "medic",
 					"tl",
 					"recon"
                 };
                 class soldier { label = "Soldier"; };
                 class at { label = "AT"; };
+                class ce { label = "CE"; };
                 class medic { label = "Medic"; };
 				class tl { label = "TL"; };
 				class recon { label = "Recon"; };
