@@ -6,7 +6,7 @@ class CfgPatches
         requiredAddons[] = {"OEC_Extension_Overwatch_Weapons"};
         units[] = 
 		{
-			"hopperBoundingMine"
+			"OEC_HopperMine"
 		};
         weapons[] = {};
     };
@@ -38,7 +38,7 @@ class CfgPatches
 class CfgMineTriggers
 {
 	class RangeTrigger;
-	class RangeTriggerHopper: RangeTrigger
+	class OEC_RangeTrigger_Hopper: RangeTrigger
 	{
 		mineTriggerRange = 7;
 		mineTriggerActivationRange = 7;
@@ -61,14 +61,14 @@ class cfgAmmo
     };
 
     class BoundingMineBase;
-    class HopperMine_Range_Ammo: BoundingMineBase
+    class OEC_Ammo_HopperMine_Range: BoundingMineBase
 	{
 		hit = 50;
 		indirectHit = 50;
 		indirectHitRange = 6.5;
 		model = "\OECExtension\Overwatch\Weapons\data\hoppermine\combine_mine.p3d";
 		mineModelDisabled = "\OECExtension\Overwatch\Weapons\data\hoppermine\combine_mine_folded.p3d";
-		defaultMagazine = "HopperMine_Range_Mag";
+		defaultMagazine = "OEC_Magazine_HopperMine_Range";
 		soundHit1[] = {"A3\Sounds_F\arsenal\explosives\mines\Explosion_M6_slam_mine_01",3.1622777,1,1300};
 		soundHit2[] = {"A3\Sounds_F\arsenal\explosives\mines\Explosion_M6_slam_mine_02",3.1622777,1,2000};
 		multiSoundHit[] = {"soundHit1",0.5,"soundHit2",0.5};
@@ -81,7 +81,7 @@ class cfgAmmo
 		mineBoundingTime = 0.55;
 		mineBoundingDist = 2.5;
 		mineInconspicuousness = 40;
-		mineTrigger = "RangeTriggerHopper";
+		mineTrigger = "OEC_RangeTrigger_Hopper";
 
 		soundActivation[] = {"OECExtension\Overwatch\Weapons\data\hoppermine\combineMine_planted.wss",.8,1,30};
 		soundTrigger[] = {"OECExtension\Overwatch\Weapons\data\hoppermine\combineMine_triggered.wss",1.2,1,30};
@@ -115,7 +115,7 @@ class CfgMagazines
 
     class CA_Magazine;
 	class ATMine_Range_Mag: CA_Magazine {};
-    class HopperMine_Range_Mag: ATMine_Range_Mag
+    class OEC_Magazine_HopperMine_Range: ATMine_Range_Mag
 	{
 		author = "OEC Extension";
         displayName = "[OEC] Combine Hopper Mine";
@@ -123,7 +123,7 @@ class CfgMagazines
         descriptionShort = "Combine-made bounding mine with IFF capabilities";
 
 		mass = 10;
-		ammo = "HopperMine_Range_Ammo";
+		ammo = "OEC_Ammo_HopperMine_Range";
 		picture = "\OECExtension\Overwatch\Weapons\data\hopper.paa";
 		model = "OECExtension\Overwatch\Weapons\data\hoppermine\combine_mine_folded.p3d";
 		class Library
@@ -139,7 +139,7 @@ class CfgMagazines
 		};
 		priority = 1;
 
-		ace_explosives_setupObject = "ACE_Explosives_Place_APERSBoundingMine";
+		ace_explosives_setupObject = "OEC_Place_HopperMine";
 		useAction = 1;
         ace_explosives_placeable = 1;
 		
@@ -168,29 +168,36 @@ class CfgWeapons
         class ClassicMineRangeMuzzle: PutMuzzle {};
         class OEC_Put_Hopper: ClassicMineRangeMuzzle
 		{
-			magazines[] = {"HopperMine_Range_Mag"};
+			magazines[] = {"OEC_Magazine_HopperMine_Range"};
 			displayName = "Deploy Hopper Mine";
 		};
 	};
 };
 
-class cfgVehicles
+class CfgVehicles
 {
 	class MineGeneric;
 	class MineBase: MineGeneric {};
 
-	class hopperBoundingMine: MineBase
+	class ACE_Explosives_Place_APERSBoundingMine;
+
+	class OEC_HopperMine: MineBase
 	{
 		author = "OEC Extension";
 		mapSize = 0.08;
 		editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\APERSBoundingMine.jpg";
 		scopeCurator = 2;
 		scope = 2;
-		ammo = "HopperMine_Range_Ammo";
+		ammo = "OEC_Ammo_HopperMine_Range";
 		displayName = "[OEC] Hopper Mine";
 		icon = "iconExplosiveAP";
 		picture = "\A3\Weapons_F\Data\clear_empty.paa";
 		model = "OECExtension\Overwatch\Weapons\data\hoppermine\combine_mine_folded.p3d";
 		descriptionShort = "Combine Hopper Mine";
+	};
+
+	class OEC_Place_HopperMine: ACE_Explosives_Place_APERSBoundingMine
+	{
+		model = "OECExtension\Overwatch\Weapons\data\hoppermine\combine_mine_folded.p3d";
 	};
 };
