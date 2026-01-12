@@ -8,7 +8,7 @@ class CfgPatches
         {
             "OEC_UGV_rcws",
             "OEC_UGV_rcws_01",
-            "OEC_Static_Turret_Base",
+            "OEC_Floor_Turret_Base",
             "OEC_Floor_Turret"
         };
         weapons[] = {};
@@ -484,8 +484,8 @@ class CfgVehicles
 				gunEnd = "gun_chamber";
 				minElev = -20;
 				maxElev = 45;
-				minTurn = -160;
-				maxTurn = 160;
+				minTurn = -45;
+				maxTurn = 45;
 				initTurn = 0;
 				turretAxis = "axis_body";
 				maxHorizontalRotSpeed = 1.75;
@@ -578,14 +578,6 @@ class CfgVehicles
 			};
 		};
 		model = "OECExtension\Overwatch\Drones\data\OEC_Floor_Turret.p3d";
-		class assembleInfo
-		{
-			primary = 0;
-			base = "";
-			assembleTo = "";
-			dissasembleTo[] = {"B_Static_Designator_01_weapon_F"};
-			displayName = "";
-		};
 		class EventHandlers: EventHandlers
 		{
 			init = "(_this select 0) execVM '\A3\Static_F_Mark\Designator_01\Scripts\init.sqf'";
