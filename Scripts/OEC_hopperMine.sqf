@@ -9,7 +9,9 @@ _hopperLight setLightFlareSize 0.25;
 _hopperLight setLightFlareMaxDistance 100;
 _hopperLight setLightDayLight true;
 _hopperLight setLightIntensity 3000;
-
+ 
+ 
+[_unit, "OEC_HopperMine_Planted", 75, 5] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf";
 
 
 _mineIFF = [{
@@ -68,9 +70,22 @@ _mineIFF = [{
         _hopperLight setLightColor _hopperGreen;
         _mine enableSimulation false;
     };
-
-
 }, 0.3, [_unit, _hopperLight]] call CBA_fnc_addPerFrameHandler;
+
+
+_mineAlert = [{
+    _array = _this select 0;
+    _mine = _array select 0;
+ 
+    _nearbyUnits = _mine nearEntities [["Man"], 12];
+    {
+        _currentUnit = _nearbyUnits select _forEachIndex;
+        if ((side _currentUnit) != west) then 
+        {            
+            [_mine, "OEC_HopperMine_alert", 75, 1] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf";
+        };
+    } forEach _nearbyUnits;
+}, 1.5, [_unit, _hopperLight]] call CBA_fnc_addPerFrameHandler;
 
 
 
@@ -79,3 +94,4 @@ if (isNull _unit) then {true} else {false};
 };
 deleteVehicle _hopperLight;
 [_mineIFF] call CBA_fnc_removePerFrameHandler;
+[_mineAlert] call CBA_fnc_removePerFrameHandler;

@@ -12,25 +12,25 @@ class CfgPatches
     };
 };
 
- class CfgSounds
+class CfgSounds
 {
     sounds[] = {};
     class OEC_HopperMine_Planted
     {
         name = "OEC_HopperMine_Planted";
-        sound[] = {"OECExtension\Overwatch\Weapons\data\combineMine_planted.wss",3.1622777,1};
+        sound[] = {"OECExtension\Overwatch\Weapons\data\hoppermine\combineMine_planted.wss",3.1622777,1};
         titles[] = {};
     };
 	class OEC_HopperMine_Alert
 	{
 		name = "OEC_HopperMine_Alert";
-        sound[] = {"OECExtension\Overwatch\Weapons\data\combineMine_alert.wss",3.1622777,1};
+        sound[] = {"OECExtension\Overwatch\Weapons\data\hoppermine\combineMine_alert.wss",3.1622777,1};
         titles[] = {};
 	};
 	class OEC_HopperMine_Triggered
 	{
 		name = "OEC_HopperMine_Triggered";
-        sound[] = {"OECExtension\Overwatch\Weapons\data\combineMine_triggered.wss",3.1622777,1};
+        sound[] = {"OECExtension\Overwatch\Weapons\data\hoppermine\combineMine_triggered.wss",3.1622777,1};
         titles[] = {};
 	};
 };
@@ -83,8 +83,7 @@ class cfgAmmo
 		mineInconspicuousness = 40;
 		mineTrigger = "OEC_RangeTrigger_Hopper";
 
-		soundActivation[] = {"OECExtension\Overwatch\Weapons\data\hoppermine\combineMine_planted.wss",3,1,30};
-		soundTrigger[] = {"OECExtension\Overwatch\Weapons\data\hoppermine\combineMine_triggered.wss",3,1,30};
+		soundTrigger[] = {"OECExtension\Overwatch\Weapons\data\hoppermine\combineMine_triggered.wss",3,10,75};
 
         triggerWhenDestroyed = 0;
         ace_explosives_defuseTime = 3;
