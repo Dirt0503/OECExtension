@@ -83,8 +83,8 @@ class cfgAmmo
 		mineInconspicuousness = 40;
 		mineTrigger = "OEC_RangeTrigger_Hopper";
 
-		soundActivation[] = {"OECExtension\Overwatch\Weapons\data\hoppermine\combineMine_planted.wss",.8,1,30};
-		soundTrigger[] = {"OECExtension\Overwatch\Weapons\data\hoppermine\combineMine_triggered.wss",1.2,1,30};
+		soundActivation[] = {"OECExtension\Overwatch\Weapons\data\hoppermine\combineMine_planted.wss",3,1,30};
+		soundTrigger[] = {"OECExtension\Overwatch\Weapons\data\hoppermine\combineMine_triggered.wss",3,1,30};
 
         triggerWhenDestroyed = 0;
         ace_explosives_defuseTime = 3;

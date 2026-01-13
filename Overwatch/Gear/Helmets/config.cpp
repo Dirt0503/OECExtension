@@ -161,7 +161,7 @@ class CfgWeapons
 
     class OEC_Overwatch_Helmet_CE: OEC_Overwatch_Helmet_Soldier
     {
-        displayName = "[OEC] Combine Soldier Helmet - AT";
+        displayName = "[OEC] Combine Soldier Helmet - CE";
         hiddenSelectionsTextures[] = 
         {
             "HL_Combine\data\Nova\Nova_helmet.paa",
@@ -211,7 +211,7 @@ class CfgWeapons
 
     class OEC_Overwatch_Helmet_Recon: OEC_Overwatch_Helmet_Soldier
     {
-        displayName = "[OEC] Combine Soldier Helmet - Medic";
+        displayName = "[OEC] Combine Soldier Helmet - Recon";
         hiddenSelectionsTextures[] =
         {
             "HL_Combine\data\ranger\ranger_helmet.paa",
