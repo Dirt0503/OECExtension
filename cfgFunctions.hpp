@@ -112,10 +112,10 @@ class CfgFunctions
 
 
 
-            class xenAntlion
+            class droneAction
             {
-                file = "\OECExtension\Scripts\xen_antlion.sqf";
-				description = "Antlion Script";
+                file = "\OECExtension\Scripts\drones\OEC_ACE_drones_action.sqf";
+				description = "gives player ace options to deploy turret";
             };
         };
     };

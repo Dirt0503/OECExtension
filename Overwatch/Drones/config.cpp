@@ -82,8 +82,8 @@ class CfgMagazines
 		ammo = "OEC_Ammo_PulseSMG";
 		author = "OEC Extension";
 		picture = "\hl_cmb_weapons\UI\m_ar2_ca.paa";
-		displayName = "[OEC] 200rnd Combine Turret Cell";
-		descriptionShort = "Extreme Capacity Turret Pulse Cell; 200m dissipation range";
+		displayName = "[OEC] 200rnd Combine Restrictor Cell";
+		descriptionShort = "Extreme Capacity Restrictor Pulse Cell; 200m dissipation range";
 		count = 1000;
 		mass = 30;
 	};
@@ -95,14 +95,11 @@ class CfgWeapons
     class OEC_Weapon_PulseSMG;
     class OEC_Weapon_Turret: OEC_Weapon_PulseSMG
     {
-        /*class effect1
-        {
-            positionName = "konec hlavne";
-            directionName = "usti hlavne";
-            effectName = "MachineGunCloud";
-        };*/
+		picture = "";
+		model = "";
         type = 1;
 		showAimCursorInternal = 1;
+		scopeCurator = 1;
 		scope = 1;
 		displayName = "[OEC] Turret Gun";
 		magazines[] = {"OEC_Magazine_Turret"};
@@ -111,19 +108,12 @@ class CfgWeapons
 		class FullAuto: Mode_FullAuto
 		{
 			sounds[] = {"StandardSound"};
-			class BaseSoundModeType
-			{
-				//closure1[] = {"A3\Sounds_F\arsenal\weapons\SMG\PDW2000\closure_pdw2000_01",0.5011872,1,10};
-				//closure2[] = {"A3\Sounds_F\arsenal\weapons\SMG\PDW2000\closure_pdw2000_02",0.5011872,1.1,10};
-				//soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			};
+			class BaseSoundModeType{};
 			class StandardSound: BaseSoundModeType
 			{
-				//soundSetShot[] = {"WBK_AR1_Shot_Base_Soundset"};
-				begin1[] = {"OECExtension\Overwatch\Drones\data\shoot1.wss",0.9,1,1000};
-				begin2[] = {"OECExtension\Overwatch\Drones\data\shoot2.wss",0.9,1,1000};
-				begin3[] = {"OECExtension\Overwatch\Drones\data\shoot3.wss",0.9,1,1000};
-				//begin4[] = {"WBK_Combines\weapons\AR1_Fire_1.ogg",0.9,1,1000};
+				begin1[] = {"OECExtension\Overwatch\Drones\data\shoot1.wss",1.6,1,1000};
+				begin2[] = {"OECExtension\Overwatch\Drones\data\shoot2.wss",1.6,1,1000};
+				begin3[] = {"OECExtension\Overwatch\Drones\data\shoot3.wss",1.6,1,1000};
 				soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
 				class SoundTails
 				{
@@ -171,8 +161,8 @@ class CfgWeapons
 			maxRangeProbab = 0.05;
 			aiRateOfFire = 0.005;
 			aiRateOfFireDistance = 70;
-			//aiDispersionCoefY = 0.5;
-			//aiDispersionCoefX = 0.5;
+			aiDispersionCoefY = 0.1;
+			aiDispersionCoefX = 0.1;
         };
         class aiMode: FullAuto
         {
@@ -201,220 +191,13 @@ class DefaultVehicleSystemsDisplayManagerRight
 {
 	class components;
 };
+
 class DefaultEventHandlers;
 class WeaponFireGun;
 class WeaponCloudsGun;
 class WeaponFireMGun;
 class WeaponCloudsMGun;
 class RCWSOptics;
-/*class cfgVehicles 
-{
-    class LandVehicle;
-	class Car: LandVehicle
-	{
-		class NewTurret;
-	};
-	class Car_F: Car
-	{
-		class ViewOptics;
-		class HitPoints
-		{
-			class HitLFWheel;
-			class HitLBWheel;
-			class HitLMWheel;
-			class HitLF2Wheel;
-			class HitRFWheel;
-			class HitRBWheel;
-			class HitRMWheel;
-			class HitRF2Wheel;
-		};
-		class NewTurret;
-		class Turrets
-		{
-			class MainTurret: NewTurret
-			{
-				class ViewOptics;
-			};
-		};
-		class AnimationSources;
-		class Components;
-	};
-    class UGV_01_base_F: Car_F
-    {
-        class AnimationSources: AnimationSources {};
-        class CargoTurret;
-        class Turrets: Turrets
-        {
-            class CargoTurret_01: CargoTurret {};
-        };
-    };
-    class OEC_UGV_rcws: UGV_01_base_F
-	{
-		author = "$STR_A3_Bohemia_Interactive";
-		_generalMacro = "UGV_01_rcws_base_F";
-		weaponsGroup1 = 2;
-		weaponsGroup2 = "1 + 		4";
-		weaponsGroup3 = "8 + 	16 + 	32";
-		weaponsGroup4 = "64 + 		128";
-		displayName = "$STR_A3_CfgVehicles_UGV_01_RCWS_Base0";
-		class Library
-		{
-			libTextDesc = "$str_a3_cfgvehicles_ugv_01_base_library0";
-		};
-		model = "\A3\Drones_F\soft_f_gamma\UGV_01\UGV_01_F";
-		picture = "\A3\Drones_F\soft_f_gamma\UGV_01\Data\UI\portrait_UGV_01_RCWS_CA.paa";
-		Icon = "\A3\Drones_F\soft_f_gamma\UGV_01\Data\UI\map_UGV_01_RCWS_CA.paa";
-		threat[] = {0.8,0.6,0.3};
-		unitInfoType = "RscOptics_AV_driver";
-		uavCameraGunnerPos = "PiP1_pos";
-		uavCameraGunnerDir = "PiP1_dir";
-		class AnimationSources: AnimationSources
-		{
-			class Turret
-			{
-				source = "user";
-				animPeriod = 1;
-				initPhase = 0;
-			};
-			delete MainGun;
-			delete MainTurret;
-		};
-		class Turrets: Turrets
-		{
-			class MainTurret: NewTurret
-			{
-				class HitPoints
-				{
-					class HitTurret
-					{
-						armor = 3000;
-						material = -1;
-						armorComponent = "hit_main_turret";
-						name = "hit_main_turret_point";
-						visual = "OtocVez";
-						passThrough = 0;
-						minimalHit = 999;
-						explosionShielding = 0.4;
-						radius = 0.25;
-						isTurret = 1;
-					};
-					class HitGun
-					{
-						armor = 3000;
-						material = -1;
-						armorComponent = "hit_main_gun";
-						name = "hit_main_gun_point";
-						visual = "OtocHlaven";
-						passThrough = 0;
-						minimalHit = 999;
-						explosionShielding = 0.4;
-						radius = 0.2;
-						isGun = 1;
-					};
-				};
-				isCopilot = 0;
-				dontCreateAI = 0;
-				body = "mainTurret";
-				gun = "mainGun";
-				memoryPointGunnerOptics = "PiP1_pos";
-				memoryPointGun = "machinegun";
-				gunnerForceOptics = 1;
-				gunnerOpticsModel = "A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_F.p3d";
-				turretInfoType = "RscOptics_UGV_gunner";
-				weapons[] = {"OEC_Weapon_Turret"};
-				magazines[] = {"OEC_Magazine_Turret","OEC_Magazine_Turret"};
-				soundServo[] = {"A3\Sounds_F\vehicles\soft\UGV_01\Servo_UGV_gunner",0.31622776,1,30};
-				soundServoVertical[] = {"A3\Sounds_F\vehicles\soft\UGV_01\Servo_UGV_gunner_vertical",0.31622776,1,30};
-				minElev = -10;
-				maxElev = 60;
-				forceHideGunner = 1;
-				outGunnerMayFire = 1;
-				discreteDistance[] = {100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500};
-				discreteDistanceInitIndex = 2;
-				stabilizedInAxes = 3;
-				class ViewOptics: RCWSOptics
-				{
-					visionMode[] = {"Normal","TI"};
-					initFov = 0.4667;
-					maxFov = 0.4667;
-					minFov = 0.035;
-					directionStabilized = 1;
-				};
-				class Components
-				{
-					class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-					{
-						class components
-						{
-							class EmptyDisplay
-							{
-								componentType = "EmptyDisplayComponent";
-							};
-							class MinimapDisplay
-							{
-								componentType = "MinimapDisplayComponent";
-								resource = "RscCustomInfoMiniMap";
-							};
-							class UAVDisplay
-							{
-								componentType = "UAVFeedDisplayComponent";
-							};
-						};
-					};
-					class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-					{
-						class components
-						{
-							class EmptyDisplay
-							{
-								componentType = "EmptyDisplayComponent";
-							};
-							class MinimapDisplay
-							{
-								componentType = "MinimapDisplayComponent";
-								resource = "RscCustomInfoMiniMap";
-							};
-							class UAVDisplay
-							{
-								componentType = "UAVFeedDisplayComponent";
-							};
-						};
-					};
-				};
-			};
-			class CargoTurret_01: CargoTurret_01{};
-		};
-	};
-
-    class OEC_UGV_rcws_01: OEC_UGV_rcws
-	{
-		displayName = "[OEC] Test UGV";
-		scope = 2;
-		scopeCurator = 2;
-		faction = "OEC_Faction_Combine";
-		factionClass = "OEC_Faction_Class_Combine";
-        editorCategory = "OEC_EdCat_Supply";
-		editorSubcategory = "OEC_EdSubCat_Pods";
-		class SimpleObject
-		{
-			eden = 1;
-			animate[] = {{"damagehide",0},{"damagehidevez",0},{"damagehidehlaven",0},{"wheel_1_1_destruct",0},{"wheel_1_2_destruct",0},{"wheel_1_3_destruct",0},{"wheel_1_4_destruct",0},{"wheel_2_1_destruct",0},{"wheel_2_2_destruct",0},{"wheel_2_3_destruct",0},{"wheel_2_4_destruct",0},{"wheel_1_1_destruct_unhide",0},{"wheel_1_2_destruct_unhide",0},{"wheel_1_3_destruct_unhide",0},{"wheel_1_4_destruct_unhide",0},{"wheel_2_1_destruct_unhide",0},{"wheel_2_2_destruct_unhide",0},{"wheel_2_3_destruct_unhide",0},{"wheel_2_4_destruct_unhide",0},{"glass1_destruct",0},{"glass2_destruct",0},{"glass3_destruct",0},{"glass4_destruct",0},{"glass5_destruct",0},{"wheel_1_1",0},{"wheel_2_1",0},{"wheel_1_2",0},{"wheel_1_3",0},{"wheel_2_2",0},{"wheel_2_3",0},{"daylights",0},{"reverse_light",1},{"wheel_1_1_damage",0},{"wheel_1_2_damage",0},{"wheel_1_3_damage",0},{"wheel_1_4_damage",0},{"wheel_2_1_damage",0},{"wheel_2_2_damage",0},{"wheel_2_3_damage",0},{"wheel_2_4_damage",0},{"wheel_1_1_damper_damage_backanim",0},{"wheel_1_2_damper_damage_backanim",0},{"wheel_1_3_damper_damage_backanim",0},{"wheel_1_4_damper_damage_backanim",0},{"wheel_2_1_damper_damage_backanim",0},{"wheel_2_2_damper_damage_backanim",0},{"wheel_2_3_damper_damage_backanim",0},{"wheel_2_4_damper_damage_backanim",0},{"vehicletransported_antenna_hide",0},{"turrethide",0},{"damagehlaven",0},{"wheel_1_1_damper",0},{"wheel_2_1_damper",0},{"wheel_1_3_damper",0},{"wheel_2_3_damper",0},{"wheel_1_2_damper",0},{"wheel_2_2_damper",0},{"mg_muzzle",0},{"gmg_muzzle",0},{"muzzleflashrot",429},{"muzzleflashrot_2",776}};
-			hide[] = {"zasleh","light_l","light_r","zadni svetlo","brzdove svetlo","clan","podsvit pristroju","poskozeni"};
-			verticalOffset = 1.968;
-			verticalOffsetWorld = -0.121;
-			init = "[this, '', []] call bis_fnc_initVehicle";
-		};
-		editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\B_UGV_01_rcws_F.jpg";
-		_generalMacro = "B_UGV_01_rcws_F";
-		crew = "B_UAV_AI";
-		typicalCargo[] = {"B_Soldier_F"};
-		side = 1;
-		hiddenSelectionsTextures[] = {"\A3\Drones_F\soft_f_gamma\UGV_01\data\UGV_01_ext_co.paa","\A3\Drones_F\soft_f_gamma\UGV_01\data\UGV_01_int_co.paa","\A3\Data_F\Vehicles\Turret_co.paa"};
-		textureList[] = {"Blufor",1};
-		forceInGarage = 1;
-	};
-};*/
-
 class CfgVehicles
 {
 	class Land;
@@ -449,7 +232,7 @@ class CfgVehicles
 		getOutAction = "GetOutLow";
 		editorSubcategory = "EdSubcat_Turrets";
 		picture = "\A3\Static_F_Mark\Designator_01\Data\UI\Designator_01_CA.paa";
-		//icon = "\A3\Static_F_Mark\Designator_01\Data\UI\map_Designator_01_CA.paa";
+		icon = "\A3\Static_F_Mark\Designator_01\Data\UI\map_Designator_01_CA.paa";
 		cost = 200000;
 		accuracy = 0.25;
 		threat[] = {1.0,0.3,0.1};
@@ -585,7 +368,7 @@ class CfgVehicles
 	};
 	class OEC_Floor_Turret: OEC_Floor_Turret_Base
 	{
-		displayName = "[OEC] Floor Turret";
+		displayName = "[OEC] Combine Restrictor";
 		scope = 2;
 		scopeCurator = 2;
 		faction = "OEC_Faction_Combine";
@@ -634,22 +417,5 @@ class CfgVehicles
             ammoUnloadTime = 1;
             desiredAmmo = 500;
 		};
-
-		/*class ACE_Actions
-		{
-			class enableTurret
-			{
-				displayName = "Activate Turret";
-				condition = "";
-				exceptions[] = {};
-				statement = "";
-				icon = "";
-				duration = 1;
-				distance = 2;
-				enabled = 1;
-
-
-			};
-		};*/
 	};
 };
