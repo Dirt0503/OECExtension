@@ -4,7 +4,7 @@ removeAllWeapons _unitWithSword;
 _unitWithSword setUnitPos "UP";
 _unitWithSword setVariable ["WBK_AI_ISZombie",true,true];
 _unitWithSword setVariable ["WBK_AI_ZombieMoveSet","WBK_CustomCreature",true];
-_unitWithSword setVariable ["WBK_SynthHP",120,true];
+_unitWithSword setVariable ["WBK_SynthHP",200,true];
 _unitWithSword setSpeaker "NoVoice";
 _unitWithSword disableConversation true;
 
@@ -14,7 +14,7 @@ _unitWithSword spawn {
 };
 
 OEC_aceDamage = {
-	params ["_zombie","_damage","_dist","_isMetal"];
+	params ["_zombie","_damage","_dist"];
 	if !(alive _zombie) exitWith {};
 	_x = _zombie findNearestEnemy _zombie;
 	if ((_zombie distance _x) <= _dist) then {
@@ -37,7 +37,7 @@ OEC_aceDamage = {
 			};
 			[_x, _damage, _bodyPart3, "bite"] remoteExec ["ace_medical_fnc_addDamageToUnit", _x];
 
-				[_x, selectRandom ["PF_Hit_1","PF_Hit_2"], 60, 5] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf";
+			[_x, selectRandom ["PF_Hit_1","PF_Hit_2"], 60, 5] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf";
 	
 			if (isPlayer _x) then
 			{
@@ -67,6 +67,16 @@ OEC_aceDamage = {
 			};
 		};
 	};
+};
+
+OEC_bullsquid_toss = {
+	if !(alive _this) exitWith {};
+	{
+		[_x, selectRandom ["PF_Hit_1","PF_Hit_2"], 60, 5] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf";
+		_dir = getDirVisual _this;
+		_vel = velocity _x;
+		[_x, [(_vel select 0)+(sin _dir*10),(_vel select 1)+(cos _dir*10),3.5]] remoteExec ["setVelocity", _x];
+	} forEach nearestObjects [_this,["StaticWeapon"],4];
 };
 
 _unitWithSword addEventHandler ["Killed", {
@@ -283,7 +293,8 @@ _unitWithSword addEventHandler ["AnimStateChanged", {
 					[_unit, selectRandom ["WBK_Bullsquid_attack_1","WBK_Bullsquid_attack_2"], 75, 5] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf";
 					uiSleep 0.7;
 					if (animationState _unit != "bullsguid_attack_upclose") exitWith {};
-					[_unit,1,4,false] call OEC_aceDamage;
+					_unit call OEC_bullsquid_toss;
+					[_unit,1,4] call OEC_aceDamage;
 				};
 		 };
 	};

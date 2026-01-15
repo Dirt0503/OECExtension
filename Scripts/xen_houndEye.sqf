@@ -78,22 +78,28 @@ OEC_aceDamage_houndEye = {
 						AddChromAbber = nil;
 					};
 				}] remoteExec ["spawn",_x];
-				[_x, [_zombie vectorModelToWorld _position, _x selectionPosition "head",false]] remoteExec ["addForce", _x];
-				[_x, selectRandom ["Smasher_hit_human_1","Smasher_hit_human_2"], 105, 5] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf";
 			};
-
-			{
-				[_zombie, "Smasher_hit", 245, 5] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf";
-				[_x, "Smasher_hit_vehicle", 245, 5] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf";
-				_dir = getDirVisual _zombie;
-				_vel = velocity _x;
-				[_x, [(_vel select 0)+(sin _dir*15),(_vel select 1)+(cos _dir*15),5]] remoteExec ["setVelocity", _x];
-				if ((_x isKindOf "CAR") or (_x isKindOf "Helicopter")) then {
-					_x setDamage 1;
-				};
-			} forEach nearestObjects [_zombie,["CAR","TANK","Air","StaticWeapon"], (_dist + 2)];
 		};
 	};
+};
+
+OEC_houndeye_toss = {
+	if !(alive _this) exitWith {};
+	{
+		[_x, selectRandom ["sword_hit_1","sword_hit_2","sword_hit_3","sword_hit_4","sword_hit_5","sword_hit_6"], 60, 3] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf"; 
+		_dir = getDirVisual _this;
+		_vel = velocity _x;
+		[_x, [(_vel select 0)+(sin _dir*8),(_vel select 1)+(cos _dir*8),3]] remoteExec ["setVelocity", _x];
+	} forEach nearestObjects [_this,["StaticWeapon"],5.75];
+};
+
+OEC_houndeye_ragdoll = {
+	params ["_unit"];
+	private _position = [0,2000,400];
+	if !(alive _this) exitWith {};
+	{
+		[_x, [_unit vectorModelToWorld _position, _x selectionPosition "head",false]] remoteExec ["addForce", _x];
+	} forEach nearestObjects [_this,["MAN"],4.5];
 };
 
 _unitWithSword addEventHandler ["Suppressed", {
@@ -156,6 +162,8 @@ _unitWithSword addEventHandler ["AnimStateChanged", {
 						deletevehicle _smlfirelight;
 					}] remoteExec ["spawn",0];
 					uiSleep 0.1;
+					_unit call OEC_houndeye_ragdoll;
+					_unit call OEC_houndeye_toss;
                     [_unit,0.4,5.5,true] call OEC_aceDamage_houndEye;
 				};
 		 };

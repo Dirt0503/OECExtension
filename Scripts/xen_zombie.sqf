@@ -153,6 +153,16 @@ OEC_aceDamage = {
 	};
 };
 
+OEC_zombie_toss = {
+	if !(alive _this) exitWith {};
+	{
+		[_x, selectRandom ["sword_hit_1","sword_hit_2","sword_hit_3","sword_hit_4","sword_hit_5","sword_hit_6"], 60, 3] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf"; 
+		_dir = getDirVisual _this;
+		_vel = velocity _x;
+		[_x, [(_vel select 0)+(sin _dir*5),(_vel select 1)+(cos _dir*5),2]] remoteExec ["setVelocity", _x];
+	} forEach nearestObjects [_this,["StaticWeapon"],4];
+};
+
 
 _unitWithSword addEventHandler ["AnimStateChanged", { 
 	_this spawn {
@@ -161,11 +171,13 @@ _unitWithSword addEventHandler ["AnimStateChanged", {
 				case "wbk_walker_idle_1_attack": {
 					uiSleep 0.6;
 					if (animationState _unit != "wbk_walker_idle_1_attack") exitWith {};
+					_unit call OEC_zombie_toss;
 					[_unit,1.1,3,true] call OEC_aceDamage;
 				};
 				case "wbk_walker_idle_2_attack": {
 					uiSleep 0.6;
 					if (animationState _unit != "wbk_walker_idle_2_attack") exitWith {};
+					_unit call OEC_zombie_toss;
 					[_unit,1.1,3,true] call OEC_aceDamage;
 				};
 		 };
@@ -311,6 +323,7 @@ _actFr = [{
 					_this playActionNow selectRandom ["wbk_zombie_attack_left","wbk_zombie_attack_right"];
 					uiSleep 0.25;
 					if !(gestureState _this in ["wbk_zombie_attack_left","wbk_zombie_attack_right"]) exitWith {};
+					_this call OEC_zombie_toss;
 					[_this,1.1,3,true] call OEC_aceDamage;
 				};
 			};
