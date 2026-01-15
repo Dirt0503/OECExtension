@@ -161,8 +161,8 @@ class CfgWeapons
 			maxRangeProbab = 0.05;
 			aiRateOfFire = 0.005;
 			aiRateOfFireDistance = 70;
-			aiDispersionCoefY = 0.1;
-			aiDispersionCoefX = 0.1;
+			aiDispersionCoefY = 0;
+			aiDispersionCoefX = 0;
         };
         class aiMode: FullAuto
         {
@@ -363,7 +363,7 @@ class CfgVehicles
 		model = "OECExtension\Overwatch\Drones\data\OEC_Floor_Turret.p3d";
 		class EventHandlers: EventHandlers
 		{
-			init = "(_this select 0) allowDamage false";
+			init = "(_this select 0) allowDamage false; (_this select 0) setSkill 0.85;";
 		};
 	};
 	class OEC_Floor_Turret: OEC_Floor_Turret_Base
@@ -373,8 +373,8 @@ class CfgVehicles
 		scopeCurator = 2;
 		faction = "OEC_Faction_Combine";
 		factionClass = "OEC_Faction_Class_Combine";
-        editorCategory = "OEC_EdCat_Supply";
-		editorSubcategory = "OEC_EdSubCat_Pods";
+        editorCategory = "OEC_EdCat_Combine";
+		editorSubcategory = "OEC_EdSubCat_Turrets";
 		class SimpleObject
 		{
 			eden = 1;
@@ -402,7 +402,7 @@ class CfgVehicles
 				onlyForPlayer = 1;
 				shortcut = "";
 				condition = "count crew this == 0";
-				statement = "createVehicleCrew this";
+				statement = "createVehicleCrew this; (_this select 0) setSkill 0.85;";
 			};
 		};
 

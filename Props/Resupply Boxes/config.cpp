@@ -79,6 +79,7 @@ class CfgVehicles
 		ACE_maxWeightDrag = 20000;
 		maximumLoad = 2900;
 		ace_cargo_size = 1;
+		mass = 500;
 		class ACE_Actions
 		{
 			class ACE_MainActions
@@ -251,8 +252,8 @@ class CfgVehicles
 			};
 			class XX_HopperMine_Range_Mag
 			{
-				magazine = "HopperMine_Range_Mag";
-				count = 20;
+				magazine = "OEC_Magazine_HopperMine_Range";
+				count = 30;
 			};
 		};
 		class TransportWeapons
@@ -261,6 +262,11 @@ class CfgVehicles
 			{
 				weapon = "OEC_Weapons_SIPL0";
 				count = 20;
+			};
+			class _xx_OEC_Floor_Turret_Folded
+			{
+				weapon = "OEC_Floor_Turret_Folded";
+				count = 2;
 			};
 		};
 		class TransportItems

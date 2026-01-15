@@ -34,7 +34,7 @@ _unit reveal [_firer, 4];
 
 
 OEC_aceDamage_Guard = {
-	params ["_zombie","_damage","_dist","_isMetal"];
+	params ["_zombie","_damage","_dist"];
 	if !(alive _zombie) exitWith {};
 	_x = _zombie findNearestEnemy _zombie;
 	if ((_zombie distance _x) <= _dist) then {
@@ -43,6 +43,7 @@ OEC_aceDamage_Guard = {
 			case ((_x == _zombie) || (side _zombie == side _x) || (((_zombie worldToModel (_x modelToWorld [0, 0, 0])) select 1) < 0)): {};
 			case (!(isNil {_x getVariable "IMS_IsUnitInvicibleScripted"}) || (animationState _x == "STAR_WARS_FIGHT_DODGE_LEFT") || (animationState _x == "STAR_WARS_FIGHT_DODGE_LEFT") || (animationState _x == "STAR_WARS_FIGHT_DODGE_RIGHT") || (animationState _x == "starWars_landRoll") || (animationState _x == "starWars_landRoll_b") || ((typeOf _x isKindOf "WBK_SpecialZombie_Smasher_1") && (side _x == side _zombie)) || ((typeOf _x isKindOf "WBK_Goliaph_1") && (side _x == side _zombie)) || ((_x == _zombie) || !(alive _zombie) || !(alive _x) || (animationState _x == "WBK_Smasher_Execution"))): {};
 			case (lifeState _x == "INCAPACITATED"): {};
+
 			case (isDamageAllowed _x == FALSE): {};
 
 			[_x, _damage, "head", "falling"] remoteExec ["ace_medical_fnc_addDamageToUnit", _x];
@@ -52,14 +53,8 @@ OEC_aceDamage_Guard = {
 			[_x, _damage, "leg_r", "falling"] remoteExec ["ace_medical_fnc_addDamageToUnit", _x];
 			[_x, _damage, "leg_l", "falling"] remoteExec ["ace_medical_fnc_addDamageToUnit", _x];
 
-			if (_isMetal) then 
-			{
-				[_x, selectRandom ["sword_hit_1","sword_hit_2","sword_hit_3","sword_hit_4","sword_hit_5","sword_hit_6"], 60, 3] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf"; 
-			}
-			else
-			{
-				[_x, selectRandom ["PF_Hit_1","PF_Hit_2"], 60, 5] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf";
-			};
+			[_x, selectRandom ["PF_Hit_1","PF_Hit_2"], 60, 5] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf";
+
 			if (isPlayer _x) then
 			{
 				[_x, {
@@ -86,6 +81,17 @@ OEC_aceDamage_Guard = {
 					};
 				}] remoteExec ["spawn",_x];
 			};
+
+			{
+				[_zombie, "Smasher_hit", 245, 5] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf";
+				[_x, "Smasher_hit_vehicle", 245, 5] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf";
+				_dir = getDirVisual _zombie;
+				_vel = velocity _x;
+				[_x, [(_vel select 0)+(sin _dir*15),(_vel select 1)+(cos _dir*15),5]] remoteExec ["setVelocity", _x];
+				if ((_x isKindOf "CAR") or (_x isKindOf "Helicopter")) then {
+					_x setDamage 1;
+				};
+			} forEach nearestObjects [_zombie,["CAR","TANK","Air","StaticWeapon"], (_dist + 2)];
 		};
 	};
 };
@@ -103,9 +109,7 @@ _unitWithSword addEventHandler ["AnimStateChanged", {
 					uiSleep 0.35;
 					if (animationState _unit != "antlionguardian_attack") exitWith {};
 					_unit call WBK_Smasher_CreateCamShake;
-					_unit call WBK_Smasher_Damage_Vehicles;
-					[_unit,0.5,[0,4000,800],5.4] call WBK_Alien_Heavy_Damage_Humanoid;
-					[_unit,1,6,false] call OEC_aceDamage_Guard; 
+					[_unit,1,4.5] call OEC_aceDamage_Guard; 
 				};
 				case "antlionguardian_charge_crash": {
 					[_unit, selectRandom ["WBK_AG_shell_crack_1","WBK_AG_shell_crack_2"], 85, 3] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf"; 
@@ -113,9 +117,7 @@ _unitWithSword addEventHandler ["AnimStateChanged", {
 				case "antlionguardian_charge_end": {
 					[_unit, selectRandom ["WBK_AG_attack_1","WBK_AG_attack_2","WBK_AG_attack_3"], 125, 3] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf"; 
 					_unit call WBK_Smasher_CreateCamShake;
-					_unit call WBK_Smasher_Damage_Vehicles;
-					[_unit,0.5,[0,2000,400],5.4] call WBK_Alien_Heavy_Damage_Humanoid;
-					[_unit,1,6,false] call OEC_aceDamage_Guard; 
+					[_unit,1,4.5] call OEC_aceDamage_Guard; 
 				};
 		 };
 	};
