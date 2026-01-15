@@ -176,7 +176,7 @@ class CfgWeapons
         hiddenSelectionsTextures[] = 
         {
             "HL_Combine\data\Nova\Nova_pants.paa",
-            "HL_Combine\data\Nova\Nova_upperArmor.paa"
+            "OECExtension\Overwatch\Gear\Uniforms\data\OEC_CE_upperArmor.paa"
         };
         class ItemInfo: ItemInfo
 		{
