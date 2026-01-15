@@ -5,13 +5,14 @@ private _hopperLight = "#lightpoint" createVehicleLocal (getPos _unit);
 _hopperLight lightAttachObject [_unit,[0,0,0.28]];
 _hopperLight setLightColor _hopperOrange;
 _hopperLight setLightUseFlare true;
-_hopperLight setLightFlareSize 0.25;
+_hopperLight setLightFlareSize 0.3;
 _hopperLight setLightFlareMaxDistance 100;
 _hopperLight setLightDayLight true;
 _hopperLight setLightIntensity 3000;
+_hopperLight setLightBrightness 0.15;
  
  
-[_unit, "OEC_HopperMine_Planted", 75, 5] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf";
+[_unit, "OEC_HopperMine_Planted", 75, 0.12] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf";
 
 
 _mineIFF = [{
@@ -82,7 +83,7 @@ _mineAlert = [{
         _currentUnit = _nearbyUnits select _forEachIndex;
         if ((side _currentUnit) != west) then 
         {            
-            [_mine, "OEC_HopperMine_alert", 75, 1] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf";
+            [_mine, "OEC_HopperMine_alert", 75, 1.45] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf";
         };
     } forEach _nearbyUnits;
 }, 1.5, [_unit, _hopperLight]] call CBA_fnc_addPerFrameHandler;
