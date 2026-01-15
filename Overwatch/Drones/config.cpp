@@ -105,6 +105,8 @@ class CfgWeapons
 		magazines[] = {"OEC_Magazine_Turret"};
 		initSpeed = 0;
         modes[] = {"FullAuto","aiMode"};
+		soundBullet[] = {};
+
 		class FullAuto: Mode_FullAuto
 		{
 			sounds[] = {"StandardSound"};
