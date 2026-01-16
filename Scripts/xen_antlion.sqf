@@ -290,6 +290,16 @@ OEC_aceDamage = {
 	};
 };
 
+OEC_antlion_toss = {
+	if !(alive _this) exitWith {};
+	{
+		[_x, selectRandom ["sword_hit_1","sword_hit_2","sword_hit_3","sword_hit_4","sword_hit_5","sword_hit_6"], 60, 3] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf"; 
+		_dir = getDirVisual _this;
+		_vel = velocity _x;
+		[_x, [(_vel select 0)+(sin _dir*5),(_vel select 1)+(cos _dir*5),2]] remoteExec ["setVelocity", _x];
+	} forEach nearestObjects [_this,["StaticWeapon"],4];
+};
+
 
 _unitWithSword addEventHandler ["Killed", {
 	_this spawn {
@@ -336,6 +346,7 @@ _unitWithSword addEventHandler ["AnimStateChanged",
 				[_unit, selectRandom ["WBK_antlion_attack_1","WBK_antlion_attack_2","WBK_antlion_attack_3","WBK_antlion_attack_4","WBK_antlion_attack_5"], 45, 3] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf"; 
 				uiSleep 0.6;
 				if (animationState _unit != "antlion_attack_1") exitWith {};
+				_unit call OEC_antlion_toss;
 				[_unit,0.9,3.3,true] call OEC_aceDamage;
 			};
 			case "antlion_attack_2": 
@@ -343,6 +354,7 @@ _unitWithSword addEventHandler ["AnimStateChanged",
 				[_unit, selectRandom ["WBK_antlion_attack_double_1","WBK_antlion_attack_double_2","WBK_antlion_attack_double_3"], 45, 3] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf"; 
 				uiSleep 0.6;
 				if (animationState _unit != "antlion_attack_2") exitWith {};
+				_unit call OEC_antlion_toss;
 				[_unit,0.9,3.3,true] call OEC_aceDamage;
 			};
 		};

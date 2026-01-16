@@ -32,7 +32,7 @@ OEC_aceDamage_houndEye = {
 	if !(alive _zombie) exitWith {};
 	_x = _zombie findNearestEnemy _zombie;
 	if ((_zombie distance _x) <= _dist) then {
-		switch true do 
+	switch true do 
 		{
 			case ((_x == _zombie) || (side _zombie == side _x) || (((_zombie worldToModel (_x modelToWorld [0, 0, 0])) select 1) < 0)): {};
 			case (!(isNil {_x getVariable "IMS_IsUnitInvicibleScripted"}) || (animationState _x == "STAR_WARS_FIGHT_DODGE_LEFT") || (animationState _x == "STAR_WARS_FIGHT_DODGE_LEFT") || (animationState _x == "STAR_WARS_FIGHT_DODGE_RIGHT") || (animationState _x == "starWars_landRoll") || (animationState _x == "starWars_landRoll_b") || ((typeOf _x isKindOf "WBK_SpecialZombie_Smasher_1") && (side _x == side _zombie)) || ((typeOf _x isKindOf "WBK_Goliaph_1") && (side _x == side _zombie)) || ((_x == _zombie) || !(alive _zombie) || !(alive _x) || (animationState _x == "WBK_Smasher_Execution"))): {};
@@ -81,6 +81,25 @@ OEC_aceDamage_houndEye = {
 			};
 		};
 	};
+};
+
+OEC_houndeye_toss = {
+	if !(alive _this) exitWith {};
+	{
+		[_x, selectRandom ["sword_hit_1","sword_hit_2","sword_hit_3","sword_hit_4","sword_hit_5","sword_hit_6"], 60, 3] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf"; 
+		_dir = getDirVisual _this;
+		_vel = velocity _x;
+		[_x, [(_vel select 0)+(sin _dir*8),(_vel select 1)+(cos _dir*8),3]] remoteExec ["setVelocity", _x];
+	} forEach nearestObjects [_this,["StaticWeapon"],5.75];
+};
+
+OEC_houndeye_ragdoll = {
+	params ["_unit"];
+	private _position = [0,2000,400];
+	if !(alive _this) exitWith {};
+	{
+		[_x, [_unit vectorModelToWorld _position, _x selectionPosition "head",false]] remoteExec ["addForce", _x];
+	} forEach nearestObjects [_this,["MAN"],4.5];
 };
 
 _unitWithSword addEventHandler ["Suppressed", {
@@ -143,9 +162,9 @@ _unitWithSword addEventHandler ["AnimStateChanged", {
 						deletevehicle _smlfirelight;
 					}] remoteExec ["spawn",0];
 					uiSleep 0.1;
-					[_unit,0.001,[0,700,100],5.5] call WBK_Alien_Heavy_Damage_Humanoid;
-					_unit call WBK_Smasher_Damage_Vehicles;
-                    [_unit,0.4,5.5,true] call OEC_aceDamage_houndEye;
+					_unit call OEC_houndeye_ragdoll;
+					_unit call OEC_houndeye_toss;
+                    [_unit,1,5.5,true] call OEC_aceDamage_houndEye;
 				};
 		 };
 	};

@@ -5,6 +5,7 @@
     WBK_ECHO_HelmetArray append [
         "OEC_Overwatch_Helmet_Soldier",
         "OEC_Overwatch_Helmet_AT",
+        "OEC_Overwatch_Helmet_CE",
         "OEC_Overwatch_Helmet_Medic",
         "OEC_Overwatch_Helmet_Recon",
         "OEC_Overwatch_Helmet_Airwatch",

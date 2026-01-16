@@ -72,6 +72,7 @@ class cfgAmmo
 		soundHit1[] = {"A3\Sounds_F\arsenal\explosives\mines\Explosion_M6_slam_mine_01",3.1622777,1,1300};
 		soundHit2[] = {"A3\Sounds_F\arsenal\explosives\mines\Explosion_M6_slam_mine_02",3.1622777,1,2000};
 		multiSoundHit[] = {"soundHit1",0.5,"soundHit2",0.5};
+		soundActivation[] = {};
 		soundDeactivation[] = {"A3\Sounds_F\weapons\Mines\deactivate_mine_3a",1.9952624,1,20};
 		explosionEffects = "BoundingMineExplosion";
 		CraterEffects = "BoundingMineCrater";
