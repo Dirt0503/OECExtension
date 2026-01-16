@@ -82,8 +82,8 @@ class CfgMagazines
 		ammo = "OEC_Ammo_PulseSMG";
 		author = "OEC Extension";
 		picture = "\hl_cmb_weapons\UI\m_ar2_ca.paa";
-		displayName = "[OEC] 200rnd Combine Restrictor Cell";
-		descriptionShort = "Extreme Capacity Restrictor Pulse Cell; 200m dissipation range";
+		displayName = "[OEC] 200rnd Combine Sterilizer Cell";
+		descriptionShort = "Extreme Capacity Sterilizer Pulse Cell; 200m dissipation range";
 		count = 1000;
 		mass = 30;
 	};
@@ -226,7 +226,7 @@ class CfgVehicles
 		mapSize = 0.7;
 		features = "Randomization: No						<br />Camo selections: 1 - the whole weapon with pod						<br />Script door sources: None						<br />Script animations: None						<br />Executed scripts: None						<br />Firing from vehicles: Just the designator						<br />Slingload: No						<br />Cargo proxy indexes: None";
 		scope = 0;
-		displayname = "$STR_A3_CfgVehicles_Static_Designator_01_base_F1";
+		displayname = "Combine Sterilizer";
 		//overviewPicture = "\A3\Data_F_Mark\Images\watermarkInfo_page11_ca.paa";
 		transportSoldier = 0;
 		cargoAction[] = {"Mortar_Gunner"};
@@ -365,12 +365,12 @@ class CfgVehicles
 		model = "OECExtension\Overwatch\Drones\data\OEC_Floor_Turret.p3d";
 		class EventHandlers: EventHandlers
 		{
-			init = "(_this select 0) allowDamage false; (_this select 0) setSkill 0.85;";
+			init = "[_this select 0] execVM '\OECExtension\Scripts\OEC_turret.sqf';";
 		};
 	};
 	class OEC_Floor_Turret: OEC_Floor_Turret_Base
 	{
-		displayName = "[OEC] Combine Restrictor";
+		displayName = "[OEC]Combine Sterilizer";
 		scope = 2;
 		scopeCurator = 2;
 		faction = "OEC_Faction_Combine";

@@ -51,8 +51,8 @@ class CfgWeapons
     class OEC_Floor_Turret_Folded: OEC_Weapons_SIPL_base
 	{
 		oec_droneType = "turretCombine";
-		displayName = "[OEC] Combine Restrictor (Folded)";
-		descriptionShort = "An undeployed Combine 'Restrictor'";
+		displayName = "[OEC] Combine Sterilizer (Folded)";
+		descriptionShort = "An undeployed Combine 'Sterilizer'";
 		author = "OEC Extension";
 		scope = 2;
 		scopeArsenal = 2;

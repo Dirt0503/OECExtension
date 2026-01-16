@@ -296,7 +296,7 @@ OEC_antlion_toss = {
 		[_x, selectRandom ["sword_hit_1","sword_hit_2","sword_hit_3","sword_hit_4","sword_hit_5","sword_hit_6"], 60, 3] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf"; 
 		_dir = getDirVisual _this;
 		_vel = velocity _x;
-		[_x, [(_vel select 0)+(sin _dir*3),(_vel select 1)+(cos _dir*3),1.5]] remoteExec ["setVelocity", _x];
+		[_x, [(_vel select 0)+(sin _dir*5),(_vel select 1)+(cos _dir*5),2]] remoteExec ["setVelocity", _x];
 	} forEach nearestObjects [_this,["StaticWeapon"],4];
 };
 
