@@ -164,7 +164,7 @@ _unitWithSword addEventHandler ["AnimStateChanged", {
 					uiSleep 0.1;
 					_unit call OEC_houndeye_ragdoll;
 					_unit call OEC_houndeye_toss;
-                    [_unit,0.4,5.5,true] call OEC_aceDamage_houndEye;
+                    [_unit,1,5.5,true] call OEC_aceDamage_houndEye;
 				};
 		 };
 	};
