@@ -112,10 +112,25 @@ class CfgFunctions
 
 
 
-            class droneAction
+            class getACEaction
             {
-                file = "\OECExtension\Scripts\drones\OEC_ACE_drones_action.sqf";
+                file = "\OECExtension\Scripts\drones\OEC_getACEaction.sqf";
 				description = "gives player ace options to deploy turret";
+            };
+            class spawnDrone
+            {
+                file = "\OECExtension\Scripts\drones\OEC_spawnDrone.sqf";
+				description = "spawns turret";
+            };
+            class pickupDrone
+            {
+                file = "\OECExtension\Scripts\drones\OEC_pickupDrone.sqf";
+				description = "picks up turret";
+            };
+            class reloadDrone
+            {
+                file = "\OECExtension\Scripts\drones\OEC_reload.sqf";
+				description = "reloads turret";
             };
         };
     };

@@ -1,3 +1,24 @@
+class CfgFunctions
+{
+    class OEC
+    {
+        tag = "OEC";
+        class functions
+        {
+            class pickupDrone
+            {
+                file = "\OECExtension\Scripts\drones\OEC_pickupDrone.sqf";
+				description = "picks up turret";
+            };
+			class reloadDrone
+            {
+                file = "\OECExtension\Scripts\drones\OEC_reload.sqf";
+				description = "reloads turret";
+            };
+        };
+    };
+};
+
 class CfgPatches
 {
     class OEC_Extension_Overwatch_Drones
@@ -79,13 +100,18 @@ class CfgMagazines
     class OEC_Magazine_Turret: OEC_Magazine_PulseSMG
 	{
 		scope = 2;
-		ammo = "OEC_Ammo_PulseSMG";
+		ammo = "OEC_Ammo_Turret";
 		author = "OEC Extension";
-		picture = "\hl_cmb_weapons\UI\m_ar2_ca.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\turretMag.paa";
 		displayName = "[OEC] 200rnd Combine Sterilizer Cell";
 		descriptionShort = "Extreme Capacity Sterilizer Pulse Cell; 200m dissipation range";
-		count = 1000;
-		mass = 30;
+		count = 200;
+		mass = 10;
+		allowedSlots[] = 
+		{
+			701, // Vest
+			901  // Backpack
+		};
 	};
 };
 
@@ -227,7 +253,6 @@ class CfgVehicles
 		features = "Randomization: No						<br />Camo selections: 1 - the whole weapon with pod						<br />Script door sources: None						<br />Script animations: None						<br />Executed scripts: None						<br />Firing from vehicles: Just the designator						<br />Slingload: No						<br />Cargo proxy indexes: None";
 		scope = 0;
 		displayname = "Combine Sterilizer";
-		//overviewPicture = "\A3\Data_F_Mark\Images\watermarkInfo_page11_ca.paa";
 		transportSoldier = 0;
 		cargoAction[] = {"Mortar_Gunner"};
 		getInAction = "GetInMortar";
@@ -281,7 +306,7 @@ class CfgVehicles
 				gunnerOpticsModel = "A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_F.p3d";
 				turretInfoType = "RscOptics_UGV_gunner";
 				weapons[] = {"OEC_Weapon_Turret"};
-				magazines[] = {"OEC_Magazine_Turret"};
+				magazines[] = {};
 				soundServo[] = {"A3\Sounds_F\vehicles\soft\UGV_01\Servo_UGV_gunner",0.31622776,1,30};
 				soundServoVertical[] = {"A3\Sounds_F\vehicles\soft\UGV_01\Servo_UGV_gunner_vertical",0.31622776,1,30};
 				forceHideGunner = 1;
@@ -370,7 +395,7 @@ class CfgVehicles
 	};
 	class OEC_Floor_Turret: OEC_Floor_Turret_Base
 	{
-		displayName = "[OEC]Combine Sterilizer";
+		displayName = "Combine Sterilizer";
 		scope = 2;
 		scopeCurator = 2;
 		faction = "OEC_Faction_Combine";
@@ -390,7 +415,33 @@ class CfgVehicles
 		side = 1;
 		crew = "B_UAV_AI";
 
-		class UserActions
+		class ACE_Actions
+		{
+			class ACE_MainActions
+			{
+				displayName = "Interactions";
+				position = "_target selectionPosition 'interact'";
+				selection = "";
+				distance = 4;
+				condition = "true";
+				class OEC_pickup_turret
+				{
+					displayName = "Pickup Sterilizer";
+					condition = "true";
+					statement = "[_target, _player] call OEC_fnc_pickupDrone";
+					icon = "\OECExtension\Overwatch\Weapons\data\turret.paa";
+				};
+				class OEC_reloadTurret
+				{
+					displayName = "Reload Cell";
+					condition = "true";
+					statement = "[_target, _player] call OEC_fnc_reloadDrone";
+					icon = "\OECExtension\Overwatch\Weapons\data\turret.paa";
+				};
+			};
+		};
+
+		/*class UserActions
 		{
 			class enableTurret
 			{
@@ -404,7 +455,7 @@ class CfgVehicles
 				onlyForPlayer = 1;
 				shortcut = "";
 				condition = "count crew this == 0";
-				statement = "createVehicleCrew this; (_this select 0) setSkill 0.85;";
+				statement = "createVehicleCrew this;";
 			};
 		};
 
@@ -413,11 +464,9 @@ class CfgVehicles
 			enabled = 1;
             proxyWeapon = "OEC_Weapon_Turret";
             magazineLocation = "_target selectionPosition 'gun_chamber'";
-            disassembleWeapon = "OEC_Floor_Turret_Folded";
-            disassembleTurret = "";
-            ammoLoadTime = 1;
-            ammoUnloadTime = 1;
-            desiredAmmo = 500;
-		};
+            ammoLoadTime = 5;
+            ammoUnloadTime = 5;
+            desiredAmmo = 200;
+		};*/
 	};
 };

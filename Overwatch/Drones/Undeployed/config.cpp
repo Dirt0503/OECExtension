@@ -63,13 +63,14 @@ class CfgWeapons
         magazineWells[] = {};
         reloadAction = "";
         model = "OECExtension\Overwatch\Drones\data\folded\OEC_turretFolded.p3d";
+		_drone_class = "combine turret";
 
-        class ACE_CSW
+        /*class ACE_CSW
 		{
 			type = "mount";
 			deployTime = 1;
 			pickupTime = 1;
 			deploy = "OEC_Floor_Turret";
-		};
+		};*/
 	};
 };

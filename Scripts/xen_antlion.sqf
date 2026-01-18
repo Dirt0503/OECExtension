@@ -51,15 +51,7 @@ WBK_Antlion_Explode = {
 		_fulgi setParticleCircle [0, [0, 0, 0]];
 		_fulgi setParticleParams [["\A3\data_f\cl_exp", 1, 0, 1],"","Billboard",1,17,[0,0,0],[0,0,0],0,1.7,1,0,[0.15],[[1,0.4,0,1]],[1],0,0,"","",_fulgi, 0, false, 0.1, [[255,102,0,1],[255,102,0,1],[255,102,0,1]]]; 
 		_fulgi say3D [selectRandom ["WBK_antlion_explode_1","WBK_antlion_explode_2","WBK_antlion_explode_3"],300];
-		_smlfirelight = "#lightpoint" createVehicleLocal (getpos _fulgi);
-		_smlfirelight setPosATL (getPosATL _this);
-		_smlfirelight setLightAmbient [1, 0.4, 0.1];
-		_smlfirelight setLightColor [1, 0.4, 0.1];
-		_smlfirelight setLightBrightness 0.51;
-		_smlfirelight setLightUseFlare true;
-		_smlfirelight setLightDayLight true;
-		_smlfirelight setLightFlareSize 2;
-		_smlfirelight setLightFlareMaxDistance 400; 
+
 		_blood = "#particlesource" createVehicleLocal (getposATL _object);          
 		_blood attachTo [_object,[0,0,0],"pilot"];  
 		_blood setParticleParams [ 
@@ -85,48 +77,16 @@ WBK_Antlion_Explode = {
 				[[255,102,0,1],[255,102,0,1],[255,102,0,1]]
 			];
 		_blood setdropinterval 1;   
-		_blood2 = "#particlesource" createVehicleLocal (getposATL _object);          
-		_blood2 attachTo [_object,[0,0,0],"pilot"];  
-		_blood2 setParticleParams [ 
-				["\A3\data_f\ParticleEffects\Universal\UnderWaterSmoke",4,0,15,1],           
-				"",          
-				"billboard",     
-				0.01, 2,        
-				[0, 0, 0],         
-
-				[random -6, random -8, random 6],           
-				5, 6, 0.4, 0.4,           
-				[0.05, 1.4],   
-				[[1,0.5,0,1],[1,0.2,0,1],[1,0.2,0,1]],    
-				[1],    
-				0.4,    
-				0.4,    
-				"",    
-				"",    
-				"",   
-				360,        
-				false,        
-				-1,
-				[[255,102,0,1],[255,102,0,1],[255,102,0,1]]
-			];
-		_blood2 setdropinterval 1;  
 		{
 			_x attachTo [_this,[0,0,0],"pilot"];
-		} forEach [_breath,_smlfirelight,_blood,_blood2,_fulgi];
+		} forEach [_breath,_blood,_fulgi];
 		uisleep 0.2;
 		deleteVehicle _breath;
-		deleteVehicle _smlfirelight; 
 		uisleep 0.2;
 		deleteVehicle _blood; 
-		deleteVehicle _blood2; 
 		uiSleep 0.5;
 		deleteVehicle _fulgi; 
 	}] remoteExec ["spawn", [0,-2] select isDedicated,false];
-	{
-		if (!(animationState _x in ["antlion_sync_main_1","antlion_sync_main_2"]) and (alive _x) and (isNil {_x getVariable "IMS_IsUnitInvicibleScripted"}) and (getText (configfile >> 'CfgVehicles' >> typeOf _x >> 'moves') == 'CfgMovesMaleSdr')) then {
-			[_x,2,_this] remoteExec ["concentrationToZero", _x, false];
-		};
-	} forEach nearestObjects [_this,["MAN"],4];
 };
 
 
@@ -225,11 +185,6 @@ WBK_AntLionJump = {
 	_zombie enableAI "MOVE";
 	[_zombie, "antlion_jump_out"] remoteExec ["switchMove", 0];
 	[_zombie, selectRandom ["WBK_antlion_flyEnd_1","WBK_antlion_flyEnd_2","WBK_antlion_flyEnd_3"], 95, 5] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf";
-	{
-		if (!(animationState _x in ["antlion_sync_main_1","antlion_sync_main_2"]) and (alive _x) and (isNil {_x getVariable "IMS_IsUnitInvicibleScripted"}) and (getText (configfile >> 'CfgVehicles' >> typeOf _x >> 'moves') == 'CfgMovesMaleSdr')) then {
-			[_x,2,_zombie] remoteExec ["concentrationToZero", _x, false];
-		};
-	} forEach nearestObjects [_zombie,["MAN"],3];
 	uiSleep (5 + random 5);
 	_zombie setVariable ["CanFly",nil];
 };
@@ -425,7 +380,7 @@ _actFr = [{
 		"GEOM",
 		"NONE"
     ];
-	if (((_mutant distance _en) < 50) and ((_mutant distance _en) > 8) and (isNil {_mutant getVariable "CanFly"})) exitWith {
+	if (((_mutant distance _en) < 50) and ((_mutant distance _en) > 10)) exitWith {
 		[_mutant,_en] spawn WBK_AntLionJump;
 	};
 	if (((_en distance _mutant) <= 2) and (count _ins == 0)) then {
@@ -509,7 +464,7 @@ _loopPathfind = [{
 	  _unit setVariable ["WBK_IsUnitLocked",nil];
 	  _unit enableAI "ANIM";
 	  _unit enableAI "MOVE";
-}, 0.01, [_unitWithSword]] call CBA_fnc_addPerFrameHandler;
+}, 0.02, [_unitWithSword]] call CBA_fnc_addPerFrameHandler;
 
 
 _loopPathfindDoMove = [{

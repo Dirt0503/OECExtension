@@ -58,6 +58,26 @@ class Extended_PostInit_EventHandlers
     };
 };
 
+class CfgFunctions
+{
+    class OEC
+    {
+        tag = "OEC";
+        class functions
+        {
+            class getACEaction
+            {
+                file = "\OECExtension\Scripts\drones\OEC_getACEaction.sqf";
+				description = "gives player ace options to deploy turret";
+            };
+            class spawnDrone
+            {
+                file = "\OECExtension\Scripts\drones\OEC_spawnDrone.sqf";
+				description = "spawns turret";
+            };
+        };
+    };
+};
 
 class CfgFactionClasses
 {
@@ -203,7 +223,7 @@ class CfgEditorSubCategories
     };
 
 };
-/*
+
 class CfgVehicles
 {
 	class Man;
@@ -211,18 +231,15 @@ class CfgVehicles
 	{
 		class ACE_SelfActions
 		{
-			class ACE_Equipment
-			{
-				class ACE_OEC_drones
-				{
-					displayName = "Drones";
-					condition = "true";
-					exceptions[] = {"isNotDragging","isNotSwimming","notOnMap","isNotInside","isNotSitting"};
-					statement = "";
-					icon = "a3\ui_f_curator\data\cfgwrapperui\cursors\curatormovein_ca.paa";
-					insertChildren = "call GX_fnc_drone_getInteractActions";
-				};
-			};
+            class ACE_OEC_drones
+            {
+                displayName = "Combine Drones";
+                condition = "true";
+                exceptions[] = {"isNotDragging","isNotSwimming","notOnMap","isNotInside","isNotSitting"};
+                statement = "";
+                icon = "\OECExtension\Overwatch\Weapons\data\cmbACElogo.paa";
+                insertChildren = "call OEC_fnc_getACEaction";
+            };
 		};
 	};
-};*/
+};

@@ -27,7 +27,7 @@ _uniformPool =
 ];
 _unitWithSword forceAddUniform (selectRandom _uniformPool);
 
-_unitWithSword setVariable ["WBK_SynthHP",150,true];
+_unitWithSword setVariable ["WBK_SynthHP",175,true];
 _unitWithSword setSpeaker "NoVoice";
 _unitWithSword disableConversation true;
 removeAllWeapons _unitWithSword;
@@ -329,7 +329,7 @@ _actFr = [{
 			};
 		};
 	};
-}, 0.1, [_unitWithSword]] call CBA_fnc_addPerFrameHandler;
+}, 0.02, [_unitWithSword]] call CBA_fnc_addPerFrameHandler;
 
 _loopPathfind = [{
     _array = _this select 0;
@@ -406,7 +406,7 @@ _loopPathfind = [{
 	  _unit setVariable ["WBK_IsUnitLocked",nil];
 	  _unit enableAI "ANIM";
 	  _unit enableAI "MOVE";
-}, 0.01, [_unitWithSword]] call CBA_fnc_addPerFrameHandler;
+}, 0.1, [_unitWithSword]] call CBA_fnc_addPerFrameHandler;
 
 
 _loopPathfindDoMove = [{

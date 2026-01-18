@@ -249,6 +249,13 @@ class CfgAmmo
 		timeToLive = 0.333333334;
 	};
 
+	class OEC_Ammo_Turret: OEC_Ammo_AR2
+	{
+		hit = 12;
+		caliber = 1.35;
+		timeToLive = 0.333333334;
+	};
+
 	// 4.6x30mm SMG46 ammo
 	class OEC_Ammo_46x30: BulletBase
 	{
