@@ -116,11 +116,11 @@ class CfgVehicles
         respawnMagazines[] = {"OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag"};
         hiddenSelectionsTextures[] =
         {
-            "HL_Combine\data\Coordinator\Coordinator_torso.paa",
-            "HL_Combine\data\Coordinator\Coordinator_pants.paa",
-            "HL_Combine\data\Coordinator\Coordinator_upperArmor.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\AT_torso.paa",
+            "HL_Combine\data\Urban\Urban_Shotgunner_pants.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\AT_upperArmor.paa",
             "HL_Combine\data\Soldier\soldier_lowerArmor.paa",
-            "HL_Combine\data\Coordinator\Coordinator_boots.paa",
+            "HL_Combine\data\Urban\Urban_boots.paa",
             "HL_Combine\data\Soldier\soldier_gloves.paa"
         };
         class EventHandlers: EventHandlers
@@ -143,11 +143,11 @@ class CfgVehicles
         respawnMagazines[] = {"OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag"};
         hiddenSelectionsTextures[] =
         {
-            "HL_Combine\data\Nova\Nova_torso.paa",
-            "HL_Combine\data\Nova\Nova_pants.paa",
-            "OECExtension\Overwatch\Gear\Uniforms\data\OEC_CE_upperArmor.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\engi_torso.paa",
+            "HL_Combine\data\Urban\Urban_Shotgunner_pants.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\engi_upperArmor.paa",
             "HL_Combine\data\Soldier\soldier_lowerArmor.paa",
-            "HL_Combine\data\Soldier\soldier_boots.paa",
+            "HL_Combine\data\Urban\Urban_boots.paa",
             "HL_Combine\data\Soldier\soldier_gloves.paa"
         };
         class EventHandlers: EventHandlers

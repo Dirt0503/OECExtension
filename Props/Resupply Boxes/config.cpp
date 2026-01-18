@@ -238,12 +238,12 @@ class CfgVehicles
 			class XX_OEC_Magazine_SPAS12_8Rnd
 			{
 				magazine = "OEC_Magazine_SPAS12_8Rnd";
-				count = 40;
+				count = 50;
 			};
 			class XX_OEC_Magazine_SPAS12_8Rnd_Slug
 			{
 				magazine = "OEC_Magazine_SPAS12_8Rnd_Slug";
-				count = 40;
+				count = 50;
 			};
 			class XX_OEC_Magazine_357
 			{
@@ -254,6 +254,11 @@ class CfgVehicles
 			{
 				magazine = "OEC_Magazine_HopperMine_Range";
 				count = 30;
+			};
+			class XX_OEC_Magazine_Turret
+			{
+				magazine = "OEC_Magazine_Turret";
+				count = 20;
 			};
 		};
 		class TransportWeapons
@@ -289,12 +294,12 @@ class CfgVehicles
 			class XX_ACE_plasmaIV_500
 			{
 				name = "ACE_plasmaIV_500";
-				count = 100;
+				count = 75;
 			};
 			class XX_ACE_plasmaIV_1000
 			{
 				name = "ACE_plasmaIV";
-				count = 100;
+				count = 50;
 			};
 			class XX_ACE_elasticBandage
 			{
@@ -329,7 +334,7 @@ class CfgVehicles
 			class XX_ACE_surgicalKit
 			{
 				name = "ACE_surgicalKit";
-				count = 5;
+				count = 3;
 			};
 		};
 		class TransportBackpacks{};
