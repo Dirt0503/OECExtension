@@ -137,19 +137,19 @@ class CfgWeapons
     class OEC_Overwatch_Helmet_AT: OEC_Overwatch_Helmet_Soldier
     {
         displayName = "[OEC] Combine Soldier Helmet - AT";
-        hiddenSelectionsTextures[] = 
+        hiddenSelectionsTextures[] =
         {
-            "HL_Combine\data\Coordinator\Coordinator_helmet.paa",
-            "HL_Combine\data\Coordinator\Coordinator_torso.paa",
-            "HL_Combine\data\Coordinator\Coordinator_lens.paa"
+            "OECExtension\Overwatch\Gear\Uniforms\data\AT_helmet.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\AT_torso.paa",
+            "HL_Combine\data\soldier\soldier_lens.paa"
         };
         class ItemInfo: ItemInfo
         {
             hiddenSelectionsTextures[] = 
             {
-                "HL_Combine\data\Coordinator\Coordinator_helmet.paa",
-                "HL_Combine\data\Coordinator\Coordinator_torso.paa",
-                "HL_Combine\data\Coordinator\Coordinator_lens.paa"
+                "HL_Combine\data\Urban\Urban_Shotgunner_helmet.paa",
+                "HL_Combine\data\Urban\Urban_Shotgunner_torso.paa",
+                "HL_Combine\data\soldier\soldier_lens.paa"
             };
         };
         class XtdGearInfo
@@ -164,8 +164,8 @@ class CfgWeapons
         displayName = "[OEC] Combine Soldier Helmet - CE";
         hiddenSelectionsTextures[] = 
         {
-            "HL_Combine\data\Nova\Nova_helmet.paa",
-            "HL_Combine\data\Nova\Nova_torso.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\engi_helmet.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\engi_torso.paa",
             "HL_Combine\data\Nova\Nova_lens.paa"
         };
         class ItemInfo: ItemInfo
