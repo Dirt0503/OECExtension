@@ -122,7 +122,7 @@ class CfgWeapons
 		model = "\a3\Weapons_F\Ammo\mag_minedetector.p3d";
 	};
 
-	class OEC_Items_Deployable_Bunker: ACE_ItemCore
+	/*class OEC_Items_Deployable_Bunker: ACE_ItemCore
     {
         scope = 2;
         displayName = "[OEC] Deployable Bunker";
@@ -134,7 +134,7 @@ class CfgWeapons
 		{
 			mass = 1;
 		};
-    };
+    };*/
 
     class OEC_Items_Deployable_Barricade: ACE_ItemCore
     {
@@ -143,7 +143,7 @@ class CfgWeapons
         descriptionShort = "Alien tools and materials."
         //descriptionUse = "Assembles into a Combine barricade."
         author = "OEC Extension";
-        picture = "\OECExtension\Overwatch\Items\FortifyTool\data\smallBarricadePackedAlt.paa";
+        picture = "\OECExtension\Overwatch\Items\FortifyTool\data\bigBarricadePacked.paa";
         class ItemInfo: CBA_MiscItem_ItemInfo
 		{
 			mass = 1;
