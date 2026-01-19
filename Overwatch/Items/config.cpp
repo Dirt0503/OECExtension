@@ -15,7 +15,7 @@ class CfgPatches
             "ACE_plasmaIV_250",
 			"ToolKit",
 			"MineDetector",
-			"OEC_Items_Deployable_Bunker",
+			//"OEC_Items_Deployable_Bunker",
 			"OEC_Items_Deployable_Barricade"
         };
     };
@@ -87,6 +87,8 @@ class CfgWeapons
 		scope = 2;
 		descriptionShort = "Combine-made bag with all essential tools. Issued to flight personnel and engineers.";
         picture = "\OECExtension\Overwatch\Weapons\data\toolkit.paa";
+		ACE_isTool = 1;
+		ace_fortify_fortifyTool = 1;
 
 		_generalMacro = "ToolKit";
 		model = "\A3\Weapons_F\Items\Toolkit";
