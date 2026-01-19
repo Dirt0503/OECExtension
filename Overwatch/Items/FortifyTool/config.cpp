@@ -9,11 +9,7 @@ class CfgPatches
             "ace_fortify"
         };
         units[] = {};
-        weapons[] = 
-        {
-            "OEC_Items_Deployable_Bunker",
-            "OEC_Items_Deployable_Barricade"
-        };
+        weapons[] = {};
         currencyItem = "OEC_Items_Deployable_Barricade";
         externalPlaceables[] = 
         {
