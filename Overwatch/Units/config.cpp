@@ -43,7 +43,7 @@ class CfgFaces
         class WBK_CombineHead;
         class OEC_Head: WBK_CombineHead
         {
-            name = "[OEC] Invisible Head";
+            displayName = "[OEC] Invisible Head";
             identityTypes[] = {"OEC_Transhumans"};
         };
     };
