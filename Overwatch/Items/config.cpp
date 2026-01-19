@@ -14,7 +14,9 @@ class CfgPatches
             "ACE_plasmaIV_500",
             "ACE_plasmaIV_250",
 			"ToolKit",
-			"MineDetector"
+			"MineDetector",
+			"OEC_Items_Deployable_Bunker",
+			"OEC_Items_Deployable_Barricade"
         };
     };
 };
@@ -120,4 +122,31 @@ class CfgWeapons
 		model = "\a3\Weapons_F\Ammo\mag_minedetector.p3d";
 	};
 
+	class OEC_Items_Deployable_Bunker: ACE_ItemCore
+    {
+        scope = 2;
+        displayName = "[OEC] Deployable Bunker";
+        descriptionShort = "Bulky alien tools and materials."
+        //descriptionUse = "Assembles into a Combine bunker."
+        author = "OEC Extension";
+        picture = "\OECExtension\Overwatch\Items\FortifyTool\data\bigBarricadePacked.paa";
+        class ItemInfo: CBA_MiscItem_ItemInfo
+		{
+			mass = 1;
+		};
+    };
+
+    class OEC_Items_Deployable_Barricade: ACE_ItemCore
+    {
+        scope = 2;
+        displayName = "[OEC] Deployable Barricade";
+        descriptionShort = "Alien tools and materials."
+        //descriptionUse = "Assembles into a Combine barricade."
+        author = "OEC Extension";
+        picture = "\OECExtension\Overwatch\Items\FortifyTool\data\smallBarricadePackedAlt.paa";
+        class ItemInfo: CBA_MiscItem_ItemInfo
+		{
+			mass = 1;
+		};
+    };
 };
