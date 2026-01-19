@@ -21,8 +21,7 @@ class CfgPatches
             "OEC_Overwatch_Vest_TL",
             "OEC_Overwatch_Vest_Elite",
             "OEC_Overwatch_Vest_Recon_TL",
-            "OEC_Overwatch_Vest_Wallhamer_Heavy",
-            "OEC_Overwatch_Vest_Wallhammer_Light",
+            "OEC_Overwatch_Vest_Wallhammer_Heavy",
             "OEC_Overwatch_Vest_APF",
             "OEC_Overwatch_Vest_Airwatch"
         };
@@ -149,15 +148,15 @@ class CfgWeapons
         scopeAresenal = 2;
         hiddenSelectionsTextures[] = 
         {
-            "HL_Combine\data\Coordinator\Coordinator_pants.paa",
-            "HL_Combine\data\Coordinator\Coordinator_upperArmor.paa"
+            "HL_Combine\data\Urban\Urban_Shotgunner_pants.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\AT_upperArmor.paa"
         };
         class ItemInfo: ItemInfo
 		{
 			hiddenSelectionsTextures[] = 
             {
-                "HL_Combine\data\Coordinator\Coordinator_pants.paa",
-                "HL_Combine\data\Coordinator\Coordinator_upperArmor.paa"
+                "HL_Combine\data\Urban\Urban_Shotgunner_pants.paa",
+                "HL_Combine\data\Urban\Urban_Shotgunner_upperArmor.paa"
             };
             containerClass = "supply500";
 		};
@@ -168,30 +167,40 @@ class CfgWeapons
         };
     };
 
-    class OEC_Overwatch_Vest_CE: OEC_Overwatch_Vest_Base
+    class OEC_Overwatch_Vest_CE: OEC_Overwatch_Vest_Soldier
     {
-        displayName = "[OEC] Combine Soldier Vest - CE";
+       displayName = "[OEC] Combine Soldier Vest - CE";
         scope = 2;
         scopeAresenal = 2;
-        hiddenSelectionsTextures[] = 
+        model = "\HL_Combine\data\Nemez_Vest_Elite.p3d";
+        hiddenSelections[] = {"camo","camo1"};
+		hiddenSelectionsTextures[] = 
         {
-            "HL_Combine\data\Nova\Nova_pants.paa",
-            "OECExtension\Overwatch\Gear\Uniforms\data\OEC_CE_upperArmor.paa"
+            "OECExtension\Overwatch\Gear\Uniforms\data\engi_upperArmor.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\engi_collar.paa"
+        };
+		hiddenSelectionsMaterials[] = 
+        {
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "HL_Combine\data\Materials\Armor.rvmat"
         };
         class ItemInfo: ItemInfo
 		{
+			hiddenSelections[] = {"camo","camo1"};
 			hiddenSelectionsTextures[] = 
             {
-                "HL_Combine\data\BorderPatrol\Nova_pants.paa",
-                "HL_Combine\data\BorderPatrol\Nova_upperArmor.paa"
+                "OECExtension\Overwatch\Gear\Uniforms\data\engi_upperArmor.paa",
+                "OECExtension\Overwatch\Gear\Uniforms\data\engi_collar.paa"
             };
-            containerClass = "supply400";
-		};
-        class XtdGearInfo
-        {
-            model = "OEC_ACEX_Vest_CMB_Soldier";
-            variant = "ce";
+			hiddenSelectionsMaterials[] = 
+            {
+                "HL_Combine\data\Materials\Armor.rvmat",
+                "HL_Combine\data\Materials\Armor.rvmat"
+            };
+			uniformModel = "\HL_Combine\data\Nemez_Vest_Elite.p3d";
+            containerClass = "supply450";
         };
+        class XtdGearInfo{};
     };
 
     class OEC_Overwatch_Vest_Medic: OEC_Overwatch_Vest_Soldier
@@ -392,33 +401,7 @@ class CfgWeapons
 				};
 			};
         };
-        class XtdGearInfo
-        {
-            model = "OEC_ACEX_Vest_CMB_Wallhammer";
-            variant = "heavy";
-        };
-    };
-
-    class OEC_Overwatch_Vest_Wallhammer_Light: OEC_Overwatch_Vest_Wallhammer_Heavy
-    {
-        displayName = "[OEC] Wallhamer Vest - Light";
-        model = "WBK_AdditionalGear\A_HalfLife_Wallhammer.p3d";
-        hiddenSelectionsTextures[]={};
-        class ItemInfo: ItemInfo
-		{
-			uniformModel = "WBK_AdditionalGear\A_HalfLife_Wallhammer.p3d";
-			containerClass="Supply300";
-			mass=90;
-			hiddenSelections[]=
-		    {
-				"camo"
-		    };
-        };
-        class XtdGearInfo
-        {
-            model = "OEC_ACEX_Vest_CMB_Wallhammer";
-            variant = "light";
-        };
+        class XtdGearInfo {};
     };
 
     class OEC_Overwatch_Vest_APF: OEC_Overwatch_Vest_Soldier
@@ -528,19 +511,18 @@ class XtdGearModels
                 {
                     "soldier",
                     "at",
-                    "ce",
                     "medic",
 					"tl",
 					"recon"
                 };
                 class soldier { label = "Soldier"; };
                 class at { label = "AT"; };
-                class ce { label = "CE"; };
                 class medic { label = "Medic"; };
 				class tl { label = "TL"; };
 				class recon { label = "Recon"; };
             };
         };
+
 
         class OEC_ACEX_Vest_CMB_Elite
         {
@@ -557,24 +539,6 @@ class XtdGearModels
                 };
                 class sl { label = "SL"; };
                 class reconSL { label = "Recon"; };
-            };
-        };
-
-        class OEC_ACEX_Vest_CMB_Wallhammer
-        {
-            label = "";
-            author = "OEC Extension";
-            options[] = { "variant" };
-            class variant
-            {
-                label = "Vest Variants";
-                values[] = 
-                {
-                    "light",
-                    "heavy"
-                };
-                class light { label = "Light"; };
-                class heavy { label = "Heavy"; };
             };
         };
 	};

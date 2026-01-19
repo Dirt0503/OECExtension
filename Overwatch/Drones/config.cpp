@@ -106,10 +106,11 @@ class CfgMagazines
 		displayName = "[OEC] 200rnd Combine Sterilizer Cell";
 		descriptionShort = "Extreme Capacity Sterilizer Pulse Cell; 200m dissipation range";
 		count = 200;
-		mass = 10;
+		mass = 20;
 		allowedSlots[] = 
 		{
 			701, // Vest
+			801, // Uniform
 			901  // Backpack
 		};
 	};
@@ -127,7 +128,7 @@ class CfgWeapons
 		showAimCursorInternal = 1;
 		scopeCurator = 1;
 		scope = 1;
-		displayName = "[OEC] Turret Gun";
+		displayName = "Combine Turret Pulse Gun";
 		magazines[] = {"OEC_Magazine_Turret"};
 		initSpeed = 0;
         modes[] = {"FullAuto","aiMode"};
@@ -440,33 +441,5 @@ class CfgVehicles
 				};
 			};
 		};
-
-		/*class UserActions
-		{
-			class enableTurret
-			{
-				displayName = "Activate Turret";
-				displayNameDefault = "Activate Turret";
-				priority = 100;
-				radius = 20;
-				position = "axis_body";
-				showWindow = 0;
-				hideOnUse = 1;
-				onlyForPlayer = 1;
-				shortcut = "";
-				condition = "count crew this == 0";
-				statement = "createVehicleCrew this;";
-			};
-		};
-
-		class ACE_CSW
-		{
-			enabled = 1;
-            proxyWeapon = "OEC_Weapon_Turret";
-            magazineLocation = "_target selectionPosition 'gun_chamber'";
-            ammoLoadTime = 5;
-            ammoUnloadTime = 5;
-            desiredAmmo = 200;
-		};*/
 	};
 };
