@@ -146,7 +146,7 @@ class CfgWeapons
         picture = "\OECExtension\Overwatch\Items\FortifyTool\data\bigBarricadePacked.paa";
         class ItemInfo: CBA_MiscItem_ItemInfo
 		{
-			mass = 1;
+			mass = 5;
 		};
     };
 };
