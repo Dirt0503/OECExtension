@@ -119,7 +119,7 @@ class CfgVehicles
             "OECExtension\Overwatch\Gear\Uniforms\data\AT_torso.paa",
             "HL_Combine\data\Urban\Urban_Shotgunner_pants.paa",
             "OECExtension\Overwatch\Gear\Uniforms\data\AT_upperArmor.paa",
-            "HL_Combine\data\Soldier\soldier_lowerArmor.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\AT_lowerArmor.paa",
             "HL_Combine\data\Urban\Urban_boots.paa",
             "HL_Combine\data\Soldier\soldier_gloves.paa"
         };
@@ -146,7 +146,7 @@ class CfgVehicles
             "OECExtension\Overwatch\Gear\Uniforms\data\engi_torso.paa",
             "HL_Combine\data\Urban\Urban_Shotgunner_pants.paa",
             "OECExtension\Overwatch\Gear\Uniforms\data\engi_upperArmor.paa",
-            "HL_Combine\data\Soldier\soldier_lowerArmor.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\engi_lowerArmor.paa",
             "HL_Combine\data\Urban\Urban_boots.paa",
             "HL_Combine\data\Soldier\soldier_gloves.paa"
         };
