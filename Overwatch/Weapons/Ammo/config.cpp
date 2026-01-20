@@ -190,14 +190,14 @@ class CfgAmmo
 	// R-2X Sniper Ammo
 	class OEC_Ammo_cmbSrifle_normal: OEC_Ammo_AR2
 	{
-		hit = 50;
+		hit = 77.5;
 		indirectHit = 0;
 		indirectHitRange = 0;
 		visibleFire = 5;
 		audibleFire = 40;
 		visibleFireTime = 3;
 		cost = 7;
-		caliber = 4;
+		caliber = 1.5;
 		typicalSpeed = 1000;
 		timeToLive = 1.2;
 		model = "\hl_cmb_weapons\ar2\Data\bullettracer\tracer_blue";
@@ -227,7 +227,7 @@ class CfgAmmo
 	class OEC_Ammo_cmbSrifle_AP: OEC_Ammo_cmbSrifle_normal
 	{
 		hit = 35;
-		caliber = 75;
+		caliber = 100;
 		tracerScale = 2.5;
 		model = "\A3\Weapons_f\Data\bullettracer\tracer_yellow";
 	};

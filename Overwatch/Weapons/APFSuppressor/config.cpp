@@ -32,7 +32,7 @@ class CfgWeapons
 
         scope = 2;
         scopeArsenal = 2;
-        magazines[] = {"OEC_Magazine_APFSuppressor_100Rnd", "OEC_Magazine_APFSuppressor_150Rnd_Exogen"};
+        magazines[] = {"OEC_Magazine_APFSuppressor_100Rnd", "OEC_Magazine_APFSuppressor_100Rnd_Exogen"};
         magazineWell[] = {"OEC_MagazineWell_APFSuppressor"};
         drySound[] = {"WBK_Combines\weapons\shotgun_empty.wav",1,1,10};
 		reloadMagazineSound[] = {"WBK_Combines\weapons\APF_reload.ogg",1,1,30};
@@ -181,15 +181,15 @@ class CfgMagazines
         lastRoundsTracer = 0;
 		mass = 50;
     };
-	 class OEC_Magazine_APFSuppressor_150Rnd_Exogen: HL_CMB_30Rnd_AR2_Mag
+	 class OEC_Magazine_APFSuppressor_100Rnd_Exogen: HL_CMB_30Rnd_AR2_Mag
     {
         ammo = "OEC_Ammo_APFSuppressor_exogen";
-        count = 150;
+        count = 100;
         author = "OEC Extension";
 		initSpeed = 770;
-        displayName = "[OEC] 150Rnd Anti-Exogen Suppressor Cell";
+        displayName = "[OEC] 100Rnd Anti-Exogen Suppressor Cell";
         descriptionShort = "High Capacity Anti-Exogen Suppressor Cell; 300m dissipation range; Deals increased damage to xen creatures";
-        displayNameShort = "150Rnd Cell";
+        displayNameShort = "100Rnd Cell";
 		picture = "\OECExtension\Overwatch\Weapons\data\APFmagExogen.paa";
         tracersEvery = 0;
         lastRoundsTracer = 0;
@@ -204,7 +204,7 @@ class CfgMagazineWells
         OEC_APFSuppressor_Mags[] =
         {
             "OEC_Magazine_APFSuppressor_100Rnd",
-			"OEC_Magazine_APFSuppressor_150Rnd_Exogen"
+			"OEC_Magazine_APFSuppressor_100Rnd_Exogen"
         };
     };
 };

@@ -45,7 +45,7 @@ class CfgMagazines
 		tracersEvery = 1;
 		mass = 3.5;
 	};
-	class OEC_Magazine_cmbSrifle_Exo: OEC_Magazine_cmbSrifle
+	/*class OEC_Magazine_cmbSrifle_Exo: OEC_Magazine_cmbSrifle
 	{
 		scope = 2;
 		ammo = "OEC_Ammo_cmbSrifle_Exo";
@@ -58,7 +58,7 @@ class CfgMagazines
 		picture = "\OECExtension\Overwatch\Weapons\data\sniperMagExo.paa";
 		tracersEvery = 1;
 		mass = 2.5;
-	};
+	};*/
 }; 
 
 class CfgSoundSets
@@ -140,7 +140,7 @@ class CfgWeapons
 		model = "WBK_Combines\weapons\assasin_sniper.p3d";
 		picture = "\OECExtension\Overwatch\Weapons\data\R2Xsniper.paa";
 		handAnim[] = {"OFP2_ManSkeleton","WBK_Combines\weapons\assasin_sniper_idle.rtm"};
-		magazines[] = {"OEC_Magazine_cmbSrifle", "OEC_Magazine_cmbSrifle_AP", "OEC_Magazine_cmbSrifle_Exo"};
+		magazines[] = {"OEC_Magazine_cmbSrifle", "OEC_Magazine_cmbSrifle_AP"};
         magazineWell[] = {};
 
 		modes[] = {"Single"};
