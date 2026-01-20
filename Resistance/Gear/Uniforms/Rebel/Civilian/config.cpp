@@ -84,7 +84,7 @@ class cfgVehicles
         model = "hl_civ_characters\models\u_civ_01.p3d";
         modelSides[] = {3,1};
         hiddenSelections[] = {"camo"};
-		hiddenSelectionsTextures[] = {"hl_civ_characters\data\citizen_beige_co.paa"};
+		hiddenSelectionsTextures[] = {"OECExtension\Resistance\Gear\Uniforms\Rebel\Civilian\data\zombie_beige_co.paa"}; // we will need to make a separate zombie uniform vehicle later.
 		class Wounds
 		{
 			tex[] = {};
@@ -98,7 +98,7 @@ class cfgVehicles
 		uniformClass = "OEC_Rebel_Civ_Uniform_Blue";
 
 		hiddenSelections[] = {"camo"};
-		hiddenSelectionsTextures[] = {"hl_civ_characters\data\citizen_co.paa"};
+		hiddenSelectionsTextures[] = {"OECExtension\Resistance\Gear\Uniforms\Rebel\Civilian\data\zombie_co.paa"}; // we will need to make a separate zombie uniform vehicle later.
 	};
 
    /* class Item_Base_F;
