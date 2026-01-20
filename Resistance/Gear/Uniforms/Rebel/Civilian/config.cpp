@@ -85,6 +85,30 @@ class cfgVehicles
         modelSides[] = {3,1};
         hiddenSelections[] = {"camo"};
 		hiddenSelectionsTextures[] = {"hl_civ_characters\data\citizen_beige_co.paa"};
+		/*hiddenSelectionsMaterials[] = 
+        {
+            "A3\Characters_F\Common\Data\basicbody.rvmat",
+			"A3\Characters_F\Common\Data\basicbody_injury.rvmat",
+			"A3\Characters_F\Common\Data\basicbody_injury.rvmat",
+			"A3\Characters_F\Heads\Data\hl_white_bald_muscular.rvmat",
+			"A3\Characters_F\Heads\Data\hl_white_bald_muscular_injury.rvmat",
+			"A3\Characters_F\Heads\Data\hl_white_bald_muscular_injury.rvmat",
+			"A3\Characters_F\Heads\Data\hl_black_bald_muscular.rvmat",
+			"A3\Characters_F\Heads\Data\hl_black_bald_muscular_injury.rvmat",
+			"A3\Characters_F\Heads\Data\hl_black_bald_muscular_injury.rvmat",
+			"A3\Characters_F\Heads\Data\hl_white_hairy_muscular.rvmat",
+			"A3\Characters_F\Heads\Data\hl_white_hairy_muscular_injury.rvmat",
+			"A3\Characters_F\Heads\Data\hl_white_hairy_muscular_injury.rvmat",
+			"A3\Characters_F\Heads\Data\hl_white_old.rvmat",
+			"A3\Characters_F\Heads\Data\hl_white_old_injury.rvmat",
+			"A3\Characters_F\Heads\Data\hl_white_old_injury.rvmat",
+			"A3\Characters_F\Heads\Data\hl_asian_bald_muscular.rvmat",
+			"A3\Characters_F\Heads\Data\hl_asian_bald_muscular_injury.rvmat",
+			"A3\Characters_F\Heads\Data\hl_asian_bald_muscular_injury.rvmat",
+			"hl_civ_characters\data\citizen.rvmat",
+			"hl_civ_characters\data\w1_citizen.rvmat",
+			"hl_civ_characters\data\w2_citizen.rvmat"
+        };*/
 		class Wounds
 		{
 			tex[] = {};

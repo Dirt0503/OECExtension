@@ -42,25 +42,7 @@ _magArray = magazinesAmmo _drone;
 if (count _magArray > 0) then {
     _mag = _magArray select 0;
 	_magAmmo = _mag select 1;
-
-
-	if (_unit canAdd "OEC_Magazine_Turret") then {
-		_unit addMagazine ["OEC_Magazine_Turret", _magAmmo];
-	} else {
-		private _item_holders = nearestObjects [_unit, ["WeaponHolder_Single_F","WeaponHolder","GroundWeaponHolder"], 5];
-		private _item_holder = objNull;
-		if (_item_holders isNotEqualTo []) then {
-			_item_holder = _item_holders select 0;
-		};
-		
-		if (!isNull _item_holder) then {
-			_item_holder addMagazineAmmoCargo ["OEC_Magazine_Turret", 1, _magAmmo];
-		} else {
-			_item_holder = createVehicle ["WeaponHolder_Single_F", _unit modelToWorld [0,1,0.025], [], 0, "CAN_COLLIDE"];
-			_item_holder setDir (getDir _unit);
-			_item_holder addMagazineAmmoCargo ["OEC_Magazine_Turret", 1, _magAmmo];
-		};
-	};
+	_unit addMagazine ["OEC_Magazine_Turret", _magAmmo];
 };
 
 if (isUAVConnected _drone) then

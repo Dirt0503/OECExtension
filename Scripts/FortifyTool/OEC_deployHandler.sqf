@@ -8,7 +8,7 @@ if (OEC_Extension_useAmmo) exitWith
         private _config = configFile >> "CfgWeapons" >> OEC_Extension_currencyItem;
         if!(istext (_config >> "displayName")) exitWith {};
         private _item_name = getText (_config >> "displayName");
-        systemChat format ["You need at least 1 %1 to use the Fortify Tool!", _item_name];
+        systemChat format ["You need at least 1 %1 to deploy barricades with Combine Toolkit!", _item_name];
     };
     _can_fortify
 };

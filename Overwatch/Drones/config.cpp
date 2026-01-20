@@ -105,6 +105,8 @@ class CfgMagazines
 		picture = "\OECExtension\Overwatch\Weapons\data\turretMag.paa";
 		displayName = "[OEC] 200rnd Combine Sterilizer Cell";
 		descriptionShort = "Extreme Capacity Sterilizer Pulse Cell; 200m dissipation range";
+		model = "\a3\Props_F_Enoch\Military\Camps\PortableLight_02_single_folded_F.p3d";
+		hiddenSelectionsTextures[] = {"a3\Props_F_Enoch\Military\Camps\data\Portable_light_02_Single_Sand_CO.paa"};
 		count = 200;
 		mass = 20;
 		allowedSlots[] = 
