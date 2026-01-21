@@ -19,6 +19,8 @@ class CfgPatches
             "OEC_Overwatch_Vest_Medic",
             "OEC_Overwatch_Vest_Recon",
             "OEC_Overwatch_Vest_TL",
+            "OEC_Overwatch_Vest_TL_AT",
+            "OEC_Overwatch_Vest_TL_CE",
             "OEC_Overwatch_Vest_Elite",
             "OEC_Overwatch_Vest_Recon_TL",
             "OEC_Overwatch_Vest_Wallhammer_Heavy",
@@ -40,8 +42,8 @@ class CfgWeapons
         hiddenSelections[] = {"camo","camo1"};
 	    hiddenSelectionsTextures[] = 
         {
-            "HL_Combine\data\Soldier\soldier_pants.paa",
-            "HL_Combine\data\Soldier\soldier_upperArmor.paa"
+            "HL_Combine\data\Urban\Urban_Shotgunner_pants.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\soldier_upperArmor.paa"
         };
 	    hiddenSelectionsMaterials[] = 
         {
@@ -55,8 +57,8 @@ class CfgWeapons
 		    hiddenSelections[] = {"camo","camo1"};
 		    hiddenSelectionsTextures[] = 
             {
-                "HL_Combine\data\Soldier\soldier_pants.paa",
-                "HL_Combine\data\Soldier\soldier_upperArmor.paa"
+                "HL_Combine\data\Urban\Urban_Shotgunner_pants.paa",
+                "OECExtension\Overwatch\Gear\Uniforms\data\soldier_upperArmor.paa"
             };
 		    hiddenSelectionsMaterials[] = 
             {
@@ -251,7 +253,7 @@ class CfgWeapons
 
     class OEC_Overwatch_Vest_TL: OEC_Overwatch_Vest_Soldier
     {
-        displayName = "[OEC] Combine Soldier Vest - TL";
+        displayName = "[OEC] Combine Team Leader Vest";
         hiddenSelectionsTextures[] =
         {
             "HL_Combine\data\Beta\Beta_pants.paa",
@@ -267,9 +269,68 @@ class CfgWeapons
         };
         class XtdGearInfo
         {
-            model = "OEC_ACEX_Vest_CMB_Soldier";
-            variant = "tl";
+            model = "OEC_ACEX_Vest_CMB_TL";
+            variant = "norm";
         };
+    };
+
+    class OEC_Overwatch_Vest_TL_AT: OEC_Overwatch_Vest_Soldier
+    {
+        displayName = "[OEC] Combine Team Leader Vest - AT";
+        hiddenSelectionsTextures[] =
+        {
+            "HL_Combine\data\Beta\Beta_pants.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\TL_AT_upperArmor.paa"
+        };
+        class ItemInfo: ItemInfo
+        {
+            hiddenSelectionsTextures[] =
+            {
+                "HL_Combine\data\Beta\Beta_pants.paa",
+                "OECExtension\Overwatch\Gear\Uniforms\data\TL_AT_upperArmor.paa"
+            };
+        };
+        class XtdGearInfo
+        {
+            model = "OEC_ACEX_Vest_CMB_TL";
+            variant = "at";
+        };
+    };
+
+    class OEC_Overwatch_Vest_TL_CE: OEC_Overwatch_Vest_Soldier
+    {
+       displayName = "[OEC] Combine Team Leader Vest - CE";
+        scope = 2;
+        scopeAresenal = 2;
+        model = "\HL_Combine\data\Nemez_Vest_Elite.p3d";
+        hiddenSelections[] = {"camo","camo1"};
+		hiddenSelectionsTextures[] = 
+        {
+            "OECExtension\Overwatch\Gear\Uniforms\data\TL_CE_upperArmor.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\engi_collar.paa"
+        };
+		hiddenSelectionsMaterials[] = 
+        {
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "HL_Combine\data\Materials\Armor.rvmat"
+        };
+        class ItemInfo: ItemInfo
+		{
+			hiddenSelections[] = {"camo","camo1"};
+			hiddenSelectionsTextures[] = 
+            {
+                "OECExtension\Overwatch\Gear\Uniforms\data\TL_CE_upperArmor.paa",
+                "OECExtension\Overwatch\Gear\Uniforms\data\engi_collar.paa"
+            };
+			hiddenSelectionsMaterials[] = 
+            {
+                "HL_Combine\data\Materials\Armor.rvmat",
+                "HL_Combine\data\Materials\Armor.rvmat"
+            };
+			uniformModel = "\HL_Combine\data\Nemez_Vest_Elite.p3d";
+            containerClass = "supply450";
+        };
+        class XtdGearInfo{};
     };
 
     class OEC_Overwatch_Vest_Elite: OEC_Overwatch_Vest_Soldier
@@ -520,6 +581,24 @@ class XtdGearModels
                 class medic { label = "Medic"; };
 				class tl { label = "TL"; };
 				class recon { label = "Recon"; };
+            };
+        };
+
+        class OEC_ACEX_Vest_CMB_TL
+        {
+            label = "";
+            author = "OEC Extension";
+            options[] = { "variant" };
+            class variant
+            {
+                label = "Vest Variants";
+                values[] = 
+                {
+                    "norm",
+                    "at"
+                };
+                class norm { label = "Normal"; };
+                class at { label = "AT"; };
             };
         };
 

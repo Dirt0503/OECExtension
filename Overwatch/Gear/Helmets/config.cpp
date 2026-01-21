@@ -46,15 +46,15 @@ class CfgWeapons
 		hiddenSelections[] = {"camo1","camo2","camo3"};
 		hiddenSelectionsTextures[] = 
         {
-            "HL_Combine\data\soldier\soldier_helmet.paa",
-            "HL_Combine\data\soldier\soldier_torso.paa",
-            "HL_Combine\data\soldier\soldier_lens.paa"
+            "OECExtension\Overwatch\Gear\Uniforms\data\soldier_helmet.paa",
+            "HL_Combine\data\shotgunner\shotgunner_torso.paa",
+            "HL_Combine\data\shotgunner\shotgunner_lens.paa"
         };
 		hiddenSelectionsMaterials[] = 
         {
             "HL_Combine\data\Materials\Armor.rvmat",
             "HL_Combine\data\Materials\Armor.rvmat",
-            "HL_Combine\data\Materials\Lens\Blue.rvmat"
+            "HL_Combine\data\Materials\Lens\Orange.rvmat"
         };
 		subItems[] = {"Integrated_NVG_TI_0_F"};
         class ItemInfo: HeadgearItem
@@ -64,15 +64,15 @@ class CfgWeapons
 			hiddenSelections[] = {"camo1","camo2","camo3"};
 			hiddenSelectionsTextures[] = 
             {
-                "HL_Combine\data\soldier\soldier_helmet.paa",
-                "HL_Combine\data\soldier\soldier_torso.paa",
-                "HL_Combine\data\soldier\soldier_lens.paa"
+                "OECExtension\Overwatch\Gear\Uniforms\data\soldier_helmet.paa",
+                "HL_Combine\data\shotgunner\shotgunner_torso.paa",
+                "HL_Combine\data\shotgunner\shotgunner_lens.paa"
             };
 			hiddenSelectionsMaterials[] = 
             {
                 "HL_Combine\data\Materials\Armor.rvmat",
                 "HL_Combine\data\Materials\Armor.rvmat",
-                "HL_Combine\data\Materials\Lens\Blue.rvmat"
+                "HL_Combine\data\Materials\Lens\Orange.rvmat"
             };
 			class HitpointsProtectionInfo
 			{
@@ -236,7 +236,7 @@ class CfgWeapons
 
     class OEC_Overwatch_Helmet_TL: OEC_Overwatch_Helmet_Soldier
     {
-        displayName = "[OEC] Combine Soldier Helmet - TL";
+        displayName = "[OEC] Combine Team Leader Helmet";
         hiddenSelectionsTextures[] =
         {
             "HL_Combine\data\Beta\Beta_helmet.paa",
@@ -264,11 +264,7 @@ class CfgWeapons
                 "HL_Combine\data\Materials\Lens\Red.rvmat"
             };
         };
-        class XtdGearInfo
-        {
-            model = "OEC_ACEX_Helmet_CMB_Soldier";
-            variant = "tl";
-        };
+        class XtdGearInfo{};
     };
 
     class OEC_Overwatch_Helmet_Elite: OEC_Overwatch_Helmet_Soldier
@@ -396,14 +392,12 @@ class XtdGearModels
                     "at",
                     "ce",
                     "medic",
-					"tl",
 					"recon"
                 };
                 class soldier { label = "Soldier"; };
                 class at { label = "AT"; };
                 class ce { label = "CE"; };
                 class medic { label = "Medic"; };
-				class tl { label = "TL"; };
 				class recon { label = "Recon"; };
             };
         };
