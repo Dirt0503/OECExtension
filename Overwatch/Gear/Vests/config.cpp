@@ -22,6 +22,8 @@ class CfgPatches
             "OEC_Overwatch_Vest_TL_AT",
             "OEC_Overwatch_Vest_TL_CE",
             "OEC_Overwatch_Vest_Elite",
+            "OEC_Overwatch_Vest_Elite_AT",
+            "OEC_Overwatch_Vest_Elite_CE",
             "OEC_Overwatch_Vest_Recon_TL",
             "OEC_Overwatch_Vest_Wallhammer_Heavy",
             "OEC_Overwatch_Vest_APF",
@@ -289,6 +291,7 @@ class CfgWeapons
                 "HL_Combine\data\Beta\Beta_pants.paa",
                 "OECExtension\Overwatch\Gear\Uniforms\data\TL_AT_upperArmor.paa"
             };
+            containerClass = "supply500";
         };
         class XtdGearInfo
         {
@@ -367,6 +370,82 @@ class CfgWeapons
         {
             model = "OEC_ACEX_Vest_CMB_Elite";
             variant = "sl";
+        };
+    };
+
+    class OEC_Overwatch_Vest_Elite_AT: OEC_Overwatch_Vest_Soldier
+    {
+        displayName = "[OEC] Combine Elite Vest - AT";
+        model = "\HL_Combine\data\Nemez_Vest_Elite.p3d";
+        hiddenSelections[] = {"camo","camo1"};
+		hiddenSelectionsTextures[] = 
+        {
+            "OECExtension\Overwatch\Gear\Uniforms\data\SL_AT_upperArmor.paa",
+            "HL_Combine\data\elite\elite_collar.paa"
+        };
+		hiddenSelectionsMaterials[] = 
+        {
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "HL_Combine\data\Materials\Armor.rvmat"
+        };
+        class ItemInfo: ItemInfo
+		{
+			hiddenSelections[] = {"camo","camo1"};
+			hiddenSelectionsTextures[] = 
+            {
+                "OECExtension\Overwatch\Gear\Uniforms\data\SL_AT_upperArmor.paa",
+                "HL_Combine\data\elite\elite_collar.paa"
+            };
+			hiddenSelectionsMaterials[] = 
+            {
+                "HL_Combine\data\Materials\Armor.rvmat",
+                "HL_Combine\data\Materials\Armor.rvmat"
+            };
+			uniformModel = "\HL_Combine\data\Nemez_Vest_Elite.p3d";
+            containerClass = "supply500";
+        };
+        class XtdGearInfo
+        {
+            model = "OEC_ACEX_Vest_CMB_Elite";
+            variant = "at";
+        };
+    };
+
+    class OEC_Overwatch_Vest_Elite_CE: OEC_Overwatch_Vest_Soldier
+    {
+        displayName = "[OEC] Combine Elite Vest - CE";
+        model = "\HL_Combine\data\Nemez_Vest_Elite.p3d";
+        hiddenSelections[] = {"camo","camo1"};
+		hiddenSelectionsTextures[] = 
+        {
+            "OECExtension\Overwatch\Gear\Uniforms\data\SL_CE_upperArmor.paa",
+            "HL_Combine\data\elite\elite_collar.paa"
+        };
+		hiddenSelectionsMaterials[] = 
+        {
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "HL_Combine\data\Materials\Armor.rvmat"
+        };
+        class ItemInfo: ItemInfo
+		{
+			hiddenSelections[] = {"camo","camo1"};
+			hiddenSelectionsTextures[] = 
+            {
+                "OECExtension\Overwatch\Gear\Uniforms\data\SL_CE_upperArmor.paa",
+                "HL_Combine\data\elite\elite_collar.paa"
+            };
+			hiddenSelectionsMaterials[] = 
+            {
+                "HL_Combine\data\Materials\Armor.rvmat",
+                "HL_Combine\data\Materials\Armor.rvmat"
+            };
+			uniformModel = "\HL_Combine\data\Nemez_Vest_Elite.p3d";
+            containerClass = "supply450";
+        };
+        class XtdGearInfo
+        {
+            model = "OEC_ACEX_Vest_CMB_Elite";
+            variant = "ce";
         };
     };
 
@@ -614,9 +693,13 @@ class XtdGearModels
                 values[] = 
                 {
                     "sl",
+                    "at",
+                    "ce",
                     "reconSL"
                 };
-                class sl { label = "SL"; };
+                class sl { label = "Normal"; };
+                class at { label = "AT"; };
+                class ce { label = "CE"; };
                 class reconSL { label = "Recon"; };
             };
         };

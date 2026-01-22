@@ -18,6 +18,8 @@ class CfgPatches
             "OEC_Overwatch_Unit_TL_AT",
             "OEC_Overwatch_Unit_TL_CE",
             "OEC_Overwatch_Unit_Elite",
+            "OEC_Overwatch_Unit_Elite_AT",
+            "OEC_Overwatch_Unit_Elite_CE",
             "OEC_Overwatch_Unit_Recon_TL",
             "OEC_Overwatch_Unit_Wallhammer",
             "OEC_Overwatch_Unit_Airwatch",
@@ -256,6 +258,8 @@ class CfgVehicles
     };
     class OEC_Overwatch_Unit_TL_AT: OEC_Overwatch_Unit_Soldier
     {
+        scope = 1;
+        scopeCurator = 1;
         displayName = "AT Team Leader";
         uniformClass = "OEC_Overwatch_Uniform_TL_AT";
         linkedItems[] = {"OEC_Overwatch_Helmet_TL", "OEC_Overwatch_Vest_TL_AT","ItemMap", "TFAR_anprc152", "ItemCompass", "ItemWatch"};
@@ -283,6 +287,8 @@ class CfgVehicles
     };
     class OEC_Overwatch_Unit_TL_CE: OEC_Overwatch_Unit_Soldier
     {
+        scope = 1;
+        scopeCurator = 1;
         displayName = "CE Team Leader";
         uniformClass = "OEC_Overwatch_Uniform_TL_CE";
         linkedItems[] = {"OEC_Overwatch_Helmet_TL", "OEC_Overwatch_Vest_TL_CE","ItemMap", "TFAR_anprc152", "ItemCompass", "ItemWatch"};
@@ -348,6 +354,97 @@ class CfgVehicles
             };
         };
     };
+    class OEC_Overwatch_Unit_Elite_AT: OEC_Overwatch_Unit_Soldier
+    {
+        scope = 1;
+        scopeCurator = 1;
+        displayName = "AT Squad Leader";
+        uniformClass = "OEC_Overwatch_Uniform_Elite_AT";
+        model = "\HL_Combine\data\Nemez_Combine_Elite.p3d";
+        linkedItems[] = {"OEC_Overwatch_Helmet_Elite", "OEC_Overwatch_Vest_Elite","ItemMap", "TFAR_anprc152", "ItemCompass", "ItemWatch"};
+        respawnLinkedItems[] = {"OEC_Overwatch_Helmet_Elite", "OEC_Overwatch_Vest_Elite", "ItemMap", "TFAR_anprc152", "ItemCompass", "ItemWatch"};
+        weapons[] = {"OEC_Weapons_SIPL_olive","OEC_Weapon_SMG46","Throw","Put"};
+        respawnWeapons[] = {"OEC_Weapons_SIPL_olive","OEC_Weapon_SMG46","Throw","Put"};
+        magazines[] ={"OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag"};
+        respawnMagazines[] = {"OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag"};
+        hiddenSelections[] = 
+        {
+            "camo1",
+            "camo2",
+            "camo3",
+            "camo4",
+            "camo5"
+        };
+		hiddenSelectionsTextures[] = 
+        {
+            "HL_Combine\data\elite\elite_torso.paa",
+            "HL_Combine\data\elite\elite_pants.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\SL_AT_upperArmor.paa",
+            "HL_Combine\data\elite\elite_boots.paa",
+            "HL_Combine\data\elite\elite_gloves.paa"
+        };
+		hiddenSelectionsMaterials[] = 
+        {
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "HL_Combine\data\Materials\Armor.rvmat"
+        };
+        class EventHandlers: EventHandlers
+        {
+            class OEC_Combine_SoldierAssign_Event
+            {
+                init = "_this call oec_fnc_cmbOrdinal;";
+            };
+        };
+    };
+    class OEC_Overwatch_Unit_Elite_CE: OEC_Overwatch_Unit_Soldier
+    {
+        scope = 1;
+        scopeCurator = 1;
+        displayName = "AT Squad Leader";
+        uniformClass = "OEC_Overwatch_Uniform_Elite_CE";
+        model = "\HL_Combine\data\Nemez_Combine_Elite.p3d";
+        linkedItems[] = {"OEC_Overwatch_Helmet_Elite", "OEC_Overwatch_Vest_Elite","ItemMap", "TFAR_anprc152", "ItemCompass", "ItemWatch"};
+        respawnLinkedItems[] = {"OEC_Overwatch_Helmet_Elite", "OEC_Overwatch_Vest_Elite", "ItemMap", "TFAR_anprc152", "ItemCompass", "ItemWatch"};
+        weapons[] = {"OEC_Weapon_SMG46", "OEC_Floor_Turret_Folded","Throw","Put"};
+        respawnWeapons[] = {"OEC_Weapon_SMG46", "OEC_Floor_Turret_Folded","Throw","Put"};
+        magazines[] ={"OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag"};
+        respawnMagazines[] = {"OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag","OEC_SMG46_Mag"};
+        hiddenSelections[] = 
+        {
+            "camo1",
+            "camo2",
+            "camo3",
+            "camo4",
+            "camo5"
+        };
+		hiddenSelectionsTextures[] = 
+        {
+            "HL_Combine\data\elite\elite_torso.paa",
+            "HL_Combine\data\elite\elite_pants.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\SL_CE_upperArmor.paa",
+            "HL_Combine\data\elite\elite_boots.paa",
+            "HL_Combine\data\elite\elite_gloves.paa"
+        };
+		hiddenSelectionsMaterials[] = 
+        {
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "HL_Combine\data\Materials\Armor.rvmat"
+        };
+        class EventHandlers: EventHandlers
+        {
+            class OEC_Combine_SoldierAssign_Event
+            {
+                init = "_this call oec_fnc_cmbOrdinal;";
+            };
+        };
+    };
+
     class OEC_Overwatch_Unit_Recon_TL: OEC_Overwatch_Unit_Elite
     {
         displayName = "Recon Team Leader";
