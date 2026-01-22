@@ -41,6 +41,7 @@ class CfgWeapons
     {
         scope = 1;
         scopeAresenal = 1;
+        descriptionShort = "";
         hiddenSelections[] = {"camo","camo1"};
 	    hiddenSelectionsTextures[] = 
         {
@@ -76,55 +77,55 @@ class CfgWeapons
                 class Neck
 	    		{
 	    			HitpointName = "HitNeck";
-	    			armor = 13.5;
+	    			armor = 16;
 	    			PassThrough = 0.08975;
                     explosionShielding = 0.8;
 	    		};
 	    		class Chest
 	    		{
 	    			HitpointName = "HitChest";
-	    			armor = 13.5;
+	    			armor = 16;
 	    			PassThrough = 0.08975;
                     explosionShielding = 0.8;
 	    		};
     			class Diaphragm
     			{
 				    HitpointName = "HitDiaphragm";
-			    	armor = 13.5;
+			    	armor = 16;
 					PassThrough = 0.08975;
                     explosionShielding = 0.8;
 		    	};
 	    		class Abdomen
     			{
 				    hitpointName = "HitAbdomen";
-				   	armor = 13.5;
+				   	armor = 16;
 					PassThrough = 0.08975;
                     explosionShielding = 0.8;
 		    	};
 	    		class Body
     			{
 				    hitpointName = "HitBody";
-				   	armor = 13.5;
+				   	armor = 16;
 					PassThrough = 0.08975;
                     explosionShielding = 0.8;
 		    	};
                 class Pelvis
                 {
                     hitpointName = "HitPelvis";
-					armor = 11;
+					armor = 14;
 					PassThrough = 0.4;
                 };
 	    		class Arms
     			{
 				    hitpointName = "HitArms";
-				    armor = 9;
+				    armor = 10;
 				    PassThrough = 0.08975;
                     explosionShielding = 0.8;
 		    	};
 	    		class Legs
     			{
 				    hitpointName = "Hitlegs";
-					armor = 9;
+					armor = 10;
 			    	PassThrough = 0.08975;
                     explosionShielding = 0.8;
 				};
