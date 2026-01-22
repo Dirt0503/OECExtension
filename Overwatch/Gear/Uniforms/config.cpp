@@ -35,6 +35,8 @@ class CfgPatches
             "OEC_Overwatch_Uniform_TL_CE",
             "OEC_Overwatch_Uniform_Recon",
             "OEC_Overwatch_Uniform_Elite",
+            "OEC_Overwatch_Uniform_Elite_AT",
+            "OEC_Overwatch_Uniform_Elite_CE",
             "OEC_Overwatch_Uniform_Wallhammer",
             "OEC_Overwatch_Uniform_Airwatch",
             "OEC_Overwatch_Uniform_APU"
@@ -171,6 +173,7 @@ class CfgWeapons
         class ItemInfo: ItemInfo
         {
             uniformClass = "OEC_Overwatch_Unit_TL_CE";
+            containerClass = "Supply170";
         };
         class XtdGearInfo
         {
@@ -190,6 +193,32 @@ class CfgWeapons
         {
             model = "OEC_ACEX_Uniform_CMB_Elite";
             variant = "sl";
+        };
+    };
+    class OEC_Overwatch_Uniform_Elite_AT: OEC_Overwatch_Uniform_Soldier
+    {
+        displayName = "[OEC] Combine Elite Uniform - AT";
+        class ItemInfo: ItemInfo
+        {
+            uniformClass = "OEC_Overwatch_Unit_Elite_AT";
+        };
+        class XtdGearInfo
+        {
+            model = "OEC_ACEX_Uniform_CMB_Elite";
+            variant = "at";
+        };
+    };
+    class OEC_Overwatch_Uniform_Elite_CE: OEC_Overwatch_Uniform_Soldier
+    {
+        displayName = "[OEC] Combine Elite Uniform - CE";
+        class ItemInfo: ItemInfo
+        {
+            uniformClass = "OEC_Overwatch_Unit_Elite_CE";
+        };
+        class XtdGearInfo
+        {
+            model = "OEC_ACEX_Uniform_CMB_Elite";
+            variant = "ce";
         };
     };
     class OEC_Overwatch_Uniform_Recon_TL: OEC_Overwatch_Uniform_Soldier
@@ -439,9 +468,13 @@ class XtdGearModels
                 values[] = 
                 {
                     "sl",
+                    "at",
+                    "ce",
                     "reconSL"
                 };
-                class sl { label = "SL"; };
+                class sl { label = "Normal"; };
+                class at { label = "AT"; };
+                class ce { label = "CE"; };
                 class reconSL { label = "Recon SL"; };
             };
         };
