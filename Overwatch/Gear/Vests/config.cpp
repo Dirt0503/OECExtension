@@ -77,42 +77,42 @@ class CfgWeapons
                 class Neck
 	    		{
 	    			HitpointName = "HitNeck";
-	    			armor = 16;
+	    			armor = 16.5;
 	    			PassThrough = 0.08975;
                     explosionShielding = 0.8;
 	    		};
 	    		class Chest
 	    		{
 	    			HitpointName = "HitChest";
-	    			armor = 16;
+	    			armor = 16.5;
 	    			PassThrough = 0.08975;
                     explosionShielding = 0.8;
 	    		};
     			class Diaphragm
     			{
 				    HitpointName = "HitDiaphragm";
-			    	armor = 16;
+			    	armor = 16.5;
 					PassThrough = 0.08975;
                     explosionShielding = 0.8;
 		    	};
 	    		class Abdomen
     			{
 				    hitpointName = "HitAbdomen";
-				   	armor = 16;
+				   	armor = 16.5;
 					PassThrough = 0.08975;
                     explosionShielding = 0.8;
 		    	};
 	    		class Body
     			{
 				    hitpointName = "HitBody";
-				   	armor = 16;
+				   	armor = 16.5;
 					PassThrough = 0.08975;
                     explosionShielding = 0.8;
 		    	};
                 class Pelvis
                 {
                     hitpointName = "HitPelvis";
-					armor = 14;
+					armor = 14.5;
 					PassThrough = 0.4;
                 };
 	    		class Arms
@@ -214,14 +214,14 @@ class CfgWeapons
         hiddenSelectionsTextures[] = 
         {
             "HL_Combine\data\Urban\Urban_Shotgunner_pants.paa",
-            "HL_Combine\data\Urban\Urban_Shotgunner_upperArmor.paa"
+            "OECExtension\Overwatch\Gear\Uniforms\data\medic_upperArmor.paa"
         };
         class ItemInfo: ItemInfo
 		{
 			hiddenSelectionsTextures[] = 
             {
                 "HL_Combine\data\Urban\Urban_Shotgunner_pants.paa",
-                "HL_Combine\data\Urban\Urban_Shotgunner_upperArmor.paa"
+                "OECExtension\Overwatch\Gear\Uniforms\data\medic_upperArmor.paa"
             };
 		};
         class XtdGearInfo
