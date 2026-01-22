@@ -25,7 +25,7 @@ class CfgAmmo
 	{
 		cartridge = "FxCartridge_9mm";
 		hit = 11.5;
-		caliber = 3;
+		caliber = 1.75;
 		typicalSpeed = 275;
 		airFriction = -0.00052;
 		visibleFire = 1.25;
