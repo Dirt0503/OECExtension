@@ -321,8 +321,8 @@ class CfgAmmo
 	};
 	class OEC_Ammo_357_Expansive: OEC_Ammo_357
 	{
-		hit = 35.5;
-		caliber = 0;
+		hit = 27.5;
+		caliber = 0.85;
 	};
 
     //Combine UGL Ammo
