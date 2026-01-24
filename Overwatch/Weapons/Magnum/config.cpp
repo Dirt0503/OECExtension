@@ -17,12 +17,26 @@ class CfgMagazines
 		scope = 2;
 		ammo = "OEC_Ammo_357";
 		author = "OEC Extension";
-		displayName = "[OEC] 6Rnd .357 Cylinder";
+		displayName = "[OEC] 6Rnd .357FMJ Cylinder";
         picture = "\OECExtension\Overwatch\Weapons\data\magnumMag.paa";
 		modelSpecialIsProxy = 1;
 		initspeed = 915;
 		count = 6;
-		mass = 8;
+		mass = 6;
+		tracersEvery = 1;
+		lastRoundsTracer = 6;
+    };
+    class OEC_Magazine_357_Expansive: OEC_Magazine_OICW_Base
+    {
+		scope = 2;
+		ammo = "OEC_Ammo_357_Expansive";
+		author = "OEC Extension";
+		displayName = "[OEC] 6Rnd .357HP Cylinder";
+        picture = "\OECExtension\Overwatch\Weapons\data\magnumMagExpansive.paa";
+		modelSpecialIsProxy = 1;
+		initspeed = 915;
+		count = 6;
+		mass = 6;
 		tracersEvery = 1;
 		lastRoundsTracer = 6;
     };
@@ -46,7 +60,7 @@ class CfgWeapons
 		picture = "\OECExtension\Overwatch\Weapons\data\Magnum.paa";
         model = "\WBK_OICW\A_HalfLife_Revolver.p3d";
         reloadAction = "WBK_HL_Revolver_Reload";
-        magazines[] = {"OEC_Magazine_357"};
+        magazines[] = {"OEC_Magazine_357", "OEC_Magazine_357_Expansive"};
         magazineWell[] = {};
         reloadMagazineSound[] = {"WBK_OICW\revolver_reload.ogg",1,1,30};
         reloadSound[] = {"WBK_OICW\revolver_reload.ogg",1,1,30};

@@ -285,6 +285,7 @@ class CfgAmmo
 	class OEC_Ammo_357: BulletBase
 	{
 		hit = 20;
+		caliber = 2;
 		indirectHit = 0;
 		indirectHitRange = 0;
 		cartridge = "FxCartridge_338_Ball";
@@ -296,7 +297,6 @@ class CfgAmmo
 		suppressionRadiusHit = 10;
 		cost = 6;
 		airLock = 1;
-		caliber = 2;
 		typicalSpeed = 890;
 		timeToLive = 10;
 		model = "\A3\Weapons_f\Data\bullettracer\tracer_green";
@@ -318,6 +318,11 @@ class CfgAmmo
 			frequency = 20;
 			distance = 1;
 		};
+	};
+	class OEC_Ammo_357_Expansive: OEC_Ammo_357
+	{
+		hit = 35.5;
+		caliber = 0;
 	};
 
     //Combine UGL Ammo
