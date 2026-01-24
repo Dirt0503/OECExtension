@@ -60,7 +60,7 @@ class CfgMagazines
 		displayName = "[OEC] XM29 HE 6Rnd GL Mag";
 		displaynameshort = "HE Grenade";
 		descriptionShort = "Standard 20mm Combine High-Explosive Grenade";
-		picture = "\OECExtension\Overwatch\Weapons\data\uglHE.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\oicwUglMagHE.paa";
 		modelSpecial = "\cup\weapons\cup_weapons_xm29\CUP_xm29_he_mag.p3d";
 		modelSpecialIsProxy = 1;
 		ammo = "OEC_Ammo_CMB20mm";
@@ -81,7 +81,7 @@ class CfgMagazines
 		ammo = "OEC_Ammo_CMB20mm_smoke";
 		nameSoundWeapon = "smokeshell";
 		nameSound = "smokeshell";
-		picture = "\OECExtension\Overwatch\Weapons\data\uglSmokeWhite.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\oicwUglMagSmokeWhite.paa";
 		modelSpecial = "\cup\weapons\cup_weapons_xm29\CUP_xm29_he_mag.p3d";
 		initspeed = 80;
 		mass = 12.75;
@@ -94,7 +94,7 @@ class CfgMagazines
 		displayName = "[OEC] XM29 Stun Grenade 3Rnd GL Mag";
 		descriptionShort = "Standard 20mm Combine Stun Grenade";
 		displaynameshort = "Stun Grenade";
-		picture = "\OECExtension\Overwatch\Weapons\data\uglStun.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\oicwUglMagStun.paa";
 		modelSpecial = "\cup\weapons\cup_weapons_xm29\CUP_xm29_he_mag.p3d";
 		ammo = "OEC_Ammo_CMB20mm_stun";
 		initspeed = 80;
@@ -109,7 +109,7 @@ class CfgMagazines
 		displayName = "[OEC] XM29 Flare (Green) 6Rnd GL Mag";
 		displaynameshort = "Green Flare";
 		descriptionShort = "Standard 20mm Combine Green Flare";
-		picture = "\OECExtension\Overwatch\Weapons\data\uglFlareGreen.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\oicwUglMagFlareGreen.paa";
 		ammo = "OEC_Ammo_CMB20mm_green";
 		initspeed = 80;
 		count = 6;
