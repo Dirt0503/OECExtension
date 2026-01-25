@@ -31,10 +31,6 @@ if (OEC_Extension_useAmmo) exitWith
         };
     };
 
-    _numCurrencyStr = str _numCurrency;
-    systemChat "post-assignment check";
-    systemChat _numCurrencyStr;
-
     if(_objectName == "Booth (Small)") then
     {
         if(_numCurrency < 2) then
