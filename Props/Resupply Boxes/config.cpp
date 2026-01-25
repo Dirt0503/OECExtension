@@ -210,11 +210,6 @@ class CfgVehicles
 				magazine = "OEC_Magazine_cmbSrifle";
 				count = 120;
 			};
-			class XX_OEC_Magazine_cmbSrifle_Exo
-			{
-				magazine = "OEC_Magazine_cmbSrifle_Exo";
-				count = 120;
-			};
 			class XX_OEC_Magazine_cmbSrifle_AP
 			{
 				magazine = "OEC_Magazine_cmbSrifle_AP";

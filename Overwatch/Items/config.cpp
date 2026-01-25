@@ -85,16 +85,15 @@ class CfgWeapons
         displayName = "[OEC] Combine Toolkit";
 		scopeArsenal = 2;
 		scope = 2;
-		descriptionShort = "Combine-made bag with all essential tools. Issued to flight personnel and engineers.";
+		descriptionShort = "Combine-made bag with essential tools. Issued to flight personnel and engineers.";
         picture = "\OECExtension\Overwatch\Weapons\data\toolkit.paa";
 		ACE_isTool = 1;
-		ace_fortify_fortifyTool = 1;
 
 		_generalMacro = "ToolKit";
 		model = "\A3\Weapons_F\Items\Toolkit";
 		class ItemInfo: ToolKitItem
 		{
-			mass = 20;
+			mass = 5;
 			uniformModel = "\A3\Weapons_F\Items\Toolkit";
 		};
 	};
@@ -142,7 +141,7 @@ class CfgWeapons
     {
         scope = 2;
         displayName = "[OEC] Deployable Barricade";
-        descriptionShort = "Alien tools and materials."
+        descriptionShort = "Alien building materials."
         //descriptionUse = "Assembles into a Combine barricade."
         author = "OEC Extension";
         picture = "\OECExtension\Overwatch\Items\FortifyTool\data\bigBarricadePacked.paa";

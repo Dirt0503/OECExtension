@@ -14,6 +14,11 @@ if (OEC_Extension_useAmmo) exitWith
     if!(istext (_config >> "displayName")) exitWith {};
     private _item_name = getText (_config >> "displayName");
 
+    if (isNil {_itemMap get OEC_Extension_currencyItem}) then
+    {
+        _numCurrency = 0;
+    };
+
     if(_objectName == "Barricade") then 
     {
         if(!_containsCurrency) then
@@ -25,6 +30,10 @@ if (OEC_Extension_useAmmo) exitWith
             systemChat format ["You need at least 1 %1 to deploy this fortification!", _item_name];
         };
     };
+
+    _numCurrencyStr = str _numCurrency;
+    systemChat "post-assignment check";
+    systemChat _numCurrencyStr;
 
     if(_objectName == "Booth (Small)") then
     {
