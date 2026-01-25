@@ -24,7 +24,6 @@ if (OEC_Extension_useAmmo) exitWith
         {
             systemChat format ["You need at least 1 %1 to deploy this fortification!", _item_name];
         };
-        systemChat "BarricadeTrigger";
     };
 
     if(_objectName == "Booth (Small)") then
@@ -37,7 +36,6 @@ if (OEC_Extension_useAmmo) exitWith
         {
             systemChat format ["You need at least 2 %1 to deploy this fortification!", _item_name];
         };
-        systemChat "BoothTrigger";
     };
     _can_fortify;
 };
