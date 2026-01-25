@@ -21,7 +21,7 @@ private _itemName = (configFile >> "CfgWeapons" >> OEC_Extension_currencyItem >>
 [
     "OEC_Extension_useAmmo",
     "CHECKBOX",
-    ["Use item as Ammo", format["Additionally to Money, require 1 %1 to use the Fortify Tool", _itemName]],
+    ["Use item as Ammo", format["Additionally to Money, require 1 %1 to use the Toolkit for Fortifications", _itemName]],
     ["OECExtension", "ACE(X) Fortify Tool"],
     false,
 	1

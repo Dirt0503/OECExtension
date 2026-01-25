@@ -31,8 +31,12 @@ class CfgPatches
             "OEC_Overwatch_Uniform_CE",
             "OEC_Overwatch_Uniform_Medic",
             "OEC_Overwatch_Uniform_TL",
+            "OEC_Overwatch_Uniform_TL_AT",
+            "OEC_Overwatch_Uniform_TL_CE",
             "OEC_Overwatch_Uniform_Recon",
             "OEC_Overwatch_Uniform_Elite",
+            "OEC_Overwatch_Uniform_Elite_AT",
+            "OEC_Overwatch_Uniform_Elite_CE",
             "OEC_Overwatch_Uniform_Wallhammer",
             "OEC_Overwatch_Uniform_Airwatch",
             "OEC_Overwatch_Uniform_APU"
@@ -136,17 +140,45 @@ class CfgWeapons
             variant = "recon";
         };
     };
+
     class OEC_Overwatch_Uniform_TL: OEC_Overwatch_Uniform_Soldier
     {
-        displayName = "[OEC] Combine Soldier Uniform - TL";
+        displayName = "[OEC] Combine Team Leader Uniform";
         class ItemInfo: ItemInfo
         {
             uniformClass = "OEC_Overwatch_Unit_TL";
         };
         class XtdGearInfo
         {
-            model = "OEC_ACEX_Uniform_CMB_Soldier";
-            variant = "tl";
+            model = "OEC_ACEX_Uniform_CMB_TL";
+            variant = "norm";
+        };
+    };
+    class OEC_Overwatch_Uniform_TL_AT: OEC_Overwatch_Uniform_Soldier
+    {
+        displayName = "[OEC] Combine Team Leader Uniform - AT";
+        class ItemInfo: ItemInfo
+        {
+            uniformClass = "OEC_Overwatch_Unit_TL_AT";
+        };
+        class XtdGearInfo
+        {
+            model = "OEC_ACEX_Uniform_CMB_TL";
+            variant = "at";
+        };
+    };
+    class OEC_Overwatch_Uniform_TL_CE: OEC_Overwatch_Uniform_Soldier
+    {
+        displayName = "[OEC] Combine Team Leader Uniform - CE";
+        class ItemInfo: ItemInfo
+        {
+            uniformClass = "OEC_Overwatch_Unit_TL_CE";
+            containerClass = "Supply170";
+        };
+        class XtdGearInfo
+        {
+            model = "OEC_ACEX_Uniform_CMB_TL";
+            variant = "ce";
         };
     };
 
@@ -161,6 +193,32 @@ class CfgWeapons
         {
             model = "OEC_ACEX_Uniform_CMB_Elite";
             variant = "sl";
+        };
+    };
+    class OEC_Overwatch_Uniform_Elite_AT: OEC_Overwatch_Uniform_Soldier
+    {
+        displayName = "[OEC] Combine Elite Uniform - AT";
+        class ItemInfo: ItemInfo
+        {
+            uniformClass = "OEC_Overwatch_Unit_Elite_AT";
+        };
+        class XtdGearInfo
+        {
+            model = "OEC_ACEX_Uniform_CMB_Elite";
+            variant = "at";
+        };
+    };
+    class OEC_Overwatch_Uniform_Elite_CE: OEC_Overwatch_Uniform_Soldier
+    {
+        displayName = "[OEC] Combine Elite Uniform - CE";
+        class ItemInfo: ItemInfo
+        {
+            uniformClass = "OEC_Overwatch_Unit_Elite_CE";
+        };
+        class XtdGearInfo
+        {
+            model = "OEC_ACEX_Uniform_CMB_Elite";
+            variant = "ce";
         };
     };
     class OEC_Overwatch_Uniform_Recon_TL: OEC_Overwatch_Uniform_Soldier
@@ -379,6 +437,26 @@ class XtdGearModels
             };
         };
 
+        class OEC_ACEX_Uniform_CMB_TL
+        {
+            label = "";
+            author = "OEC Extension";
+            options[] = { "variant" };
+            class variant
+            {
+                label = "Uniform Variants";
+                values[] = 
+                {
+                    "norm",
+                    "at",
+                    "ce"
+                };
+                class norm { label = "Normal"; };
+                class at { label = "AT"; };
+                class ce { label = "CE"; };
+            };
+        };
+
         class OEC_ACEX_Uniform_CMB_Elite
         {
             label = "";
@@ -390,9 +468,13 @@ class XtdGearModels
                 values[] = 
                 {
                     "sl",
+                    "at",
+                    "ce",
                     "reconSL"
                 };
-                class sl { label = "SL"; };
+                class sl { label = "Normal"; };
+                class at { label = "AT"; };
+                class ce { label = "CE"; };
                 class reconSL { label = "Recon SL"; };
             };
         };

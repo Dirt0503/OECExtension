@@ -19,7 +19,11 @@ class CfgPatches
             "OEC_Overwatch_Vest_Medic",
             "OEC_Overwatch_Vest_Recon",
             "OEC_Overwatch_Vest_TL",
+            "OEC_Overwatch_Vest_TL_AT",
+            "OEC_Overwatch_Vest_TL_CE",
             "OEC_Overwatch_Vest_Elite",
+            "OEC_Overwatch_Vest_Elite_AT",
+            "OEC_Overwatch_Vest_Elite_CE",
             "OEC_Overwatch_Vest_Recon_TL",
             "OEC_Overwatch_Vest_Wallhammer_Heavy",
             "OEC_Overwatch_Vest_APF",
@@ -37,11 +41,12 @@ class CfgWeapons
     {
         scope = 1;
         scopeAresenal = 1;
+        descriptionShort = "";
         hiddenSelections[] = {"camo","camo1"};
 	    hiddenSelectionsTextures[] = 
         {
-            "HL_Combine\data\Soldier\soldier_pants.paa",
-            "HL_Combine\data\Soldier\soldier_upperArmor.paa"
+            "HL_Combine\data\Urban\Urban_Shotgunner_pants.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\soldier_upperArmor.paa"
         };
 	    hiddenSelectionsMaterials[] = 
         {
@@ -55,8 +60,8 @@ class CfgWeapons
 		    hiddenSelections[] = {"camo","camo1"};
 		    hiddenSelectionsTextures[] = 
             {
-                "HL_Combine\data\Soldier\soldier_pants.paa",
-                "HL_Combine\data\Soldier\soldier_upperArmor.paa"
+                "HL_Combine\data\Urban\Urban_Shotgunner_pants.paa",
+                "OECExtension\Overwatch\Gear\Uniforms\data\soldier_upperArmor.paa"
             };
 		    hiddenSelectionsMaterials[] = 
             {
@@ -72,55 +77,55 @@ class CfgWeapons
                 class Neck
 	    		{
 	    			HitpointName = "HitNeck";
-	    			armor = 13.5;
+	    			armor = 16.5;
 	    			PassThrough = 0.08975;
                     explosionShielding = 0.8;
 	    		};
 	    		class Chest
 	    		{
 	    			HitpointName = "HitChest";
-	    			armor = 13.5;
+	    			armor = 16.5;
 	    			PassThrough = 0.08975;
                     explosionShielding = 0.8;
 	    		};
     			class Diaphragm
     			{
 				    HitpointName = "HitDiaphragm";
-			    	armor = 13.5;
+			    	armor = 16.5;
 					PassThrough = 0.08975;
                     explosionShielding = 0.8;
 		    	};
 	    		class Abdomen
     			{
 				    hitpointName = "HitAbdomen";
-				   	armor = 13.5;
+				   	armor = 16.5;
 					PassThrough = 0.08975;
                     explosionShielding = 0.8;
 		    	};
 	    		class Body
     			{
 				    hitpointName = "HitBody";
-				   	armor = 13.5;
+				   	armor = 16.5;
 					PassThrough = 0.08975;
                     explosionShielding = 0.8;
 		    	};
                 class Pelvis
                 {
                     hitpointName = "HitPelvis";
-					armor = 11;
+					armor = 14.5;
 					PassThrough = 0.4;
                 };
 	    		class Arms
     			{
 				    hitpointName = "HitArms";
-				    armor = 9;
+				    armor = 10;
 				    PassThrough = 0.08975;
                     explosionShielding = 0.8;
 		    	};
 	    		class Legs
     			{
 				    hitpointName = "Hitlegs";
-					armor = 9;
+					armor = 10;
 			    	PassThrough = 0.08975;
                     explosionShielding = 0.8;
 				};
@@ -209,14 +214,14 @@ class CfgWeapons
         hiddenSelectionsTextures[] = 
         {
             "HL_Combine\data\Urban\Urban_Shotgunner_pants.paa",
-            "HL_Combine\data\Urban\Urban_Shotgunner_upperArmor.paa"
+            "OECExtension\Overwatch\Gear\Uniforms\data\medic_upperArmor.paa"
         };
         class ItemInfo: ItemInfo
 		{
 			hiddenSelectionsTextures[] = 
             {
                 "HL_Combine\data\Urban\Urban_Shotgunner_pants.paa",
-                "HL_Combine\data\Urban\Urban_Shotgunner_upperArmor.paa"
+                "OECExtension\Overwatch\Gear\Uniforms\data\medic_upperArmor.paa"
             };
 		};
         class XtdGearInfo
@@ -251,7 +256,7 @@ class CfgWeapons
 
     class OEC_Overwatch_Vest_TL: OEC_Overwatch_Vest_Soldier
     {
-        displayName = "[OEC] Combine Soldier Vest - TL";
+        displayName = "[OEC] Combine Team Leader Vest";
         hiddenSelectionsTextures[] =
         {
             "HL_Combine\data\Beta\Beta_pants.paa",
@@ -267,9 +272,69 @@ class CfgWeapons
         };
         class XtdGearInfo
         {
-            model = "OEC_ACEX_Vest_CMB_Soldier";
-            variant = "tl";
+            model = "OEC_ACEX_Vest_CMB_TL";
+            variant = "norm";
         };
+    };
+
+    class OEC_Overwatch_Vest_TL_AT: OEC_Overwatch_Vest_Soldier
+    {
+        displayName = "[OEC] Combine Team Leader Vest - AT";
+        hiddenSelectionsTextures[] =
+        {
+            "HL_Combine\data\Beta\Beta_pants.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\TL_AT_upperArmor.paa"
+        };
+        class ItemInfo: ItemInfo
+        {
+            hiddenSelectionsTextures[] =
+            {
+                "HL_Combine\data\Beta\Beta_pants.paa",
+                "OECExtension\Overwatch\Gear\Uniforms\data\TL_AT_upperArmor.paa"
+            };
+            containerClass = "supply500";
+        };
+        class XtdGearInfo
+        {
+            model = "OEC_ACEX_Vest_CMB_TL";
+            variant = "at";
+        };
+    };
+
+    class OEC_Overwatch_Vest_TL_CE: OEC_Overwatch_Vest_Soldier
+    {
+       displayName = "[OEC] Combine Team Leader Vest - CE";
+        scope = 2;
+        scopeAresenal = 2;
+        model = "\HL_Combine\data\Nemez_Vest_Elite.p3d";
+        hiddenSelections[] = {"camo","camo1"};
+		hiddenSelectionsTextures[] = 
+        {
+            "OECExtension\Overwatch\Gear\Uniforms\data\TL_CE_upperArmor.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\engi_collar.paa"
+        };
+		hiddenSelectionsMaterials[] = 
+        {
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "HL_Combine\data\Materials\Armor.rvmat"
+        };
+        class ItemInfo: ItemInfo
+		{
+			hiddenSelections[] = {"camo","camo1"};
+			hiddenSelectionsTextures[] = 
+            {
+                "OECExtension\Overwatch\Gear\Uniforms\data\TL_CE_upperArmor.paa",
+                "OECExtension\Overwatch\Gear\Uniforms\data\engi_collar.paa"
+            };
+			hiddenSelectionsMaterials[] = 
+            {
+                "HL_Combine\data\Materials\Armor.rvmat",
+                "HL_Combine\data\Materials\Armor.rvmat"
+            };
+			uniformModel = "\HL_Combine\data\Nemez_Vest_Elite.p3d";
+            containerClass = "supply450";
+        };
+        class XtdGearInfo{};
     };
 
     class OEC_Overwatch_Vest_Elite: OEC_Overwatch_Vest_Soldier
@@ -306,6 +371,82 @@ class CfgWeapons
         {
             model = "OEC_ACEX_Vest_CMB_Elite";
             variant = "sl";
+        };
+    };
+
+    class OEC_Overwatch_Vest_Elite_AT: OEC_Overwatch_Vest_Soldier
+    {
+        displayName = "[OEC] Combine Elite Vest - AT";
+        model = "\HL_Combine\data\Nemez_Vest_Elite.p3d";
+        hiddenSelections[] = {"camo","camo1"};
+		hiddenSelectionsTextures[] = 
+        {
+            "OECExtension\Overwatch\Gear\Uniforms\data\SL_AT_upperArmor.paa",
+            "HL_Combine\data\elite\elite_collar.paa"
+        };
+		hiddenSelectionsMaterials[] = 
+        {
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "HL_Combine\data\Materials\Armor.rvmat"
+        };
+        class ItemInfo: ItemInfo
+		{
+			hiddenSelections[] = {"camo","camo1"};
+			hiddenSelectionsTextures[] = 
+            {
+                "OECExtension\Overwatch\Gear\Uniforms\data\SL_AT_upperArmor.paa",
+                "HL_Combine\data\elite\elite_collar.paa"
+            };
+			hiddenSelectionsMaterials[] = 
+            {
+                "HL_Combine\data\Materials\Armor.rvmat",
+                "HL_Combine\data\Materials\Armor.rvmat"
+            };
+			uniformModel = "\HL_Combine\data\Nemez_Vest_Elite.p3d";
+            containerClass = "supply500";
+        };
+        class XtdGearInfo
+        {
+            model = "OEC_ACEX_Vest_CMB_Elite";
+            variant = "at";
+        };
+    };
+
+    class OEC_Overwatch_Vest_Elite_CE: OEC_Overwatch_Vest_Soldier
+    {
+        displayName = "[OEC] Combine Elite Vest - CE";
+        model = "\HL_Combine\data\Nemez_Vest_Elite.p3d";
+        hiddenSelections[] = {"camo","camo1"};
+		hiddenSelectionsTextures[] = 
+        {
+            "OECExtension\Overwatch\Gear\Uniforms\data\SL_CE_upperArmor.paa",
+            "HL_Combine\data\elite\elite_collar.paa"
+        };
+		hiddenSelectionsMaterials[] = 
+        {
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "HL_Combine\data\Materials\Armor.rvmat"
+        };
+        class ItemInfo: ItemInfo
+		{
+			hiddenSelections[] = {"camo","camo1"};
+			hiddenSelectionsTextures[] = 
+            {
+                "OECExtension\Overwatch\Gear\Uniforms\data\SL_CE_upperArmor.paa",
+                "HL_Combine\data\elite\elite_collar.paa"
+            };
+			hiddenSelectionsMaterials[] = 
+            {
+                "HL_Combine\data\Materials\Armor.rvmat",
+                "HL_Combine\data\Materials\Armor.rvmat"
+            };
+			uniformModel = "\HL_Combine\data\Nemez_Vest_Elite.p3d";
+            containerClass = "supply450";
+        };
+        class XtdGearInfo
+        {
+            model = "OEC_ACEX_Vest_CMB_Elite";
+            variant = "ce";
         };
     };
 
@@ -523,6 +664,24 @@ class XtdGearModels
             };
         };
 
+        class OEC_ACEX_Vest_CMB_TL
+        {
+            label = "";
+            author = "OEC Extension";
+            options[] = { "variant" };
+            class variant
+            {
+                label = "Vest Variants";
+                values[] = 
+                {
+                    "norm",
+                    "at"
+                };
+                class norm { label = "Normal"; };
+                class at { label = "AT"; };
+            };
+        };
+
 
         class OEC_ACEX_Vest_CMB_Elite
         {
@@ -535,9 +694,13 @@ class XtdGearModels
                 values[] = 
                 {
                     "sl",
+                    "at",
+                    "ce",
                     "reconSL"
                 };
-                class sl { label = "SL"; };
+                class sl { label = "Normal"; };
+                class at { label = "AT"; };
+                class ce { label = "CE"; };
                 class reconSL { label = "Recon"; };
             };
         };

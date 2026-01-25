@@ -22,10 +22,24 @@ class CfgMagazines
 		modelSpecialIsProxy = 1;
 		initspeed = 915;
 		count = 6;
-		mass = 8;
+		mass = 6;
 		tracersEvery = 1;
 		lastRoundsTracer = 6;
     };
+    /*class OEC_Magazine_357_Expansive: OEC_Magazine_OICW_Base
+    {
+		scope = 2;
+		ammo = "OEC_Ammo_357_Expansive";
+		author = "OEC Extension";
+		displayName = "[OEC] 6Rnd .357HP Cylinder";
+        picture = "\OECExtension\Overwatch\Weapons\data\magnumMagExpansive.paa";
+		modelSpecialIsProxy = 1;
+		initspeed = 915;
+		count = 6;
+		mass = 6;
+		tracersEvery = 1;
+		lastRoundsTracer = 6;
+    };*/
 };
 
 class Mode_SemiAuto;

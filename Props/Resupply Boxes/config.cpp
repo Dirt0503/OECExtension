@@ -200,9 +200,9 @@ class CfgVehicles
 				magazine = "OEC_Magazine_APFSuppressor_100Rnd";
 				count = 60;
 			};
-			class XX_OEC_Magazine_APFSuppressor_150Rnd_Exogen
+			class XX_OEC_Magazine_APFSuppressor_100Rnd_Exogen
 			{
-				magazine = "OEC_Magazine_APFSuppressor_150Rnd_Exogen";
+				magazine = "OEC_Magazine_APFSuppressor_100Rnd_Exogen";
 				count = 60;
 			};
 			class XX_OEC_Magazine_cmbSrifle
