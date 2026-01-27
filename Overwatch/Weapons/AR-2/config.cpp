@@ -23,7 +23,7 @@ class CfgMagazines
 		initSpeed = 750;
 		picture = "\OECExtension\Overwatch\Weapons\data\AR2mag.paa";
 		tracersEvery = 1;
-		mass = 25;
+		mass = 16;
 	};
 
 	class OEC_Magazine_R1: CA_Magazine

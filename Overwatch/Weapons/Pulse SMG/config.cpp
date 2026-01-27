@@ -21,7 +21,7 @@ class CfgMagazines
 		displayName = "[OEC] 60rnd AR-1s Cell";
 		descriptionShort = "Increased Capacity Pulse Cell; 200m dissipation range";
 		count = 60;
-		mass = 30;
+		mass = 20;
 	};
 };
 

@@ -170,7 +170,7 @@ class CfgMagazines
     class OEC_Magazine_APFSuppressor_100Rnd: HL_CMB_30Rnd_AR2_Mag
     {
         ammo = "OEC_Ammo_APFSuppressor";
-        count = 100;
+        count = 150;
         author = "OEC Extension";
 		initSpeed = 770;
         displayName = "[OEC] 100Rnd Suppressor Cell";
@@ -179,12 +179,12 @@ class CfgMagazines
 		picture = "\OECExtension\Overwatch\Weapons\data\APFmag.paa";
         tracersEvery = 0;
         lastRoundsTracer = 0;
-		mass = 50;
+		mass = 40;
     };
 	 class OEC_Magazine_APFSuppressor_100Rnd_Exogen: HL_CMB_30Rnd_AR2_Mag
     {
         ammo = "OEC_Ammo_APFSuppressor_exogen";
-        count = 100;
+        count = 150;
         author = "OEC Extension";
 		initSpeed = 770;
         displayName = "[OEC] 100Rnd Anti-Exogen Suppressor Cell";
@@ -193,7 +193,7 @@ class CfgMagazines
 		picture = "\OECExtension\Overwatch\Weapons\data\APFmagExogen.paa";
         tracersEvery = 0;
         lastRoundsTracer = 0;
-		mass = 50;
+		mass = 40;
     };
 };
 
