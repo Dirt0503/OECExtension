@@ -99,7 +99,7 @@ class CfgWeapons
             class Single: Mode_SemiAuto
 			{
                 
-				displayName = "[OEC] Wallhammer Shotgun";
+				displayName = "Shredder Cell";
 				textureType = "topDown";
 				sounds[] = {"StandardSound"};
 				dispersion = 0;

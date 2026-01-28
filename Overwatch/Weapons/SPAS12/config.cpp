@@ -63,7 +63,7 @@ class CfgWeapons
         displayName = "[OEC] SPAS-12 Shotgun";
 		scopeArsenal = 2;
 		scope = 2;
-		descriptionShort = "Overwatch Standard Issue Ballistic Shotgun";
+		descriptionShort = "Overwatch Standard Issue Ballistic Shotgun.";
 		model = "CUP\Weapons\CUP_Weapons_SPAS12\CUP_sgun_SPAS12";
 		picture = "\OECExtension\Overwatch\Weapons\data\SPAS12.paa";
 		magazines[] = {"OEC_Magazine_SPAS12_8Rnd", "OEC_Magazine_SPAS12_8Rnd_Slug"};

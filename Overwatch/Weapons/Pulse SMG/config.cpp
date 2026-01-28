@@ -19,7 +19,7 @@ class CfgMagazines
 		author = "OEC Extension";
 		picture = "\OECExtension\Overwatch\Weapons\data\pulseSMGmag.paa";
 		displayName = "[OEC] 60rnd AR-1s Cell";
-		descriptionShort = "Increased Capacity Pulse Cell; 200m dissipation range";
+		descriptionShort = "Increased Capacity Pulse Cell.";
 		count = 60;
 		mass = 20;
 	};
@@ -48,7 +48,7 @@ class CfgWeapons
 		mass = 85;
         class Library
 		{
-			libTextDesc = "Overwatch Standard Issue Pulse SMG. Pulse ammo has no damage dropoff and is not affected by gravity, but will dissipate beyond 200m.";
+			libTextDesc = "Overwatch Standard Issue Pulse SMG. High penetration, medium damage, 60rnd magazine capacity.";
 		};
         modes[] = {"FullAuto"};
 		class FullAuto: Mode_FullAuto
