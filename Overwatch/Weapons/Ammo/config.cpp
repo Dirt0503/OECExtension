@@ -116,7 +116,7 @@ class CfgAmmo
         hit = 9;
         caliber = 2.5;
 		typicalSpeed = 770;
-		timeToLive = 0.38961039;
+		timeToLive = 1.05;
         tracerColor[] = {0,1,1,1};
         tracerColorR[] = {0,1,1,1};
     };
@@ -129,7 +129,7 @@ class CfgAmmo
         hit = 23.4;
         caliber = 0;
 		typicalSpeed = 770;
-		timeToLive = 0.38961039;
+		timeToLive = 1.05;
         tracerColor[] = {0,1,1,1};
         tracerColorR[] = {0,1,1,1};
     };
@@ -154,7 +154,7 @@ class CfgAmmo
 		typicalSpeed = 770;
 		airFriction = 0;
 		deflecting = 0;
-		timeToLive = 0.666666667;
+		timeToLive = 1.05;
 		caliber = 1.5;
 		model = "\hl_cmb_weapons\ar2\Data\bullettracer\tracer_blue";
 		tracerScale = 1.5;
@@ -173,7 +173,7 @@ class CfgAmmo
 	{
 		hit = 13;
 		typicalSpeed = 770;
-		timeToLive = 0.666666667;
+		timeToLive = 1.05;
 		caliber = 1.5;
 		model = "\hl_cmb_weapons\ar2\Data\bullettracer\tracer_blue";
 		dangerRadiusBulletClose = -1;
@@ -246,14 +246,14 @@ class CfgAmmo
 	{
 		hit = 9;
 		caliber = 1.5;
-		timeToLive = 0.333333334;
+		timeToLive = 1.05;
 	};
 
 	class OEC_Ammo_Turret: OEC_Ammo_AR2
 	{
 		hit = 12;
 		caliber = 1.35;
-		timeToLive = 0.333333334;
+		timeToLive = 0.5;
 	};
 
 	// 4.6x30mm SMG46 ammo
@@ -266,7 +266,7 @@ class CfgAmmo
 		cost = 1;
 		typicalSpeed = 380;
 		airLock = 1;
-		airFriction = -0.0075;
+		airFriction = -0.0045;
 		caliber = 2;
 		deflecting = 25;
 		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";

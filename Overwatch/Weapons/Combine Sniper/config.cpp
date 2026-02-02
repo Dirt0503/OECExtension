@@ -24,7 +24,7 @@ class CfgMagazines
 		author = "OEC Extension";
 		displayName = "[OEC] R-2X Cell - Standard";
 		displaynameshort = "Standard Cell";
-		descriptionShort = "Standard R-2X cell. High damage, decent penetration, 1200m dissipation range";
+		descriptionShort = "Standard R-2X cell. High damage, decent penetration, 1200m dissipation range.";
 		count = 1;
 		initSpeed = 1000;
 		picture = "\OECExtension\Overwatch\Weapons\data\sniperMag.paa";
@@ -38,27 +38,13 @@ class CfgMagazines
 		author = "OEC Extension";
 		displayName = "[OEC] R-2X Cell - Piercer";
 		displaynameshort = "Piercer Cell";
-		descriptionShort = "Anti-materiel R-2X cell. Medium damage, extreme penetration, 1200m dissipation range";
+		descriptionShort = "Anti-materiel R-2X cell. Medium damage, extreme penetration, 1200m dissipation range.";
 		count = 1;
 		initSpeed = 1000;
 		picture = "\OECExtension\Overwatch\Weapons\data\sniperMagAP.paa";
 		tracersEvery = 1;
 		mass = 3.5;
 	};
-	/*class OEC_Magazine_cmbSrifle_Exo: OEC_Magazine_cmbSrifle
-	{
-		scope = 2;
-		ammo = "OEC_Ammo_cmbSrifle_Exo";
-		author = "OEC Extension";
-		displayName = "[OEC] R-2X Cell - Anti-Exogen";
-		displaynameshort = "Anti-Exogen Cell";
-		descriptionShort = "Anti-Exogen R-2X cell. High damage to xen creatures, zero penetration, 400m dissipation range, reduced muzzle velocity";
-		count = 1;
-		initSpeed = 500;
-		picture = "\OECExtension\Overwatch\Weapons\data\sniperMagExo.paa";
-		tracersEvery = 1;
-		mass = 2.5;
-	};*/
 }; 
 
 class CfgSoundSets

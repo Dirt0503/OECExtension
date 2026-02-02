@@ -175,7 +175,7 @@ class CfgWeapons
 		magazineWell[] = {};
 		class Library
 		{
-			libTextDesc = "Overwatch Standard Issue Ballistic Rifle. Equipped with a 6-round over-barrel grenade launcher.";
+			libTextDesc = "Overwatch Standard Issue Ballistic Rifle with a 6-round over-barrel grenade launcher. Medium penetration, high damage, 30rnd magazine capacity.";
 		};
         muzzles[] = {"this","EGLM1"};
 		class EGLM1: UGL_F

@@ -99,7 +99,7 @@ class CfgWeapons
             class Single: Mode_SemiAuto
 			{
                 
-				displayName = "[OEC] Wallhammer Shotgun";
+				displayName = "Shredder Cell";
 				textureType = "topDown";
 				sounds[] = {"StandardSound"};
 				dispersion = 0;
@@ -147,7 +147,7 @@ class CfgMagazines
         ammo = "OEC_Ammo_WallhammerShotgun";
         count = 8;
         initSpeed = 300;
-        mass = 15;
+        mass = 12.5;
     };
     class OEC_Magazine_WallhammerShotgun_8Rnd_Shredder: OEC_Magazine_WallhammerShotgun_8Rnd
     {

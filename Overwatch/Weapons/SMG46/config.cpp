@@ -117,7 +117,7 @@ class CfgWeapons
 		magazineWell[] = {};
 		class Library
 		{
-			libTextDesc = "Overwatch Standard Issue Ballistic Submachinegun. Equipped with a 2-round under-barrel grenade launcher.";
+			libTextDesc = "Overwatch Standard Issue Ballistic Submachinegun with a 2-round under-barrel grenade launcher. High penetration and high damage (at short ranges), 45rnd magazine capacity.";
 		};
 		muzzles[] = {"this","EGLM2"};
 		class EGLM2: UGL_F

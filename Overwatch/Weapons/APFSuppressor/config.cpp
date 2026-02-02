@@ -46,7 +46,7 @@ class CfgWeapons
 		mass = 262;
 		class Library
 		{
-			libTextDesc = "Overwatch Standard Issue HMG. This unstable ammunition has no damage dropoff and is not affected by gravity, but will dissipate beyond 300m.";
+			libTextDesc = "Overwatch Standard Issue HMG. Very high penetration, high damage, 150rnd magazine capacity.";
 		};
         class FullAuto450: Mode_FullAuto
         {
@@ -170,30 +170,30 @@ class CfgMagazines
     class OEC_Magazine_APFSuppressor_100Rnd: HL_CMB_30Rnd_AR2_Mag
     {
         ammo = "OEC_Ammo_APFSuppressor";
-        count = 100;
+        count = 150;
         author = "OEC Extension";
 		initSpeed = 770;
         displayName = "[OEC] 100Rnd Suppressor Cell";
-        descriptionShort = "High Capacity Suppressor Cell; 300m dissipation range";
-        displayNameShort = "100Rnd Cell";
+        descriptionShort = "High Capacity Suppressor Cell.";
+        displayNameShort = "150Rnd Cell";
 		picture = "\OECExtension\Overwatch\Weapons\data\APFmag.paa";
         tracersEvery = 0;
         lastRoundsTracer = 0;
-		mass = 50;
+		mass = 40;
     };
 	 class OEC_Magazine_APFSuppressor_100Rnd_Exogen: HL_CMB_30Rnd_AR2_Mag
     {
         ammo = "OEC_Ammo_APFSuppressor_exogen";
-        count = 100;
+        count = 150;
         author = "OEC Extension";
 		initSpeed = 770;
         displayName = "[OEC] 100Rnd Anti-Exogen Suppressor Cell";
-        descriptionShort = "High Capacity Anti-Exogen Suppressor Cell; 300m dissipation range; Deals increased damage to xen creatures";
-        displayNameShort = "100Rnd Cell";
+        descriptionShort = "High Capacity Anti-Exogen Suppressor Cell; Deals increased damage to xen creatures.";
+        displayNameShort = "150Rnd Exo Cell";
 		picture = "\OECExtension\Overwatch\Weapons\data\APFmagExogen.paa";
         tracersEvery = 0;
         lastRoundsTracer = 0;
-		mass = 50;
+		mass = 40;
     };
 };
 
