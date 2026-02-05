@@ -325,6 +325,55 @@ class CfgAmmo
 		caliber = 0.85;
 	};
 
+	// Gauss Ammo 
+	class OEC_Ammo_Gauss: BulletBase
+	{
+		soundHit1[] = {"A3\Sounds_F\weapons\Explosion\gr_explosion_1",3.1622777,1,1600};
+		soundHit2[] = {"A3\Sounds_F\weapons\Explosion\gr_explosion_2",3.1622777,1,1600};
+		soundHit3[] = {"A3\Sounds_F\weapons\Explosion\gr_explosion_3",3.1622777,1,1600};
+		soundHit4[] = {"A3\Sounds_F\weapons\Explosion\gr_explosion_4",3.1622777,1,1600};
+		soundHit5[] = {"A3\Sounds_F\weapons\Explosion\gr_explosion_5",3.1622777,1,1600};
+		soundHit6[] = {"A3\Sounds_F\weapons\Explosion\gr_explosion_6",3.1622777,1,1600};
+		multiSoundHit[] = {"soundHit1",0.2,"soundHit2",0.2,"soundHit3",0.2,"soundHit4",0.1,"soundHit5",0.15,"soundHit6",0.15};
+		explosive = 1;
+		explosionEffects = "";
+		effectFly = "OEC_ParticleEffect_AlienPulse_Blue";
+		craterEffects = "CUP_AA12AmmoImpact";
+		hit = 30;
+		caliber = 2;
+		indirectHit = 40;
+		indirectHitRange = 3.5;
+		warheadName = "HE";
+		visibleFire = 16;
+		audibleFire = 18;
+		visibleFireTime = 3;
+		cost = 20;
+		typicalSpeed = 770;
+		deflecting = 0;
+		deflectionSlowDown = 0.8;
+		airFriction = -0.00061;
+		//coefgravity = 1e-005;
+		timeToLive = 1.05;
+		fuseDistance = 3;
+		model = "\hl_cmb_weapons\ar2\Data\bullettracer\tracer_blue";
+		tracerScale = 2.5;
+		tracerStartTime = 0.005;
+		tracerEndTime = 12;
+		class CamShakeExplode
+		{
+			power = "(19 * 0.2)";
+			duration = "((round (19^0.5))*0.2 max 0.2)";
+			frequency = 20;
+			distance = "((2 + 19^0.5)*8)";
+		};
+		cartridge = "";
+
+		class EventHandlers 
+		{
+            init = "[_this select 0] execVM '\OECExtension\Scripts\OEC_gauss_ammo.sqf';";
+        };
+	};
+
     //Combine UGL Ammo
 	// Cmb HE
     class G_40mm_HE;

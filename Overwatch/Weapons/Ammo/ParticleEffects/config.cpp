@@ -131,9 +131,9 @@ class OEC_ParticleEffect_AlienPulse_Blue
         simulation = "particles";
         type = "OEC_CloudLet_AlienPulse";
         position[] = {0,0,0};
-		enabled = "speedY interpolate [-0.0001,0.0001,1,-1]";
-		intensity = 1;
-		interval = 1;
+		//enabled = "speedY interpolate [-0.0001,0.0001,1,-1]";
+		//intensity = 1;
+		//interval = 1;
     };
 };
 
@@ -160,9 +160,9 @@ class OEC_ParticleEffect_AlienPulse_Orange
         simulation = "particles";
         type = "OEC_CloudLet_AlienPulse_Orange";
         position[] = {0,0,0};
-		enabled = "speedY interpolate [-0.0001,0.0001,1,-1]";
-		intensity = 1;
-		interval = 1;
+		//enabled = "speedY interpolate [-0.0001,0.0001,1,-1]";
+		//intensity = 1;
+		//interval = 1;
     };
 };
 
@@ -179,9 +179,9 @@ class OEC_ParticleEffect_AlienPulse_Green
         simulation = "particles";
         type = "OEC_CloudLet_AlienPulse_Green";
         position[] = {0,0,0};
-		enabled = "speedY interpolate [-0.0001,0.0001,1,-1]";
-		intensity = 1;
-		interval = 1;
+		//enabled = "speedY interpolate [-0.0001,0.0001,1,-1]";
+		//intensity = 1;
+		//interval = 1;
     };
 };
 
