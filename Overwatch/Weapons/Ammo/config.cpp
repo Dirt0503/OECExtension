@@ -336,8 +336,8 @@ class CfgAmmo
 		soundHit6[] = {"A3\Sounds_F\weapons\Explosion\gr_explosion_6",3.1622777,1,1600};
 		multiSoundHit[] = {"soundHit1",0.2,"soundHit2",0.2,"soundHit3",0.2,"soundHit4",0.1,"soundHit5",0.15,"soundHit6",0.15};
 		explosive = 1;
-		explosionEffects = "";
-		effectFly = "OEC_ParticleEffect_AlienPulse_Blue";
+		explosionEffects = "OEC_ParticleEffect_GaussImpact";
+		effectFly = "OEC_ParticleEffect_GaussTrail";
 		craterEffects = "CUP_AA12AmmoImpact";
 		hit = 30;
 		caliber = 2;
@@ -354,7 +354,7 @@ class CfgAmmo
 		airFriction = -0.00061;
 		//coefgravity = 1e-005;
 		timeToLive = 1.05;
-		fuseDistance = 3;
+		fuseDistance = 0;
 		model = "\hl_cmb_weapons\ar2\Data\bullettracer\tracer_blue";
 		tracerScale = 2.5;
 		tracerStartTime = 0.005;
