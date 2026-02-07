@@ -25,7 +25,7 @@ class CfgMagazines
 		descriptionShort = "Portable Explosive Pulse Ammo Cell.";
 		count = 6;
 		initSpeed = 770;
-		picture = "\OECExtension\Overwatch\Weapons\data\AR2mag.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\GaussAmmo.paa";
 		tracersEvery = 1;
 		mass = 16;
 	};
@@ -192,7 +192,7 @@ class CfgWeapons
 		model = "\A3\Weapons_F_Mark\LongRangeRifles\DMR_02\DMR_02_F.p3d";
 		dexterity = 1.68;
 		displayName = "[OEC] EM-1 Pulse Assisted Gauss Gun";
-		picture = "\A3\Weapons_F_Mark\LongRangeRifles\DMR_02\Data\UI\gear_DMR_02_X_CA.paa";
+		picture = "\OECExtension\Overwatch\Weapons\data\GaussGun.paa";
 		UiPicture = "\A3\weapons_f\data\UI\icon_regular_CA.paa";
 		descriptionShort = "Special Issue Pulse Assisted Gauss Gun";
 		inertia = 0.9;
