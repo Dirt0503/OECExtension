@@ -66,6 +66,28 @@ class CfgLights
         position[] = {0,0.055,0};
         intensity = 10000;
     };
+
+    class OEC_Light_GaussFlash
+    {
+        color[] = {0,1,1,1};
+        diffuse[] = {0,1,1,1};
+        ambient[] = {0,0,0,0.5};
+        intensity = 10000;
+        class Attenuation
+        {
+            start = 0;
+            constant = 0;
+            linear = 0;
+            quadratic = 255;
+            hardLimitStart = "1e20 * 0.7";
+            hardLimitEnd = 1e+20;
+        };
+        dayLight = 1;
+        useFlare = 1;
+        irLight = 0;
+        flareSize = 12;
+        flareMaxDistance = 6000;
+    };
 };
 
 class CfgCloudLets
@@ -86,13 +108,13 @@ class CfgCloudLets
         anlgeVar = 0;
         circleRadius = 0;
         circleVelocity[] = {0,0,0};
-        interval = 0.005;
+        interval = 0.0009;
         particleType = "Billboard";
         timerPeriod = 1;
         lifeTime = 0.65;
         positionVar[] = {0,0,0};
         moveVelocity[] = {1,1,1};
-        moveVelocityVar[] = {5,2.5,5};
+        moveVelocityVar[] = {5,5,5};
         rotationVelocity = 0;
         weight = 1000;
         volume = 1;
@@ -100,8 +122,8 @@ class CfgCloudLets
         sizeOverLifetime[] = {0.15,0.01,0.001};
         color[] = {{0,0.47,1,1}};
         animationSpeed[] = {1};
-        randomDirectionIntensity = 0;
-		randomDirectionPeriod = 2;
+        randomDirectionIntensity = 1;
+		randomDirectionPeriod = 0.1;
 		randomDirectionPeriodVar = 0;
 		rotationVelocity = 10;
 		rotationVelocityVar = 90;
@@ -122,7 +144,7 @@ class CfgCloudLets
         animationName = "";
         particleType = "Billboard";
         timerPeriod = 1;
-        lifeTime = 0.3;
+        lifeTime = 0.15;
         positionVar[] = {0,0,0};
         moveVelocity[] = {0,0,0.6};
         rotationVelocity = 0;
@@ -138,9 +160,16 @@ class CfgCloudLets
         beforeDestroyScipt = "";
     };
 
+    class OEC_Cloudlet_Refract1: OEC_CloudLet_Refract
+    {
+        sizeOverLifeTime[] = {100,300,600};
+        interval = 1;
+        lifeTime = 1;
+    };
+
     class OEC_Cloudlet_Refract2: OEC_CloudLet_Refract
     {
-        interval = 0.01;
+        interval = 0.001;
     };
 
     class OEC_CloudLet_Distortion: Default
@@ -149,18 +178,20 @@ class CfgCloudLets
         particleFSNtieth = 1;
         particleFSIndex = 0;
         particleFSFrameCount = 1;
+        smokeGenMinDist = 20;
 
         animationName = "";
         particleType = "Billboard";
         timerPeriod = 1;
-        lifeTime = 0.5;
+        lifeTime = 0.15;
         positionVar[] = {0,0,0.6};
         moveVelocity[] = {0.2,0.5,0.2};
-        rotationVelocity = 90;
-        weight = 10;
-        volume = 7.85;
-        rubbing = 0.375;
-        sizeOverLifeTime[] = {1,2,3};
+
+        rotationVelocity = 0;
+        weight = 1;
+        volume = 1;
+        rubbing = 0.0001;
+        sizeOverLifeTime[] = {1,2,5};
         color[] = {{0.15,0.15,0.15,0.2},{0.15,0.15,0.15,0.1},{0.15,0.15,0.15,0}};
         animationSpeed[] = {10};
         randomDirectionPeriod = 1;
@@ -169,47 +200,61 @@ class CfgCloudLets
         beforeDestroyScipt = "";
     };
 
-    class OEC_Cloudlet_Distortion2: OEC_CloudLet_Refract
+    class OEC_Cloudlet_Distortion1: OEC_CloudLet_Distortion
     {
-        interval = 0.01;
+        circleRadius = 0.25;
+		circleVelocity[] = {15,0,15};
+        sizeOverLifeTime[] = {1,2,3};
+        interval = 0.004;
+        lifeTime = 0.5;
     };
 
-    class OEC_CloudLet_ImpactDust: Default
+    class OEC_Cloudlet_Distortion2: OEC_CloudLet_Distortion
     {
-        circleVelocity[] = {0,0,0};
-		moveVelocity[] = {0,0,0};
-		size[] = {10,10};
-		color[] = {{ 0,0,0,0}};
-		animationSpeed[] = {1};
-		positionVar[] = {0,0,0};
-		MoveVelocityVar[] = {1.75,1.75,1.75};
-		colorVar[] = {0,0,0,0.02};
-		interval = "0.007 * interval + 0.007";
-		circleRadius = "intensity";
-		particleShape = "\A3\data_f\ParticleEffects\Universal\Universal";
-		particleFSNtieth = 16;
-		particleFSIndex = 13;
-		particleFSFrameCount = 2;
-		particleFSLoop = 0;
-		angleVar = 1;
-		animationName = "";
-		particleType = "Billboard";
-		timerPeriod = 0.05;
-		lifeTime = 0.5;
-		rotationVelocity = 0;
-		weight = 4;
-		volume = 1;
-		rubbing = 0;
-		randomDirectionPeriod = 0.01;
-		randomDirectionIntensity = 0.08;
-		onTimerScript = ""; 
-		beforeDestroyScript = "";
-		lifeTimeVar = 0;
-		rotationVelocityVar = 1;
-		sizeVar = 0;
-		randomDirectionPeriodVar = 2;
-		randomDirectionIntensityVar = 0.1;
+        interval = 0.001;
+        sizeOverLifeTime[] = {1,1.5,2};
     };
+
+    class OEC_Cloudlet_GaussSparks: Default
+	{
+		angle = 90;	
+		angleVar = 90;
+		animationName = "";
+		animationSpeed[] = {1};
+		beforeDestroyScript = "";
+		circleRadius = 0;
+		circleVelocity[] = {0,0,0};
+		colorVar[] = {0,0,0,0};
+		color[] = {{0,0.83,0.76,1}};
+		interval = 0.03;
+		lifeTime = 0.75;
+		lifeTimeVar = 0.2;
+		MoveVelocityVar[] = {5,5,5};
+		moveVelocity[] = {2,2,0};
+		onTimerScript = "";
+		particleFSFrameCount = 1;
+		particleFSIndex = 0;
+		particleFSLoop = 1;
+		particleFSNtieth = 1;
+		particleShape ="\A3\data_f\kouleSvetlo";
+		particleType = "Billboard";
+		positionVar[] = {0,0,0};
+		randomDirectionIntensity = 0;
+		randomDirectionIntensityVar = 0.2;
+		randomDirectionPeriod = 2;
+		randomDirectionPeriodVar = 0;
+		rotationVelocity = 10;
+		rotationVelocityVar = 90;
+		bounceOnSurface = -1;	
+		rubbing = 0.1;
+		sizeVar = 0.015;
+		Size[] = {0.15,0.01};
+		timerPeriod = 1;
+		volume = 1;
+		weight = 10;
+		emissiveColor[] = {{5000,5000,5000,1},{100,100,100,1}};	
+		destroyOnWaterSurface = 1;
+	};
 
     class OEC_CloudLet_AlienPulse: ArtilleryShell1
     {
@@ -277,16 +322,6 @@ class OEC_ParticleEffect_AlienPulse_Blue
     };
 };
 
-class OEC_ParticleEffect_AlienPulse_Blue_sRifle
-{
-    class Light
-    {
-        simulation = "light";
-        type = "OEC_Light_AlienPulse_Blue_sRifle";
-        position[] = {0,0,0};
-    };
-};
-
 class OEC_ParticleEffect_AlienPulse_Orange
 {
     class Light
@@ -327,24 +362,24 @@ class OEC_ParticleEffect_AlienPulse_Green
 
 class OEC_ParticleEffect_GaussImpact
 {
-    class Refraction1
+  /*  class Refraction1
     {
         simulation = "particles";
-		type = "OEC_CloudLet_Refract";
-		position[] = {0,0,0};
-		intensity = 1;
-		interval = "3 * 1";
-		lifeTime = 1;
-    };
-    class Distortion1
-    {
-        simulation = "particles";
-		type = "OEC_CloudLet_Distortion";
+		type = "OEC_CloudLet_Refract1";
 		position[] = {0,0,0};
 		intensity = 1;
 		interval = 1;
 		lifeTime = 1;
-    };
+    };*/
+    class Distortion1
+    {
+        simulation = "particles";
+		type = "OEC_CloudLet_Distortion1";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+		lifeTime = 1;
+    }
     class Explosion
     {
         simulation = "particles";
@@ -354,14 +389,12 @@ class OEC_ParticleEffect_GaussImpact
 		interval = 1;
 		lifeTime = 1;
     };
-    class ImpactDust
+    class Light
     {
-        simulation = "particles";
-		type = "OEC_Cloudlet_ImpactDust";
-		position[] = {0,0,0};
-		intensity = 1;
-		interval = 1;
-		lifeTime = 0.75;
+        simulation = "light";
+        type = "OEC_Light_GaussFlash";
+        position[] = {0,0,0};
+        lifeTime = 0.2;
     };
 };
 
@@ -379,7 +412,7 @@ class OEC_ParticleEffect_GaussTrail
 		type = "OEC_CloudLet_Refract2";
 		position[] = {0,0,0};
 		intensity = 1;
-		interval = "3 * 1";
+		interval = 1;
 		lifeTime = 1;
     };
     class Trail2
@@ -390,16 +423,18 @@ class OEC_ParticleEffect_GaussTrail
 		intensity = 1;
 		interval = 1;
 		lifeTime = 1;
+        smokeGenMinDist = 100;
     };
-    class Trail3
-    {
-        simulation = "particles";
-        type = "OEC_CloudLet_AlienPulse";
-        position[] = {0,0,0};
-		//enabled = "speedY interpolate [-0.0001,0.0001,1,-1]";
-		//intensity = 1;
-		//interval = 1;
-    };
+
+    class Sparks
+	{
+		simulation = "particles";
+		type = "OEC_Cloudlet_GaussSparks";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+		lifeTime = 1;
+	};
 };
 
 class OEC_ParticleEffect_MK3A2

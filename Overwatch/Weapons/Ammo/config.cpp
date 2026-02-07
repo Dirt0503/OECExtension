@@ -335,14 +335,14 @@ class CfgAmmo
 		soundHit5[] = {"A3\Sounds_F\weapons\Explosion\gr_explosion_5",3.1622777,1,1600};
 		soundHit6[] = {"A3\Sounds_F\weapons\Explosion\gr_explosion_6",3.1622777,1,1600};
 		multiSoundHit[] = {"soundHit1",0.2,"soundHit2",0.2,"soundHit3",0.2,"soundHit4",0.1,"soundHit5",0.15,"soundHit6",0.15};
-		explosive = 1;
+		explosive = 0.8;
 		explosionEffects = "OEC_ParticleEffect_GaussImpact";
 		effectFly = "OEC_ParticleEffect_GaussTrail";
 		craterEffects = "CUP_AA12AmmoImpact";
 		hit = 30;
 		caliber = 2;
-		indirectHit = 40;
-		indirectHitRange = 3.5;
+		indirectHit = 60;
+		indirectHitRange = 3;
 		warheadName = "HE";
 		visibleFire = 16;
 		audibleFire = 18;
@@ -353,7 +353,7 @@ class CfgAmmo
 		deflectionSlowDown = 0.8;
 		airFriction = -0.00061;
 		//coefgravity = 1e-005;
-		timeToLive = 1.05;
+		timeToLive = 1.25;
 		fuseDistance = 0;
 		model = "\hl_cmb_weapons\ar2\Data\bullettracer\tracer_blue";
 		tracerScale = 2.5;
@@ -367,11 +367,6 @@ class CfgAmmo
 			distance = "((2 + 19^0.5)*8)";
 		};
 		cartridge = "";
-
-		class EventHandlers 
-		{
-            init = "[_this select 0] execVM '\OECExtension\Scripts\OEC_gauss_ammo.sqf';";
-        };
 	};
 
     //Combine UGL Ammo
