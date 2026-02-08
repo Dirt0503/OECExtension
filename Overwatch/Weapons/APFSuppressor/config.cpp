@@ -173,7 +173,7 @@ class CfgMagazines
         count = 150;
         author = "OEC Extension";
 		initSpeed = 770;
-        displayName = "[OEC] 100Rnd Suppressor Cell";
+        displayName = "[OEC] 150Rnd Suppressor Cell";
         descriptionShort = "High Capacity Suppressor Cell.";
         displayNameShort = "150Rnd Cell";
 		picture = "\OECExtension\Overwatch\Weapons\data\APFmag.paa";
@@ -187,7 +187,7 @@ class CfgMagazines
         count = 150;
         author = "OEC Extension";
 		initSpeed = 770;
-        displayName = "[OEC] 100Rnd Anti-Exogen Suppressor Cell";
+        displayName = "[OEC] 150Rnd Anti-Exogen Suppressor Cell";
         descriptionShort = "High Capacity Anti-Exogen Suppressor Cell; Deals increased damage to xen creatures.";
         displayNameShort = "150Rnd Exo Cell";
 		picture = "\OECExtension\Overwatch\Weapons\data\APFmagExogen.paa";
