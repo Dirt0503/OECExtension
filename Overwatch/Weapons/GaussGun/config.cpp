@@ -3,7 +3,7 @@ class CfgPatches
     class OEC_Extension_Overwatch_Weapons_Gauss
     {
         addonRootClass = "OEC_Extension_Overwatch_Weapons";
-        requiredAddons[] = {"OEC_Extension_Overwatch_Weapons"};
+        requiredAddons[] = {};
         units[] = {};
         weapons[] = 
         {
@@ -19,15 +19,17 @@ class CfgMagazines
 	class OEC_Magazine_Gauss: CA_Magazine
 	{
 		scope = 2;
+		scopeArsenal = 2;
 		ammo = "OEC_Ammo_Gauss";
 		author = "OEC Extension";
 		displayName = "[OEC] 6rnd EM-1 Cell";
+		displaynameshort = "Explosive Cell";
 		descriptionShort = "Portable Explosive Pulse Ammo Cell.";
 		count = 6;
-		initSpeed = 770;
+		initSpeed = 780;
 		picture = "\OECExtension\Overwatch\Weapons\data\GaussAmmo.paa";
 		tracersEvery = 1;
-		mass = 16;
+		mass = 12.5;
 	};
 };
 
