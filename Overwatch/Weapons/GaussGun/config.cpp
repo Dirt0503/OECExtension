@@ -31,6 +31,46 @@ class CfgMagazines
 	};
 };
 
+class CfgSoundShaders
+{
+    class OEC_SoundShader_GaussGun_closeShot
+    {
+        samples[] = 
+        {
+            {"OECExtension\Overwatch\Weapons\data\gaussgun\gaussShot.wss",1}
+        };
+        volume = 1;
+        range = 150;
+        rangeCurve = "closeShotCurve";
+    };
+    class OEC_SoundShader_GaussGun_distShot
+    {
+        samples[] = 
+        {
+            {"OECExtension\Overwatch\Weapons\data\gaussgun\gaussShot.wss",1}
+        };
+        volume = 1;
+        range = 2200;
+        rangeCurve[] = {{0,0},{50,0},{300,1},{1800,1}};
+    };
+};
+
+class CfgSoundSets
+{
+    class OEC_SoundSet_GaussGun
+    {
+        soundShaders[] = 
+        {
+            "OEC_SoundShader_GaussGun_closeShot",
+            "OEC_SoundShader_GaussGun_distShot"
+        };
+        volumeFactor = 1.6;
+        spatial = 1;
+        doppler = 0;
+        loop = 0;
+    };
+};
+
 class Mode_SemiAuto;
 class Mode_Burst;
 class Mode_FullAuto;
@@ -76,13 +116,13 @@ class CfgWeapons
 		displayName = "[OEC] EM-1 Pulse Assisted Gauss Gun";
 		magazines[] = {"OEC_Magazine_Gauss"};
 		magazineWell[] = {};
-		reloadAction = "GestureReloadDMR02";
+		reloadAction = "WBK_OICW_ReloadGL";
 		recoil = "recoil_dmr_02";
 		maxZeroing = 2000;
-		handAnim[] = {"OFP2_ManSkeleton","\A3\Weapons_F_Mark\LongRangeRifles\DMR_02\data\Anim\DMR_02.rtm"};
+		handAnim[] = {"OFP2_ManSkeleton","WBK_Combines\weapons\OICW_Idle.rtm"};
 		overviewPicture = "\A3\Data_F_Mark\Images\watermarkInfo_page06_ca.paa";
-		hiddenSelections[] = {"Camo1","Camo2"};
-		hiddenSelectionsTextures[] = {"\A3\Weapons_F_Mark\LongRangeRifles\DMR_02\Data\DMR_02_01_CO.paa","\A3\Weapons_F_Mark\LongRangeRifles\DMR_02\Data\DMR_02_02_CO.paa"};
+		hiddenSelections[] = {};
+		hiddenSelectionsTextures[] = {};
 		cursor = "srifle";
 		class Library
 		{
@@ -92,21 +132,25 @@ class CfgWeapons
 		{
 			class MuzzleSlot: MuzzleSlot_338
 			{
+				compatibleItems[] = {};
 				iconPosition[] = {0.0,0.4};
 				iconScale = 0.2;
 			};
 			class CowsSlot: CowsSlot_Rail
 			{
+				compatibleItems[] = {};
 				iconPosition[] = {0.5,0.36};
 				iconScale = 0.2;
 			};
 			class PointerSlot: PointerSlot_Rail
 			{
+				compatibleItems[] = {};
 				iconPosition[] = {0.22,0.42};
 				iconScale = 0.25;
 			};
 			class UnderBarrelSlot: UnderBarrelSlot_rail
 			{
+				compatibleItems[] = {};
 				iconPosition[] = {0.2,0.8};
 				iconScale = 0.3;
 			};
@@ -114,7 +158,7 @@ class CfgWeapons
 		distanceZoomMin = 500;
 		distanceZoomMax = 500;
 		drySound[] = {"A3\Sounds_F_Mark\arsenal\weapons\LongRangeRifles\DMR_02_MAR10\DMR_02_Dry_01",0.25118864,1,20};
-		reloadMagazineSound[] = {"A3\Sounds_F_Mark\arsenal\weapons\LongRangeRifles\DMR_02_MAR10\DMR_02_reload",1.0,1,10};
+		reloadMagazineSound[] = {"OECExtension\Overwatch\Weapons\data\gaussgun\gaussReload.wss",1.0,1,10};
 		modes[] = {"Single","single_close_optics1","single_medium_optics1","single_far_optics1"};
 		bullet1[] = {"A3\sounds_f\weapons\shells\7_62\metal_762_01",0.63095737,1,15};
 		bullet2[] = {"A3\sounds_f\weapons\shells\7_62\metal_762_02",0.63095737,1,15};
@@ -129,13 +173,59 @@ class CfgWeapons
 		bullet11[] = {"A3\sounds_f\weapons\shells\7_62\grass_762_03",0.63095737,1,15};
 		bullet12[] = {"A3\sounds_f\weapons\shells\7_62\grass_762_04",0.63095737,1,15};
 		soundBullet[] = {"bullet1",0.083,"bullet2",0.083,"bullet3",0.083,"bullet4",0.083,"bullet5",0.083,"bullet6",0.083,"bullet7",0.083,"bullet8",0.083,"bullet9",0.083,"bullet10",0.083,"bullet11",0.083,"bullet12",0.083};
+		modelOptics = "\CUP\Weapons\CUP_Weapons_XM29\CUP_xm29_optics.p3d";
+		class OpticsModes
+        {
+            class Ironsights
+            {
+                opticsID = 0;
+                useModelOptics = 0;
+                opticsFlare = "true";
+                opticsPPEffects[] = {"OpticsCHAbera5","OpticsBlur5"};
+                opticsDisablePeripherialVision = 0.67;
+                opticsZoomMin = 0.25;
+                opticsZoomMax = 1.1;
+                opticsZoomInit = 0.75;
+                memoryPointCamera = "eye";
+                visionMode[] = {};
+                distanceZoomMin = 100;
+                distanceZoomMax = 100;
+            };
+            class Scope: Ironsights
+            {
+                opticsID = 1;
+				useModelOptics = 1;
+				opticsZoomMin = "1 call (uiNamespace getVariable 'cba_optics_fnc_setOpticMagnificationHelper')";
+				opticsZoomMax = "4 call (uiNamespace getVariable 'cba_optics_fnc_setOpticMagnificationHelper')";
+				opticsZoomInit = "2 call (uiNamespace getVariable 'cba_optics_fnc_setOpticMagnificationHelper')";
+				discreteFov[] = {"1 call (uiNamespace getVariable 'cba_optics_fnc_setOpticMagnificationHelper')","2 call (uiNamespace getVariable 'cba_optics_fnc_setOpticMagnificationHelper')","3 call (uiNamespace getVariable 'cba_optics_fnc_setOpticMagnificationHelper')","4 call (uiNamespace getVariable 'cba_optics_fnc_setOpticMagnificationHelper')"};
+				discreteInitIndex = 0;
+				distanceZoomMin = 100;
+				distanceZoomMax = 800;
+				memoryPointCamera = "opticView";
+				opticsFlare = 1;
+				opticsDisablePeripherialVision = 1;
+				cameraDir = "";
+				visionMode[] = {"Normal","NVG"};
+				thermalMode[] = {2,3};
+				opticsPPEffects[] = {"OpticsCHAbera1","OpticsBlur1"};
+				discreteDistance[] = {100,200,300,400,500,600,700,800};
+				discreteDistanceInitIndex = 2;
+            };
+        };
 		class Single: Mode_SemiAuto
 		{
 			sounds[] = {"StandardSound","SilencedSound"};
 			class BaseSoundModeType{};
-			class StandardSound: BaseSoundModeType{};
-			class SilencedSound: BaseSoundModeType{};
-			reloadTime = 1;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[] = {"OEC_SoundSet_GaussGun"};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[] = {"OEC_SoundSet_GaussGun"};
+			};
+			reloadTime = 2.2;
 			dispersion = 0.00044;
 			recoil = "recoil_single_dmr";
 			recoilProne = "recoil_single_prone_dmr";
@@ -189,7 +279,7 @@ class CfgWeapons
 	{
 		author = "OEC Extension";
 		scope = 2;
-		model = "\A3\Weapons_F_Mark\LongRangeRifles\DMR_02\DMR_02_F.p3d";
+		model = "OECExtension\Overwatch\Weapons\data\gaussgun\OEC_GaussRifle.p3d";
 		dexterity = 1.68;
 		displayName = "[OEC] EM-1 Pulse Assisted Gauss Gun";
 		picture = "\OECExtension\Overwatch\Weapons\data\GaussGun.paa";
