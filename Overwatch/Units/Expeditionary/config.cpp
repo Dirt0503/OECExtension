@@ -41,11 +41,6 @@ class CfgFunctions
                 file = "\OECExtension\Scripts\CombineTypeAssignments\OEC_cmbSoldier.sqf";
 				description = "Vocelines & Abilities Script";
             };
-            class cmbRanger
-            {
-                file = "\OECExtension\Scripts\CombineTypeAssignments\OEC_cmbRanger.sqf";
-				description = "Vocelines & Abilities Script";
-            };
             class cmbOrdinal
             {
                 file = "\OECExtension\Scripts\CombineTypeAssignments\OEC_cmbOrdinal.sqf";
@@ -229,9 +224,10 @@ class CfgVehicles
         {
             class OEC_Combine_SoldierAssign_Event
             {
-                init = "_this call oec_fnc_cmbRanger;";
+                init = "_this call oec_fnc_cmbSoldier;";
             };
         };
+        camouflage = 0.5;
     };
     class OEC_Overwatch_Unit_TL: OEC_Overwatch_Unit_Soldier
     {
@@ -466,9 +462,10 @@ class CfgVehicles
         {
             class OEC_Combine_SoldierAssign_Event
             {
-                init = "_this call oec_fnc_cmbRanger;";
+                init = "_this call oec_fnc_cmbOrdinal;";
             };
         };
+        camouflage = 0.5;
     };
     class OEC_Overwatch_Unit_Wallhammer: OEC_Overwatch_Unit_Soldier
     {

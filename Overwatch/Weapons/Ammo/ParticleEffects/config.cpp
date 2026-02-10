@@ -301,6 +301,49 @@ class CfgCloudLets
     {
         sizeCoef = 0.33;
     }; 
+
+    class OEC_ParticleEffect_Smoke: Default
+	{
+		circleRadius = 0;
+		circleVelocity[] = {0,0,0};
+		particleShape = "\A3\data_f\ParticleEffects\Universal\Universal";
+		particleFSNtieth = 16;
+		particleFSIndex = 12;
+		particleFSFrameCount = 8;
+		particleFSLoop = 1;
+		angleVar = 1;
+		animationName = "";
+		particleType = "Billboard";
+		timerPeriod = 1;
+		sizeCoef = 1;
+		colorCoef[] = {1,1,1,1};
+		animationSpeed[] = {1};
+		animationSpeedCoef = 1;
+		onTimerScript = "";
+		beforeDestroyScript = "";
+		MoveVelocityVar[] = {0,0,0};
+		emissiveColor[] = {{0.5,0.5,0.5,0},{0,0,0,0}};
+		colorVar[] = {0,0,0,0};
+		rubbing = 0;
+		sizeVar = 0.5;
+		rotationVelocity = 0.75;
+		rotationVelocityVar = 0.5;
+		randomDirectionIntensityVar = 0.1;
+		position[] = {0,0,0};
+		positionVar[] = {0.1,0.1,0.1};
+		blockAIVisibility = 0;
+
+        moveVelocity[] = {0,0,0.1};
+		size[] = {5,10,15};
+		weight = 1.277;
+		volume = "2.5 + randomValue / 30";
+		randomDirectionPeriod = 5;
+		randomDirectionIntensity = 0.25;
+		interval = 0.02;
+		lifeTime = 10;
+		lifeTimeVar = 1;
+		color[] = {{0.03,0.03,0.03,0.6},{0.03,0.03,0.03,0.5},{0.03,0.03,0.03,0.4},{0.03,0.03,0.03,0.2},{0.03,0.03,0.03,0.05},{0.03,0.03,0.03,0.01},{1,1,1,0}};
+	};
 };
 
 class OEC_ParticleEffect_AlienPulse_Blue
@@ -316,9 +359,6 @@ class OEC_ParticleEffect_AlienPulse_Blue
         simulation = "particles";
         type = "OEC_CloudLet_AlienPulse";
         position[] = {0,0,0};
-		//enabled = "speedY interpolate [-0.0001,0.0001,1,-1]";
-		//intensity = 1;
-		//interval = 1;
     };
 };
 
@@ -335,9 +375,6 @@ class OEC_ParticleEffect_AlienPulse_Orange
         simulation = "particles";
         type = "OEC_CloudLet_AlienPulse_Orange";
         position[] = {0,0,0};
-		//enabled = "speedY interpolate [-0.0001,0.0001,1,-1]";
-		//intensity = 1;
-		//interval = 1;
     };
 };
 
@@ -354,23 +391,11 @@ class OEC_ParticleEffect_AlienPulse_Green
         simulation = "particles";
         type = "OEC_CloudLet_AlienPulse_Green";
         position[] = {0,0,0};
-		//enabled = "speedY interpolate [-0.0001,0.0001,1,-1]";
-		//intensity = 1;
-		//interval = 1;
     };
 };
 
 class OEC_ParticleEffect_GaussImpact
 {
-  /*  class Refraction1
-    {
-        simulation = "particles";
-		type = "OEC_CloudLet_Refract1";
-		position[] = {0,0,0};
-		intensity = 1;
-		interval = 1;
-		lifeTime = 1;
-    };*/
     class Distortion1
     {
         simulation = "particles";
@@ -453,4 +478,62 @@ class OEC_ParticleEffect_MK3A2
 		intensity = 1;
 		interval = 1;
     };
+};
+
+class OEC_ParticleEffect_ImpactSmoke
+{
+	class ExplosionLight
+	{
+		simulation = "light";
+		type = "RHS_GDM40ExplosionLight";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+		lifeTime = 1;
+	};
+	class ExplosionSparks
+	{
+		simulation = "particles";
+		type = "RHS_GDM40Sparks";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+		lifeTime = 0.1;
+	};
+	class ExplosionSparksTail
+	{
+		simulation = "particles";
+		type = "RHS_GDM40SparksTrail";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+		lifeTime = 0.2;
+	};
+	class ExplosionSparksTailLight
+	{
+		simulation = "particles";
+		type = "RHS_GDM40SparksTrailLight";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+		lifeTime = 0.2;
+	};
+	class ExplosionCloud
+	{
+		simulation = "particles";
+		type = "OEC_ParticleEffect_Smoke";
+		position[] = {0,0,0.5};
+		intensity = 1;
+		interval = 1;
+		lifeTime = 1;
+	};
+	class GrenadeExp1
+	{
+		simulation = "particles";
+		type = "GrenadeExp";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+		lifeTime = 0.5;
+	};
 };

@@ -397,7 +397,7 @@ class CfgAmmo
 		indirectHitRange = 0;
 		typicalspeed = 185;
 
-		explosionEffects = "RHS_GDM40Effect";
+		explosionEffects = "OEC_ParticleEffect_ImpactSmoke";
 		CraterEffects = "";
 
 		soundHit1[] = { "rhsafrf\addons\rhs_sounds\smoke\GDM40_1.wss", 5, 1, 1500 };
