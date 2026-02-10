@@ -27,7 +27,7 @@ class CfgMagazines
 		initSpeed = 770;
 		picture = "\OECExtension\Overwatch\Weapons\data\GaussAmmo.paa";
 		tracersEvery = 1;
-		mass = 16;
+		mass = 12.5;
 	};
 };
 
