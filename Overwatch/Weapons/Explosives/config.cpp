@@ -53,11 +53,17 @@ class cfgAmmo
 	class GrenadeHand;
     class OEC_Ammo_MK3A2: GrenadeHand
     {
+		hit = 12;
+		indirectHit = 12;
+		indirectHitRange = 6;
+
         model = "\rhsusf\addons\rhsusf_weapons\grenades_thrown\mk3a2\mk3a2";
         effectFly = "OEC_ParticleEffect_MK3A2";
-        simulation = "shotNVGMarker";
         soundFly[] = {"\OECExtension\Overwatch\Weapons\Ammo\sounds\OEC_5SEC_GRENFUSE.wss",20,1,200};
-        class NVGMarkers{};
+		class EventHandlers 
+		{
+            init = "[_this select 0] execVM '\OECExtension\Scripts\OEC_combineGrenade.sqf';";
+        };
     };
 
     class BoundingMineBase;
@@ -130,7 +136,6 @@ class CfgMagazines
 		{
 			libTextDesc = "test description1. Tell Petee if you found this";
 		};
-		//descriptionUse = "Deeploy Hopper";
 		allowedSlots[] = 
 		{
 			701, // Vest
