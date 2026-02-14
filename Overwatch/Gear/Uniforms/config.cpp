@@ -214,6 +214,7 @@ class CfgWeapons
         class ItemInfo: ItemInfo
         {
             uniformClass = "OEC_Overwatch_Unit_Elite_CE";
+            containerClass = "Supply170";
         };
         class XtdGearInfo
         {
