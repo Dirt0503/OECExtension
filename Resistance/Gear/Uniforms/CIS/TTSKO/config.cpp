@@ -31,6 +31,7 @@ class CfgWeapons
 		picture = "\rhsafrf\addons\rhs_inventoryicons\data\uniform\rhs_uniform_flora_patchless_alt_ca.paa";
 		scope = 2;
 		model = "\A3\Characters_F\Common\Suitpacks\suitpack_blufor_diver";
+		nameSound = "";
 		class ItemInfo: UniformItem
 		{
 			uniformModel = "-";

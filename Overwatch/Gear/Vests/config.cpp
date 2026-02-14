@@ -236,16 +236,16 @@ class CfgWeapons
         displayName = "[OEC] Combine Soldier Vest - Recon";
         hiddenSelectionsTextures[] =
         {
-            "HL_Combine\data\ranger\ranger_pants.paa",
-            "HL_Combine\data\ranger\ranger_upperArmor.paa"
+            "OECExtension\Overwatch\Gear\Uniforms\data\Recon_Trooper_pants.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\Recon_Trooper_upperArmor.paa"
         };
         class ItemInfo: ItemInfo
         {
             hiddenSelectionsTextures[] =
-            {
-                "HL_Combine\data\ranger\ranger_pants.paa",
-                "HL_Combine\data\ranger\ranger_upperArmor.paa"
-            };
+        {
+            "OECExtension\Overwatch\Gear\Uniforms\data\Recon_Trooper_pants.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\Recon_Trooper_upperArmor.paa"
+        };
         };
         class XtdGearInfo
         {
@@ -455,8 +455,8 @@ class CfgWeapons
         displayName = "[OEC] Combine Elite Vest - Recon";
         hiddenSelectionsTextures[] = 
         {
-            "HL_Combine\data\wpu\wpu_upperArmor.paa",
-            "HL_Combine\data\wpu\wpu_collar.paa"
+            "OECExtension\Overwatch\Gear\Uniforms\data\Recon_Elite_upperArmor.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\Recon_Elite_collar.paa"
         };
         class ItemInfo: ItemInfo
         {
