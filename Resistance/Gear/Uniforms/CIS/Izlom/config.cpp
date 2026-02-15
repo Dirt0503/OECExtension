@@ -21,9 +21,11 @@ class CfgPatches
 
 class CfgWeapons
 {
-	class OEC_CIS_Uniform_Flora
+	class UniformItem;
+	class Uniform_Base;
+	class OEC_CIS_Uniform_Flora: Uniform_Base
     {
-        class ItemInfo;
+        class ItemInfo: UniformItem{};
     };
 
     class OEC_CIS_Uniform_Izlom: OEC_CIS_Uniform_Flora

@@ -22,11 +22,11 @@ class CfgPatches
 class CfgWeapons
 {
     class UniformItem;
-    class Uniform_Base;
-	class OEC_CIS_Uniform_Flora
-	{
-		class ItemInfo;
-	};
+	class Uniform_Base;
+	class OEC_CIS_Uniform_Flora: Uniform_Base
+    {
+        class ItemInfo: UniformItem{};
+    };
 
     class OEC_CIS_Uniform_Gorka_Black: OEC_CIS_Uniform_Flora
 	{

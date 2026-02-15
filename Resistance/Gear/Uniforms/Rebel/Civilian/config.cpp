@@ -23,11 +23,11 @@ class CfgPatches
 class CfgWeapons
 {
     class UniformItem;
-    class Uniform_Base;
-	class OEC_CIS_Uniform_Flora
-	{
-		class ItemInfo;
-	};
+	class Uniform_Base;
+	class OEC_CIS_Uniform_Flora: Uniform_Base
+    {
+        class ItemInfo: UniformItem{};
+    };
 
     class OEC_Rebel_Civ_Uniform_White: OEC_CIS_Uniform_Flora
 	{
@@ -100,25 +100,4 @@ class cfgVehicles
 		hiddenSelections[] = {"camo"};
 		hiddenSelectionsTextures[] = {"OECExtension\Resistance\Gear\Uniforms\Rebel\Civilian\data\zombie_co.paa"}; // we will need to make a separate zombie uniform vehicle later.
 	};
-
-   /* class Item_Base_F;
-    class OEC_CIS_Uniform_M88_Winter_Vehicle: Item_Base_F
-	{
-		scope = 2;
-		scopeCurator = 2;
-		displayName = "[OEC] M88 (Officer)";
-		author = "OEC Extension";
-		vehicleClass = "ItemsHeadgear";
-		editorCategory = "EdCat_Equipment";
-		editorSubcategory = "EdSubcat_Uniforms";
-		model = "\A3\Weapons_f\dummyweapon.p3d";
-		class TransportItems
-		{
-			class OEC_CIS_Uniform_M88_Winter
-			{
-				name = "OEC_CIS_Uniform_M88_Winter";
-				count = 1;
-			};
-		};
-    };*/
 };

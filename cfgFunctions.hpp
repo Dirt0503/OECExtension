@@ -84,11 +84,6 @@ class CfgFunctions
                 file = "\OECExtension\Scripts\CombineTypeAssignments\OEC_cmbSoldier.sqf";
 				description = "Vocelines & Abilities Script";
             };
-            class cmbRanger
-            {
-                file = "\OECExtension\Scripts\CombineTypeAssignments\OEC_cmbRanger.sqf";
-				description = "Vocelines & Abilities Script";
-            };
             class cmbOrdinal
             {
                 file = "\OECExtension\Scripts\CombineTypeAssignments\OEC_cmbOrdinal.sqf";
