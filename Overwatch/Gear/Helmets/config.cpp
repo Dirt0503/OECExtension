@@ -214,17 +214,17 @@ class CfgWeapons
         displayName = "[OEC] Combine Soldier Helmet - Recon";
         hiddenSelectionsTextures[] =
         {
-            "HL_Combine\data\ranger\ranger_helmet.paa",
-            "HL_Combine\data\ranger\ranger_torso.paa",
-            "HL_Combine\data\ranger\ranger_lens.paa"
+            "OECExtension\Overwatch\Gear\Uniforms\data\Recon_Trooper_helmet.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\Recon_Trooper_torso.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\Recon_Trooper_lens.paa"
         };
         class ItemInfo: ItemInfo
         {
-            hiddenSelectionsTextures[] = 
+            hiddenSelectionsTextures[] =
             {
-                "HL_Combine\data\ranger\ranger_helmet.paa",
-                "HL_Combine\data\ranger\ranger_torso.paa",
-                "HL_Combine\data\ranger\ranger_lens.paa"
+                "OECExtension\Overwatch\Gear\Uniforms\data\Recon_Trooper_helmet.paa",
+                "OECExtension\Overwatch\Gear\Uniforms\data\Recon_Trooper_torso.paa",
+                "OECExtension\Overwatch\Gear\Uniforms\data\Recon_Trooper_lens.paa"
             };
         };
         class XtdGearInfo
@@ -264,7 +264,11 @@ class CfgWeapons
                 "HL_Combine\data\Materials\Lens\Red.rvmat"
             };
         };
-        class XtdGearInfo{};
+        class XtdGearInfo
+        {
+            model = "OEC_ACEX_Helmet_CMB_Soldier";
+            variant = "tl";
+        };
     };
 
     class OEC_Overwatch_Helmet_Elite: OEC_Overwatch_Helmet_Soldier
@@ -291,30 +295,34 @@ class CfgWeapons
         };
     };
 
-    class OEC_Overwatch_Helmet_Recon_TL: HL2_Combine_Helmet_WPU
+    class OEC_Overwatch_Helmet_Recon_TL: OEC_Overwatch_Helmet_Elite
     {
         displayName = "[OEC] Combine Elite Helmet - Recon";
         picture = "\hl_cmb_overwatch\ui\icon_h_ow_e_ca.paa";
+        hiddenSelections[] = {"camo","camo1"};
+		hiddenSelectionsTextures[] = 
+        {
+            "OECExtension\Overwatch\Gear\Uniforms\data\Recon_Elite_helmet.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\Recon_Elite_lens.paa"
+        };
+		hiddenSelectionsMaterials[] = 
+        {
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "OECExtension\Overwatch\Gear\Uniforms\data\Recon_Elite_lens.rvmat"
+        };
 		class ItemInfo: ItemInfo
 		{
-            class HitpointsProtectionInfo
+			uniformmodel = "\HL_Combine\data\Nemez_Helmet_Elite.p3d";
+			hiddenSelections[] = {"camo","camo1"};
+			hiddenSelectionsTextures[] = 
             {
-                class Head
-				{
-					hitpointname = "HitHead";
-					armor = 6;
-					visual = "injury_Head";
-					PassThrough = 0.08975;
-                    explosionShielding = 0.8;
-				};
-				class Face
-				{
-					hitpointName = "HitFace";
-					armor = 6;
-					visual = "injury_Head";
-					PassThrough = 0.08975;
-                    explosionShielding = 0.8;
-				};
+                "OECExtension\Overwatch\Gear\Uniforms\data\Recon_Elite_helmet.paa",
+                "OECExtension\Overwatch\Gear\Uniforms\data\Recon_Elite_lens.paa"
+            };
+			hiddenSelectionsMaterials[] = 
+            {
+                "HL_Combine\data\Materials\Armor.rvmat",
+                "OECExtension\Overwatch\Gear\Uniforms\data\Recon_Elite_lens.rvmat"
             };
 		};
         class XtdGearInfo
@@ -391,12 +399,14 @@ class XtdGearModels
                     "soldier",
                     "at",
                     "ce",
+                    "tl",
                     "medic",
 					"recon"
                 };
                 class soldier { label = "Soldier"; };
                 class at { label = "AT"; };
                 class ce { label = "CE"; };
+                class tl { label = "TL"; };
                 class medic { label = "Medic"; };
 				class recon { label = "Recon"; };
             };

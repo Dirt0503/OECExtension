@@ -115,7 +115,6 @@ class CfgCloudLets
         positionVar[] = {0,0,0};
         moveVelocity[] = {1,1,1};
         moveVelocityVar[] = {5,5,5};
-        rotationVelocity = 0;
         weight = 1000;
         volume = 1;
         rubbing = 10;
@@ -301,6 +300,193 @@ class CfgCloudLets
     {
         sizeCoef = 0.33;
     }; 
+
+    class OEC_CloudLet_Impact_Smoke_White: Default
+	{
+		circleRadius = 0;
+		circleVelocity[] = {0,0,0};
+		particleShape = "\A3\data_f\ParticleEffects\Universal\Universal";
+		particleFSNtieth = 16;
+		particleFSIndex = 12;
+		particleFSFrameCount = 8;
+		particleFSLoop = 1;
+		angleVar = 1;
+		animationName = "";
+		particleType = "Billboard";
+		timerPeriod = 1;
+		sizeCoef = 1;
+		colorCoef[] = {1,1,1,1};
+		animationSpeed[] = {1};
+		animationSpeedCoef = 1;
+		onTimerScript = "";
+		beforeDestroyScript = "";
+		MoveVelocityVar[] = {0,0,0};
+		emissiveColor[] = {{0.5,0.5,0.5,0},{0,0,0,0}};
+		colorVar[] = {0,0,0,0};
+		rubbing = 0;
+		sizeVar = 0.5;
+		rotationVelocity = 0.75;
+		rotationVelocityVar = 0.5;
+		randomDirectionIntensityVar = 0.1;
+		position[] = {0,0,0};
+		positionVar[] = {0.1,0.1,0.1};
+		blockAIVisibility = 0;
+
+        moveVelocity[] = {0,0,0.1};
+		size[] = {5,10,15};
+		weight = 1.277;
+		volume = "2.5 + randomValue / 30";
+		randomDirectionPeriod = 5;
+		randomDirectionIntensity = 0.25;
+		interval = 0.02;
+		lifeTime = 10;
+		lifeTimeVar = 1;
+		color[] = {{0.03,0.03,0.03,0.6},{0.03,0.03,0.03,0.5},{0.03,0.03,0.03,0.4},{0.03,0.03,0.03,0.2},{0.03,0.03,0.03,0.05},{0.03,0.03,0.03,0.01},{1,1,1,0}};
+	};
+
+    class OEC_CloudLet_Smoke_White: Default
+	{
+		animationSpeedCoef = 1;
+		colorCoef[] = {"colorR","colorG","colorB","colorA"};
+		sizeCoef = 1;
+		position[] = {0,0,0};
+		interval = 0.06;
+		circleRadius = 0;
+		circleVelocity[] = {0,0,0};
+		particleShape = "\A3\data_f\ParticleEffects\Universal\Universal";
+		particleFSNtieth = 16;
+		particleFSIndex = 7;
+		particleFSFrameCount = 48;
+		particleFSLoop = 1;
+		angleVar = 0.1;
+		animationName = "";
+		particleType = "Billboard";
+		timerPeriod = 1;
+		lifeTime = 30;
+		moveVelocity[] = {0.2,0.1,0.1};
+		rotationVelocity = 1;
+		weight = 1.2777;
+		volume = 1;
+		rubbing = 0.05;
+		size[] = {0.5,12,16,24};
+		color[] = {{0.6,0.6,0.6,0.2},{0.6,0.6,0.6,0.05},{0.6,0.6,0.6,0}};
+		animationSpeed[] = {1.5,0.5};
+		randomDirectionPeriod = 1;
+		randomDirectionIntensity = 0.04;
+		onTimerScript = "";
+		beforeDestroyScript = "";
+		destroyOnWaterSurface = 1;
+		destroyOnWaterSurfaceOffset = -0.6;
+		lifeTimeVar = 2;
+		positionVar[] = {0,0,0};
+		MoveVelocityVar[] = {0.25,0.25,0.25};
+		rotationVelocityVar = 20;
+		sizeVar = 0.5;
+		colorVar[] = {0,0,0,0.35};
+		randomDirectionPeriodVar = 0;
+		randomDirectionIntensityVar = 0;
+	};
+    class OEC_CloudLet_Smoke_White2: OEC_CloudLet_Smoke_White
+	{
+		particleFSNtieth = 16;
+		particleFSIndex = 12;
+		particleFSFrameCount = 4;
+		particleFSLoop = 0;
+		color[] = {{0.6,0.6,0.6,1},{0.6,0.6,0.6,0.5},{0.6,0.6,0.6,0}};
+	};
+    class OEC_CloudLet_Smoke_White_UW: Default
+	{
+		animationSpeedCoef = 1;
+		colorCoef[] = {1,1,1,1};
+		sizeCoef = 1;
+		position[] = {0,0,0};
+		interval = 0.06;
+		circleRadius = 0;
+		circleVelocity[] = {0,0,0};
+		particleShape = "\A3\data_f\ParticleEffects\Universal\UnderWaterSmoke";
+		particleFSNtieth = 4;
+		particleFSIndex = 0;
+		particleFSFrameCount = 16;
+		particleFSLoop = 1;
+		angleVar = 0.1;
+		animationName = "";
+		particleType = "Billboard";
+		timerPeriod = 1;
+		lifeTime = 20;
+		moveVelocity[] = {0,0,0};
+		rotationVelocity = 1;
+		weight = 0.1;
+		volume = 0.1;
+		rubbing = 0.5;
+		size[] = {0.4};
+		color[] = {{1,1,1,1}};
+		animationSpeed[] = {1};
+		randomDirectionPeriod = 0.1;
+		randomDirectionIntensity = 0.01;
+		onTimerScript = "";
+		beforeDestroyScript = "";
+		destroyOnWaterSurface = -1;
+		lifeTimeVar = 8;
+		positionVar[] = {0,0,0};
+		MoveVelocityVar[] = {0.05,0.05,0.05};
+		rotationVelocityVar = 0;
+		sizeVar = 0.004;
+		colorVar[] = {0,0,0,1};
+		randomDirectionPeriodVar = 0;
+		randomDirectionIntensityVar = 0;
+	};
+    class OEC_CloudLet_Smoke_White_UW2: OEC_CloudLet_Smoke_White_UW
+	{
+		postEffects = "SmokeShellWhiteWater";
+	};
+    class OEC_CloudLet_Smoke_Red_UW: OEC_CloudLet_Smoke_White_UW
+	{
+		color[] = {{0.8438,0.1383,0.1353,1}};
+	};
+    class OEC_CloudLet_Smoke_Red_UW2: OEC_CloudLet_Smoke_Red_UW
+	{
+		postEffects = "SmokeShellRedWater";
+	};
+    class OEC_CloudLet_Smoke_Green_UW: OEC_CloudLet_Smoke_White_UW
+	{
+		color[] = {{0.2125,0.6258,0.48909998,1}};
+	};
+    class OEC_CloudLet_Smoke_Green_UW2: OEC_CloudLet_Smoke_Red_UW
+	{
+		postEffects = "SmokeShellGreenWater";
+	};
+    class OEC_CloudLet_Smoke_Yellow_UW: OEC_CloudLet_Smoke_White_UW
+	{
+		color[] = {{0.9883,0.8606,0.0719,1}};
+	};
+    class OEC_CloudLet_Smoke_Yellow_UW2: OEC_CloudLet_Smoke_Red_UW
+	{
+		postEffects = "SmokeShellYellowWater";
+	};
+    class OEC_CloudLet_Smoke_Purple_UW: OEC_CloudLet_Smoke_White_UW
+	{
+		color[] = {{0.4341,0.1388,0.41439998,1}};
+	};
+    class OEC_CloudLet_Smoke_Purple_UW2: OEC_CloudLet_Smoke_Red_UW
+	{
+		postEffects = "SmokeShellPurpleWater";
+	};
+    class OEC_CloudLet_Smoke_Blue_UW: OEC_CloudLet_Smoke_White_UW
+	{
+		color[] = {{0.1183,0.1867,1,1}};
+	};
+    class OEC_CloudLet_Smoke_Blue_UW2: OEC_CloudLet_Smoke_Red_UW
+	{
+		postEffects = "SmokeShellBlueWater";
+	};
+    class OEC_CloudLet_Smoke_Orange_UW: OEC_CloudLet_Smoke_White_UW
+	{
+		color[] = {{0.6697,0.2275,0.10053,1}};
+	};
+    class OEC_CloudLet_Smoke_Orange_UW2: OEC_CloudLet_Smoke_Red_UW
+	{
+		postEffects = "SmokeShellOrangeWater";
+	};
 };
 
 class OEC_ParticleEffect_AlienPulse_Blue
@@ -316,9 +502,6 @@ class OEC_ParticleEffect_AlienPulse_Blue
         simulation = "particles";
         type = "OEC_CloudLet_AlienPulse";
         position[] = {0,0,0};
-		//enabled = "speedY interpolate [-0.0001,0.0001,1,-1]";
-		//intensity = 1;
-		//interval = 1;
     };
 };
 
@@ -335,9 +518,6 @@ class OEC_ParticleEffect_AlienPulse_Orange
         simulation = "particles";
         type = "OEC_CloudLet_AlienPulse_Orange";
         position[] = {0,0,0};
-		//enabled = "speedY interpolate [-0.0001,0.0001,1,-1]";
-		//intensity = 1;
-		//interval = 1;
     };
 };
 
@@ -354,23 +534,11 @@ class OEC_ParticleEffect_AlienPulse_Green
         simulation = "particles";
         type = "OEC_CloudLet_AlienPulse_Green";
         position[] = {0,0,0};
-		//enabled = "speedY interpolate [-0.0001,0.0001,1,-1]";
-		//intensity = 1;
-		//interval = 1;
     };
 };
 
 class OEC_ParticleEffect_GaussImpact
 {
-  /*  class Refraction1
-    {
-        simulation = "particles";
-		type = "OEC_CloudLet_Refract1";
-		position[] = {0,0,0};
-		intensity = 1;
-		interval = 1;
-		lifeTime = 1;
-    };*/
     class Distortion1
     {
         simulation = "particles";
@@ -453,4 +621,224 @@ class OEC_ParticleEffect_MK3A2
 		intensity = 1;
 		interval = 1;
     };
+};
+
+class OEC_ParticleEffect_ImpactSmoke
+{
+	class ExplosionLight
+	{
+		simulation = "light";
+		type = "RHS_GDM40ExplosionLight";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+		lifeTime = 1;
+	};
+	class ExplosionSparks
+	{
+		simulation = "particles";
+		type = "RHS_GDM40Sparks";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+		lifeTime = 0.1;
+	};
+	class ExplosionSparksTail
+	{
+		simulation = "particles";
+		type = "RHS_GDM40SparksTrail";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+		lifeTime = 0.2;
+	};
+	class ExplosionSparksTailLight
+	{
+		simulation = "particles";
+		type = "RHS_GDM40SparksTrailLight";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+		lifeTime = 0.2;
+	};
+	class ExplosionCloud
+	{
+		simulation = "particles";
+		type = "OEC_CloudLet_Impact_Smoke_White";
+		position[] = {0,0,0.5};
+		intensity = 1;
+		interval = 1;
+		lifeTime = 1;
+	};
+	class GrenadeExp1
+	{
+		simulation = "particles";
+		type = "GrenadeExp";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+		lifeTime = 0.5;
+	};
+};
+
+class OEC_ParticleEffect_Smoke_White
+{
+	class SmokeShell
+	{
+		simulation = "particles";
+		type = "OEC_CloudLet_Smoke_White";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+	};
+	class SmokeShell2
+	{
+		simulation = "particles";
+		type = "OEC_CloudLet_Smoke_White2";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+	};
+	class SmokeShellUW
+	{
+		simulation = "particles";
+		type = "OEC_CloudLet_Smoke_White_UW";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+	};
+	class SmokeShell2UW
+	{
+		simulation = "particles";
+		type = "OEC_CloudLet_Smoke_White_UW2";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+	};
+};
+class OEC_ParticleEffect_Smoke_Red: OEC_ParticleEffect_Smoke_White
+{
+	class SmokeShell: SmokeShell{};
+	class SmokeShell2: SmokeShell2{};
+	class SmokeShellUW
+	{
+		simulation = "particles";
+		type = "OEC_CloudLet_Smoke_Red_UW";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+	};
+	class SmokeShell2UW
+	{
+		simulation = "particles";
+		type = "OEC_CloudLet_Smoke_Red_UW2";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+	};
+};
+class OEC_ParticleEffect_Smoke_Green: OEC_ParticleEffect_Smoke_White
+{
+	class SmokeShell: SmokeShell{};
+	class SmokeShell2: SmokeShell2{};
+	class SmokeShellUW
+	{
+		simulation = "particles";
+		type = "OEC_CloudLet_Smoke_Green_UW";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+	};
+	class SmokeShell2UW
+	{
+		simulation = "particles";
+		type = "OEC_CloudLet_Smoke_Green_UW2";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+	};
+};
+class OEC_ParticleEffect_Smoke_Yellow: OEC_ParticleEffect_Smoke_White
+{
+	class SmokeShell: SmokeShell{};
+	class SmokeShell2: SmokeShell2{};
+	class SmokeShellUW
+	{
+		simulation = "particles";
+		type = "OEC_CloudLet_Smoke_Yellow_UW";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+	};
+	class SmokeShell2UW
+	{
+		simulation = "particles";
+		type = "OEC_CloudLet_Smoke_Yellow_UW2";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+	};
+};
+class OEC_ParticleEffect_Smoke_Purple: OEC_ParticleEffect_Smoke_White
+{
+	class SmokeShell: SmokeShell{};
+	class SmokeShell2: SmokeShell2{};
+	class SmokeShellUW
+	{
+		simulation = "particles";
+		type = "OEC_CloudLet_Smoke_Purple_UW";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+	};
+	class SmokeShell2UW
+	{
+		simulation = "particles";
+		type = "OEC_CloudLet_Smoke_Purple_UW2";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+	};
+};
+class OEC_ParticleEffect_Smoke_Blue: OEC_ParticleEffect_Smoke_White
+{
+	class SmokeShell: SmokeShell{};
+	class SmokeShell2: SmokeShell2{};
+	class SmokeShellUW
+	{
+		simulation = "particles";
+		type = "OEC_CloudLet_Smoke_Blue_UW";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+	};
+	class SmokeShell2UW
+	{
+		simulation = "particles";
+		type = "OEC_CloudLet_Smoke_Blue_UW2";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+	};
+};
+class OEC_ParticleEffect_Smoke_Orange: OEC_ParticleEffect_Smoke_White
+{
+	class SmokeShell: SmokeShell{};
+	class SmokeShell2: SmokeShell2{};
+	class SmokeShellUW
+	{
+		simulation = "particles";
+		type = "OEC_CloudLet_Smoke_Orange_UW";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+	};
+	class SmokeShell2UW
+	{
+		simulation = "particles";
+		type = "OEC_CloudLet_Smoke_Orange_UW2";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+	};
 };

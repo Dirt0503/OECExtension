@@ -19,15 +19,6 @@ class CfgPatches
     };
 };
 
-/*class ACEX_Fortify_Presets
-{
-    class Combine
-    {
-        displayName = "Combine";
-        objects[] = {{"HL_CMB_Static_barricade_short01a", 0},{"HL_CMB_Static_booth_short01a", 0}};
-    };
-};*/
-
 class Extended_PreInit_EventHandlers 
 {
     class OEC_Extension_Overwatch_Items_FortifyTool 

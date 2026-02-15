@@ -41,11 +41,6 @@ class CfgFunctions
                 file = "\OECExtension\Scripts\CombineTypeAssignments\OEC_cmbSoldier.sqf";
 				description = "Vocelines & Abilities Script";
             };
-            class cmbRanger
-            {
-                file = "\OECExtension\Scripts\CombineTypeAssignments\OEC_cmbRanger.sqf";
-				description = "Vocelines & Abilities Script";
-            };
             class cmbOrdinal
             {
                 file = "\OECExtension\Scripts\CombineTypeAssignments\OEC_cmbOrdinal.sqf";
@@ -209,7 +204,7 @@ class CfgVehicles
     };
     class OEC_Overwatch_Unit_Recon: OEC_Overwatch_Unit_Soldier
     {
-        displayName = "Ranger";
+        displayName = "Recon";
         uniformClass = "OEC_Overwatch_Uniform_Recon";
         weapons[] = {"OEC_Weapon_R1","Throw","Put"};
         respawnWeapons[] = {"OEC_Weapon_R1","Throw","Put"};
@@ -218,9 +213,9 @@ class CfgVehicles
         respawnLinkedItems[] = {"OEC_Overwatch_Helmet_Recon", "OEC_Overwatch_Vest_Recon", "ItemMap", "TFAR_anprc152", "ItemCompass", "ItemWatch"};
         hiddenSelectionsTextures[] = 
         {
-            "HL_Combine\data\ranger\ranger_torso.paa",
-            "HL_Combine\data\ranger\ranger_pants.paa",
-            "HL_Combine\data\ranger\ranger_upperArmor.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\Recon_Trooper_torso.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\Recon_Trooper_pants.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\Recon_Trooper_upperArmor.paa",
             "HL_Combine\data\ranger\ranger_lowerArmor.paa",
             "HL_Combine\data\ranger\ranger_boots.paa",
             "HL_Combine\data\ranger\ranger_gloves.paa"
@@ -229,9 +224,10 @@ class CfgVehicles
         {
             class OEC_Combine_SoldierAssign_Event
             {
-                init = "_this call oec_fnc_cmbRanger;";
+                init = "_this call oec_fnc_cmbSoldier;";
             };
         };
+        camouflage = 0.5;
     };
     class OEC_Overwatch_Unit_TL: OEC_Overwatch_Unit_Soldier
     {
@@ -456,9 +452,9 @@ class CfgVehicles
         respawnLinkedItems[] = {"OEC_Overwatch_Helmet_Recon_TL", "OEC_Overwatch_Vest_Recon_TL", "ItemMap", "TFAR_anprc152", "ItemCompass", "ItemWatch"};
         hiddenSelectionsTextures[] = 
         {
-            "HL_Combine\data\wpu\wpu_torso.paa",
-            "HL_Combine\data\wpu\wpu_pants.paa",
-            "HL_Combine\data\wpu\wpu_upperArmor.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\Recon_Elite_torso.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\Recon_Elite_pants.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\Recon_Elite_upperArmor.paa",
             "HL_Combine\data\wpu\wpu_boots.paa",
             "HL_Combine\data\wpu\wpu_gloves.paa"
         };
@@ -466,9 +462,10 @@ class CfgVehicles
         {
             class OEC_Combine_SoldierAssign_Event
             {
-                init = "_this call oec_fnc_cmbRanger;";
+                init = "_this call oec_fnc_cmbOrdinal;";
             };
         };
+        camouflage = 0.5;
     };
     class OEC_Overwatch_Unit_Wallhammer: OEC_Overwatch_Unit_Soldier
     {

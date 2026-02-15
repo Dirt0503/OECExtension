@@ -134,7 +134,7 @@ class CfgVehicles
         respawnItems[] = {};
 
 		ace_dragging_ignoreWeightCarry = 1;
-		 ace_dragging_ignoreWeight = 1;
+		ace_dragging_ignoreWeight = 1;
         threat[] = {1, 0.5, 0.1};
         canCarryBackPack = 1;
 
