@@ -323,7 +323,7 @@ class CfgCloudLets
 		MoveVelocityVar[] = {0,0,0};
 		emissiveColor[] = {{0.5,0.5,0.5,0},{0,0,0,0}};
 		colorVar[] = {0,0,0,0};
-		rubbing = 0;
+		rubbing = 0.00005;
 		sizeVar = 0.5;
 		rotationVelocity = 0.75;
 		rotationVelocityVar = 0.5;
@@ -333,9 +333,9 @@ class CfgCloudLets
 		blockAIVisibility = 0;
 
         moveVelocity[] = {0,0,0.1};
-		size[] = {5,10,15};
+		size[] = {5,15,20};
 		weight = 1.277;
-		volume = "2.5 + randomValue / 30";
+		volume = 0.5;
 		randomDirectionPeriod = 5;
 		randomDirectionIntensity = 0.25;
 		interval = 0.02;

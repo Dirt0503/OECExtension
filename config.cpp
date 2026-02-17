@@ -50,12 +50,23 @@ class CfgMods
     };
 };
 
+class Extended_PreInit_EventHandlers
+{
+	class OEC_Hunter_PreInit
+	{
+		init = "call compile preprocessFileLineNumbers '\OECExtension\Scripts\Hunter\XEH_preInit.sqf'";
+	};
+};
 class Extended_PostInit_EventHandlers
 {
     class Dirts_Visor_Extension
     {
         init = "call compile preprocessFileLineNumbers '\OECExtension\Scripts\OEC_patchHelmets.sqf'";
     };
+    class OEC_Hunter_PostInit
+	{
+		init = "call compile preprocessFileLineNumbers '\OECExtension\Scripts\Hunter\XEH_postInit.sqf'";
+	};
 };
 
 class CfgFunctions

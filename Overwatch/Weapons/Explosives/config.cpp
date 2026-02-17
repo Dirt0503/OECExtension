@@ -70,7 +70,7 @@ class cfgAmmo
 		model = "\A3\Weapons_f\ammo\smokegrenade_white_throw";
 		hit = 0;
 		indirectHit = 0;
-		indirectHitRange = 0.2;
+		indirectHitRange = 0;
 		dangerRadiusHit = -1;
 		suppressionRadiusHit = -1;
 		typicalspeed = 22;
@@ -116,7 +116,7 @@ class cfgAmmo
 	{
 		model = "\A3\Weapons_f\ammo\smokegrenade_purple_throw";
 		smokeColor[] = {0.4341,0.1388,0.41439998,1};
-		effectsSmoke = "OEC_ParticleEffect_Smoke_Yellow";
+		effectsSmoke = "OEC_ParticleEffect_Smoke_Purple";
 	};
 	class OEC_Ammo_m18Smoke_Blue: OEC_Ammo_m18Smoke_White
 	{

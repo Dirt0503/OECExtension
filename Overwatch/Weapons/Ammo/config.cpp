@@ -148,14 +148,14 @@ class CfgAmmo
 	class OEC_Ammo_AR2: BulletBase
 	{
 		airLock = 0;
-		hit = 13;
+		hit = 12;
 		indirectHit = 0;
 		indirectHitRange = 0;
 		typicalSpeed = 770;
 		airFriction = 0;
 		deflecting = 0;
 		timeToLive = 1.05;
-		caliber = 1.5;
+		caliber = 1.35;
 		model = "\hl_cmb_weapons\ar2\Data\bullettracer\tracer_blue";
 		tracerScale = 1.5;
 		tracerStartTime = 0.005;
@@ -171,11 +171,6 @@ class CfgAmmo
 	// R-1 Silenced Pulse Rifle Ammo
 	class OEC_Ammo_R1: OEC_Ammo_AR2
 	{
-		hit = 13;
-		typicalSpeed = 770;
-		timeToLive = 1.05;
-		caliber = 1.5;
-		model = "\hl_cmb_weapons\ar2\Data\bullettracer\tracer_blue";
 		dangerRadiusBulletClose = -1;
 		dangerRadiusHit = -1;
 		suppressionRadiusBulletClose = -1;
@@ -184,7 +179,6 @@ class CfgAmmo
 		visibleFireTime = 6;
 		audibleFire = 0.1;
 		audibleFireTime = 6;
-		coefGravity = 0.01;
 	};
 
 	// R-2X Sniper Ammo
@@ -340,9 +334,9 @@ class CfgAmmo
 		effectFly = "OEC_ParticleEffect_GaussTrail";
 		craterEffects = "CUP_AA12AmmoImpact";
 		hit = 30;
-		caliber = 2;
+		caliber = 1.5;
 		indirectHit = 60;
-		indirectHitRange = 3;
+		indirectHitRange = 2;
 		warheadName = "HE";
 		visibleFire = 16;
 		audibleFire = 18;
@@ -420,18 +414,21 @@ class CfgAmmo
 	class SmokeShellRed;
 	class OEC_Ammo_CMB40mm_smokeRed: SmokeShellRed
 	{
+		effectsSmoke = "OEC_ParticleEffect_Smoke_Red";
 		model = "\A3\weapons_f\ammo\UGL_slug";
 		explosionTime = -1;
 		timeToLive = 30;
 	};
 	class OEC_Ammo_CMB40mm_smokeGreen: SmokeShellGreen
 	{
+		effectsSmoke = "OEC_ParticleEffect_Smoke_Green";
 		model = "\A3\weapons_f\ammo\UGL_slug";
 		explosionTime = -1;
 		timeToLive = 30;
 	};
 	class OEC_Ammo_CMB40mm_smokeYellow: SmokeShellYellow
 	{
+		effectsSmoke = "OEC_ParticleEffect_Smoke_Yellow";
 		model = "\A3\weapons_f\ammo\UGL_slug";
 		explosionTime = -1;
 		timeToLive = 30;
