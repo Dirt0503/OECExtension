@@ -1,7 +1,9 @@
 _unitWithSword = _this;
+systemChat "BOOP";
 
 if (isPlayer _unitWithSword) exitWith 
 {
+	systemChat ":3";
 	_unitWithSword setSpeaker "NoVoice";
 	_unitWithSword setVariable ["dam_ignore_hit0",true,true];
 	_unitWithSword setVariable ["dam_ignore_effect0",true,true];
@@ -38,24 +40,35 @@ if (isPlayer _unitWithSword) exitWith
 		_damage = _this select 2;
 		_hitter = _this select 3;
 		_projectile = _this select 4;
+		_ammoConfig = configFile >> "CfgAmmo" >> _projectile >> "caliber";
+		if(!isNumber(_ammoConfig)) then
+		{
+			systemChat "HEEEEELP!!! HELP ME!!";
+		};
 		_caliber = getNumber (configFile >> "CfgAmmo" >> _projectile >> "caliber");
-		if (isNil(_caliber)) then {_caliber = 2};
+		systemChat str(_caliber);
+		if (_caliber == nil) then {_caliber = 2};
 		if (_caliber > 6) then {_caliber = 6};
 		if ((animationState _unit == "hunter_die_2") or (animationState _unit == "hunter_die_1")) exitWith {};
 
 		if (!(_unit == _hitter) and !(isNull _hitter)) then 
 		{
+			systemChat "BEEP";
+			
 			if (currentWeapon _hitter == secondaryWeapon _hitter) exitWith 
 			{
+				systemChat "have you heard of the high elves?";
 				_vv = _unit getVariable "WBK_StriderArmor";
 				_new_vv = _vv - (_damage * 1.75);
 				if (_new_vv <= 0) exitWith {_unit spawn WBK_HunterPlayDeathAnim;};
 				_unit setVariable ["WBK_StriderArmor",_new_vv];
 				[_unit, selectRandom ["hunter_stagger","hunter_hitHard"]] remoteExec ["switchMove", 0];
 			};
+			systemChat "HEY!!! YOU DOWN THERE!";
 
 			if (!((vehicle _hitter) isKindOf "MAN")) exitWith 
 			{
+				systemChat "christmas just a week away!";
 				_vv = _unit getVariable "WBK_StriderArmor";
 				_new_vv = _vv - (_damage / (3 / _caliber));
 				if (_new_vv <= 0) exitWith {_unit spawn WBK_HunterPlayDeathAnim;};
@@ -63,9 +76,14 @@ if (isPlayer _unitWithSword) exitWith
 				_unit setVariable ["WBK_StriderArmor",_new_vv];
 			};
 
+			systemChat "LOOK OUT BELOW!";
+
 			_vv = _unit getVariable "WBK_StriderArmor";
 			if (_new_vv <= 0) exitWith {_unit spawn WBK_HunterPlayDeathAnim;};
+			systemChat "nothing will break this part.";
 			_unit setVariable ["WBK_StriderArmor",_new_vv];
+			_healthString = str(_unit getVariable "WBK_StriderArmor");
+			systemChat _healthString;
 		};
 	}];
 
