@@ -266,9 +266,9 @@ class CfgVehicles
 		irTarget = 0;
 		irTargetSize = 0.5;
 		visualTarget = 1;
-		visualTargetSize = 0.5;
-		radarTarget = 1;
-		radarTargetSize = 0.5;
+		visualTargetSize = 0.1;
+		radarTarget = 0;
+		radarTargetSize = 0.25;
 		memoryPointsGetInCargo = "pos_cargo_dir";
 		memoryPointsGetInCargoDir = "pos_cargo";
 		memoryPointsGetInDriver = "pos_driver_dir";

@@ -23,7 +23,8 @@ class CfgPatches
             "OEC_Overwatch_Unit_Recon_TL",
             "OEC_Overwatch_Unit_Wallhammer",
             "OEC_Overwatch_Unit_Airwatch",
-            "OEC_Overwatch_Unit_APF"
+            "OEC_Overwatch_Unit_APF",
+            "OEC_Overwatch_Unit_Elite_Medic"
         };
         weapons[] = {};
     };
@@ -421,6 +422,45 @@ class CfgVehicles
             "HL_Combine\data\elite\elite_torso.paa",
             "HL_Combine\data\elite\elite_pants.paa",
             "OECExtension\Overwatch\Gear\Uniforms\data\SL_CE_upperArmor.paa",
+            "HL_Combine\data\elite\elite_boots.paa",
+            "HL_Combine\data\elite\elite_gloves.paa"
+        };
+		hiddenSelectionsMaterials[] = 
+        {
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "HL_Combine\data\Materials\Armor.rvmat"
+        };
+        class EventHandlers: EventHandlers
+        {
+            class OEC_Combine_SoldierAssign_Event
+            {
+                init = "_this call oec_fnc_cmbOrdinal;";
+            };
+        };
+    };
+    class OEC_Overwatch_Unit_Elite_Medic: OEC_Overwatch_Unit_Soldier
+    {
+        displayName = "Medic NCO";
+        uniformClass = "OEC_Overwatch_Uniform_Elite_Medic";
+        model = "\HL_Combine\data\Nemez_Combine_Elite.p3d";
+        linkedItems[] = {"OEC_Overwatch_Helmet_Elite_Medic", "OEC_Overwatch_Vest_Elite_Medic","ItemMap", "TFAR_anprc152", "ItemCompass", "ItemWatch"};
+        respawnLinkedItems[] = {"OEC_Overwatch_Helmet_Elite_Medic", "OEC_Overwatch_Vest_Elite_Medic", "ItemMap", "TFAR_anprc152", "ItemCompass", "ItemWatch"};
+        hiddenSelections[] = 
+        {
+            "camo1",
+            "camo2",
+            "camo3",
+            "camo4",
+            "camo5"
+        };
+		hiddenSelectionsTextures[] = 
+        {
+            "OECExtension\Overwatch\Gear\Uniforms\data\Medic_Elite_torso.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\Medic_Elite_pants.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\Medic_Elite_upperArmor.paa",
             "HL_Combine\data\elite\elite_boots.paa",
             "HL_Combine\data\elite\elite_gloves.paa"
         };

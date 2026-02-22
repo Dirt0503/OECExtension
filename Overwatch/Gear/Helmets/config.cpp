@@ -22,6 +22,7 @@ class CfgPatches
             "OEC_Overwatch_Helmet_Recon",
             "OEC_Overwatch_Helmet_TL",
             "OEC_Overwatch_Helmet_Elite",
+            "OEC_Overwatch_Helmet_Elite_Medic",
             "OEC_Overwatch_Helmet_Recon_TL",
             "OEC_Overwatch_Helmet_Wallhammer",
             "OEC_Overwatch_Helmet_APF"
@@ -295,6 +296,46 @@ class CfgWeapons
         };
     };
 
+    class OEC_Overwatch_Helmet_Elite_Medic: OEC_Overwatch_Helmet_Soldier
+    {
+        author = "Overwatch Expeditionary Corps";
+        picture = "\hl_cmb_overwatch\ui\icon_h_ow_e_ca.paa";
+        displayName = "[OEC] Combine Elite Helmet - Medic";
+        model = "\HL_Combine\data\Nemez_Helmet_Elite.p3d";
+		hiddenSelections[] = {"camo","camo1"};
+		hiddenSelectionsTextures[] = 
+        {
+            "OECExtension\Overwatch\Gear\Uniforms\data\Medic_Elite_helmet.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\Medic_Elite_lens.paa"
+        };
+		hiddenSelectionsMaterials[] = 
+        {
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "OECExtension\Overwatch\Gear\Uniforms\data\Medic_Elite_lens.rvmat"
+        };
+		subItems[] = {"Integrated_NVG_TI_0_F"};
+		class ItemInfo: ItemInfo
+		{
+			uniformmodel = "\HL_Combine\data\Nemez_Helmet_Elite.p3d";
+			hiddenSelections[] = {"camo","camo1"};
+			hiddenSelectionsTextures[] = 
+            {
+                "OECExtension\Overwatch\Gear\Uniforms\data\Medic_Elite_helmet.paa",
+                "OECExtension\Overwatch\Gear\Uniforms\data\Medic_Elite_lens.paa"
+            };
+			hiddenSelectionsMaterials[] = 
+            {
+                "HL_Combine\data\Materials\Armor.rvmat",
+                "OECExtension\Overwatch\Gear\Uniforms\data\Medic_Elite_lens.rvmat"
+            };
+		};
+        class XtdGearInfo
+        {
+            model = "OEC_ACEX_Helmet_CMB_Elite";
+            variant = "medicNCO";
+        };
+    };
+
     class OEC_Overwatch_Helmet_Recon_TL: OEC_Overwatch_Helmet_Elite
     {
         displayName = "[OEC] Combine Elite Helmet - Recon";
@@ -319,7 +360,7 @@ class CfgWeapons
                 "OECExtension\Overwatch\Gear\Uniforms\data\Recon_Elite_helmet.paa",
                 "OECExtension\Overwatch\Gear\Uniforms\data\Recon_Elite_lens.paa"
             };
-			hiddenSelectionsMaterials[] = 
+            hiddenSelectionsMaterials[] = 
             {
                 "HL_Combine\data\Materials\Armor.rvmat",
                 "OECExtension\Overwatch\Gear\Uniforms\data\Recon_Elite_lens.rvmat"
@@ -423,9 +464,11 @@ class XtdGearModels
                 values[] = 
                 {
                     "sl",
+                    "medicNCO",
                     "reconSL"
                 };
                 class sl { label = "SL"; };
+                class medicNCO { label = "Medic NCO"; };
                 class reconSL { label = "Recon"; };
             };
         };

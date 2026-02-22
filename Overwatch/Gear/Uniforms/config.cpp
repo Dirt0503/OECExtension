@@ -13,7 +13,7 @@ class CfgPatches
         };
         units[] = 
         {
-            "OEC_Overwatch_Unit_Soldier",
+            /*"OEC_Overwatch_Unit_Soldier",
             "OEC_Overwatch_Unit_AT",
             "OEC_Overwatch_Unit_Medic",
             "OEC_Overwatch_Unit_TL",
@@ -21,7 +21,7 @@ class CfgPatches
             "OEC_Overwatch_Unit_Elite",
             "OEC_Overwatch_Unit_Wallhammer",
             "OEC_Overwatch_Unit_Airwatch",
-            "OEC_Overwatch_Unit_APU"
+            "OEC_Overwatch_Unit_APU"*/
         };
         weapons[] = 
         {
@@ -37,9 +37,10 @@ class CfgPatches
             "OEC_Overwatch_Uniform_Elite",
             "OEC_Overwatch_Uniform_Elite_AT",
             "OEC_Overwatch_Uniform_Elite_CE",
+            "OEC_Overwatch_Uniform_Elite_Medic",
             "OEC_Overwatch_Uniform_Wallhammer",
             "OEC_Overwatch_Uniform_Airwatch",
-            "OEC_Overwatch_Uniform_APU"
+            "OEC_Overwatch_Uniform_APF"
         };
     };
 };
@@ -227,13 +228,27 @@ class CfgWeapons
         displayName = "[OEC] Combine Elite Uniform - Recon";
         class ItemInfo: ItemInfo
         {
-            containerClass = "Supply150";
             uniformClass = "OEC_Overwatch_Unit_Recon_TL";
+            containerClass = "Supply150";
         };
         class XtdGearInfo
         {
             model = "OEC_ACEX_Uniform_CMB_Elite";
             variant = "reconSL";
+        };
+    };
+    class OEC_Overwatch_Uniform_Elite_Medic: OEC_Overwatch_Uniform_Soldier
+    {
+        displayName = "[OEC] Combine Elite Uniform - Medic";
+        class ItemInfo: ItemInfo
+        {
+            uniformClass = "OEC_Overwatch_Unit_Elite_Medic";
+            containerClass = "Supply240";
+        };
+        class XtdGearInfo
+        {
+            model = "OEC_ACEX_Uniform_CMB_Elite";
+            variant = "medicNCO";
         };
     };
 
@@ -282,130 +297,6 @@ class CfgVehicles
 	{
 		maximumLoad = 500;
 	};
-    /*class OEC_Overwatch_Unit_Base;
-
-    class OEC_Overwatch_Uniform_Soldier_Vehicle: OEC_Overwatch_Unit_Base
-    {
-        scope = 1;
-        scopeCurator = 0;
-        uniformClass = "OEC_Overwatch_Uniform_Soldier";
-    };
-    
-    class OEC_Overwatch_Uniform_AT_Vehicle: OEC_Overwatch_Uniform_Soldier_Vehicle
-    {
-        uniformClass = "OEC_Overwatch_Uniform_AT";
-        hiddenSelectionsTextures[] =
-        {
-            "HL_Combine\data\Coordinator\Coordinator_torso.paa",
-            "HL_Combine\data\Coordinator\Coordinator_pants.paa",
-            "HL_Combine\data\Coordinator\Coordinator_upperArmor.paa",
-            "HL_Combine\data\Soldier\soldier_lowerArmor.paa",
-            "HL_Combine\data\Coordinator\Coordinator_boots.paa",
-            "HL_Combine\data\Soldier\soldier_gloves.paa"
-        };
-    };
-    
-    class OEC_Overwatch_Uniform_Medic_Vehicle: OEC_Overwatch_Uniform_Soldier_Vehicle
-    {
-        uniformClass = "OEC_Overwatch_Uniform_Medic";
-        hiddenSelectionsTextures[]=
-        {
-            "HL_Combine\data\Urban\Urban_Shotgunner_torso.paa",
-            "HL_Combine\data\Urban\Urban_Shotgunner_pants.paa",
-            "HL_Combine\data\Urban\Urban_Shotgunner_upperArmor.paa",
-            "HL_Combine\data\Soldier\soldier_lowerArmor.paa",
-            "HL_Combine\data\Urban\Urban_boots.paa",
-            "HL_Combine\data\Soldier\soldier_gloves.paa"
-        };
-    };
-
-    class OEC_Overwatch_Uniform_Recon_Vehicle: OEC_Overwatch_Uniform_Soldier_Vehicle
-    {
-        uniformClass = "OEC_Overwatch_Uniform_Recon";
-        hiddenSelectionsTextures[] = 
-        {
-            "HL_Combine\data\ranger\ranger_torso.paa",
-            "HL_Combine\data\ranger\ranger_pants.paa",
-            "HL_Combine\data\ranger\ranger_upperArmor.paa",
-            "HL_Combine\data\ranger\ranger_lowerArmor.paa",
-            "HL_Combine\data\ranger\ranger_boots.paa",
-            "HL_Combine\data\ranger\ranger_gloves.paa"
-        };
-    };
-
-    class OEC_Overwatch_Uniform_TL_Vehicle: OEC_Overwatch_Uniform_Soldier_Vehicle
-    {
-        uniformClass = "OEC_Overwatch_Uniform_TL";
-        hiddenSelectionsTextures[]=
-        {
-            "HL_Combine\data\Beta\Beta_torso.paa",
-            "HL_Combine\data\Beta\Beta_pants.paa",
-            "HL_Combine\data\Beta\Beta_upperArmor.paa",
-            "HL_Combine\data\Soldier\soldier_lowerArmor.paa",
-            "HL_Combine\data\Beta\Beta_boots.paa",
-            "HL_Combine\data\Soldier\soldier_gloves.paa"
-        };
-    };
-
-    class OEC_Overwatch_Uniform_Elite_Vehicle: OEC_Overwatch_Uniform_Soldier_Vehicle
-    {
-        uniformClass = "OEC_Overwatch_Uniform_Elite";
-        model = "\HL_Combine\data\Nemez_Combine_Elite.p3d";
-        hiddenSelections[] = 
-        {
-            "camo1",
-            "camo2",
-            "camo3",
-            "camo4",
-            "camo5"
-        };
-		hiddenSelectionsTextures[] = 
-        {
-            "HL_Combine\data\elite\elite_torso.paa",
-            "HL_Combine\data\elite\elite_pants.paa",
-            "HL_Combine\data\elite\elite_upperArmor.paa",
-            "HL_Combine\data\elite\elite_boots.paa",
-            "HL_Combine\data\elite\elite_gloves.paa"
-        };
-		hiddenSelectionsMaterials[] = 
-        {
-            "HL_Combine\data\Materials\Armor.rvmat",
-            "HL_Combine\data\Materials\Armor.rvmat",
-            "HL_Combine\data\Materials\Armor.rvmat",
-            "HL_Combine\data\Materials\Armor.rvmat",
-            "HL_Combine\data\Materials\Armor.rvmat"
-        };
-    };
-
-    class OEC_Overwatch_Uniform_Recon_TL_Vehicle: OEC_Overwatch_Uniform_Elite_Vehicle
-    {
-        uniformClass = "OEC_Overwatch_Uniform_Recon_TL";
-        hiddenSelectionsTextures[] = 
-        {
-            "HL_Combine\data\wpu\wpu_torso.paa",
-            "HL_Combine\data\wpu\wpu_pants.paa",
-            "HL_Combine\data\wpu\wpu_upperArmor.paa",
-            "HL_Combine\data\wpu\wpu_boots.paa",
-            "HL_Combine\data\wpu\wpu_gloves.paa"
-        };
-    };
-
-    class OEC_Overwatch_Uniform_Wallhammer_Vehicle: OEC_Overwatch_Uniform_Soldier_Vehicle
-    {
-        uniformClass = "OEC_Overwatch_Uniform_Wallhammer";
-        model = "\WBK_FixingFactory\charger\CombainWallhamer.p3d";
-    };
-
-    class OEC_Overwatch_Uniform_Airwatch_Vehicle: OEC_Overwatch_Uniform_Wallhammer_Vehicle
-    {
-        uniformClass = "OEC_Overwatch_Uniform_Airwatch";
-    };
-
-    class OEC_Overwatch_Uniform_APF_Vehicle: OEC_Overwatch_Uniform_Soldier_Vehicle
-    {
-        uniformClass = "OEC_Overwatch_Uniform_APF";
-        model = "@Combain\CombainSuppressor.p3d";
-    };*/
 };
 
 class XtdGearModels
@@ -426,14 +317,12 @@ class XtdGearModels
                     "at",
                     "ce",
                     "medic",
-					"tl",
 					"recon"
                 };
                 class soldier { label = "Soldier"; };
                 class at { label = "AT"; };
                 class ce { label = "CE"; };
                 class medic { label = "Medic"; };
-				class tl { label = "TL"; };
 				class recon { label = "Recon"; };
             };
         };
@@ -452,9 +341,9 @@ class XtdGearModels
                     "at",
                     "ce"
                 };
-                class norm { label = "Normal"; };
-                class at { label = "AT"; };
-                class ce { label = "CE"; };
+                class norm { label = "TL"; };
+                class at { label = "TL - AT"; };
+                class ce { label = "TL - CE"; };
             };
         };
 
@@ -471,12 +360,14 @@ class XtdGearModels
                     "sl",
                     "at",
                     "ce",
-                    "reconSL"
+                    "reconSL",
+                    "medicNCO"
                 };
-                class sl { label = "Normal"; };
-                class at { label = "AT"; };
-                class ce { label = "CE"; };
+                class sl { label = "SL"; };
+                class at { label = "SL - AT"; };
+                class ce { label = "SL - CE"; };
                 class reconSL { label = "Recon SL"; };
+                class medicNCO { label = "Medic NCO"; };
             };
         };
 	};

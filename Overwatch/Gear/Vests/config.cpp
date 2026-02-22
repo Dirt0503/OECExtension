@@ -25,6 +25,7 @@ class CfgPatches
             "OEC_Overwatch_Vest_Elite_AT",
             "OEC_Overwatch_Vest_Elite_CE",
             "OEC_Overwatch_Vest_Recon_TL",
+            "OEC_Overwatch_Vest_Elite_Medic",
             "OEC_Overwatch_Vest_Wallhammer_Heavy",
             "OEC_Overwatch_Vest_APF",
             "OEC_Overwatch_Vest_Airwatch"
@@ -469,6 +470,43 @@ class CfgWeapons
         };
     };
 
+    class OEC_Overwatch_Vest_Elite_Medic: OEC_Overwatch_Vest_Soldier
+    {
+        displayName = "[OEC] Combine Elite Vest - Medic";
+        model = "\HL_Combine\data\Nemez_Vest_Elite.p3d";
+        hiddenSelections[] = {"camo","camo1"};
+		hiddenSelectionsTextures[] = 
+        {
+            "OECExtension\Overwatch\Gear\Uniforms\data\Medic_Elite_upperArmor.paa",
+            "OECExtension\Overwatch\Gear\Uniforms\data\Medic_Elite_collar.paa"
+        };
+		hiddenSelectionsMaterials[] = 
+        {
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "HL_Combine\data\Materials\Armor.rvmat"
+        };
+        class ItemInfo: ItemInfo
+		{
+			hiddenSelections[] = {"camo","camo1"};
+			hiddenSelectionsTextures[] = 
+            {
+                "OECExtension\Overwatch\Gear\Uniforms\data\Medic_Elite_upperArmor.paa",
+                "OECExtension\Overwatch\Gear\Uniforms\data\Medic_Elite_collar.paa"
+            };
+			hiddenSelectionsMaterials[] = 
+            {
+                "HL_Combine\data\Materials\Armor.rvmat",
+                "HL_Combine\data\Materials\Armor.rvmat"
+            };
+			uniformModel = "\HL_Combine\data\Nemez_Vest_Elite.p3d";
+        };
+        class XtdGearInfo
+        {
+            model = "OEC_ACEX_Vest_CMB_Elite";
+            variant = "medicNCO";
+        };
+    };
+
     class OEC_Overwatch_Vest_Wallhammer_Heavy: OEC_Overwatch_Vest_Soldier
     {
         displayName = "[OEC] Wallhammer Vest - Heavy";
@@ -653,13 +691,11 @@ class XtdGearModels
                     "soldier",
                     "at",
                     "medic",
-					"tl",
 					"recon"
                 };
                 class soldier { label = "Soldier"; };
                 class at { label = "AT"; };
                 class medic { label = "Medic"; };
-				class tl { label = "TL"; };
 				class recon { label = "Recon"; };
             };
         };
@@ -677,8 +713,8 @@ class XtdGearModels
                     "norm",
                     "at"
                 };
-                class norm { label = "Normal"; };
-                class at { label = "AT"; };
+                class norm { label = "TL"; };
+                class at { label = "TL - AT"; };
             };
         };
 
@@ -696,12 +732,14 @@ class XtdGearModels
                     "sl",
                     "at",
                     "ce",
-                    "reconSL"
+                    "reconSL",
+                    "medicNCO"
                 };
-                class sl { label = "Normal"; };
-                class at { label = "AT"; };
-                class ce { label = "CE"; };
-                class reconSL { label = "Recon"; };
+                class sl { label = "SL"; };
+                class at { label = "SL - AT"; };
+                class ce { label = "SL - CE"; };
+                class reconSL { label = "Recon SL"; };
+                class medicNCO { label = "Medic NCO"; };
             };
         };
 	};
