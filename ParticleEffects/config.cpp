@@ -1,9 +1,9 @@
 class CfgPatches
 {
-    class OEC_Extension_Overwatch_Ammo_ParticleEffects
+    class OEC_Extension_ParticleEffects
     {
-        addonRootClass = "OEC_Extension_Overwatch_Weapons";
-        requiredAddons[] = {"OEC_Extension_Overwatch_Weapons"};
+        addonRootClass = "OEC_Extension";
+        requiredAddons[] = {"OEC_Extension"};
         units[] = {};
         weapons[] = {};
     };
@@ -487,6 +487,12 @@ class CfgCloudLets
 	{
 		postEffects = "SmokeShellOrangeWater";
 	};
+
+    class OEC_CloudLet_CISGrenadier_Trail: ArtilleryShell1
+    {
+        sizeCoef = 0.4;
+        lifeTime = 0.5;
+    };
 };
 
 class OEC_ParticleEffect_AlienPulse_Blue
@@ -841,4 +847,14 @@ class OEC_ParticleEffect_Smoke_Orange: OEC_ParticleEffect_Smoke_White
 		intensity = 1;
 		interval = 1;
 	};
+};
+
+class OEC_ParticleEffect_Gren
+{
+    class Trail1 
+    {
+        simulation = "particles";
+		type = "OEC_CloudLet_CISGrenadier_Trail";
+		position[] = {0,0,0};
+    };
 };

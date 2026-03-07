@@ -6,22 +6,11 @@ class CfgPatches
         author = "Dirt & Petee";
         requiredAddons[] = 
         {
-            "A3_data_F",
-            "A3_anims_F",
-            "A3_weapons_F",
-            "A3_characters_F",
-            "A3_Soft_F",
-            "A3_CargoPoses_F",
-            "WBK_Combinus",
-            "WBK_HalfLife_AlienShit",
-            "rhs_c_weapons",
-            "rhs_c_heavyweapons",
-            "rhsusf_c_weapons",
-            "A3_Data_F_Oldman_Loadorder",
-            "A3_Armor_F",
+            "A3_Data_F_Loadorder",
+            "rhs_main_loadorder",
+            "A3_Data_F_Enoch_Loadorder",
+            
             "cup_weapons_grenadelaunchers",
-            "A3_Characters_F_Enoch_Vests",
-            "a3_sounds_f_exp",
             "CUP_Weapons_XM29",
             "HL_CMB_Weapons"
         };
