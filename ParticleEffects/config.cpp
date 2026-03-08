@@ -1,9 +1,14 @@
+#include "\OECExtension\cfgFunctions.hpp"
+
 class CfgPatches
 {
     class OEC_Extension_ParticleEffects
     {
         addonRootClass = "OEC_Extension";
-        requiredAddons[] = {"OEC_Extension"};
+        requiredAddons[] = 
+		{
+			"OEC_Extension"
+		};
         units[] = {};
         weapons[] = {};
     };

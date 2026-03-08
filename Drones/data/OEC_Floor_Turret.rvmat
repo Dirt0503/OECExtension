@@ -17,7 +17,7 @@ class TexGen1
 
 class Stage1
 {
-	texture = "OECExtension\Weapons\data\gaussgun\gaussGun_nohq.paa";
+	texture = "OECExtension\Drones\data\floorTurret_nohq.paa";
 	texGen = 0;
 };
 class Stage2
@@ -52,11 +52,6 @@ class Stage7
 };
 class Stage8
 {
-	texture = "OECExtension\Weapons\data\gaussgun\gaussGun_co.paa";
+	texture = "OECExtension\Drones\data\floorTurret_co.paa";
 	texGen = 0;
-};
-class Stage9
-{
-    texture = "OECExtension\Weapons\data\gaussgun\gaussGunLense_co.paa";
-    texGen = 0;
 };

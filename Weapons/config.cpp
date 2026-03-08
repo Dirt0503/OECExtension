@@ -1,3 +1,5 @@
+#include "\OECExtension\cfgFunctions.hpp"
+
 class CfgPatches
 {
     class OEC_Extension_Weapons
@@ -5,7 +7,8 @@ class CfgPatches
         addonRootClass = "OEC_Extension";
         requiredAddons[] = 
         {
-            "OEC_Extension"
+            "OEC_Extension",
+			"OEC_Extension_ParticleEffects"
         };
         units[] = {};
         weapons[] = 
@@ -47,13 +50,18 @@ class CfgPatches
             "OEC_Weapon_ASVal",
             "OEC_Weapon_ASVal_PSO1",
             "OEC_Weapon_DSHKM",
+			"OEC_Weapon_DSHKM_BMP3",
+			"OEC_Weapon_DSHKM_BTR80",
             "OEC_Weapon_DSHKM_t80",
             "OEC_Weapon_Makarov",
             "OEC_Weapon_PKM",
             "OEC_Weapon_PKT",
             "OEC_Weapon_PKM_Vehicle",
+			"OEC_Weapon_vicPKM_BMP3_bow1",
+			"OEC_Weapon_vicPKM_BMP3_bow2",
             "OEC_Weapon_RPG7",
             "OEC_Weapon_ZU23",
+			"OEC_Weapon_Zu23_Shilka",
 
             //Accessories
             "OEC_Acc_Scope_PKAS",
@@ -1323,7 +1331,7 @@ class CfgAmmo
 		mineInconspicuousness = 40;
 		mineTrigger = "OEC_RangeTrigger_Hopper";
 
-		soundTrigger[] = {"OECExtension\Overwatch\Weapons\data\hoppermine\combineMine_triggered.wss",3,10,75};
+		soundTrigger[] = {"\OECExtension\Weapons\data\hoppermine\combineMine_triggered.wss",3,10,75};
 
         triggerWhenDestroyed = 0;
         ace_explosives_defuseTime = 3;
@@ -1572,7 +1580,7 @@ class CfgMagazines
 		mass = 10;
 		ammo = "OEC_Ammo_HopperMine_Range";
 		picture = "\OECExtension\Weapons\data\hopper.paa";
-		model = "OECExtension\Overwatch\Weapons\data\hoppermine\combine_mine_folded.p3d";
+		model = "\OECExtension\Weapons\data\hoppermine\combine_mine_folded.p3d";
 		class Library
 		{
 			libTextDesc = "test description1. Tell Petee if you found this";
@@ -2408,6 +2416,29 @@ class CfgMagazineWells
     };
 };
 
+class CfgSounds
+{
+	sounds[] = {};
+    class OEC_HopperMine_Planted
+    {
+        name = "OEC_HopperMine_Planted";
+        sound[] = {"OECExtension\Weapons\data\hoppermine\combineMine_planted.wss",3.1622777,1};
+        titles[] = {};
+    };
+	class OEC_HopperMine_Alert
+	{
+		name = "OEC_HopperMine_Alert";
+        sound[] = {"OECExtension\Weapons\data\hoppermine\combineMine_alert.wss",3.1622777,1};
+        titles[] = {};
+	};
+	class OEC_HopperMine_Triggered
+	{
+		name = "OEC_HopperMine_Triggered";
+        sound[] = {"OECExtension\Weapons\data\hoppermine\combineMine_triggered.wss",3.1622777,1};
+        titles[] = {};
+	};
+};
+
 class CfgSoundSets
 {
 	class Rifle_Shot_Base_SoundSet;
@@ -2450,7 +2481,7 @@ class CfgSoundShaders
     {
         samples[] = 
         {
-            {"OECExtension\Overwatch\Weapons\data\gaussgun\gaussShot.wss",1}
+            {"\OECExtension\Weapons\data\gaussgun\gaussShot.wss",1}
         };
         volume = 1;
         range = 150;
@@ -2460,7 +2491,7 @@ class CfgSoundShaders
     {
         samples[] = 
         {
-            {"OECExtension\Overwatch\Weapons\data\gaussgun\gaussShot.wss",1}
+            {"\OECExtension\Weapons\data\gaussgun\gaussShot.wss",1}
         };
         volume = 1;
         range = 2200;
@@ -2558,7 +2589,7 @@ class CfgWeapons
         class GunParticles;
         class FullAuto;
     };
-    class arifle_MXC_F
+    class arifle_MXC_F: arifle_MX_Base_F
 	{
         class GunParticles;
 		class WeaponSlotsInfo;
@@ -3330,7 +3361,7 @@ class CfgWeapons
 		distanceZoomMin = 500;
 		distanceZoomMax = 500;
 		drySound[] = {"A3\Sounds_F_Mark\arsenal\weapons\LongRangeRifles\DMR_02_MAR10\DMR_02_Dry_01",0.25118864,1,20};
-		reloadMagazineSound[] = {"OECExtension\Overwatch\Weapons\data\gaussgun\gaussReload.wss",1.0,1,10};
+		reloadMagazineSound[] = {"\OECExtension\Weapons\data\gaussgun\gaussReload.wss",1.0,1,10};
 		modes[] = {"Single","single_close_optics1","single_medium_optics1","single_far_optics1"};
 		bullet1[] = {"A3\sounds_f\weapons\shells\7_62\metal_762_01",0.63095737,1,15};
 		bullet2[] = {"A3\sounds_f\weapons\shells\7_62\metal_762_02",0.63095737,1,15};
@@ -3452,7 +3483,7 @@ class CfgWeapons
 	{
 		author = "OEC Extension";
 		scope = 2;
-		model = "OECExtension\Overwatch\Weapons\data\gaussgun\OEC_GaussRifle.p3d";
+		model = "\OECExtension\Weapons\data\gaussgun\OEC_GaussRifle.p3d";
 		dexterity = 1.68;
 		displayName = "[OEC] EM-1 Pulse Assisted Gauss Gun";
 		picture = "\OECExtension\Weapons\data\GaussGun.paa";
@@ -4850,9 +4881,9 @@ class CfgWeapons
 			class BaseSoundModeType{};
 			class StandardSound: BaseSoundModeType
 			{
-				begin1[] = {"OECExtension\Overwatch\Drones\data\shoot1.wss",1.6,1,1000};
-				begin2[] = {"OECExtension\Overwatch\Drones\data\shoot2.wss",1.6,1,1000};
-				begin3[] = {"OECExtension\Overwatch\Drones\data\shoot3.wss",1.6,1,1000};
+				begin1[] = {"OECExtension\Drones\data\shoot1.wss",1.6,1,1000};
+				begin2[] = {"OECExtension\Drones\data\shoot2.wss",1.6,1,1000};
+				begin3[] = {"OECExtension\Drones\data\shoot3.wss",1.6,1,1000};
 				soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
 				class SoundTails
 				{
@@ -4925,7 +4956,7 @@ class CfgWeapons
     //CISDF WEAPONS
     //-------------------------------------------------------------------------------//
 
-    class OEC_Weapon__2A46_Cannon: cannon_120mm
+    class OEC_Weapon_2A46_Cannon: cannon_120mm
 	{
 		aiDispersioncoefX = 3.5;
 		aiDispersioncoefY = 6.5;
@@ -5007,7 +5038,7 @@ class CfgWeapons
 		};
 	};
 
-    class OEC_Weapon__2a72: autocannon_30mm_CTWS
+    class OEC_Weapon_2a72: autocannon_30mm_CTWS
 	{
 		aiDispersioncoefX = 2;
 		aiDispersioncoefY = 3;
@@ -5895,6 +5926,78 @@ class CfgWeapons
 			maxRangeProbab = 0.04;
 		};
 	};
+
+	class OEC_Weapon_DSHKM_BMP3: OEC_Weapon_DSHKM
+	{
+		class gunParticles
+		{
+			class Shell
+			{
+				positionName = "ejector_30mm";
+				directionName = "ejector_30mm_dir";
+				effectName = "MachineGunCartridge2";
+			};
+			class Effect
+			{
+				positionname = "Usti hlavne3";
+				directionname = "Konec hlavne3";
+				effectname = "MachineGunCloud";
+			};
+		};
+		/*class effect1a
+			{
+				effectname = "MachineGunCloud";
+				positionname = "Usti hlavne";
+				directionname = "Konec hlavne";
+			};
+            class effect1
+			{
+				positionname = "nabojnicestart";
+				directionname = "nabojniceend";
+				effectname = "MachineGunEject";
+			};
+			class effect2
+			{
+				positionName = "machinegun_eject_pos";
+				directionName = "machinegun_eject_dir";
+				effectName = "MachineGunCartridge2";
+			};*/
+	};
+
+	class OEC_Weapon_DSHKM_BTR80: OEC_Weapon_DSHKM
+	{
+		class effect1
+			{
+				effectname = "MachineGunCloud";
+				positionname = "Usti hlavne";
+				directionname = "Konec hlavne";
+			};
+			class effect2
+			{
+				effectname = "RHS_145mm_Catridge";
+				positionname = "machinegun_eject_pos";
+				directionname = "machinegun_eject_dir";
+			};
+		/*class effect1a
+			{
+				effectname = "MachineGunCloud";
+				positionname = "Usti hlavne";
+				directionname = "Konec hlavne";
+			};
+            class effect1
+			{
+				positionname = "nabojnicestart";
+				directionname = "nabojniceend";
+				effectname = "MachineGunEject";
+			};
+			class effect2
+			{
+				positionName = "machinegun_eject_pos";
+				directionName = "machinegun_eject_dir";
+				effectName = "MachineGunCartridge2";
+			};*/
+	};
+
 	class OEC_Weapon_DSHKM_t80: OEC_Weapon_DSHKM
 	{
 		class GunParticles: GunParticles
@@ -5979,7 +6082,7 @@ class CfgWeapons
 	{
 		author = "OEC Extension";
         displayName = "[OEC] PKM";
-        baseWeapon = "OEC_Weapon__PKM";
+        baseWeapon = "OEC_Weapon_PKM";
 		scope = 2;
         inertia = 0.85;
 		dexterity = 1.0;
@@ -6288,6 +6391,33 @@ class CfgWeapons
 		};
 	};
 
+	class OEC_Weapon_vicPKM_BMP3_bow1: OEC_Weapon_PKM_Vehicle
+	{
+		class gunParticles
+		{
+			class effect1
+			{
+				effectname = "MachineGunCloud";
+				positionname = "muzzle2";
+				directionname = "end2";
+			};
+		};
+	};
+
+	class OEC_Weapon_vicPKM_BMP3_bow2: OEC_Weapon_PKM_Vehicle
+	{
+		class gunParticles
+		{
+			class effect1
+			{
+				effectname = "MachineGunCloud";
+				positionname = "muzzle3";
+				directionname = "end2";
+			};
+		};
+	};
+
+
     class OEC_Weapon_RPG7: Launcher_Base_F
     {
         displayName = "[OEC] RPG-7V2";
@@ -6502,6 +6632,125 @@ class CfgWeapons
 		};
 	};
 
+	class OEC_Weapon_ZU23_Shilka: OEC_Weapon_ZU23
+	{
+		type = 1;
+		ballisticsComputer = 4;
+		canLock = 0;
+		weaponLockSystem = "1 + 2 + 8";
+		displayName = "2A14";
+		reloadMagazineSound[] = {"rhsafrf\addons\rhs_c_heavyweapons\sounds\rhs_2a14_reload",10.0,1,20};
+		scope = 1;
+		nameSound = "cannon";
+		cartridgePos = "eject1";
+		cartridgeVel = "eject1dir";
+		cursor = "emptyCursor";
+		cursorAim = "mg";
+		cursorAimOn = "";
+		cursorSize = 1;
+		flash = "gunfire";
+		flashSize = 0.1;
+		class gunParticles
+		{
+			class effect1
+			{
+				positionName = "eject1";
+				directionName = "eject1dir";
+				effectName = "RHS_23mm_Catridge";
+			};
+			class effect2
+			{
+				positionName = "eject2";
+				directionName = "eject2dir";
+				effectName = "RHS_23mm_AmmoBeltLink";
+			};
+			class effect3
+			{
+				positionName = "eject3";
+				directionName = "eject3dir";
+				effectName = "RHS_23mm_Catridge";
+			};
+			class effect4
+			{
+				positionName = "eject4";
+				directionName = "eject4dir";
+				effectName = "RHS_23mm_AmmoBeltLink";
+			};
+		};
+		magazines[] = {"OEC_Magazine_AZP23_AA_1250Rnd"};
+		magazineReloadTime = 9;
+		modes[] = {"manual","close","short","medium"};
+		class manual: OEC_Weapon_ZU23
+		{
+			displayName = "2A14 23x152mm";
+			autoFire = 1;
+			reloadTime = 0.03;
+			dispersion = 0.005;
+			multiplier = 1;
+			soundContinuous = 0;
+			showToPlayer = 1;
+			burst = 1;
+			aiRateOfFire = 0.5;
+			aiRateOfFireDistance = 50;
+			minRange = 1;
+			minRangeProbab = 0.01;
+			midRange = 2;
+			midRangeProbab = 0.01;
+			maxRange = 3;
+			maxRangeProbab = 0.01;
+			sounds[] = {"StandardSound"};
+			class StandardSound
+			{
+				soundSetShot[] = {"RHS_KPVT_Closure_SoundSet","RHS_KPVT_Shot_SoundSet","RHS_KPVT_Int_Shot_SoundSet","RHS_autocannon_Tail_SoundSet"};
+			};
+		};
+		class close: manual
+		{
+			showToPlayer = 0;
+			soundBurst = 0;
+			burst = 40;
+			burstRangeMax = 60;
+			aiRateOfFire = 3;
+			aiRateOfFireDistance = 500;
+			aiRateOfFireDispersion = 2;
+			minRange = 0;
+			minRangeProbab = 0.05;
+			midRange = 300;
+			midRangeProbab = 0.58;
+			maxRange = 500;
+			maxRangeProbab = 0.3;
+		};
+		class short: close
+		{
+			burst = 40;
+			burstRangeMax = 60;
+			aiRateOfFire = 3;
+			aiRateOfFireDistance = 1200;
+			aiRateOfFireDispersion = 3;
+			minRange = 500;
+			minRangeProbab = 0.3;
+			midRange = 800;
+			midRangeProbab = 0.58;
+			maxRange = 1200;
+			maxRangeProbab = 0.3;
+		};
+		class medium: close
+		{
+			burst = 40;
+			burstRangeMax = 60;
+			aiRateOfFire = 3;
+			aiRateOfFireDistance = 2500;
+			aiRateOfFireDispersion = 3;
+			minRange = 1200;
+			minRangeProbab = 0.3;
+			midRange = 1800;
+			midRangeProbab = 0.58;
+			maxRange = 2500;
+			maxRangeProbab = 0.3;
+		};
+	};
+
+
     //-----------------------------------------------------------//
     //ACCESSORIES
     //-----------------------------------------------------------//
@@ -6602,12 +6851,12 @@ class CfgVehicles
 		displayName = "[OEC] Hopper Mine";
 		icon = "iconExplosiveAP";
 		picture = "\A3\Weapons_F\Data\clear_empty.paa";
-		model = "OECExtension\Overwatch\Weapons\data\hoppermine\combine_mine_folded.p3d";
+		model = "\OECExtension\Weapons\data\hoppermine\combine_mine_folded.p3d";
 		descriptionShort = "Combine Hopper Mine";
 	};
 
 	class OEC_Place_HopperMine: ACE_Explosives_Place_APERSBoundingMine
 	{
-		model = "OECExtension\Overwatch\Weapons\data\hoppermine\combine_mine_folded.p3d";
+		model = "\OECExtension\Weapons\data\hoppermine\combine_mine_folded.p3d";
 	};
 };
