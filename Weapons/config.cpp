@@ -3620,7 +3620,7 @@ class CfgWeapons
         displayName = "[OEC] .357 Magnum";
 		scopeArsenal = 2;
 		scope = 2;
-		baseWeapon = "OEC_Weapon_Magnum";
+		//baseWeapon = "OEC_Weapon_Magnum";
 		picture = "\OECExtension\Weapons\data\Magnum.paa";
         model = "\WBK_OICW\A_HalfLife_Revolver.p3d";
         reloadAction = "WBK_HL_Revolver_Reload";
@@ -5942,24 +5942,6 @@ class CfgWeapons
 				effectname = "MachineGunCloud";
 			};
 		};
-		/*class effect1a
-			{
-				effectname = "MachineGunCloud";
-				positionname = "Usti hlavne";
-				directionname = "Konec hlavne";
-			};
-            class effect1
-			{
-				positionname = "nabojnicestart";
-				directionname = "nabojniceend";
-				effectname = "MachineGunEject";
-			};
-			class effect2
-			{
-				positionName = "machinegun_eject_pos";
-				directionName = "machinegun_eject_dir";
-				effectName = "MachineGunCartridge2";
-			};*/
 	};
 
 	class OEC_Weapon_DSHKM_BTR80: OEC_Weapon_DSHKM
@@ -5976,24 +5958,6 @@ class CfgWeapons
 				positionname = "machinegun_eject_pos";
 				directionname = "machinegun_eject_dir";
 			};
-		/*class effect1a
-			{
-				effectname = "MachineGunCloud";
-				positionname = "Usti hlavne";
-				directionname = "Konec hlavne";
-			};
-            class effect1
-			{
-				positionname = "nabojnicestart";
-				directionname = "nabojniceend";
-				effectname = "MachineGunEject";
-			};
-			class effect2
-			{
-				positionName = "machinegun_eject_pos";
-				directionName = "machinegun_eject_dir";
-				effectName = "MachineGunCartridge2";
-			};*/
 	};
 
 	class OEC_Weapon_DSHKM_t80: OEC_Weapon_DSHKM
@@ -6766,7 +6730,6 @@ class CfgWeapons
         author = "OEC Extension";
         displayName = "[OEC] EKP-8-02 Collimator Sights";
         model = "\rhsafrf\addons\rhs_accessory\scopes\ekp-8-02\rhs_ekp_8_02";
-
         inertia = 0;
     };
 

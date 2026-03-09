@@ -124,7 +124,11 @@ class CfgPatches
 
             //Rebel Gear
             "OEC_Rebel_Civ_Uniform_White",
-            "OEC_Rebel_Civ_Uniform_Blue"
+            "OEC_Rebel_Civ_Uniform_Blue",
+
+            //Zombie Gear
+            "OEC_Zombie_Uniform_Soldier",
+            "OEC_Zombie_Vest_Soldier"
         };
     };
 };
@@ -1615,6 +1619,12 @@ class CfgWeapons
             "\OECExtension\Gear\data\Recon_Trooper_torso.paa",
             "\OECExtension\Gear\data\Recon_Trooper_lens.paa"
         };
+        hiddenSelectionsMaterials[] = 
+        {
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "\OECExtension\Gear\data\Recon_Trooper_lens.rvmat"
+        };
         class ItemInfo: ItemInfo
         {
             hiddenSelectionsTextures[] =
@@ -1623,6 +1633,12 @@ class CfgWeapons
                 "\OECExtension\Gear\data\Recon_Trooper_torso.paa",
                 "\OECExtension\Gear\data\Recon_Trooper_lens.paa"
             };
+        };
+        hiddenSelectionsMaterials[] = 
+        {
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "\OECExtension\Gear\data\Recon_Trooper_lens.rvmat"
         };
         class XtdGearInfo
         {
@@ -2613,12 +2629,15 @@ class CfgWeapons
         };
 	};
 
-    //MISCELLANEOUS
+    //----------------------------------------------------------//
+    //ZOMBIE GEAR
+    //----------------------------------------------------------//
+
     class OEC_Misc_Helmet_Headcrab: H_HelmetB
 	{
         author = "OEC Extension";
         displayName = "[OEC] Headcrab";
-		picture = "\rhsafrf\addons\rhs_inventoryicons\data\headgear\rhs_6b26_ca.paa";
+		picture = "";
 		Scope = 1;
 		allowedFacewear[] = {};
 
@@ -2631,7 +2650,7 @@ class CfgWeapons
 			modelSides[] = {2};
 			_generalMacro = "HeadgearItem";
 			hitpointName = "HitHead";
-			containerclass = "Supply200";
+			containerclass = "Supply0";
 			mass = 30;
 			uniformmodel = "WBK_CombineAlienShit\HLA_Headgear_Headcrab_Spine3.p3d";
 			hiddenSelections[] = {"Camo"};
@@ -2639,6 +2658,39 @@ class CfgWeapons
 			hiddenSelectionsMaterials[] = {"\WBK_CombineAlienShit\textures\headcrab.rvmat"};
 		};
 	};
+    class OEC_Zombie_Uniform_Soldier: OEC_Overwatch_Uniform_Base
+    {
+        scope = 2;
+        scopeArsenal = 2;
+        displayName = "[OEC] Zombine Soldier Uniform";
+        class ItemInfo: ItemInfo
+        {
+            uniformClass = "OEC_Unit_Zombine_Soldier";
+            scope = 2;
+            containerClass = "supply0";
+        };
+    };
+    class OEC_Zombie_Vest_Soldier: OEC_Overwatch_Vest_Base
+    {
+        displayName = "[OEC] Zombine Soldier Vest";
+        scope = 2;
+        scopeAresenal = 2;
+        hiddenSelectionsTextures[] = 
+        {
+            "\OECExtension\Gear\data\zombie_soldier_pants.paa",
+            "\OECExtension\Gear\data\zombie_soldier_upperArmor.paa"
+        };
+        class ItemInfo: ItemInfo
+		{
+			hiddenSelectionsTextures[] = 
+            {
+                "\OECExtension\Gear\data\zombie_soldier_pants.paa",
+            "\OECExtension\Gear\data\zombie_soldier_upperArmor.paa"
+            };
+            containerClass = "supply200";
+		};
+        class XtdGearInfo{};
+    };
 
     //----------------------------------------------------------//
     //REBEL GEAR
