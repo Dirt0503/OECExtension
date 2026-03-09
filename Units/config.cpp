@@ -56,6 +56,7 @@ class CfgPatches
 		    "OEC_Unit_HoundEye",
 			"OEC_Unit_Bullsquid",
 			"OEC_Unit_Zombie",
+            "OEC_Unit_Zombine_Soldier",
 			"OEC_Unit_AntlionGuardian"
         };
         weapons[] = {};
@@ -1374,6 +1375,106 @@ class CfgGroups
                     {
                         side = 2;
                         vehicle = "OEC_Unit_Zombie";
+                        rank = "PRIVATE";
+                        position[] = {0,-2,0};
+                    };
+                    class Unit7
+                    {
+                        side = 2;
+                        vehicle = "OEC_Unit_Zombie";
+                        rank = "PRIVATE";
+                        position[] = {1,-2,0};
+                    };
+                    class Unit8
+                    {
+                        side = 2;
+                        vehicle = "OEC_Unit_Zombie";
+                        rank = "PRIVATE";
+                        position[] = {-1,-2,0};
+                    };
+                };
+                class OEC_group_Alien_small_zombine_horde
+                {
+                    name = "5. Small Zombine Horde";
+                    faction = "OEC_Faction_Aliens";
+                    side = 0;
+                    rarityGroup = 0.75;
+                    icon = "\A3\ui_f\data\map\markers\nato\o_inf.paa";
+                    class Unit0
+                    {
+                        side = 2;
+                        vehicle = "OEC_Unit_Zombine_Soldier";
+                        rank = "LIEUTENANT";
+                        position[] = {0,0,0};
+                    };
+                    class Unit1
+                    {
+                        side = 2;
+                        vehicle = "OEC_Unit_Zombine_Soldier";
+                        rank = "SERGEANT";
+                        position[] = {1,0,0};
+                    };
+                    class Unit2
+                    {
+                        side = 2;
+                        vehicle = "OEC_Unit_Zombine_Soldier";
+                        rank = "PRIVATE";
+                        position[] = {-1,0,0};
+                    };
+                };
+                class OEC_group_Alien_mixed_horde
+                {
+                    name = "6. Mixed Zombine Horde";
+                    faction = "OEC_Faction_Aliens";
+                    side = 0;
+                    rarityGroup = 0.75;
+                    icon = "\A3\ui_f\data\map\markers\nato\o_inf.paa";
+                    class Unit0
+                    {
+                        side = 2;
+                        vehicle = "OEC_Unit_Zombie";
+                        rank = "LIEUTENANT";
+                        position[] = {0,0,0};
+                    };
+                    class Unit1
+                    {
+                        side = 2;
+                        vehicle = "OEC_Unit_Zombie";
+                        rank = "SERGEANT";
+                        position[] = {1,0,0};
+                    };
+                    class Unit2
+                    {
+                        side = 2;
+                        vehicle = "OEC_Unit_Zombie";
+                        rank = "PRIVATE";
+                        position[] = {-1,0,0};
+                    };
+                    class Unit3
+                    {
+                        side = 2;
+                        vehicle = "OEC_Unit_Zombine_Soldier";
+                        rank = "PRIVATE";
+                        position[] = {0,-1,0};
+                    };
+                    class Unit4
+                    {
+                        side = 2;
+                        vehicle = "OEC_Unit_Zombine_Soldier";
+                        rank = "PRIVATE";
+                        position[] = {1,-1,0};
+                    };
+                    class Unit5
+                    {
+                        side = 2;
+                        vehicle = "OEC_Unit_Zombine_Soldier";
+                        rank = "PRIVATE";
+                        position[] = {-1,-1,0};
+                    };
+                    class Unit6
+                    {
+                        side = 2;
+                        vehicle = "OEC_Unit_Zombine_Soldier";
                         rank = "PRIVATE";
                         position[] = {0,-2,0};
                     };
@@ -3910,6 +4011,93 @@ class CfgVehicles
 			Person1[] = {};
 		};
 	};
+    class OEC_Unit_Zombine_Soldier: WBK_C_ExportClass
+    {
+        editorPreview = "rhsafrf\addons\rhs_editorPreviews\data\rhs_msv_rifleman.paa";
+        scope = 2;
+        scopeCurator = 2;
+        author = "OEC Extension";
+        displayName = "Zombine";
+        editorCategory = "OEC_EdCat_Aliens";
+        editorSubCategory = "OEC_EdSubCat_Zombies";
+        faction = "OEC_Faction_Aliens";
+		factionClass = "OEC_Faction_Class_Aliens";
+
+		uniformClass = "OEC_Zombie_Uniform_Soldier";
+        model = "\HL_Combine\data\Nemez_Combine.p3d";
+		backpack = "";
+		weapons[] = {"Throw","Put"};
+		magazines[] = {};
+		items[] = {};
+		linkedItems[] = {"OEC_Misc_Helmet_Headcrab","OEC_Zombie_Vest_Soldier"};
+		class SoundBreath
+		{
+			breath[] = {};
+		};
+		class SoundDrown
+		{
+			breath[] = {};
+		};
+		class SoundInjured
+		{
+			breath[] = {};
+		};
+		class SoundBleeding
+		{
+			breath[] = {};
+		};
+		class SoundBurning
+		{
+			breath[] = {};
+		};
+		class SoundChoke
+		{
+			breath[] = {};
+		};
+		class SoundRecovered
+		{
+			breath[] = {};
+		};
+		class SoundBreathAiming
+		{
+			breath[] = {};
+		};
+		class SoundBreathAutomatic
+		{
+			breath[] = {};
+		};
+		class SoundBreathInjured
+		{
+			Person1[] = {};
+		};
+		class SoundBreathSwimming
+		{
+			breathSwimming1[] = {};
+		};
+		class SoundHitScream
+		{
+			Person1[] = {};
+		};
+        hiddenSelections[] = {"camo1","camo2","camo3","camo4","camo5","camo6"};
+        hiddenSelectionsTextures[] =
+        {
+            "\OECExtension\Gear\data\zombie_soldier_torso.paa",
+            "\OECExtension\Gear\data\zombie_soldier_pants.paa",
+            "\OECExtension\Gear\data\zombie_soldier_upperArmor.paa",
+            "\OECExtension\Gear\data\zombie_soldier_lowerArmor.paa",
+            "HL_Combine\data\Urban\Urban_boots.paa",
+            "HL_Combine\data\Soldier\soldier_gloves.paa"
+        };
+        hiddenSelectionsMaterials[] = 
+        {
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "HL_Combine\data\Materials\Armor.rvmat",
+            "HL_Combine\data\Materials\Armor.rvmat"
+        };
+    };
 };
 
 class CfgVoice
@@ -4018,6 +4206,15 @@ class Extended_InitPost_EventHandlers
 		{
 			onRespawn = "true";
 			init = "_unit = _this select 0; if (local _unit) then {[_unit,false] execVM '\OECExtension\Scripts\xen_zombie.sqf';};";
+		};
+	};
+
+    class OEC_Unit_Zombine_Soldier
+	{
+		class HL_ClassicZombie_Ai_Init
+		{
+			onRespawn = "true";
+			init = "_unit = _this select 0; if (local _unit) then {[_unit,false] execVM '\OECExtension\Scripts\xen_zombine.sqf';};";
 		};
 	};
 };
