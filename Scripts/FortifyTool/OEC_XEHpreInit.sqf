@@ -1,4 +1,4 @@
-private _addonConfig = configFile >> "CfgPatches" >> "OEC_Extension_Overwatch_Items_FortifyTool";
+private _addonConfig = configFile >> "CfgPatches" >> "OEC_Extension_Items_FortifyTool";
 private _version = getArray(_addonConfig >> "version");
 
 #include "OEC_XEHprep.sqf";

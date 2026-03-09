@@ -20,7 +20,7 @@ OEC_subActions_turret = {
         private _deployAction = [
             "OEC_droneACEaction",
             "Place", 
-            "\OECExtension\Overwatch\Weapons\data\turret.paa",
+            "\OECExtension\Weapons\data\turret.paa",
             {
                 params ["_target", "_player", "_params"];
                 [_player] call OEC_fnc_spawnDrone;
@@ -39,7 +39,7 @@ private _actions = [];
 {
     private _magazine_class_name = OEC_Floor_Turret_Folded;
     private _magazine_display_name = "Combine Sterilizer";
-    private _magazine_picture = "\OECExtension\Overwatch\Weapons\data\turret.paa";
+    private _magazine_picture = "\OECExtension\Weapons\data\turret.paa";
 
     
     private _magazine_action = [
