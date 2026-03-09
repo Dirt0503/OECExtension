@@ -2551,6 +2551,7 @@ class CfgWeapons
 	class InventoryMuzzleItem_Base_F;
 	class InventoryOpticsItem_Base_F;
 	class InventoryFlashLightItem_Base_F;
+	class Weapon_Base_F;
     class Rifle;
 	class Rifle_Base_F: Rifle
 	{
@@ -2619,15 +2620,12 @@ class CfgWeapons
 
     class autocannon_30mm_CTWS;
 
-    class hgun_Pistol_heavy_02_F
+    class hgun_Pistol_heavy_02_F: Pistol_Base_F
 	{
 		class WeaponSlotsInfo;
 	};
 
-    class srifle_GM6_F
-	{
-		class WeaponSlotsInfo;
-	};
+    class srifle_GM6_F;
 
     class CUP_glaunch_6G30;
     
@@ -3190,14 +3188,14 @@ class CfgWeapons
     class OEC_Weapon_CombineSniper: srifle_GM6_F
 	{
 		selectionfireanim = "muzzleFlash";
-		class WeaponSlotsInfo: WeaponSlotsInfo
+		class WeaponSlotsInfo
 		{
 			class CowsSlot{};
 			class MuzzleSlot{};
 			class UnderBarrelSlot{};
 			class PointerSlot
 			{
-				compatibleItems[] = {"OEC_pointer_blue"};
+				compatibleItems[] = {"OEC_Acc_pointer_blue"};
 			};
 		};
 
