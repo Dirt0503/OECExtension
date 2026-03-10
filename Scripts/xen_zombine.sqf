@@ -487,7 +487,7 @@ _loopPathfindDoMove = [{
 		}else{
 			[_unit, selectRandom ["plagued_attack_9","plagued_attack_8","plagued_attack_3","plagued_attack_2","plagued_idle_1","plagued_idle_2","plagued_idle_3","plagued_idle_4","plagued_idle_5"], 25] call CBA_fnc_GlobalSay3D;
 		};
-}, 2.4, [_unitWithSword]] call CBA_fnc_addPerFrameHandler;
+}, 0.5, [_unitWithSword]] call CBA_fnc_addPerFrameHandler;
 
 
 waitUntil {sleep 0.5; 
