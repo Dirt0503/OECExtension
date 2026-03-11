@@ -6821,3 +6821,29 @@ class CfgVehicles
 		model = "\OECExtension\Weapons\data\hoppermine\combine_mine_folded.p3d";
 	};
 };
+
+class XtdGearModels
+{
+    class CfgWeapons
+    {
+		class OEC_ACEX_Weap_SIPL
+        {
+            label = "";
+            author = "OEC Extension";
+            options[] = { "variant" };
+            class variant
+            {
+                label = "SIRR-1 Variants";
+                values[] = 
+                {
+                    "olive",
+                    "green",
+                    "sand"
+                };
+                class olive { label = "Olive"; };
+                class green { label = "Green"; };
+                class sand { label = "Sand"; };
+            };
+        };
+	};
+};
