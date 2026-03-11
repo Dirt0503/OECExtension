@@ -30,6 +30,7 @@ class CfgPatches
             "OEC_Overwatch_Unit_Airwatch",
             "OEC_Overwatch_Unit_APF",
             "OEC_Overwatch_Unit_Elite_Medic",
+            "OEC_Overwatch_Unit_HunterSynth",
 
             //CISDF Units
             "OEC_Unit_CIS_Infantry_Base", 
@@ -1511,6 +1512,7 @@ class CfgVehicles
     class Man;
 	class CAManBase;
     class B_Soldier_base_f;
+    class I_Survivor_F;
     class B_Soldier_f: B_Soldier_base_f
     {
         class HitPoints;
@@ -1521,7 +1523,10 @@ class CfgVehicles
 		class HitPoints;
 		class Eventhandlers;
 	};
-    class WBK_C_ExportClass;
+    class WBK_C_ExportClass: I_Survivor_F
+    {
+        identityTypes[] = {"empty_Face"};
+    };
     
     class OEC_Overwatch_Unit_Base: B_Soldier_f
     {
@@ -2237,6 +2242,260 @@ class CfgVehicles
             };
         };
     };
+
+    class OEC_Overwatch_Unit_HunterSynth: WBK_C_ExportClass
+	{
+		side = 1;
+		editorCategory = "OEC_EdCat_Combine";
+        editorSubCategory = "OEC_EdSubCat_Infantry";
+		gestures = "CfgGesturesHunter";
+		class SoundEnvironExt
+		{
+			generic[] = {{"run",{"\WBK_CombineAlienShit\sounds\hunter\ministrider_footstep1.wav",1,1,70}},{"run",{"\WBK_CombineAlienShit\sounds\hunter\ministrider_footstep2.wav",1,1,70}},{"run",{"\WBK_CombineAlienShit\sounds\hunter\ministrider_footstep3.wav",1,1,70}},{"run",{"\WBK_CombineAlienShit\sounds\hunter\ministrider_footstep4.wav",1,1,70}},{"run",{"\WBK_CombineAlienShit\sounds\hunter\ministrider_footstep5.wav",1,1,70}},{"walk",{"\WBK_CombineAlienShit\sounds\hunter\hunter_foundenemy_ack1.wav",1,1,70}},{"walk",{"\WBK_CombineAlienShit\sounds\hunter\hunter_foundenemy_ack2.wav",1,1,70}},{"walk",{"\WBK_CombineAlienShit\sounds\hunter\hunter_foundenemy_ack3.wav",1,1,70}},{"walk",{"\WBK_CombineAlienShit\sounds\hunter\hunter_idle1.wav",1,1,70}},{"walk",{"\WBK_CombineAlienShit\sounds\hunter\hunter_idle2.wav",1,1,70}},{"walk",{"\WBK_CombineAlienShit\sounds\hunter\hunter_idle3.wav",1,1,70}},{"walk",{"\WBK_CombineAlienShit\sounds\hunter\hunter_laugh1.wav",1,1,70}},{"walk",{"\WBK_CombineAlienShit\sounds\hunter\hunter_laugh3.wav",1,1,70}},{"walk",{"\WBK_CombineAlienShit\sounds\hunter\hunter_laugh5.wav",1,1,70}}};
+		};
+		class SoundEquipment
+		{
+			soldier[] = {{"run",{"\WBK_CombineAlienShit\sounds\hunter\ministrider_footstep1.wav",1,1,70}},{"run",{"\WBK_CombineAlienShit\sounds\hunter\ministrider_footstep2.wav",1,1,70}},{"run",{"\WBK_CombineAlienShit\sounds\hunter\ministrider_footstep3.wav",1,1,70}},{"run",{"\WBK_CombineAlienShit\sounds\hunter\ministrider_footstep4.wav",1,1,70}},{"run",{"\WBK_CombineAlienShit\sounds\hunter\ministrider_footstep5.wav",1,1,70}},{"walk",{"\WBK_CombineAlienShit\sounds\hunter\hunter_foundenemy_ack1.wav",1,1,70}},{"walk",{"\WBK_CombineAlienShit\sounds\hunter\hunter_foundenemy_ack2.wav",1,1,70}},{"walk",{"\WBK_CombineAlienShit\sounds\hunter\hunter_foundenemy_ack3.wav",1,1,70}},{"walk",{"\WBK_CombineAlienShit\sounds\hunter\hunter_idle1.wav",1,1,70}},{"walk",{"\WBK_CombineAlienShit\sounds\hunter\hunter_idle2.wav",1,1,70}},{"walk",{"\WBK_CombineAlienShit\sounds\hunter\hunter_idle3.wav",1,1,70}},{"walk",{"\WBK_CombineAlienShit\sounds\hunter\hunter_laugh1.wav",1,1,70}},{"walk",{"\WBK_CombineAlienShit\sounds\hunter\hunter_laugh3.wav",1,1,70}},{"walk",{"\WBK_CombineAlienShit\sounds\hunter\hunter_laugh5.wav",1,1,70}}};
+		};
+		class SoundBreath
+		{
+			breath[] = {};
+		};
+		class SoundDrown
+		{
+			breath[] = {};
+		};
+		class SoundInjured
+		{
+			breath[] = {};
+		};
+		class SoundBleeding
+		{
+			breath[] = {};
+		};
+		class SoundBurning
+		{
+			breath[] = {};
+		};
+		class SoundChoke
+		{
+			breath[] = {};
+		};
+		class SoundRecovered
+		{
+			breath[] = {};
+		};
+		class SoundBreathAiming
+		{
+			breath[] = {};
+		};
+		class SoundBreathAutomatic
+		{
+			breath[] = {};
+		};
+		class SoundBreathInjured
+		{
+			Person1[] = {};
+		};
+		class SoundBreathSwimming
+		{
+			breathSwimming1[] = {};
+		};
+		class SoundHitScream
+		{
+			Person1[] = {};
+		};
+		items[] = {};
+		uniformClass = "OEC_Overwatch_HunterSynth";
+		nakedUniform = "OEC_Overwatch_HunterSynth";
+		faction = "OEC_Faction_Combine";
+		vehicleclass = "Men";
+		displayName = "Hunter";
+		moves = "cfgMovesWbkHunter";
+		model = "WBK_CombineAlienShit\Hunter.p3d";
+		armor = 7;
+		scope = 2;
+		canCarryBackPack = 1;
+		canDeactivateMines = 0;
+		engineer = 0;
+		hiddenSelections[] = {"Camo","Camo1","Camo2"};
+		hiddenSelectionsTextures[] = {"\WBK_CombineAlienShit\textures\hunter_armor_tex.paa","\WBK_CombineAlienShit\textures\hunter_tex.paa","\WBK_CombineAlienShit\textures\hunter_tex.paa"};
+		hiddenSelectionsMaterials[] = {"\WBK_CombineAlienShit\textures\hunter_armor.rvmat","\WBK_CombineAlienShit\textures\hunter.rvmat","\WBK_CombineAlienShit\textures\huntereyes.rvmat"};
+		attendant = 1;
+		class Character
+		{
+			radius = 200;
+			detectionRadius = 500;
+			chaseDistance = 51;
+			coverRadius = 50;
+			escapeRadius = 200;
+			damage = 0.4;
+			damageHitPoints[] = {{"HitLeftLeg",0.4},{"HitRightLeg",0.4},{"HitBody",0.7}};
+			armor = 7;
+			attackDistances[] = {2,3};
+			allowWalk = 1;
+			aggressive = 1;
+			secrecy = 0.4;
+			curious = 1;
+			cowardice = 0;
+			societal = 0;
+			tactful = 1;
+			courage = 1;
+			friendly[] = {};
+			class Sounds
+			{
+				idle[] = {};
+				attack[] = {};
+				hit[] = {};
+				other[] = {};
+			};
+			class Animations
+			{
+				attack_1[] = {};
+				attack_2[] = {};
+				attack_3[] = {};
+				agry[] = {};
+				eat[] = {""};
+			};
+			class HitPoints
+			{
+				class HitFace
+				{
+					armor = 1;
+					material = -1;
+					name = "bip01_head";
+					passThrough = 0.1;
+					radius = 0.08;
+					explosionShielding = 0.1;
+					minimalHit = 0.01;
+				};
+				class HitNeck: HitFace
+				{
+					armor = 1;
+					material = -1;
+					name = "bip01_neck";
+					passThrough = 0.1;
+					radius = 0.1;
+					explosionShielding = 0.5;
+					minimalHit = 0.01;
+				};
+				class HitHead: HitNeck
+				{
+					armor = 1;
+					material = -1;
+					name = "bip01_head";
+					passThrough = 0.1;
+					radius = 0.2;
+					explosionShielding = 0.5;
+					minimalHit = 0.01;
+					depends = "HitFace max HitNeck";
+				};
+				class HitPelvis
+				{
+					armor = 1;
+					material = -1;
+					name = "bip01_pelvis";
+					passThrough = 0.1;
+					radius = 0.2;
+					explosionShielding = 1;
+					visual = "injury_body";
+					minimalHit = 0.01;
+				};
+				class HitAbdomen: HitPelvis
+				{
+					armor = 1;
+					material = -1;
+					name = "bip01_spine1";
+					passThrough = 0.1;
+					radius = 0.15;
+					explosionShielding = 1;
+					visual = "injury_body";
+					minimalHit = 0.01;
+				};
+				class HitDiaphragm: HitAbdomen
+				{
+					armor = 1;
+					material = -1;
+					name = "bip01_spine2";
+					passThrough = 0.1;
+					radius = 0.15;
+					explosionShielding = 6;
+					visual = "injury_body";
+					minimalHit = 0.01;
+				};
+				class HitChest: HitDiaphragm
+				{
+					armor = 1;
+					material = -1;
+					name = "bip01_spine3";
+					passThrough = 0.1;
+					radius = 0.15;
+					explosionShielding = 6;
+					visual = "injury_body";
+					minimalHit = 0.01;
+				};
+				class HitBody: HitChest
+				{
+					armor = 6500;
+					material = -1;
+					name = "Body";
+					passThrough = 0.1;
+					radius = 0.16;
+					explosionShielding = 6;
+					visual = "injury_body";
+					minimalHit = 0.01;
+					depends = "HitPelvis max HitAbdomen max HitDiaphragm max HitChest";
+				};
+				class HitArms
+				{
+					armor = 1;
+					material = -1;
+					name = "arms";
+					passThrough = 1;
+					radius = 0.1;
+					explosionShielding = 1;
+					visual = "injury_hands";
+					minimalHit = 0.01;
+				};
+				class HitHands: HitArms
+				{
+					armor = 1;
+					material = -1;
+					name = "hands";
+					passThrough = 1;
+					radius = 0.1;
+					explosionShielding = 1;
+					visual = "injury_hands";
+					minimalHit = 0.01;
+					depends = "HitArms";
+				};
+				class HitLegs
+				{
+					armor = 1;
+					material = -1;
+					name = "legs";
+					passThrough = 1;
+					radius = 0.12;
+					explosionShielding = 1;
+					visual = "injury_legs";
+					minimalHit = 0.01;
+				};
+			};
+			armorStructural = 0.4;
+			explosionShielding = 0.04;
+			minTotalDamageThreshold = 0.001;
+			impactDamageMultiplier = 0.5;
+		};
+		weapons[] = {"Throw","Put"};
+		magazines[] = {};
+		linkedItems[] = {};
+
+        class HL_Hunter_Ai_Init
+		{
+			onRespawn = "true";
+			init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\Hunter\OEC_cmbHunter.sqf';};";
+		};
+	};
 
     //---------------------------------------------------------//
     //CISDF Units
