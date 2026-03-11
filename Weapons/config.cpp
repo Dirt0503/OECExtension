@@ -361,6 +361,16 @@ class CfgAmmo
 		timeToLive = 1.05;
 	};
 
+	class OEC_Ammo_Hunter_Flechette: OEC_Ammo_AR2
+	{
+		hit = 0.0001;
+		caliber = 0.0001;
+		class EventHandlers 
+		{
+            init = "[_this select 0] execVM '\OECExtension\Scripts\Hunter\OEC_Hunter_Flechette.sqf';";
+        };
+	};
+
 	class OEC_Ammo_Turret: OEC_Ammo_AR2
 	{
 		hit = 12;
@@ -2090,6 +2100,12 @@ class CfgMagazines
 			801, // Uniform
 			901  // Backpack
 		};
+	};
+
+	class OEC_Magazine_Hunter_Flechette: OEC_Magazine_PulseSMG
+	{
+		ammo = "OEC_Ammo_Hunter_Flechette";
+		displayName = "[OEC] Hunter Flechette Cartridge";
 	};
 
     // KORD 12.7x108mm mags
@@ -3991,7 +4007,7 @@ class CfgWeapons
 		descriptionShort = "Overwatch Standard Issue Pulse Submachine Gun";
 		model = "\WBK_Combines\weapons\grunt_ar.p3d";
 		handanim[] = {"OFP2_ManSkeleton","WBK_Combines\weapons\arsmg_idle.rtm"};
-        magazines[] = {"OEC_Magazine_PulseSMG"};
+        magazines[] = {"OEC_Magazine_PulseSMG","OEC_Magazine_Hunter_Flechette"};
 		magazineWell[] = {};
 		reloadMagazineSound[] = {"WBK_Combines\weapons\ordinal_ar_reload.ogg",1.05,1,16};
 		reloadAction = "WBK_HLA_OrdinalArReload";
