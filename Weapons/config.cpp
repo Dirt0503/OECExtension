@@ -3620,7 +3620,7 @@ class CfgWeapons
         displayName = "[OEC] .357 Magnum";
 		scopeArsenal = 2;
 		scope = 2;
-		//baseWeapon = "OEC_Weapon_Magnum";
+		baseWeapon = "OEC_Weapon_Magnum";
 		picture = "\OECExtension\Weapons\data\Magnum.paa";
         model = "\WBK_OICW\A_HalfLife_Revolver.p3d";
         reloadAction = "WBK_HL_Revolver_Reload";
