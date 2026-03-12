@@ -361,16 +361,6 @@ class CfgAmmo
 		timeToLive = 1.05;
 	};
 
-	class OEC_Ammo_Hunter_Flechette: OEC_Ammo_AR2
-	{
-		hit = 0.0001;
-		caliber = 0.0001;
-		class EventHandlers 
-		{
-            init = "[_this select 0] execVM '\OECExtension\Scripts\Hunter\OEC_Hunter_Flechette.sqf';";
-        };
-	};
-
 	class OEC_Ammo_Turret: OEC_Ammo_AR2
 	{
 		hit = 12;
@@ -490,6 +480,34 @@ class CfgAmmo
 		};
 		cartridge = "";
 	};
+
+	class OEC_Ammo_Hunter_Flechette: OEC_Ammo_AR2
+	{
+		hit = 0.0001;
+		caliber = 0.0001;
+		class EventHandlers 
+		{
+            init = "[_this select 0] execVM '\OECExtension\Scripts\Hunter\OEC_Hunter_Flechette.sqf';";
+        };
+	};
+
+	class OEC_Ammo_Flechette_Charge: OEC_Ammo_Gauss
+    {
+		hit = 12;
+		indirectHit = 12;
+		indirectHitRange = 1.5;
+		typicalSpeed = 0;
+		
+		//simulation = "shotBullet";
+		explosionEffects = "OEC_ParticleEffect_FlechetteCharge";
+        //model = "\rhsusf\addons\rhsusf_weapons\grenades_thrown\mk3a2\mk3a2";
+        explosionTime = 0.0005;
+		explosive = 1;
+		craterEffects = "";
+		warheadName = "HE";
+		//explosive = 1;
+        //soundFly[] = {"\OECExtension\Weapons\data\sounds\OEC_5SEC_GRENFUSE.wss",20,1,200};
+    };
 
     //Combine UGL Ammo
 	// Cmb HE
@@ -1246,12 +1264,29 @@ class CfgAmmo
         };
     };
 
+	/*class OEC_Ammo_Flechette_Charge: GrenadeHand
+    {
+		scope = 1;
+		hit = 6;
+		indirectHit = 6;
+		indirectHitRange = 3;
+
+		simulation = "shotBullet";
+		explosionEffects = "OEC_ParticleEffect_FlechetteCharge";
+        model = "\rhsusf\addons\rhsusf_weapons\grenades_thrown\mk3a2\mk3a2";
+        explosionTime = 0.005;
+		craterEffects = "";
+		warheadName = "HE";
+		//explosive = 1;
+        //soundFly[] = {"\OECExtension\Weapons\data\sounds\OEC_5SEC_GRENFUSE.wss",20,1,200};
+    };*/
+
 	class OEC_Ammo_m18Smoke_White: GrenadeHand
 	{
 		model = "\A3\Weapons_f\ammo\smokegrenade_white_throw";
 		hit = 0;
 		indirectHit = 0;
-		indirectHitRange = 0.2;
+		indirectHitRange = 0;
 		dangerRadiusHit = -1;
 		suppressionRadiusHit = -1;
 		typicalspeed = 22;
@@ -2106,6 +2141,7 @@ class CfgMagazines
 	{
 		ammo = "OEC_Ammo_Hunter_Flechette";
 		displayName = "[OEC] Hunter Flechette Cartridge";
+		initspeed = 80;
 	};
 
     // KORD 12.7x108mm mags

@@ -90,9 +90,14 @@ class CfgLights
         dayLight = 1;
         useFlare = 1;
         irLight = 0;
-        flareSize = 12;
+        flareSize = 14;
         flareMaxDistance = 6000;
     };
+
+	class OEC_Light_FlechetteFlash: OEC_Light_GaussFlash
+	{
+		flareSize = 6;
+	};
 };
 
 class CfgCloudLets
@@ -176,6 +181,14 @@ class CfgCloudLets
         interval = 0.001;
     };
 
+	class OEC_Cloudlet_FlechetteRefract: OEC_CloudLet_Refract
+    {
+        sizeOverLifeTime[] = {200,900};
+        interval = 0.2;
+        lifeTime = 1;
+		color[] = { { 0.42, 1, 1, 1 }, { 0.42, 1, 1, 0 } };
+    };
+
     class OEC_CloudLet_Distortion: Default
     {
         particleShape = "\A3\data_f\cl_fireD";
@@ -195,7 +208,7 @@ class CfgCloudLets
         weight = 1;
         volume = 1;
         rubbing = 0.0001;
-        sizeOverLifeTime[] = {1,2,5};
+        sizeOverLifeTime[] = {2,5};
         color[] = {{0.15,0.15,0.15,0.2},{0.15,0.15,0.15,0.1},{0.15,0.15,0.15,0}};
         animationSpeed[] = {10};
         randomDirectionPeriod = 1;
@@ -208,15 +221,28 @@ class CfgCloudLets
     {
         circleRadius = 0.25;
 		circleVelocity[] = {15,0,15};
-        sizeOverLifeTime[] = {1,2,3};
+        sizeOverLifeTime[] = {2,5};
         interval = 0.004;
-        lifeTime = 0.5;
+        lifeTime = 0.75;
     };
 
     class OEC_Cloudlet_Distortion2: OEC_CloudLet_Distortion
     {
         interval = 0.001;
         sizeOverLifeTime[] = {1,1.5,2};
+    };
+
+	class OEC_Cloudlet_DistortionFlechette: OEC_CloudLet_Distortion
+    {
+        //circleRadius = 0.25;
+		//circleVelocity[] = {15,0,15};
+        sizeOverLifeTime[] = {1,4,3,1};
+        interval = 0.125;
+        lifeTime = 1;
+		color[] = { { 0.42, 1, 1, 1 }, { 0.042, 0.1, 0.1, 0 } };
+		weight = 0.95;
+        volume = 1;
+        rubbing = 0.05;
     };
 
     class OEC_Cloudlet_GaussSparks: Default
@@ -255,9 +281,31 @@ class CfgCloudLets
 		Size[] = {0.15,0.01};
 		timerPeriod = 1;
 		volume = 1;
-		weight = 10;
+		weight = 5;
 		emissiveColor[] = {{5000,5000,5000,1},{100,100,100,1}};	
 		destroyOnWaterSurface = 1;
+	};
+
+	class OEC_Cloudlet_FlechetteSparks: OEC_Cloudlet_GaussSparks
+	{
+		interval = 0.008;
+		lifetime = 0.75;
+		color[] = {{0,0.4,0.4,1}};
+		Size[] = {0.085,0.01};
+		MoveVelocityVar[] = {2,2,2};
+		moveVelocity[] = {1,1,0};
+	};
+	class OEC_Cloudlet_FlechetteCoreSpark: OEC_Cloudlet_GaussSparks
+	{
+		interval = 1;
+		lifetime = 0.75;
+		weight = 1.275;
+		volume = 1;
+		rubbing = 0;
+		Size[] = {1};
+		color[] = {{0.1,0,1,1}};
+		MoveVelocityVar[] = {0,0,0};
+		moveVelocity[] = {0,0,0};
 	};
 
     class OEC_CloudLet_AlienPulse: ArtilleryShell1
@@ -604,7 +652,6 @@ class OEC_ParticleEffect_GaussTrail
 		lifeTime = 1;
         smokeGenMinDist = 100;
     };
-
     class Sparks
 	{
 		simulation = "particles";
@@ -614,6 +661,63 @@ class OEC_ParticleEffect_GaussTrail
 		interval = 1;
 		lifeTime = 1;
 	};
+};
+
+class OEC_ParticleEffect_FlechetteCharge
+{
+    class Refract
+    {
+        simulation = "particles";
+		type = "OEC_Cloudlet_FlechetteRefract";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+		lifeTime = 1;
+    }
+    class Sparks
+    {
+        simulation = "particles";
+		type = "OEC_Cloudlet_FlechetteSparks";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+		lifeTime = 1;
+    };
+	class RisingSmoke
+    {
+        simulation = "particles";
+		type = "OEC_Cloudlet_DistortionFlechette";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+		lifeTime = 1;
+        smokeGenMinDist = 100;
+    };
+	class SmokeRing
+    {
+        simulation = "particles";
+		type = "OEC_CloudLet_Distortion1";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+		lifeTime = 1;
+    }
+	class Core
+    {
+        simulation = "particles";
+		type = "OEC_Cloudlet_FlechetteCoreSpark";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+		lifeTime = 1;
+    };
+    class Light
+    {
+        simulation = "light";
+        type = "OEC_Light_FlechetteFlash";
+        position[] = {0,0,0};
+        lifeTime = 0.2;
+    };
 };
 
 class OEC_ParticleEffect_MK3A2
