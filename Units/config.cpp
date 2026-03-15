@@ -1889,7 +1889,7 @@ class CfgVehicles
                 init = "_this call oec_fnc_cmbSoldier;";
             };
         };
-        camouflage = 0.5;
+        //camouflage = 0.5;
     };
     class OEC_Overwatch_Unit_TL: OEC_Overwatch_Unit_Soldier
     {
@@ -2166,7 +2166,7 @@ class CfgVehicles
                 init = "_this call oec_fnc_cmbOrdinal;";
             };
         };
-        camouflage = 0.5;
+        //camouflage = 0.5;
     };
     class OEC_Overwatch_Unit_Wallhammer: OEC_Overwatch_Unit_Soldier
     {

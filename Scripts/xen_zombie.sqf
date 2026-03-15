@@ -45,7 +45,7 @@ _unitWithSword setVariable ["WBK_Zombie_CustomSounds",
 
 
 _unitWithSword spawn {
-	_rndFace = selectRandom ["Bloody_Neck"];
+	_rndFace = selectRandom ["WBK_DecapatedHead_Zombies_Normal"];
 	[_this, _rndFace] remoteExec ["setFace", 0];
 	_this addHeadgear "OEC_Misc_Helmet_Headcrab";
 	uisleep 0.5;
