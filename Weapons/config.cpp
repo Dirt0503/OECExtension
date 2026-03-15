@@ -2141,7 +2141,7 @@ class CfgMagazines
 	{
 		ammo = "OEC_Ammo_Hunter_Flechette";
 		displayName = "[OEC] Hunter Flechette Cartridge";
-		initspeed = 80;
+		initspeed = 200;
 	};
 
     // KORD 12.7x108mm mags
@@ -4050,6 +4050,7 @@ class CfgWeapons
 		picture = "\OECExtension\Weapons\data\PulseSMG.paa";
 		muzzles[] = {"this"};
 		mass = 85;
+		initSpeed = -1;
         class Library
 		{
 			libTextDesc = "Overwatch Standard Issue Pulse SMG. High penetration, medium damage, 60rnd magazine capacity.";

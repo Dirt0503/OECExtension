@@ -240,7 +240,7 @@ class CfgCloudLets
         interval = 0.125;
         lifeTime = 1;
 		color[] = { { 0.42, 1, 1, 1 }, { 0.042, 0.1, 0.1, 0 } };
-		weight = 0.95;
+		weight = 1.15;
         volume = 1;
         rubbing = 0.05;
     };

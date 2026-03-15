@@ -7,6 +7,7 @@ _bullet addEventHandler ["HitPart",
         params ["_projectile", "_hitEntity", "_projectileOwner", "_pos", "_velocity", "_normal", "_components", "_radius" ,"_surfaceType", "_instigator"]; 
         _posAGL = ASLtoAGL _pos; 
         _flechette = createVehicle ["land_cartridge_slug_01_F",_posAGL,[], 0, "CAN_COLLIDE"]; 
+        systemChat("Bullet created at " + str (_posAGL) + ".");
         if !(isNull _hitEntity) then 
         {
             systemchat "projectile attached";
@@ -20,4 +21,4 @@ _bullet addEventHandler ["HitPart",
         //_explosion setDamage 1;
         deleteVehicle _flechette;
     };
-}]; 
+}];
