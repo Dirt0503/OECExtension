@@ -1896,7 +1896,7 @@ class CfgMagazines
 		modelSpecialIsProxy = 1;
 		ammo = "OEC_Ammo_CMB20mm";
 		count = 6;
-		mass = 24.5;
+		mass = 20;
 		initspeed = 80;
 		scope = 2;
 		scopearsenal = 2;
@@ -1914,22 +1914,22 @@ class CfgMagazines
 		picture = "\OECExtension\Weapons\data\oicwUglMagSmokeWhite.paa";
 		modelSpecial = "\cup\weapons\cup_weapons_xm29\CUP_xm29_he_mag.p3d";
 		initspeed = 80;
-		mass = 12.75;
+		mass = 8;
 	};
 
 	// Cmb 20mm Stun Grenade
 	class OEC_Magazine_OICW_Stun_3rnd: OEC_Magazine_OICW_HE_6rnd
 	{
 		author = "OEC Extension";
-		displayName = "[OEC] XM29 Stun Grenade 3Rnd GL Mag";
+		displayName = "[OEC] XM29 Stun Grenade 6Rnd GL Mag";
 		descriptionShort = "Standard 20mm Combine Stun Grenade";
 		displaynameshort = "Stun Grenade";
 		picture = "\OECExtension\Weapons\data\oicwUglMagStun.paa";
 		modelSpecial = "\cup\weapons\cup_weapons_xm29\CUP_xm29_he_mag.p3d";
 		ammo = "OEC_Ammo_CMB20mm_stun";
 		initspeed = 80;
-		count = 3;
-		mass = 24.5;
+		count = 6;
+		mass = 18;
 	};
 
 	// Cmb 20mm Flares
@@ -1943,7 +1943,7 @@ class CfgMagazines
 		ammo = "OEC_Ammo_CMB20mm_green";
 		initspeed = 80;
 		count = 6;
-		mass = 5;
+		mass = 3;
 	};
 
     class OEC_Magazine_PulseSMG: OEC_Magazine_AR2
@@ -1978,7 +1978,7 @@ class CfgMagazines
 		displayName = "[OEC] MP7 HE 2Rnd GL Mag";
 		initspeed = 80;
 		count = 2;
-		mass = 8.25;
+		mass = 6.5;
 		picture = "\OECExtension\Weapons\data\uglHE.paa";
 	};
 
@@ -1987,16 +1987,16 @@ class CfgMagazines
 		displayName = "[OEC] MP7 Instant Smoke 2Rnd GL Mag";
 		initspeed = 80;
 		count = 2;
-		mass = 4.125;
+		mass = 2.5;
 		picture = "\OECExtension\Weapons\data\uglSmokeWhite.paa";
 	};
 
     class OEC_Magazine_SMG46_Stun_1Rnd: OEC_Magazine_OICW_Stun_3rnd
 	{
-		displayName = "[OEC] MP7 Stun 1Rnd GL Mag";
+		displayName = "[OEC] MP7 Stun 2Rnd GL Mag";
 		initspeed = 80;
-		count = 1;
-		mass = 8.25;
+		count = 2;
+		mass = 6;
 		picture = "\OECExtension\Weapons\data\uglStun.paa";
 	};
 
@@ -2005,7 +2005,7 @@ class CfgMagazines
 		displayName = "[OEC] MP7 Flare (Green) 2Rnd GL Mag";
 		initspeed = 80;
 		count = 2;
-		mass = 1.65;
+		mass = 1;
 		picture = "\OECExtension\Weapons\data\uglFlareGreen.paa";
 	};
 

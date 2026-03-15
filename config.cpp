@@ -227,7 +227,7 @@ class CfgVehicles
                 condition = "true";
                 exceptions[] = {"isNotDragging","isNotSwimming","notOnMap","isNotInside","isNotSitting"};
                 statement = "";
-                icon = "\OECExtension\Overwatch\Weapons\data\cmbACElogo.paa";
+                icon = "\OECExtension\Weapons\data\cmbACElogo.paa";
                 insertChildren = "call OEC_fnc_getACEaction";
             };
 		};
