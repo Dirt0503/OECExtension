@@ -116,19 +116,16 @@ if (isPlayer _unitWithSword) exitWith
 };
 
 
-_unitWithSword setUnitPos "UP";
-_unitWithSword setVariable ["WBK_AI_ISZombie",0, true];
-_unitWithSword setVariable ['isMutant', true];
 _unitWithSword setSpeaker "NoVoice";
 _unitWithSword setVariable ["dam_ignore_hit0",true,true];
 _unitWithSword setVariable ["dam_ignore_effect0",true,true];
 _unitWithSword disableConversation true;
 _unitWithSword setVariable ['IMS_IsUnitInvicibleScripted',1,true];
-_unitWithSword setVariable ["WBK_StriderRounds",2];
-_unitWithSword allowFleeing 0;
-_unitWithSword setVariable ["WBK_SynthHP",100];
-
-
+_unitWithSword setVariable ["WBK_StriderRounds",20];
+_unitWithSword setVariable ["WBK_StriderArmor",200];
+_unitWithSword setVariable ["WBK_HunterCanCharge",nil];
+_unitWithSword setVariable ["WBK_HunterCanScan",nil];
+_unitWithSword allowDamage false;
 
 _SynthmainGun = "WBK_Strider_MainCanon" createVehicle [0,0,0];
 _SynthmainGun attachTo [_unitWithSword,[-0.08,1.2,1.75]]; 
@@ -161,50 +158,87 @@ _zombie = _this select 0;
 _zombie spawn WBK_HunterPlayDeathAnim;
 }];
 
-_unitWithSword addEventHandler ["HandleDamage", {
-_unit = _this select 0;
-if ((animationState _unit == "hunter_die_2") or (animationState _unit == "hunter_die_1")) exitWith {};
-_hitter = _this select 3;
-_projectile = _this select 4;
-if (!(_unit == _hitter) and !(isNull _hitter)) then {
-if (currentWeapon _hitter == secondaryWeapon _hitter) exitWith {
-_unit spawn WBK_HunterPlayDeathAnim;
-};
-if (_projectile == "HL_CMB_G_Comball") exitWith {
-_vv = _unit getVariable "WBK_SynthHP";
-_new_vv = _vv - 30;
-if (_new_vv <= 0) exitWith {_unit spawn WBK_HunterPlayDeathAnim;};
-_unit setVariable ["WBK_SynthHP",_new_vv];
-[_unit, selectRandom ["hunter_stagger","hunter_hitHard"]] remoteExec ["switchMove", 0]; 
-_unit enableAI "MOVE";
-};
-if (!((vehicle _hitter) isKindOf "MAN")) exitWith {
-_vv = _unit getVariable "WBK_SynthHP";
-_new_vv = _vv - 10;
-if (_new_vv <= 0) exitWith {_unit spawn WBK_HunterPlayDeathAnim;};
-_unit setVariable ["WBK_SynthHP",_new_vv];
-};
-if (_projectile == "HL_CMB_B_Pulse_Ball") exitWith {
-_vv = _unit getVariable "WBK_SynthHP";
-_new_vv = _vv - 4;
-if (_new_vv <= 0) exitWith {_unit spawn WBK_HunterPlayDeathAnim;};
-_unit setVariable ["WBK_SynthHP",_new_vv];
-};
+_unitWithSword removeAllEventHandlers "Explosion";
+_unitWithSword addEventHandler ["Explosion", 
+{
+	_unit = _this select 0;
+	_source = _this select 3;
 
-if ((_projectile == "B_12Gauge_Pellets") and ((_unit distance _hitter) <= 10)) exitWith {
-_vv = _unit getVariable "WBK_SynthHP";
-_new_vv = _vv - 4;
-if (_new_vv <= 0) exitWith {_unit spawn WBK_HunterPlayDeathAnim;};
-_unit setVariable ["WBK_SynthHP",_new_vv];
-[_unit, selectRandom ["hunter_stagger","hunter_hitHard"]] remoteExec ["switchMove", 0];
-_unit enableAI "MOVE";
-};
+	systemChat "EXPLOSION TRIGGERED!";
+	systemChat str _source;
+}];
 
-_vv = _unit getVariable "WBK_SynthHP";
-_new_vv = _vv - 2;
-if (_new_vv <= 0) exitWith {_unit spawn WBK_HunterPlayDeathAnim;};
-_unit setVariable ["WBK_SynthHP",_new_vv];
-};
+_unitWithSword removeAllEventHandlers "HandleDamage";
+_unitWithSword addEventHandler ["HandleDamage", 
+{
+	_unit = _this select 0;
+	_hitter = _this select 3;
+	_projectile = _this select 4;
+	_directHit = _this select 8;
+	if(_projectile == "") exitWith
+	{
+	};
+	if(_directHit) exitWith
+	{
+		systemChat "damage was dealt by " + (str _projectile);
+		systemChat str _directHit;
+
+		_ammoConfig = configFile >> "CfgAmmo" >> _projectile >> "caliber";
+		_ammoConfigHit = configFile >> "CfgAmmo" >> _projectile >> "hit";
+		if(!isNumber(_ammoConfig) || !isNumber(_ammoConfigHit)) then
+		{
+			systemChat "HEEEEELP!!! HELP ME!!";
+		};
+		_damage = getNumber (_ammoConfigHit);
+		_caliber = getNumber (_ammoConfig);
+		if (_caliber <= 0) then {_caliber = 2};
+		if (_caliber > 6) then {_caliber = 6};
+		if ((animationState _unit == "hunter_die_2") or (animationState _unit == "hunter_die_1")) exitWith {};
+
+		if(_ammoConfigHit == nil) exitWith
+		{
+			hint "WE'RE ALL GONNA DIE!";
+		};
+
+		if (!(_unit == _hitter) and !(isNull _hitter)) exitWith 
+		{
+			systemChat str _damage;
+
+			if (currentWeapon _hitter == secondaryWeapon _hitter) exitWith 
+			{
+				_vv = _unit getVariable "WBK_StriderArmor";
+				_new_vv = _vv - (_damage * 1.75);
+				if (_new_vv <= 0) exitWith {_unit spawn WBK_HunterPlayDeathAnim;};
+				_unit setVariable ["WBK_StriderArmor",_new_vv];
+				[_unit, selectRandom ["hunter_stagger","hunter_hitHard"]] remoteExec ["switchMove", 0];
+				systemChat str(_unit getVariable "WBK_StriderArmor");
+			};
+			
+			_vv = _unit getVariable "WBK_StriderArmor";
+			_caliberCoef = 3 / _caliber;
+			_damageModified = _damage / _caliberCoef;
+			_new_vv = _vv - _damageModified;
+			if (_new_vv <= 0) exitWith {_unit spawn WBK_HunterPlayDeathAnim;};
+			if (_damage >= 25) then {[_unit, selectRandom ["hunter_stagger","hunter_hitHard"]] remoteExec ["switchMove", 0];};
+			_unit setVariable ["WBK_StriderArmor",_new_vv];
+			systemChat str(_unit getVariable "WBK_StriderArmor");
+		};
+	};
+	systemChat "indirect hit.. skipping direct hit logic";
+	_ammoConfigExplosiveHit = configFile >> "CfgAmmo" >> _projectile >> "indirectHit";
+	_damage = getNumber (_ammoConfigExplosiveHit);
+
+	if (!(_unit == _hitter) and !(isNull _hitter)) exitWith
+	{
+		systemChat str _damage;
+			
+		_vv = _unit getVariable "WBK_StriderArmor";
+		_new_vv = _vv - _damage;
+		if (_new_vv <= 0) exitWith {_unit spawn WBK_HunterPlayDeathAnim;};
+		if (_damage >= 25) then {[_unit, selectRandom ["hunter_stagger","hunter_hitHard"]] remoteExec ["switchMove", 0];};
+		_unit setVariable ["WBK_StriderArmor",_new_vv];
+		systemChat str(_unit getVariable "WBK_StriderArmor");
+	};
 }];
 
 _actFr = [{
@@ -312,9 +346,6 @@ _actFr_Loop = [{
     ]; 
 	};
 }, 0.01, [_unitWithSword]] call CBA_fnc_addPerFrameHandler;
-
-
-
 
 _loopPathfindDoMove = [{
     _array = _this select 0;

@@ -483,6 +483,7 @@ class CfgAmmo
 
 	class OEC_Ammo_Hunter_Flechette: OEC_Ammo_AR2
 	{
+		effectFly = "WBK_SynthGunTrail";
 		hit = 0.0001;
 		caliber = 0.0001;
 		class EventHandlers 
@@ -2588,8 +2589,6 @@ class CBA_DisposableLaunchers
 {
 	OEC_Weapon_SIPL0_Loaded[] = {"OEC_Weapon_SIPL0","OEC_Weapon_SIPL0_Used"};
 };
-
-
 
 class CfgWeapons
 {
