@@ -27,7 +27,7 @@ _uniformPool =
 ];
 _unitWithSword forceAddUniform (selectRandom _uniformPool);
 
-_unitWithSword setVariable ["WBK_SynthHP",175,true];
+_unitWithSword setVariable ["WBK_SynthHP",140,true];
 _unitWithSword setSpeaker "NoVoice";
 _unitWithSword disableConversation true;
 removeAllWeapons _unitWithSword;
@@ -329,7 +329,7 @@ _actFr = [{
 			};
 		};
 	};
-}, 0.02, [_unitWithSword]] call CBA_fnc_addPerFrameHandler;
+}, 0.1, [_unitWithSword]] call CBA_fnc_addPerFrameHandler;
 
 _loopPathfind = [{
     _array = _this select 0;
@@ -406,7 +406,7 @@ _loopPathfind = [{
 	  _unit setVariable ["WBK_IsUnitLocked",nil];
 	  _unit enableAI "ANIM";
 	  _unit enableAI "MOVE";
-}, 0.1, [_unitWithSword]] call CBA_fnc_addPerFrameHandler;
+}, 0.15, [_unitWithSword]] call CBA_fnc_addPerFrameHandler;
 
 
 _loopPathfindDoMove = [{
@@ -430,7 +430,7 @@ _loopPathfindDoMove = [{
 		}else{
 			[_unit, selectRandom ["plagued_attack_9","plagued_attack_8","plagued_attack_3","plagued_attack_2","plagued_idle_1","plagued_idle_2","plagued_idle_3","plagued_idle_4","plagued_idle_5"], 25] call CBA_fnc_GlobalSay3D;
 		};
-}, 0.5, [_unitWithSword]] call CBA_fnc_addPerFrameHandler;
+}, 0.3, [_unitWithSword]] call CBA_fnc_addPerFrameHandler;
 
 
 waitUntil {sleep 0.5; 

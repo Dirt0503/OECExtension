@@ -356,7 +356,7 @@ _actFr = [{
 					[_mutant, selectRandom ["middle_attack_1","middle_attack_2","middle_attack_3","middle_attack_4","middle_attack_5","middle_attack_6"], 45, 5] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf";
 				};
 			};
-			case ((random 100) >= 75): {
+			case ((random 100) >= 80): {
 				_mutant spawn {
 					_this playActionNow "WBK_Zombine_Grenade_In";
 					uisleep 0.8;
@@ -365,7 +365,7 @@ _actFr = [{
 					_smoke = "OEC_Ammo_MK3A2" createVehicle [0,0,0];
 					_smoke attachTo [_this, [-0.1, 0, 0],"rightHand",true];
 					_this removeMagazines "OEC_Magazine_MK3A2";
-					uisleep 0.9;
+					uisleep 4.2;
 					if (!(alive _this) or !(gestureState _this == "WBK_Zombine_Grenade_In")) exitWith {detach _smoke;};
 					[_this, "WBK_DosHead_FrontHole"] remoteExec ["setFace",0];
 					_this playActionNow "WBK_Zombine_Grenade_Loop";
@@ -386,7 +386,7 @@ _actFr = [{
 			};
 		};
 	};
-}, 0.02, [_unitWithSword]] call CBA_fnc_addPerFrameHandler;
+}, 0.1, [_unitWithSword]] call CBA_fnc_addPerFrameHandler;
 
 _loopPathfind = [{
     _array = _this select 0;
@@ -463,7 +463,7 @@ _loopPathfind = [{
 	  _unit setVariable ["WBK_IsUnitLocked",nil];
 	  _unit enableAI "ANIM";
 	  _unit enableAI "MOVE";
-}, 0.1, [_unitWithSword]] call CBA_fnc_addPerFrameHandler;
+}, 0.15, [_unitWithSword]] call CBA_fnc_addPerFrameHandler;
 
 
 _loopPathfindDoMove = [{
@@ -487,7 +487,7 @@ _loopPathfindDoMove = [{
 		}else{
 			[_unit, selectRandom ["plagued_attack_9","plagued_attack_8","plagued_attack_3","plagued_attack_2","plagued_idle_1","plagued_idle_2","plagued_idle_3","plagued_idle_4","plagued_idle_5"], 25] call CBA_fnc_GlobalSay3D;
 		};
-}, 0.5, [_unitWithSword]] call CBA_fnc_addPerFrameHandler;
+}, 0.3, [_unitWithSword]] call CBA_fnc_addPerFrameHandler;
 
 
 waitUntil {sleep 0.5; 
