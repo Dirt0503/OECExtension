@@ -12,7 +12,7 @@ class CfgPatches
             "OEC_Extension_Items",
             "OEC_Extension_Weapons"
         };
-        units[] = {};
+        units[] = {"OEC_Prop_Resupply_bigSupply"};
         weapons[] = {};
     };
 };
@@ -263,7 +263,7 @@ class CfgVehicles
 		{
 			class _xx_OEC_Launcher_SIPL0
 			{
-				weapon = "OEC_Weapons_SIPL0";
+				weapon = "OEC_Weapon_SIPL0";
 				count = 20;
 			};
 			class _xx_OEC_Floor_Turret_Folded
