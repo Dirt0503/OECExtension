@@ -53,7 +53,7 @@ if (isPlayer _unitWithSword) exitWith
 		};
 		if(_directHit) exitWith
 		{
-			systemChat "damage was dealt by " + (str _projectile);
+			systemChat ("damage was dealt by " + str (_projectile) + ".");
 			systemChat str _directHit;
 
 			_ammoConfig = configFile >> "CfgAmmo" >> _projectile >> "caliber";
@@ -115,7 +115,7 @@ if (isPlayer _unitWithSword) exitWith
 	}];
 };
 
-
+systemChat ":3meow";
 _unitWithSword setSpeaker "NoVoice";
 _unitWithSword setVariable ["dam_ignore_hit0",true,true];
 _unitWithSword setVariable ["dam_ignore_effect0",true,true];
@@ -138,21 +138,21 @@ _SynthmainGun1 setDir 90;
 _unitWithSword setVariable ["WBK_SynthObjects",[_SynthmainGun,_SynthmainGun1]];
 
 
-
+systemChat "maow!";
 _unitWithSword addEventHandler ["Suppressed", {
 params ["_unit", "_distance", "_shooter", "_instigator", "_ammoObject", "_ammoClassName", "_ammoConfig"];
 if (!(alive _unit)) exitWith {};
 _unit reveal [_instigator, 4];
 }];
 
-
+systemChat "maoouuu..";
 _unitWithSword addEventHandler ["FiredNear", {
 params ["_unit", "_firer", "_distance", "_weapon", "_muzzle", "_mode", "_ammo", "_gunner"];
 if (!(alive _unit)) exitWith {};
 _unit reveal [_firer, 4];
 }];
 
-
+systemChat "awowowowow";
 _unitWithSword addEventHandler ["Killed", {
 _zombie = _this select 0;
 _zombie spawn WBK_HunterPlayDeathAnim;
@@ -180,7 +180,7 @@ _unitWithSword addEventHandler ["HandleDamage",
 	};
 	if(_directHit) exitWith
 	{
-		systemChat "damage was dealt by " + (str _projectile);
+		systemChat ("damage was dealt by " + str (_projectile) + ".");
 		systemChat str _directHit;
 
 		_ammoConfig = configFile >> "CfgAmmo" >> _projectile >> "caliber";
@@ -361,11 +361,3 @@ _loopPathfindDoMove = [{
 		_unit doMove _pos;
 		};
 }, 3.5, [_unitWithSword]] call CBA_fnc_addPerFrameHandler;
-
-waitUntil {sleep 0.5; 
-if (isNull _unitWithSword) exitWith { true };
-(!(alive _unitWithSword) or (animationState _unitWithSword == "hunter_die_2") or (animationState _unitWithSword == "hunter_die_1"))
-};
-[_actFr] call CBA_fnc_removePerFrameHandler;
-[_loopPathfindDoMove] call CBA_fnc_removePerFrameHandler;
-[_actFr_Loop] call CBA_fnc_removePerFrameHandler;

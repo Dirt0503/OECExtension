@@ -13,7 +13,8 @@ class CfgPatches
             "cup_weapons_grenadelaunchers",
             "CUP_Weapons_XM29",
             "HL_CMB_Weapons",
-            "Nemez_Combine_Pack"
+            "Nemez_Combine_Pack",
+            "WBK_HalfLife_AlienShit"
         };
         units[] = {};
         weapons[] = {};

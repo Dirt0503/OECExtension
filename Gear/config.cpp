@@ -52,6 +52,7 @@ class CfgPatches
             "OEC_Overwatch_Uniform_Wallhammer",
             "OEC_Overwatch_Uniform_Airwatch",
             "OEC_Overwatch_Uniform_APF",
+            "OEC_Overwatch_HunterSynth",
 
             "OEC_Overwatch_Vest_Soldier",
             "OEC_Overwatch_Vest_AT",
@@ -241,7 +242,6 @@ class CfgGlasses
 		mass = 2;
 	};
 };
-
 
 class CfgVehicles
 {
@@ -547,8 +547,6 @@ class CfgVehicles
 	};
 };
 
-
-
 class CfgWeapons
 {
 	class Uniform_Base;
@@ -799,6 +797,23 @@ class CfgWeapons
         };
         class XtdGearInfo{};
     };
+
+    class OEC_Overwatch_HunterSynth: Uniform_Base
+	{
+		displayname = "[OEC] Hunter";
+		model = "WBK_CombineAlienShit\Hunter.p3d";
+		scope = 1;
+		picture = "";
+		hiddenSelections[] = {};
+		hiddenSelectionsTextures[] = {};
+		class ItemInfo: UniformItem
+		{
+			containerclass = "Supply200";
+			mass = 30;
+			uniformclass = "OEC_Overwatch_HunterSynth";
+			uniformmodel = "-";
+		};
+	};
 
     //Vests
     class OEC_Overwatch_Vest_Base: V_RebreatherB

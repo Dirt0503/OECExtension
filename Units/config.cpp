@@ -2486,15 +2486,12 @@ class CfgVehicles
 			minTotalDamageThreshold = 0.001;
 			impactDamageMultiplier = 0.5;
 		};
-		weapons[] = {"Throw","Put"};
-		magazines[] = {};
+		weapons[] = {"OEC_Weapon_PulseSMG", "Throw","Put"};
+		respawnWeapons[] = {"OEC_Weapon_PulseSMG", "Throw","Put"};
+		magazines[] = {"OEC_Magazine_Hunter_Flechette","OEC_Magazine_Hunter_Flechette","OEC_Magazine_Hunter_Flechette"};
+		respawnMagazines[] = {"OEC_Magazine_Hunter_Flechette","OEC_Magazine_Hunter_Flechette","OEC_Magazine_Hunter_Flechette"};
 		linkedItems[] = {};
 
-        class HL_Hunter_Ai_Init
-		{
-			onRespawn = "true";
-			init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\Hunter\OEC_cmbHunter.sqf';};";
-		};
 	};
 
     //---------------------------------------------------------//
