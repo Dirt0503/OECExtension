@@ -3,8 +3,8 @@ params ["_unit"];
 _unit setVariable ["stunMeter", 100, true];
 _refreshed_StunMeter = 75;
 _unitClassName = str _unit;
-_stunResist = getText (configFile >> "cfgVehicles" >> _unitClassName  >> "stunResistance");
-if (isNil(_stunResist)) then
+_stunResist = getNumber (configFile >> "cfgVehicles" >> _unitClassName  >> "stunResistance");
+if (_stunResist = nil) then
 {
     _stunResist = 2;
 };
@@ -20,14 +20,12 @@ _this addEventHandler ["HitPart",
 		switch true do 
         {
             _ammoClassName = _this select 4;
-
             systemChat "Ammo Classname:" + (str _ammoClassName);
 
-            _stunValue = getText (configFile >> "cfgAmmo" >> _ammoClassName >> "stunValue");
-
+            _stunValue = getNumber (configFile >> "cfgAmmo" >> _ammoClassName >> "stunValue");
             systemChat "stun Value:" + (str _stunValue);
 
-			If !(isNil(_stunValue)) then  
+			If !(_stunValue = nil) then  
             {
                 if ((_selection select 0) in ["head","neck"]) then 
                 {

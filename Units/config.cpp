@@ -2623,15 +2623,6 @@ class CfgVehicles
             	init = "_this call oec_fnc_riflemanAssign;";
 			};
         };
-
-        class Extended_InitPost_EventHandlers
-        {
-            class HL_Antlion_Ai_Init
-            {
-                onRespawn = "true";
-                init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_statusEffects.sqf';};";
-            };
-        };
     };
 
 	class OEC_Unit_CIS_AT: OEC_Unit_CIS_Infantry_Base
@@ -2908,14 +2899,6 @@ class CfgVehicles
         stunResistance = 1;
 
 		class EventHandlers {};
-        class Extended_InitPost_EventHandlers
-        {
-            class HL_Antlion_Ai_Init
-            {
-                onRespawn = "true";
-                init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_statusEffects.sqf';};";
-            };
-        };
     };
 
 	class OEC_Unit_CIS_Officer: OEC_Unit_CIS_Infantry_Base
@@ -2940,14 +2923,6 @@ class CfgVehicles
         stunResistance = 1;
 
 		class EventHandlers {};
-        class Extended_InitPost_EventHandlers
-        {
-            class HL_Antlion_Ai_Init
-            {
-                onRespawn = "true";
-                init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_statusEffects.sqf';};";
-            };
-        };
     };
 
     //-------------------------------------------------------//
@@ -4244,4 +4219,31 @@ class Extended_InitPost_EventHandlers
 			init = "_unit = _this select 0; if (local _unit) then {[_unit,false] execVM '\OECExtension\Scripts\xen_zombine.sqf';};";
 		};
 	};
+
+    class OEC_Unit_CIS_Rifleman
+	{
+        class OEC_StatusEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_statusEffects.sqf';};";
+        };
+    };
+
+    class OEC_Unit_CIS_Officer
+	{
+        class OEC_StatusEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_statusEffects.sqf';};";
+        };
+    };
+
+    class OEC_Unit_CIS_Scientist
+	{
+        class OEC_StatusEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_statusEffects.sqf';};";
+        };
+    };
 };
