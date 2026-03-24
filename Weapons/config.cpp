@@ -187,6 +187,16 @@ class CfgAmmo
 		airFriction = -0.013;
     };
 
+	class OEC_Ammo_SPAS12_Riot: OEC_Ammo_SPAS12_Buckshot
+    {
+		model = "";
+        submunitionConeAngle = 1.1;
+        submunitionCount = 6;
+        submunitionAmmo = "OEC_Ammo_SPAS12_Riot_Pellets";
+        submunitionInitialOffset[] = {0, 0, -0.2};
+		stunValue = 8;
+    };
+
     class OEC_Ammo_SPAS12_Slug: BulletBase
     {
 		model = "\A3\Weapons_f\Data\bullettracer\tracer_green";
@@ -215,6 +225,20 @@ class CfgAmmo
         caliber = 3;
         timeToLive = 0.6;
 		typicalSpeed = 590;
+    }; 
+
+	class OEC_Ammo_SPAS12_Riot_Pellets: OEC_Ammo_SPAS12_Buckshot_Pellets
+    {
+        model = "";
+		//tracerStartTime = 0.005;
+		//tracerEndTime = 10;
+		//tracerScale = 1;
+        airFriction = -0.026;
+        hit = 0.125;
+        caliber = 0.01;
+        timeToLive = 1.5;
+		typicalSpeed = 70;
+		stunValue = 6;
     };
 
 
@@ -2022,6 +2046,21 @@ class CfgMagazines
         initSpeed = 600;
         mass = 15;
         tracersEvery = 1;
+    };
+
+	class OEC_Magazine_SPAS12_8Rnd_Riot: OEC_Magazine_SPAS12_8Rnd
+    {
+        author = "OEC Extension";
+        scope = 2;
+        displayName = "[OEC] 8 SPAS-12 Riot Shells";
+        displayNameShort = "Riot";
+        descriptionshort = "Rubber buckshot shell for SPAS-12 Shotgun.";
+        picture = "\OECExtension\Weapons\data\buckshotMag.paa";
+        ammo = "OEC_Ammo_SPAS12_Riot";
+        count = 8;
+        initSpeed = 70;
+        mass = 15;
+        tracersEvery = 0;
     };
 
     class OEC_Magazine_SPAS12_8Rnd_Slug: OEC_Magazine_SPAS12_8Rnd
@@ -4551,7 +4590,7 @@ class CfgWeapons
 		descriptionShort = "Overwatch Standard Issue Ballistic Shotgun.";
 		model = "CUP\Weapons\CUP_Weapons_SPAS12\CUP_sgun_SPAS12";
 		picture = "\OECExtension\Weapons\data\SPAS12.paa";
-		magazines[] = {"OEC_Magazine_SPAS12_8Rnd", "OEC_Magazine_SPAS12_8Rnd_Slug"};
+		magazines[] = {"OEC_Magazine_SPAS12_8Rnd", "OEC_Magazine_SPAS12_8Rnd_Slug", "OEC_Magazine_SPAS12_8Rnd_Riot"};
         magazineWell[] = {};
 		handAnim[] = {"OFP2_ManSkeleton","\CUP\Weapons\CUP_Weapons_SPAS12\data\anim\spas_hand.rtm"};
 		inertia = 0.5;

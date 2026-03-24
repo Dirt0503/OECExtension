@@ -72,6 +72,13 @@ class CfgFunctions
             };
 
 
+            class statusEffects
+            {
+                file = "\OECExtension\Scripts\OEC_statusEffects.sqf";
+				description = "Script for handling ammo-applied status effects";
+            };
+
+
 
             class cisTaruPod
             {
