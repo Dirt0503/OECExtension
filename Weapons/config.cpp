@@ -8,7 +8,8 @@ class CfgPatches
         requiredAddons[] = 
         {
             "OEC_Extension",
-			"OEC_Extension_ParticleEffects"
+			"OEC_Extension_ParticleEffects",
+			"CUP_Weapons_L85"
         };
         units[] = {};
         weapons[] = 
@@ -25,6 +26,7 @@ class CfgPatches
             "OEC_Weapon_M320marker",
             "OEC_Weapon_Magnum",
             "OEC_Weapon_OICW",
+			"OEC_Weapon_l85",
             "OEC_Weapon_PulseSMG",
             "OEC_Weapon_SIPL0_Loaded",
             "OEC_Weapon_SIPL0",
@@ -277,7 +279,23 @@ class CfgAmmo
 		caliber = 1.5;
         typicalSpeed = 820;
 		airFriction = -0.0009;
+		coefGravity = 0.15;
 		model = "\hl_cmb_weapons\ar2\Data\bullettracer\tracer_blue";
+    };
+
+	// L85 Ammo
+	class OEC_Ammo_L85: BulletBase
+    {
+		hit = 14;
+		caliber = 1.5;
+        typicalSpeed = 915;
+		airFriction = -0.0011204;
+		coefGravity = 1.25;
+		tracerScale = 1;
+		tracerStartTime = 0.005;
+		tracerEndTime = 2;
+		model = "\A3\Weapons_f\Data\bullettracer\tracer_yellow";
+		cartridge = "CUP_FxCartridge_545";
     };
 
 	// AR-2 Ammo
@@ -1869,14 +1887,12 @@ class CfgMagazines
 		useActionTitle = "";
 		reloadAction = "";
 		ammo = "";
-		count = 30;
 		type = 256;
 		initSpeed = 820;
 		selectionFireAnim = "zasleh";
 		nameSound = "magazine";
 		maxLeadSpeed = 25;
 		weaponpoolavailable = 1;
-		mass = 9;
 		cost = 1;
     };
 
@@ -1892,6 +1908,55 @@ class CfgMagazines
 		count = 30;
 		mass = 11.5;
 		tracersEvery = 1;
+    };
+
+	class OEC_Magazine_L85_Base: Default
+    {
+        author = "OEC Extension";
+		scope = 1;
+		value = 1;
+		displayName = "";
+		model = "\CUP\Weapons\CUP_Weapons_Ammunition\magazines\CUP_mag_20Rnd_STANAG.p3d";
+		modelSpecial = "\CUP\Weapons\CUP_Weapons_Ammunition\magazines_proxy\CUP_mag_20Rnd_STANAG.p3d";
+		modelSpecialIsProxy = 1;
+		picture = "";
+		useAction = 0;
+		useActionTitle = "";
+		reloadAction = "";
+		ammo = "";
+		type = 256;
+		initSpeed = 920;
+		selectionFireAnim = "zasleh";
+		nameSound = "magazine";
+		maxLeadSpeed = 25;
+		weaponpoolavailable = 1;
+		cost = 1;
+    };
+
+	class OEC_Magazine_L85: OEC_Magazine_L85_Base
+    {
+		scope = 2;
+		ammo = "OEC_Ammo_L85";
+		author = "OEC Extension";
+		displayName = "[OEC] 20rnd L85 Magazine";
+        picture = "\OECExtension\Weapons\data\L85mag.paa";
+		count = 20;
+		mass = 20;
+		tracersEvery = 0;
+		lastRoundsTracer = 3;
+    };
+
+	class OEC_Magazine_L85_Tracer: OEC_Magazine_L85_Base
+    {
+		scope = 2;
+		ammo = "OEC_Ammo_L85";
+		author = "OEC Extension";
+		displayName = "[OEC] 20rnd L85 Tracer Magazine";
+        picture = "\OECExtension\Weapons\data\L85magTracer.paa";
+		count = 20;
+		mass = 20;
+		tracersEvery = 1;
+		lastRoundsTracer = 20;
     };
 
     class OEC_Magazine_357: OEC_Magazine_OICW_Base
@@ -4019,6 +4084,199 @@ class CfgWeapons
 			aiRateOfFireDistance = 500;
 			aiBurstTerminable = 1;
 		};
+	};
+
+	class OEC_Weapon_l85: Rifle_Base_F
+	{
+		author = "OEC Extension";
+        displayName = "[OEC] L85 Combine HPR";
+		scopeArsenal = 2;
+		scope = 2;
+		descriptionShort = "Overwatch Special Issue Ballistic Hybrid Purpose Rifle";
+		picture = "\OECExtension\Weapons\data\L85.paa";
+
+		magazines[] = {"OEC_Magazine_L85","OEC_Magazine_L85_Tracer"};
+		magazineWell[] = {};
+		reloadAction = "CUP_GestureReloadSA80";
+		recoil = "recoil_trg20";
+		magazineReloadSwitchPhase = 0.13;
+		model = "\CUP\Weapons\CUP_Weapons_L85\CUP_L85A2.p3d";
+		initspeed = -1.0217391;
+		discreteDistanceInitIndex = 0;
+		maxRecoilSway = 0.0125;
+		swayDecaySpeed = 1.25;
+		ACE_barrelLength = 518;
+		ACE_barrelTwist = 180;
+		ACE_twistDirection = 1;
+		handAnim[] = {"OFP2_ManSkeleton","\CUP\Weapons\CUP_Weapons_L85\data\anim\L85.rtm"};
+		class Library
+		{
+			libTextDesc = "Overwatch Special Issue Ballistic Hybrid Purpose Rifle acting as a hybrid of DMR and AR. High penetration, high damage, 20rnd magazine capacity.";
+		};
+		class GunParticles: GunParticles
+		{
+			class SecondEffect
+			{
+				positionName = "Nabojnicestart";
+				directionName = "Nabojniceend";
+				effectName = "CaselessAmmoCloud";
+			};
+		};
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass = 84.23;
+			class CowsSlot
+			{
+				linkProxy = "\A3\data_f\proxies\weapon_slots\TOP";
+				//displayName = "$STR_A3_CowsSlot0";
+                iconPosition[] = {0.4,0.32};
+				iconScale = 0.15;
+				compatibleItems[] = {"CUP_optic_Elcan"};
+			};
+			class PointerSlot{};
+			class MuzzleSlot
+			{
+				linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
+				compatibleItems[] = {"CUP_muzzle_snds_L85"};
+				iconPosition[] = {0.23,0.45};
+				iconScale = 0.2;
+				iconPicture = "\A3\Weapons_F\Data\UI\attachment_muzzle.paa";
+				iconPinPoint = "Right";
+			};
+		};
+		inertia = 0.4;
+		dexterity = 1.6;
+		aimTransitionSpeed = 1;
+		class ItemInfo
+		{
+			priority = 1;
+		};
+		opticsZoomMin = 0.25;
+		opticsZoomMax = 1.1;
+		opticsZoomInit = 0.75;
+		distanceZoomMin = 300;
+		distanceZoomMax = 300;
+		caseless[] = {"",1,1,1};
+		soundBullet[] = {"caseless",1};
+		changeFiremodeSound[] = {"A3\sounds_f\weapons\closure\firemode_changer_2.wss",0.17782794,1,5};
+		modes[] = {"Single","FullAuto","fullauto_medium","single_medium_optics1","single_far_optics2"};
+		class Single: Mode_SemiAuto
+		{
+			sounds[] = {"StandardSound","SilencedSound"};
+			class BaseSoundModeType
+			{
+				weaponSoundEffect = "DefaultRifle";
+				closure1[] = {"A3\sounds_f\weapons\closure\closure_rifle_6",0.70794576,1,10};
+				closure2[] = {"A3\sounds_f\weapons\closure\closure_rifle_7",0.70794576,1,10};
+				soundClosure[] = {"closure1",0.5,"closure2",0.5};
+			};
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[] = {"CUP_m16_Closure_SoundSet","CUP_m16_Shot_SoundSet","CUP_rifle1_Tail_SoundSet"};
+				begin1[] = {"CUP\Weapons\CUP_Weapons_L85\data\sounds\Fire1",1.0,2,1200};
+				begin2[] = {"CUP\Weapons\CUP_Weapons_L85\data\sounds\Fire2",1.0,2,1200};
+				begin3[] = {"CUP\Weapons\CUP_Weapons_L85\data\sounds\Fire3",1.0,2,1200};
+				begin4[] = {"CUP\Weapons\CUP_Weapons_L85\data\sounds\Fire4",1.0,2,1200};
+				soundBegin[] = {"begin1",0.5,"begin2",0.5,"begin3",0.5,"begin4",0.5};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[] = {"CUP_m16_Closure_SoundSet","CUP_m16_ShotSD_SoundSet","CUP_rifle1_SD_Tail_SoundSet"};
+				begin1[] = {"A3\sounds_f\weapons\silenced\silent-18",0.7943282,1,100};
+				begin2[] = {"A3\sounds_f\weapons\silenced\silent-19",0.7943282,1,100};
+				begin3[] = {"A3\sounds_f\weapons\silenced\silent-11",0.7943282,1,100};
+				soundBegin[] = {"begin1",0.333,"begin2",0.333,"begin3",0.333};
+			};
+			reloadTime = 0.096;
+			dispersion = 0.00087;
+			minRange = 2;
+			minRangeProbab = 0.5;
+			midRange = 150;
+			midRangeProbab = 0.7;
+			maxRange = 300;
+			maxRangeProbab = 0.2;
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			sounds[] = {"StandardSound","SilencedSound"};
+			class BaseSoundModeType
+			{
+				weaponSoundEffect = "DefaultRifle";
+				closure1[] = {"A3\sounds_f\weapons\closure\closure_rifle_6",0.70794576,1,10};
+				closure2[] = {"A3\sounds_f\weapons\closure\closure_rifle_7",0.70794576,1,10};
+				soundClosure[] = {"closure1",0.5,"closure2",0.5};
+			};
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[] = {"CUP_m16_Closure_SoundSet","CUP_m16_Shot_SoundSet","CUP_rifle1_Tail_SoundSet"};
+				begin1[] = {"CUP\Weapons\CUP_Weapons_L85\data\sounds\Fire1",1.0,2,1200};
+				begin2[] = {"CUP\Weapons\CUP_Weapons_L85\data\sounds\Fire2",1.0,2,1200};
+				begin3[] = {"CUP\Weapons\CUP_Weapons_L85\data\sounds\Fire3",1.0,2,1200};
+				begin4[] = {"CUP\Weapons\CUP_Weapons_L85\data\sounds\Fire4",1.0,2,1200};
+				soundBegin[] = {"begin1",0.5,"begin2",0.5,"begin3",0.5,"begin4",0.5};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[] = {"CUP_m16_Closure_SoundSet","CUP_m16_ShotSD_SoundSet","CUP_rifle1_SD_Tail_SoundSet"};
+				begin1[] = {"A3\sounds_f\weapons\silenced\silent-18",0.7943282,1,100};
+				begin2[] = {"A3\sounds_f\weapons\silenced\silent-19",0.7943282,1,100};
+				begin3[] = {"A3\sounds_f\weapons\silenced\silent-11",0.7943282,1,100};
+				soundBegin[] = {"begin1",0.333,"begin2",0.333,"begin3",0.333};
+			};
+			reloadTime = 0.096;
+			dispersion = 0.00087;
+			minRange = 0;
+			minRangeProbab = 0.9;
+			midRange = 15;
+			midRangeProbab = 0.7;
+			maxRange = 30;
+			maxRangeProbab = 0.1;
+			aiRateOfFire = 1e-006;
+		};
+		class fullauto_medium: FullAuto
+		{
+			showToPlayer = 0;
+			burst = 3;
+			minRange = 2;
+			minRangeProbab = 0.5;
+			midRange = 75;
+			midRangeProbab = 0.7;
+			maxRange = 150;
+			maxRangeProbab = 0.05;
+			aiRateOfFire = 2.0;
+			aiRateOfFireDistance = 200;
+			aiBurstTerminable = 1;
+		};
+		class single_medium_optics1: Single
+		{
+			requiredOpticType = 1;
+			showToPlayer = 0;
+			minRange = 2;
+			minRangeProbab = 0.2;
+			midRange = 450;
+			midRangeProbab = 0.7;
+			maxRange = 600;
+			maxRangeProbab = 0.2;
+			aiRateOfFire = 6;
+			aiRateOfFireDistance = 600;
+		};
+		class single_far_optics2: single_medium_optics1
+		{
+			requiredOpticType = 2;
+			showToPlayer = 0;
+			minRange = 100;
+			minRangeProbab = 0.1;
+			midRange = 500;
+			midRangeProbab = 0.6;
+			maxRange = 700;
+			maxRangeProbab = 0.05;
+			aiRateOfFire = 8;
+			aiRateOfFireDistance = 700;
+		};
+		aiDispersionCoefY = 6.0;
+		aiDispersionCoefX = 4.0;
+		drySound[] = {"A3\sounds_f\weapons\Other\dry_1.wss",0.56234133,1,10};
+		reloadMagazineSound[] = {"\CUP\Weapons\CUP_Weapons_L85\data\sounds\l85_reload.wss",1.0,1,10};
 	};
 
     class OEC_Weapon_PulseSMG: OEC_Weapon_AR2
