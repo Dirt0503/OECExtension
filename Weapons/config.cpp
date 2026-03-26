@@ -2120,7 +2120,7 @@ class CfgMagazines
         displayName = "[OEC] 8 SPAS-12 Riot Shells";
         displayNameShort = "Riot";
         descriptionshort = "Rubber buckshot shell for SPAS-12 Shotgun.";
-        picture = "\OECExtension\Weapons\data\buckshotMag.paa";
+        picture = "\OECExtension\Weapons\data\riotMag.paa";
         ammo = "OEC_Ammo_SPAS12_Riot";
         count = 8;
         initSpeed = 70;

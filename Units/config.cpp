@@ -2896,7 +2896,7 @@ class CfgVehicles
         respawnWeapons[] = {"Throw","Put"};
         magazines[] = {};
         respawnMagazines[] = {};
-        stunResistance = 1;
+        stunResistance = 0.5;
 
 		class EventHandlers {};
     };
@@ -2920,7 +2920,7 @@ class CfgVehicles
         respawnWeapons[] = {"OEC_Weapon_Makarov", "Throw","Put"};
         magazines[] = {"OEC_Magazine_9x18_8Rnd", "OEC_Magazine_9x18_8Rnd", "OEC_Magazine_9x18_8Rnd", "OEC_Magazine_9x18_8Rnd"};
         respawnMagazines[] = {"OEC_Magazine_9x18_8Rnd", "OEC_Magazine_9x18_8Rnd", "OEC_Magazine_9x18_8Rnd", "OEC_Magazine_9x18_8Rnd"};
-        stunResistance = 1;
+        stunResistance = 0.5;
 
 		class EventHandlers {};
     };
