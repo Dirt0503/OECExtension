@@ -177,7 +177,7 @@ class CfgAmmo
 		tracerScale = 1;
         triggerTime = 0.002;
 		cartridge = "FxCartridge_slug";
-        submunitionConeAngle = 1.1;
+        submunitionConeAngle = 0.9;
         submunitionCount = 8;
         submunitionAmmo = "OEC_Ammo_SPAS12_Buckshot_Pellets";
         submunitionInitialOffset[] = {0, 0, -0.2};
@@ -197,6 +197,17 @@ class CfgAmmo
         submunitionAmmo = "OEC_Ammo_SPAS12_Riot_Pellets";
         submunitionInitialOffset[] = {0, 0, -0.2};
 		stunValue = 8;
+    };
+
+	class OEC_Ammo_SPAS12_Magnesium: OEC_Ammo_SPAS12_Buckshot
+    {
+		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+        submunitionConeAngle = 0.6;
+        submunitionCount = 6;
+		tracerScale = 1.5;
+        submunitionAmmo = "OEC_Ammo_SPAS12_Magnesium_Pellets";
+		incendiary = 1;
+        submunitionInitialOffset[] = {0, 0, 0};
     };
 
     class OEC_Ammo_SPAS12_Slug: BulletBase
@@ -243,6 +254,19 @@ class CfgAmmo
 		stunValue = 6;
     };
 
+	class OEC_Ammo_SPAS12_Magnesium_Pellets: OEC_Ammo_SPAS12_Buckshot_Pellets
+    {
+        model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+	    effectFly = "OEC_ParticleEffect_DragonTrail";
+		explosionEffects = "OEC_ParticleEffect_DragonImpact";
+		incendiary = 1;
+		tracerScale = 1.5;
+        airFriction = -0.02;
+        hit = 5;
+        caliber = 1.5;
+        timeToLive = 0.75;
+		typicalSpeed = 200;
+    };
 
 	// APF Suppressor ammo
     class OEC_Ammo_APFSuppressor: B_65x39_Caseless
@@ -2109,7 +2133,7 @@ class CfgMagazines
         ammo = "OEC_Ammo_SPAS12_Buckshot";
         count = 8;
         initSpeed = 600;
-        mass = 15;
+        mass = 9.3;
         tracersEvery = 1;
     };
 
@@ -2124,8 +2148,22 @@ class CfgMagazines
         ammo = "OEC_Ammo_SPAS12_Riot";
         count = 8;
         initSpeed = 70;
-        mass = 15;
+        mass = 9.3;
         tracersEvery = 0;
+    };
+
+	class OEC_Magazine_SPAS12_8Rnd_Magnesium: OEC_Magazine_SPAS12_8Rnd
+    {
+        author = "OEC Extension";
+        scope = 2;
+        displayName = "[OEC] 8 SPAS-12 Magnesium Shells";
+        displayNameShort = "Magnesium";
+        descriptionshort = "Incendiary buckshot shell for SPAS-12 Shotgun.";
+        picture = "\OECExtension\Weapons\data\dragonMag.paa";
+        ammo = "OEC_Ammo_SPAS12_Magnesium";
+        count = 8;
+        initSpeed = 200;
+        mass = 9.3;
     };
 
     class OEC_Magazine_SPAS12_8Rnd_Slug: OEC_Magazine_SPAS12_8Rnd
@@ -2136,7 +2174,7 @@ class CfgMagazines
         picture = "\OECExtension\Weapons\data\slugMag.paa";
         ammo = "OEC_Ammo_SPAS12_Slug";
         tracersEvery = 1;
-        mass = 20;
+        mass = 9.3;
     };
 
     class OEC_Magazine_USP: OEC_Magazine_OICW_Base
@@ -2184,8 +2222,6 @@ class CfgMagazines
 		picture = "\OECExtension\Weapons\data\turretMag.paa";
 		displayName = "[OEC] 200rnd Combine Sterilizer Cell";
 		descriptionShort = "Extreme Capacity Sterilizer Pulse Cell; 200m dissipation range";
-		//model = "\a3\Props_F_Enoch\Military\Camps\PortableLight_02_single_folded_F.p3d";
-		//hiddenSelectionsTextures[] = {"a3\Props_F_Enoch\Military\Camps\data\Portable_light_02_Single_Sand_CO.paa"};
 		count = 200;
 		mass = 20;
 		allowedSlots[] = 
@@ -4848,7 +4884,7 @@ class CfgWeapons
 		descriptionShort = "Overwatch Standard Issue Ballistic Shotgun.";
 		model = "CUP\Weapons\CUP_Weapons_SPAS12\CUP_sgun_SPAS12";
 		picture = "\OECExtension\Weapons\data\SPAS12.paa";
-		magazines[] = {"OEC_Magazine_SPAS12_8Rnd", "OEC_Magazine_SPAS12_8Rnd_Slug", "OEC_Magazine_SPAS12_8Rnd_Riot"};
+		magazines[] = {"OEC_Magazine_SPAS12_8Rnd", "OEC_Magazine_SPAS12_8Rnd_Slug", "OEC_Magazine_SPAS12_8Rnd_Riot", "OEC_Magazine_SPAS12_8Rnd_Magnesium"};
         magazineWell[] = {};
 		handAnim[] = {"OFP2_ManSkeleton","\CUP\Weapons\CUP_Weapons_SPAS12\data\anim\spas_hand.rtm"};
 		inertia = 0.5;
@@ -4877,7 +4913,7 @@ class CfgWeapons
 		discreteDistance[] = {100};
 		distanceZoomMin = 50;
 		distanceZoomMax = 50;
-		fireSpreadAngle = 0.7848246;
+		fireSpreadAngle = 0.6;
 		jsrs_soundeffect = "JSRS2_Distance_Effects_Shotgun";
 		ACE_twistDirection = 0;
 		ACE_barrelTwist = 0.0;

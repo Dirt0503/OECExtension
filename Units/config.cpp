@@ -4222,28 +4222,33 @@ class Extended_InitPost_EventHandlers
 
     class OEC_Unit_CIS_Rifleman
 	{
-        class OEC_StatusEffects_Init
+        class OEC_stunEffects_Init
         {
             onRespawn = "true";
-            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_statusEffects.sqf';};";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_stunEffects.sqf';};";
+        };
+        class OEC_fireEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_fireEffects.sqf';};";
         };
     };
 
     class OEC_Unit_CIS_Officer
 	{
-        class OEC_StatusEffects_Init
+        class OEC_stunEffects_Init
         {
             onRespawn = "true";
-            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_statusEffects.sqf';};";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_stunEffects.sqf';};";
         };
     };
 
     class OEC_Unit_CIS_Scientist
 	{
-        class OEC_StatusEffects_Init
+        class OEC_stunEffects_Init
         {
             onRespawn = "true";
-            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_statusEffects.sqf';};";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_stunEffects.sqf';};";
         };
     };
 };

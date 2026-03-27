@@ -72,10 +72,10 @@ class CfgFunctions
             };
 
 
-            class statusEffects
+            class stunEffects
             {
-                file = "\OECExtension\Scripts\OEC_statusEffects.sqf";
-				description = "Script for handling ammo-applied status effects";
+                file = "\OECExtension\Scripts\OEC_stunEffects.sqf";
+				description = "Script for handling ammo-applied stun effects";
             };
 
 
