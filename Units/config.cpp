@@ -2268,6 +2268,7 @@ class CfgVehicles
 		modelSides[] = {0,3};
 		nakedUniform = "U_BasicBody";
 		uniformClass = "OEC_CIS_Uniform_Flora";
+        ace_fire_screamSounds[] = {};
 
         class HitPoints: HitPoints
 		{

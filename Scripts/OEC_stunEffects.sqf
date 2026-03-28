@@ -15,7 +15,7 @@ if (_noExistingEntry) then
 };
 
 
-_unit removeAllEventHandlers "HitPart";
+//_unit removeAllEventHandlers "HitPart";
 _unit addEventHandler ["HitPart", {
     (_this select 0) params ["_target","_shooter","_bullet","_position","_velocity","_selection","_ammo","_direction","_radius","_surface","_direct"];
     _stunMunition = _ammo select 4;

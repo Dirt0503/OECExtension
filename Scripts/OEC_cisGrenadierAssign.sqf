@@ -16,3 +16,6 @@ _unit setSkill ["courage", 0.1];
 
 _unit forceSpeed (_unit getSpeed "Normal");
 _unit setAnimSpeedCoef 1.6;
+
+
+_unit setVariable ["ace_fire_enableScreams", false, _isGlobal];

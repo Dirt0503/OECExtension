@@ -14,3 +14,5 @@ if(isPlayer _unit)exitWith{};
 _unit setSkill ["general", 0.75];
 _unit setSkill ["spotTime", 0.75];
 _unit setSkill ["courage", 0.75];
+
+_unit setVariable ["ace_fire_enableScreams", false, _isGlobal];

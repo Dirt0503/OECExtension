@@ -315,10 +315,10 @@ class CfgCloudLets
 		circleVelocity[] = {0,0,0};
 		colorVar[] = {0.1,0.05,0.05,0};
 		color[] = {{1,0.92,0.53,1}};
-		interval = 0.002;
+		interval = 0.0009;
 		lifeTime = 0.13;
 		lifeTimeVar = 0.2;
-		MoveVelocityVar[] = {3,3,3};
+		MoveVelocityVar[] = {7,7,7};
 		moveVelocity[] = {2,2,0};
 		onTimerScript = "";
 		particleFSFrameCount = 1;
@@ -327,15 +327,15 @@ class CfgCloudLets
 		particleFSNtieth = 1;
 		particleShape ="\A3\data_f\kouleSvetlo";
 		particleType = "Billboard";
-		positionVar[] = {0,0,0};
-		randomDirectionIntensity = 0.2;
+		positionVar[] = {0.06,0.06,0.06};
+		randomDirectionIntensity = 0.5;
 		randomDirectionIntensityVar = 0.2;
-		randomDirectionPeriod = 2;
+		randomDirectionPeriod = 0.03;
 		randomDirectionPeriodVar = 0;
 		rotationVelocity = 10;
 		rotationVelocityVar = 90;
 		bounceOnSurface = -1;	
-		rubbing = 0.1;
+		rubbing = 0.01;
 		sizeVar = 0.015;
 		Size[] = {0.08,0.01};
 		timerPeriod = 1;
@@ -741,7 +741,7 @@ class OEC_ParticleEffect_DragonTrail
 		position[] = {0,0,0};
 		intensity = 1;
 		interval = 1;
-		lifeTime = 0.15;
+		lifeTime = 0.06;
 	};
 };
 

@@ -32,4 +32,6 @@ _uniformPool =
 ];
 _unit forceAddUniform (selectRandom _uniformPool);
 
+_unit setVariable ["ace_fire_enableScreams", false, _isGlobal];
+
 if(isPlayer _unit)exitWith{};
