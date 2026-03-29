@@ -228,10 +228,10 @@ class CfgCloudLets
 
 	class OEC_Cloudlet_DragonSmoke: OEC_CloudLet_Distortion
     {
-        interval = 0.001;
-        sizeOverLifeTime[] = {1};
-		lifeTime = 0.01;
-		color[] = {{0.69,0.17,0.12,0.05}};
+        interval = 0.0001;
+        sizeOverLifeTime[] = {1.5,1};
+		lifeTime = 0.015;
+		//color[] = {{0.69,0.17,0.12,0.05}};
     };
 
 	class OEC_CloudLet_DragonFire: Default
@@ -314,12 +314,12 @@ class CfgCloudLets
 		circleRadius = 0;
 		circleVelocity[] = {0,0,0};
 		colorVar[] = {0.1,0.05,0.05,0};
-		color[] = {{1,0.92,0.53,1}};
+		color[] = {{1,0.32,0.23,1}};
 		interval = 0.0009;
-		lifeTime = 0.13;
-		lifeTimeVar = 0.2;
-		MoveVelocityVar[] = {7,7,7};
-		moveVelocity[] = {2,2,0};
+		lifeTime = 0.25;
+		lifeTimeVar = 0.15;
+		MoveVelocityVar[] = {3,3,3};
+		moveVelocity[] = {1,1,0};
 		onTimerScript = "";
 		particleFSFrameCount = 1;
 		particleFSIndex = 0;
@@ -343,6 +343,16 @@ class CfgCloudLets
 		weight = 25;
 		emissiveColor[] = {{5000,5000,5000,1},{100,100,100,1}};	
 		destroyOnWaterSurface = 1;
+	};
+
+	class OEC_Cloudlet_DragonSparksSmall: OEC_Cloudlet_DragonSparks
+	{
+		interval = 0.035;
+		lifeTime = 0.1;
+		lifeTimeVar = 0.06;
+		MoveVelocityVar[] = {5,5,5};
+		moveVelocity[] = {2,2,0};
+		positionVar[] = {0.001,0.001,0.001};
 	};
 
     class OEC_CloudLet_AlienPulse: ArtilleryShell1
@@ -386,15 +396,15 @@ class CfgCloudLets
         sizeCoef = 0.1;
     };
 
-	class OEC_CloudLet_AlienPulse_Red: OEC_CloudLet_AlienPulse
+	class OEC_CloudLet_AlienPulse_White: OEC_CloudLet_AlienPulse
     {
         color[] = 
         {
-            {0.88, 0.35, 0.14, 0.25},  
-            {0.88, 0.35, 0.11, 0.15},
-            {0.88, 0.3, 0.09, 0.08},
-            {0.88, 0.25, 0.07, 0.03},  
-            {0.88, 0.2, 0.05, 0.01}   
+            {1, 1, 1, 0.3},  
+            {1, 1, 1, 0.25},
+            {1, 1, 1, 0.2},
+            {1, 1, 1, 0.15},  
+            {1, 1, 1, 0.1}   
         };
         sizeVar = 0.05;
         sizeCoef = 0.1;
@@ -727,11 +737,11 @@ class OEC_ParticleEffect_DragonTrail
 	class Trail
     {
         simulation = "particles";
-		type = "OEC_CloudLet_AlienPulse_Red";
+		type = "OEC_CloudLet_AlienPulse_White";
 		position[] = {0,0,0};
 		intensity = 1;
 		interval = 1;
-		lifeTime = 0.5;
+		lifeTime = 2;
         smokeGenMinDist = 10;
     };
     class Sparks
@@ -741,7 +751,16 @@ class OEC_ParticleEffect_DragonTrail
 		position[] = {0,0,0};
 		intensity = 1;
 		interval = 1;
-		lifeTime = 0.06;
+		lifeTime = 0.045;
+	};
+	class SparksSmall
+	{
+		simulation = "particles";
+		type = "OEC_Cloudlet_DragonSparksSmall";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+		lifeTime = 2;
 	};
 };
 

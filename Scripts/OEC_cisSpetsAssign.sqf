@@ -9,8 +9,6 @@ _headgearPool =
 ];
 _unit addHeadgear (selectRandom _headgearPool);
 
-_unit setVariable ["ace_fire_enableScreams", false, _isGlobal];
-
 if(isPlayer _unit)exitWith{};
 
 _unit setSkill ["general", 0.8];

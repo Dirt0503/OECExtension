@@ -10,7 +10,6 @@ _unit addEventHandler ["HitPart", {
     if (_target == _shooter || (!alive _target) || _isMunitionIncendiary != 1) exitWith {};
     _finalFlammable = ((_target getVariable "fireMeter") + 1);
     _target setVariable["fireMeter", _finalFlammable, true];
-    systemchat ("new flammable:" + (str _finalFlammable));
 
     if((_target getVariable "fireMeter") > 0) then
     {
@@ -32,5 +31,4 @@ while {(alive _unit) && !(isNull _unit)} do
 
     _newFlammable = _currentFlammable - 2;
     _unit setVariable ["fireMeter",_newFlammable,true];
-    systemchat ("refreshed Flammable:" + (str _newFlammable));
 };

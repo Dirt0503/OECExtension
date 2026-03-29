@@ -2126,7 +2126,7 @@ class CfgMagazines
     {
         author = "OEC Extension";
         scope = 2;
-        displayName = "[OEC] 8 SPAS-12 Buckshot Shells";
+        displayName = "[OEC] 8pcs SPAS-12 Buckshot Shells";
         displayNameShort = "Buckshot";
         descriptionshort = "Buckshot shell for SPAS-12 Shotgun.";
         picture = "\OECExtension\Weapons\data\buckshotMag.paa";
@@ -2141,7 +2141,7 @@ class CfgMagazines
     {
         author = "OEC Extension";
         scope = 2;
-        displayName = "[OEC] 8 SPAS-12 Riot Shells";
+        displayName = "[OEC] 8pcs SPAS-12 Riot Shells";
         displayNameShort = "Riot";
         descriptionshort = "Rubber buckshot shell for SPAS-12 Shotgun.";
         picture = "\OECExtension\Weapons\data\riotMag.paa";
@@ -2156,7 +2156,7 @@ class CfgMagazines
     {
         author = "OEC Extension";
         scope = 2;
-        displayName = "[OEC] 8 SPAS-12 Magnesium Shells";
+        displayName = "[OEC] 8pcs SPAS-12 Magnesium Shells";
         displayNameShort = "Magnesium";
         descriptionshort = "Incendiary buckshot shell for SPAS-12 Shotgun.";
         picture = "\OECExtension\Weapons\data\dragonMag.paa";
@@ -2168,7 +2168,7 @@ class CfgMagazines
 
     class OEC_Magazine_SPAS12_8Rnd_Slug: OEC_Magazine_SPAS12_8Rnd
     {
-        displayName = "[OEC] 8 SPAS-12 Slug Shells";
+        displayName = "[OEC] 8pcs SPAS-12 Slug Shells";
         displayNameShort = "Slug";
         descriptionshort = "Slug shell for SPAS-12 Shotgun.";
         picture = "\OECExtension\Weapons\data\slugMag.paa";

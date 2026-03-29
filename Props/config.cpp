@@ -246,12 +246,22 @@ class CfgVehicles
 			class _xx_OEC_Magazine_SPAS12_8Rnd
 			{
 				magazine = "OEC_Magazine_SPAS12_8Rnd";
-				count = 50;
+				count = 40;
 			};
 			class _xx_OEC_Magazine_SPAS12_8Rnd_Slug
 			{
 				magazine = "OEC_Magazine_SPAS12_8Rnd_Slug";
-				count = 50;
+				count = 40;
+			};
+			class _xx_OEC_Magazine_SPAS12_8Rnd_Magnesium
+			{
+				magazine = "OEC_Magazine_SPAS12_8Rnd_Magnesium";
+				count = 40;
+			};
+			class _xx_OEC_Magazine_SPAS12_8Rnd_Riot
+			{
+				magazine = "OEC_Magazine_SPAS12_8Rnd_Riot";
+				count = 40;
 			};
 			class _xx_OEC_Magazine_357
 			{

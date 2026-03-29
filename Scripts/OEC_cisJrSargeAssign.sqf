@@ -44,8 +44,6 @@ _newGoggles = selectRandom _gogglesPool;
 removeGoggles _unit; 
 _unit addGoggles _newGoggles;
 
-_unit setVariable ["ace_fire_enableScreams", false, _isGlobal];
-
 if(isPlayer _unit)exitWith{};
 
 _unit setSkill ["general", 0.75];
