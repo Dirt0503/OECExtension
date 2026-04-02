@@ -72,6 +72,13 @@ class CfgFunctions
             };
 
 
+            class stunEffects
+            {
+                file = "\OECExtension\Scripts\OEC_stunEffects.sqf";
+				description = "Script for handling ammo-applied stun effects";
+            };
+
+
 
             class cisTaruPod
             {

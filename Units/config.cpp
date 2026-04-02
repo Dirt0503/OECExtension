@@ -2268,6 +2268,7 @@ class CfgVehicles
 		modelSides[] = {0,3};
 		nakedUniform = "U_BasicBody";
 		uniformClass = "OEC_CIS_Uniform_Flora";
+        ace_fire_screamSounds[] = {};
 
         class HitPoints: HitPoints
 		{
@@ -2790,6 +2791,7 @@ class CfgVehicles
         respawnWeapons[] = {"OEC_Weapon_PKM","Throw","Put"};
         magazines[] = {"OEC_Magazine_762x51_150Rnd", "OEC_Magazine_762x51_150Rnd", "OEC_Magazine_762x51_150Rnd", "OEC_Magazine_762x51_150Rnd", "Smokeshell", "Smokeshell", "Smokeshell"};
         respawnMagazines[] = {"OEC_Magazine_762x51_150Rnd", "OEC_Magazine_762x51_150Rnd", "OEC_Magazine_762x51_150Rnd", "OEC_Magazine_762x51_150Rnd", "Smokeshell", "Smokeshell", "Smokeshell"};
+        stunResistance = 1.5;
 
 		class EventHandlers: EventHandlers
         {
@@ -2896,6 +2898,7 @@ class CfgVehicles
         respawnWeapons[] = {"Throw","Put"};
         magazines[] = {};
         respawnMagazines[] = {};
+        stunResistance = 0.5;
 
 		class EventHandlers {};
     };
@@ -2919,6 +2922,7 @@ class CfgVehicles
         respawnWeapons[] = {"OEC_Weapon_Makarov", "Throw","Put"};
         magazines[] = {"OEC_Magazine_9x18_8Rnd", "OEC_Magazine_9x18_8Rnd", "OEC_Magazine_9x18_8Rnd", "OEC_Magazine_9x18_8Rnd"};
         respawnMagazines[] = {"OEC_Magazine_9x18_8Rnd", "OEC_Magazine_9x18_8Rnd", "OEC_Magazine_9x18_8Rnd", "OEC_Magazine_9x18_8Rnd"};
+        stunResistance = 0.5;
 
 		class EventHandlers {};
     };
@@ -4217,4 +4221,172 @@ class Extended_InitPost_EventHandlers
 			init = "_unit = _this select 0; if (local _unit) then {[_unit,false] execVM '\OECExtension\Scripts\xen_zombine.sqf';};";
 		};
 	};
+
+    class OEC_Unit_CIS_Rifleman
+	{
+        class OEC_stunEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_stunEffects.sqf';};";
+        };
+        class OEC_fireEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_fireEffects.sqf';};";
+        };
+    };
+
+    class OEC_Unit_CIS_AT
+	{
+        class OEC_stunEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_stunEffects.sqf';};";
+        };
+        class OEC_fireEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_fireEffects.sqf';};";
+        };
+    };
+
+    class OEC_Unit_CIS_Medic
+	{
+        class OEC_stunEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_stunEffects.sqf';};";
+        };
+        class OEC_fireEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_fireEffects.sqf';};";
+        };
+    };
+
+    class OEC_Unit_CIS_JrSergeant
+	{
+        class OEC_stunEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_stunEffects.sqf';};";
+        };
+        class OEC_fireEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_fireEffects.sqf';};";
+        };
+    };
+
+    class OEC_Unit_CIS_Sergeant
+	{
+        class OEC_stunEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_stunEffects.sqf';};";
+        };
+        class OEC_fireEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_fireEffects.sqf';};";
+        };
+    };
+
+    class OEC_Unit_CIS_Crew
+	{
+        class OEC_stunEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_stunEffects.sqf';};";
+        };
+        class OEC_fireEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_fireEffects.sqf';};";
+        };
+    };
+
+    class OEC_Unit_CIS_Heavy
+	{
+        class OEC_stunEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_stunEffects.sqf';};";
+        };
+        class OEC_fireEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_fireEffects.sqf';};";
+        };
+    };
+
+    class OEC_Unit_CIS_Grenadier
+	{
+        class OEC_stunEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_stunEffects.sqf';};";
+        };
+        class OEC_fireEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_fireEffects.sqf';};";
+        };
+    };
+
+    class OEC_Unit_CIS_Spetsnaz
+	{
+        class OEC_stunEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_stunEffects.sqf';};";
+        };
+        class OEC_fireEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_fireEffects.sqf';};";
+        };
+    };
+
+    class OEC_Unit_CIS_Officer
+	{
+        class OEC_stunEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_stunEffects.sqf';};";
+        };
+        class OEC_fireEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_fireEffects.sqf';};";
+        };
+    };
+
+    class OEC_Unit_CIS_Scientist
+	{
+        class OEC_stunEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_stunEffects.sqf';};";
+        };
+        class OEC_fireEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_fireEffects.sqf';};";
+        };
+    };
+
+    class OEC_Overwatch_Unit_Base
+	{
+        class OEC_stunEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_stunEffects.sqf';};";
+        };
+        class OEC_fireEffects_Init
+        {
+            onRespawn = "true";
+            init = "_unit = _this select 0; if (local _unit) then {_unit execVM '\OECExtension\Scripts\OEC_fireEffects.sqf';};";
+        };
+    };
 };

@@ -57,6 +57,13 @@ class CfgLights
         flareSize = 0.25;
     };
 
+	class OEC_Light_AlienPulse_Red: OEC_Light_AlienPulse_Blue
+    {
+        color[] = {1, 0.25, 0.16, 1};
+        diffuse[] = {1, 0.25, 0.16, 1};
+        flareSize = 0.25;
+    };
+
     class OEC_Light_AlienPulse_Green: OEC_Light_AlienPulse_Blue
     {
         color[] = {0.2, 0.95, 0.1, 1};
@@ -219,6 +226,43 @@ class CfgCloudLets
         sizeOverLifeTime[] = {1,1.5,2};
     };
 
+	class OEC_Cloudlet_DragonSmoke: OEC_CloudLet_Distortion
+    {
+        interval = 0.0001;
+        sizeOverLifeTime[] = {1.5,1};
+		lifeTime = 0.015;
+		//color[] = {{0.69,0.17,0.12,0.05}};
+    };
+
+	class OEC_CloudLet_DragonFire: Default
+    {
+        particleShape = "\A3\data_f\ParticleEffects\Universal\Universal";
+        particleFSNtieth = 16;
+        particleFSIndex = 10;
+        particleFSFrameCount = 32;
+        smokeGenMinDist = 20;
+
+        animationName = "";
+        particleType = "Billboard";
+        timerPeriod = 1;
+        lifeTime = 1.5;
+        positionVar[] = {0,0,0};
+        moveVelocity[] = {0,0,0};
+
+        rotationVelocity = 0;
+        weight = 1;
+        volume = 1;
+        rubbing = 0.0001;
+        sizeOverLifeTime[] = {0.2};
+        color[] = {{1,1,1,-1}};
+        animationSpeed[] = {0.5, 1};
+        randomDirectionPeriod = 1;
+        randomDirectionIntensity = 0;
+        onTimerScript = "";
+        beforeDestroyScipt = "";
+		emissiveColor[] = {{0.8,0.6,0.2,1}};	
+    };
+
     class OEC_Cloudlet_GaussSparks: Default
 	{
 		angle = 90;	
@@ -260,6 +304,57 @@ class CfgCloudLets
 		destroyOnWaterSurface = 1;
 	};
 
+	class OEC_Cloudlet_DragonSparks: Default
+	{
+		angle = 90;	
+		angleVar = 90;
+		animationName = "";
+		animationSpeed[] = {1};
+		beforeDestroyScript = "";
+		circleRadius = 0;
+		circleVelocity[] = {0,0,0};
+		colorVar[] = {0.1,0.05,0.05,0};
+		color[] = {{1,0.32,0.23,1}};
+		interval = 0.0009;
+		lifeTime = 0.25;
+		lifeTimeVar = 0.15;
+		MoveVelocityVar[] = {3,3,3};
+		moveVelocity[] = {1,1,0};
+		onTimerScript = "";
+		particleFSFrameCount = 1;
+		particleFSIndex = 0;
+		particleFSLoop = 1;
+		particleFSNtieth = 1;
+		particleShape ="\A3\data_f\kouleSvetlo";
+		particleType = "Billboard";
+		positionVar[] = {0.06,0.06,0.06};
+		randomDirectionIntensity = 0.5;
+		randomDirectionIntensityVar = 0.2;
+		randomDirectionPeriod = 0.03;
+		randomDirectionPeriodVar = 0;
+		rotationVelocity = 10;
+		rotationVelocityVar = 90;
+		bounceOnSurface = -1;	
+		rubbing = 0.01;
+		sizeVar = 0.015;
+		Size[] = {0.08,0.01};
+		timerPeriod = 1;
+		volume = 1;
+		weight = 25;
+		emissiveColor[] = {{5000,5000,5000,1},{100,100,100,1}};	
+		destroyOnWaterSurface = 1;
+	};
+
+	class OEC_Cloudlet_DragonSparksSmall: OEC_Cloudlet_DragonSparks
+	{
+		interval = 0.035;
+		lifeTime = 0.1;
+		lifeTimeVar = 0.06;
+		MoveVelocityVar[] = {5,5,5};
+		moveVelocity[] = {2,2,0};
+		positionVar[] = {0.001,0.001,0.001};
+	};
+
     class OEC_CloudLet_AlienPulse: ArtilleryShell1
     {
         color[] = 
@@ -299,6 +394,21 @@ class CfgCloudLets
         };
         sizeVar = 0.05;
         sizeCoef = 0.1;
+    };
+
+	class OEC_CloudLet_AlienPulse_White: OEC_CloudLet_AlienPulse
+    {
+        color[] = 
+        {
+            {1, 1, 1, 0.3},  
+            {1, 1, 1, 0.25},
+            {1, 1, 1, 0.2},
+            {1, 1, 1, 0.15},  
+            {1, 1, 1, 0.1}   
+        };
+        sizeVar = 0.05;
+        sizeCoef = 0.1;
+		lifeTime = 0.13;
     };
 
     class OEC_CloudLet_MK3A2_Trail: ArtilleryShell1
@@ -614,6 +724,57 @@ class OEC_ParticleEffect_GaussTrail
 		interval = 1;
 		lifeTime = 1;
 	};
+};
+
+class OEC_ParticleEffect_DragonTrail
+{
+    class Light
+    {
+        simulation = "light";
+        type = "OEC_Light_AlienPulse_Red";
+        position[] = {0,0,0};
+    };
+	class Trail
+    {
+        simulation = "particles";
+		type = "OEC_CloudLet_AlienPulse_White";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+		lifeTime = 2;
+        smokeGenMinDist = 10;
+    };
+    class Sparks
+	{
+		simulation = "particles";
+		type = "OEC_Cloudlet_DragonSparks";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+		lifeTime = 0.045;
+	};
+	class SparksSmall
+	{
+		simulation = "particles";
+		type = "OEC_Cloudlet_DragonSparksSmall";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+		lifeTime = 2;
+	};
+};
+
+class OEC_ParticleEffect_DragonImpact
+{
+    class Fire
+    {
+        simulation = "particles";
+		type = "OEC_CloudLet_DragonFire";
+		position[] = {0,0,0};
+		intensity = 1;
+		interval = 1;
+		lifeTime = 1;
+    };
 };
 
 class OEC_ParticleEffect_MK3A2

@@ -113,6 +113,16 @@ class CfgVehicles
 				magazine = "OEC_Magazine_Gauss";
 				count = 80;
 			};
+			class __xx_OEC_Magazine_L85
+			{
+				magazine = "OEC_Magazine_L85";
+				count = 75;
+			};
+			class __xx_OEC_Magazine_L85_Tracer
+			{
+				magazine = "OEC_Magazine_L85_Tracer";
+				count = 75;
+			};
 			class _xx_OEC_AR2_Mag
 			{
 				magazine = "OEC_Magazine_AR2";
@@ -236,12 +246,22 @@ class CfgVehicles
 			class _xx_OEC_Magazine_SPAS12_8Rnd
 			{
 				magazine = "OEC_Magazine_SPAS12_8Rnd";
-				count = 50;
+				count = 40;
 			};
 			class _xx_OEC_Magazine_SPAS12_8Rnd_Slug
 			{
 				magazine = "OEC_Magazine_SPAS12_8Rnd_Slug";
-				count = 50;
+				count = 40;
+			};
+			class _xx_OEC_Magazine_SPAS12_8Rnd_Magnesium
+			{
+				magazine = "OEC_Magazine_SPAS12_8Rnd_Magnesium";
+				count = 40;
+			};
+			class _xx_OEC_Magazine_SPAS12_8Rnd_Riot
+			{
+				magazine = "OEC_Magazine_SPAS12_8Rnd_Riot";
+				count = 40;
 			};
 			class _xx_OEC_Magazine_357
 			{
