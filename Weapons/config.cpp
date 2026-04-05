@@ -27,6 +27,7 @@ class CfgPatches
             "OEC_Weapon_Magnum",
             "OEC_Weapon_OICW",
 			"OEC_Weapon_l85",
+			"OEC_Weapon_MP5",
             "OEC_Weapon_PulseSMG",
             "OEC_Weapon_SIPL0_Loaded",
             "OEC_Weapon_SIPL0",
@@ -446,6 +447,30 @@ class CfgAmmo
 		airLock = 1;
 		airFriction = -0.0045;
 		caliber = 2;
+		deflecting = 25;
+		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+		tracerScale = 0.5;
+		tracerStartTime = 0.001;
+		tracerEndTime = 10;
+		audibleFire = 30;
+		aiAmmoUsageFlags = 64;
+		dangerRadiusBulletClose = 4;
+		dangerRadiusHit = 8;
+		suppressionRadiusBulletClose = 2;
+		suppressionRadiusHit = 4;
+	};
+
+	class OEC_Ammo_9mm: BulletBase
+	{
+		hit = 12;
+		indirectHit = 0;
+		indirectHitRange = 0;
+		cartridge = "FxCartridge_9mm";
+		cost = 1;
+		typicalSpeed = 400;
+		airLock = 1;
+		airFriction = -0.001;
+		caliber = 1.25;
 		deflecting = 25;
 		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
 		tracerScale = 0.5;
@@ -2084,6 +2109,32 @@ class CfgMagazines
 		mass = 6;
 		tracersEvery = 0;
 		lastRoundsTracer = 10;
+    };
+
+	class OEC_Magazine_MP5: OEC_Magazine_OICW_Base
+    {
+		scope = 2;
+		ammo = "OEC_Ammo_9mm";
+		author = "OEC Extension";
+		displayName = "[OEC] 30rnd MP5 Magazine";
+        picture = "\OECExtension\Weapons\data\MP5Ammo.paa";
+		modelSpecialIsProxy = 1;
+		initspeed = 405;
+		count = 30;
+		mass = 10;
+		tracersEvery = 0;
+		lastRoundsTracer = 6;
+		model = "\CUP\Weapons\CUP_Weapons_Ammunition\magazines\CUP_mag_30Rnd_MP5.p3d";
+		modelSpecial = "\CUP\Weapons\CUP_Weapons_Ammunition\magazines_proxy\CUP_mag_30Rnd_MP5.p3d";
+		modelSpecialIsProxy = 1;
+    };
+
+	class OEC_Magazine_MP5_Tracer: OEC_Magazine_MP5
+    {
+		displayName = "[OEC] 30rnd MP5 Tracer Magazine";
+        picture = "\OECExtension\Weapons\data\MP5tracerAmmo.paa";
+		tracersEvery = 1;
+		lastRoundsTracer = 30;
     };
 
     class OEC_Magazine_SMG46_HE_2Rnd: OEC_Magazine_OICW_HE_6rnd
@@ -4862,6 +4913,7 @@ class CfgWeapons
 			aiBurstTerminable = 1;
 		};
 	};
+	
 
     class OEC_Weapon_SMG46_Sighted: OEC_Weapon_SMG46
     {
@@ -4874,6 +4926,212 @@ class CfgWeapons
 			};
         };
     };
+
+	class OEC_Weapon_MP5: Rifle_Base_F
+	{
+		author = "OEC Extension";
+        displayName = "[OEC] MP5 Combine SMG";
+		scopeArsenal = 2;
+		scope = 2;
+		descriptionShort = "Overwatch Standard Issue Ballistic Submachine Gun";
+		class GunParticles: GunParticles
+		{
+			class SecondEffect
+			{
+				positionName = "Nabojnicestart";
+				directionName = "Nabojniceend";
+				effectName = "CaselessAmmoCloud";
+			};
+			class ThirdEffect
+			{
+				positionName = "barrel_smoke_start";
+				directionName = "barrel_smoke_end";
+				effectName = "CaselessAmmoCloud";
+			};
+		};
+		selectionFireAnim = "zasleh";
+		fireLightDuration = 0;
+		fireLightIntensity = 0;
+		dexterity = 1.75;
+		aimTransitionSpeed = 1.3;
+		maxZeroing = 600;
+		discreteDistance[] = {100,200,300,400};
+		discreteDistanceInitIndex = 0;
+		model = "\CUP\Weapons\CUP_Weapons_MP5\CUP_MP5SD.p3d";
+		picture = "\OECExtension\Weapons\data\MP5.paa";
+		magazines[] = {"OEC_Magazine_MP5", "OEC_Magazine_MP5_Tracer"};
+		magazineWell[] = {};
+		displayName = "$STR_CUP_dn_mp5sd6";
+		reloadAction = "GestureReloadSMG_05";
+		reloadMagazineSound[] = {"A3\Sounds_F_Exp\arsenal\weapons\SMGs\Rogue9\Rogue9_reload.wss",1,1,10};
+		drySound[] = {"CUP\Weapons\CUP_Weapons_Mp5\data\sfx\Dry.wss",1,1,35};
+		distanceZoomMin = 50;
+		distanceZoomMax = 50;
+		handAnim[] = {"OFP2_ManSkeleton","\CUP\Weapons\CUP_Weapons_MP5\data\anim\MP5_SD.rtm"};
+		magazineReloadSwitchPhase = 0.4333;
+		inertia = 0.2;
+		ACE_barrelTwist = 254.0;
+		ACE_barrelLength = 144.78;
+		initSpeed = -1.0;
+		recoil = "recoil_smg_05";
+		bullet1[] = {"A3\sounds_f\weapons\shells\9mm\metal_9mm_01",0.5011872,1,15};
+		bullet2[] = {"A3\sounds_f\weapons\shells\9mm\metal_9mm_02",0.5011872,1,15};
+		bullet3[] = {"A3\sounds_f\weapons\shells\9mm\metal_9mm_03",0.5011872,1,15};
+		bullet4[] = {"A3\sounds_f\weapons\shells\9mm\metal_9mm_04",0.5011872,1,15};
+		bullet5[] = {"A3\sounds_f\weapons\shells\9mm\dirt_9mm_01",0.39810717,1,15};
+		bullet6[] = {"A3\sounds_f\weapons\shells\9mm\dirt_9mm_02",0.39810717,1,15};
+		bullet7[] = {"A3\sounds_f\weapons\shells\9mm\dirt_9mm_03",0.39810717,1,15};
+		bullet8[] = {"A3\sounds_f\weapons\shells\9mm\dirt_9mm_04",0.39810717,1,15};
+		bullet9[] = {"A3\sounds_f\weapons\shells\9mm\grass_9mm_01",0.39810717,1,15};
+		bullet10[] = {"A3\sounds_f\weapons\shells\9mm\grass_9mm_02",0.39810717,1,15};
+		bullet11[] = {"A3\sounds_f\weapons\shells\9mm\grass_9mm_03",0.39810717,1,15};
+		bullet12[] = {"A3\sounds_f\weapons\shells\9mm\grass_9mm_04",0.39810717,1,15};
+		soundBullet[] = {"bullet1",0.083,"bullet2",0.083,"bullet3",0.083,"bullet4",0.083,"bullet5",0.083,"bullet6",0.083,"bullet7",0.083,"bullet8",0.083,"bullet9",0.083,"bullet10",0.083,"bullet11",0.083,"bullet12",0.083};
+		changeFiremodeSound[] = {"A3\sounds_f\weapons\closure\firemode_changer_1.wss",0.25118864,1,5};
+		modes[] = {"Single","FullAuto"};
+		reloadTime = 0.075;
+		class Single: Mode_SemiAuto
+		{
+			sounds[] = {"StandardSound"};
+			class BaseSoundModeType{};
+			class StandardSound: BaseSoundModeType
+			{
+				weaponSoundEffect = "DefaultRifle";
+				closure1[] = {"A3\Sounds_F\arsenal\weapons\SMG\PDW2000\closure_pdw2000_01",0.501187,1,10};
+				closure2[] = {"A3\Sounds_F\arsenal\weapons\SMG\PDW2000\closure_pdw2000_02",0.501187,1.1,10};
+				soundClosure[] = {"closure1",0.5,"closure2",0.5};
+				soundSetShot[] = {"CUP_MP7_Closure_SoundSet","CUP_MP7_Shot_SoundSet","CUP_pistol1_Tail_SoundSet"};
+				begin1[] = {"CUP\Weapons\CUP_Weapons_Mp5\data\sfx\MP5_s1.wss",1,1,900};
+				begin2[] = {"CUP\Weapons\CUP_Weapons_Mp5\data\sfx\MP5_s2.wss",1,1,900};
+				begin3[] = {"CUP\Weapons\CUP_Weapons_Mp5\data\sfx\MP5_s3.wss",1,1,900};
+				begin4[] = {"CUP\Weapons\CUP_Weapons_Mp5\data\sfx\MP5_s4.wss",1,1,900};
+				soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};
+				class SoundTails
+				{
+					class TailInterior
+					{
+						sound[] = {"A3\Sounds_F\arsenal\weapons\SMG\PDW2000\pdw2000_tail_interior.wss",1.58489,1,900};
+						frequency = 1;
+						volume = "interior";
+					};
+					class TailTrees
+					{
+						sound[] = {"A3\Sounds_F\arsenal\weapons\SMG\PDW2000\pdw2000_tail_trees.wss",1,1,900};
+						frequency = 1;
+						volume = "(1-interior/1.4)*trees";
+					};
+					class TailForest
+					{
+						sound[] = {"A3\Sounds_F\arsenal\weapons\SMG\PDW2000\pdw2000_tail_forest.wss",1,1,900};
+						frequency = 1;
+						volume = "(1-interior/1.4)*forest";
+					};
+					class TailMeadows
+					{
+						sound[] = {"A3\Sounds_F\arsenal\weapons\SMG\PDW2000\pdw2000_tail_meadows.wss",1,1,900};
+						frequency = 1;
+						volume = "(1-interior/1.4)*(meadows/2 max sea/2)";
+					};
+					class TailHouses
+					{
+						sound[] = {"A3\Sounds_F\arsenal\weapons\SMG\PDW2000\pdw2000_tail_houses.wss",1,1,900};
+						frequency = 1;
+						volume = "(1-interior/1.4)*houses";
+					};
+				};
+			};
+			reloadTime = 0.075;
+			dispersion = 0.003;
+			minRange = 2;
+			minRangeProbab = 0.25;
+			midRange = 20;
+			midRangeProbab = 0.7;
+			maxRange = 50;
+			maxRangeProbab = 0.05;
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			sounds[] = {"StandardSound"};
+			class BaseSoundModeType{};
+			class StandardSound: BaseSoundModeType
+			{
+				weaponSoundEffect = "DefaultRifle";
+				closure1[] = {"A3\Sounds_F\arsenal\weapons\SMG\PDW2000\closure_pdw2000_01",0.501187,1,10};
+				closure2[] = {"A3\Sounds_F\arsenal\weapons\SMG\PDW2000\closure_pdw2000_02",0.501187,1.1,10};
+				soundClosure[] = {"closure1",0.5,"closure2",0.5};
+				soundSetShot[] = {"CUP_MP7_Closure_SoundSet","CUP_MP7_Shot_SoundSet","CUP_pistol1_Tail_SoundSet"};
+				begin1[] = {"CUP\Weapons\CUP_Weapons_Mp5\data\sfx\MP5_s1.wss",1,1,900};
+				begin2[] = {"CUP\Weapons\CUP_Weapons_Mp5\data\sfx\MP5_s2.wss",1,1,900};
+				begin3[] = {"CUP\Weapons\CUP_Weapons_Mp5\data\sfx\MP5_s3.wss",1,1,900};
+				begin4[] = {"CUP\Weapons\CUP_Weapons_Mp5\data\sfx\MP5_s4.wss",1,1,900};
+				soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};
+				class SoundTails
+				{
+					class TailInterior
+					{
+						sound[] = {"A3\Sounds_F\arsenal\weapons\SMG\PDW2000\pdw2000_tail_interior.wss",1.58489,1,900};
+						frequency = 1;
+						volume = "interior";
+					};
+					class TailTrees
+					{
+						sound[] = {"A3\Sounds_F\arsenal\weapons\SMG\PDW2000\pdw2000_tail_trees.wss",1,1,900};
+						frequency = 1;
+						volume = "(1-interior/1.4)*trees";
+					};
+					class TailForest
+					{
+						sound[] = {"A3\Sounds_F\arsenal\weapons\SMG\PDW2000\pdw2000_tail_forest.wss",1,1,900};
+						frequency = 1;
+						volume = "(1-interior/1.4)*forest";
+					};
+					class TailMeadows
+					{
+						sound[] = {"A3\Sounds_F\arsenal\weapons\SMG\PDW2000\pdw2000_tail_meadows.wss",1,1,900};
+						frequency = 1;
+						volume = "(1-interior/1.4)*(meadows/2 max sea/2)";
+					};
+					class TailHouses
+					{
+						sound[] = {"A3\Sounds_F\arsenal\weapons\SMG\PDW2000\pdw2000_tail_houses.wss",1,1,900};
+						frequency = 1;
+						volume = "(1-interior/1.4)*houses";
+					};
+				};
+			};
+			soundContinuous = 0;
+			reloadTime = 0.075;
+			ffCount = 1;
+			aiRateOfFire = 0.001;
+			dispersion = 0.003;
+			minRange = 0;
+			minRangeProbab = 0.2;
+			midRange = 7;
+			midRangeProbab = 0.7;
+			maxRange = 15;
+			maxRangeProbab = 0.05;
+		};
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass = 73.17105;
+			class MuzzleSlot: MuzzleSlot
+            {
+                compatibleItems[] = {};
+            };
+            class PointerSlot: PointerSlot
+            {
+                compatibleItems[] = {"acc_flashlight"};
+            };
+            class CowsSlot: CowsSlot 
+            {
+                compatibleItems[] = {"CUP_optic_aimpoint_5000", "CUP_optic_MicroT1"};
+            };
+            class UnderBarrelSlot: UnderBarrelSlot
+            {
+                compatibleItems[] = {};
+            };
+		};
+	};
 
     class OEC_Weapon_SPAS12: Rifle_Base_F
 	{

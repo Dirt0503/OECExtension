@@ -123,6 +123,16 @@ class CfgVehicles
 				magazine = "OEC_Magazine_L85_Tracer";
 				count = 75;
 			};
+			class __xx_OEC_Magazine_MP5
+			{
+				magazine = "OEC_Magazine_MP5";
+				count = 75;
+			};
+			class __xx_OEC_Magazine_MP5_Tracer
+			{
+				magazine = "OEC_Magazine_MP5_Tracer";
+				count = 75;
+			};
 			class _xx_OEC_AR2_Mag
 			{
 				magazine = "OEC_Magazine_AR2";
