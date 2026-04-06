@@ -1532,13 +1532,13 @@ class CfgMagazines
 		scope = 2;
 		ammo = "OEC_Ammo_R1";
 		author = "OEC Extension";
-		displayName = "[OEC] 20rnd R-1 Cell";
-		descriptionShort = "Reduced Capacity Pulse Cell; does not alert enemies.";
-		count = 20;
-		initSpeed = 770;
+		displayName = "[OEC] 30rnd R-1 Cell";
+		descriptionShort = "Standard Capacity Stabilized Pulse Cell; does not alert enemies.";
+		count = 30;
+		initSpeed = 750;
 		picture = "\OECExtension\Weapons\data\R1mag.paa";
 		tracersEvery = 1;
-		mass = 20;
+		mass = 16;
 	};
 
     class OEC_Magazine_cmbSrifle: CA_Magazine
@@ -1548,7 +1548,7 @@ class CfgMagazines
 		author = "OEC Extension";
 		displayName = "[OEC] R-2X Cell - Standard";
 		displaynameshort = "Standard Cell";
-		descriptionShort = "Standard R-2X cell. High damage, decent penetration, 1200m dissipation range.";
+		descriptionShort = "Standard R-2X cell. High damage, medium penetration, 1200m dissipation range.";
 		count = 1;
 		initSpeed = 1000;
 		picture = "\OECExtension\Weapons\data\sniperMag.paa";
